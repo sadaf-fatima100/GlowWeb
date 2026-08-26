@@ -417,13 +417,12 @@ header.site-header.webagency-header {
   top: 75px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 2 * var(--gutter));
-  max-width: calc(var(--maxw) - 2 * var(--gutter));
+  width: calc(100% - 40px);
+  max-width: 1440px;
   height: 76px;
   background: var(--surface);
   border-radius: 99px;
   border: 1.5px solid var(--border-strong);
-  box-shadow: var(--shadow);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -4015,7 +4014,7 @@ body:hover .custom-cursor-follower {
 .project-scroll-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 16px;
   width: 100%;
   padding-block: 20px;
 }
@@ -4028,7 +4027,7 @@ body:hover .custom-cursor-follower {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  border: 1.5px solid rgba(0, 217, 143, 0.3);
+  border: 2px solid rgba(0, 217, 143, 0.4);
   box-shadow: 0 10px 30px rgba(0, 217, 143, 0.05);
   transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
   cursor: pointer;
@@ -4036,7 +4035,7 @@ body:hover .custom-cursor-follower {
 }
 
 html[data-theme="dark"] .project-carousel-frame {
-  border: 1.5px solid rgba(0, 217, 143, 0.15);
+  border: 2px solid rgba(0, 217, 143, 0.8);
 }
 
 /* Dark Theme Opacity Overlay */
@@ -4044,8 +4043,8 @@ html[data-theme="dark"] .project-carousel-frame::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--bg);
-  opacity: 0.5;
+  background: var(--accent-primary);
+  opacity: 0.12;
   z-index: 1;
   pointer-events: none;
   transition: opacity 0.4s var(--ease);
