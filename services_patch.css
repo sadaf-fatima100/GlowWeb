@@ -1,0 +1,214 @@
+
+/* ==========================================================================
+   SERVICES PAGE PREMIUM STYLES
+   ========================================================================== */
+
+.services-page-hero {
+  padding: 180px 20px 80px;
+  background: var(--bg);
+  color: var(--fg);
+  border-bottom: 1px solid var(--border);
+}
+
+.services-page-hero .subtitle {
+  max-width: 800px;
+  margin: 20px auto 0;
+  font-size: 1.15rem;
+  color: var(--fg-soft);
+  line-height: 1.6;
+}
+
+.services-core-grid {
+  background: var(--bg);
+}
+
+.services-grid-premium {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card-premium {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  transition: transform var(--dur-normal), box-shadow var(--dur-normal), border-color var(--dur-normal);
+}
+
+.service-card-premium:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.service-card-premium .icon {
+  width: 60px;
+  height: 60px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  margin-bottom: 24px;
+}
+
+.service-card-premium h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--fg);
+}
+
+.service-card-premium p {
+  color: var(--fg-soft);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Process Timeline Premium */
+.services-process {
+  background: var(--bg-2);
+}
+
+.process-timeline-premium {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.process-step-premium {
+  background: var(--bg);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.step-num-premium {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  opacity: 0.2;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  line-height: 1;
+}
+
+.process-step-premium h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 20px;
+}
+
+.process-step-premium p {
+  color: var(--fg-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Expertise Details */
+.expertise-row-premium {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-top: 80px;
+}
+
+.expertise-row-premium.reverse {
+  flex-direction: row-reverse;
+}
+
+.expertise-content-premium {
+  flex: 1;
+}
+
+.expertise-content-premium h2 {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 16px 0 24px;
+  line-height: 1.2;
+}
+
+.expertise-content-premium p {
+  color: var(--fg-soft);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.expertise-image-premium {
+  flex: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.expertise-image-premium img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--dur-normal);
+}
+
+.expertise-image-premium:hover img {
+  transform: scale(1.03);
+}
+
+/* Testimonials Premium */
+.services-testimonials {
+  background: var(--bg-2);
+}
+
+.testimonials-grid-premium {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.testimonial-card-premium {
+  background: var(--bg);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card-premium p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--fg);
+  margin-bottom: 30px;
+}
+
+.testimonial-card-premium .client-info h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.testimonial-card-premium .client-info span {
+  font-size: 0.9rem;
+  color: var(--fg-soft);
+}
+
+/* Responsive Overrides */
+@media (max-width: 960px) {
+  .expertise-row-premium,
+  .expertise-row-premium.reverse {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 60px;
+  }
+}
