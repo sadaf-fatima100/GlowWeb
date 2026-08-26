@@ -232,214 +232,115 @@
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
       <a href="contact.html">Get Started</a>
     </div>
-    <!-- WEB AGENCY HERO SECTION -->
-    <section class="webagency-hero">
-      <!-- Search Bar -->
-      <div class="wrap webagency-search-container">
-        <form class="webagency-search-bar" id="hero-email-form">
-          <input type="email" id="hero-email-input" placeholder="Enter your email" required />
-          <button type="submit" aria-label="Submit">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.8"
-              class="webagency-search-submit-icon"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
-        </form>
-        <script>
-          document.getElementById('hero-email-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('hero-email-input').value.trim();
-            if(email) {
-              window.location.href = 'contact.html?email=' + encodeURIComponent(email);
-            }
-          });
-        </script>
+    <!-- PREMIUM ILLUMINATED HERO SECTION (GRAPHIZO-STYLE REFERENCE MATCH) -->
+    <section class="webagency-hero-v2">
+      <!-- Background Ambient Glow & Light Waves -->
+      <div class="hero-aurora-glow">
+        <div class="aurora-wave wave-1"></div>
+        <div class="aurora-wave wave-2"></div>
+        <div class="aurora-light-orb orb-1"></div>
+        <div class="aurora-light-orb orb-2"></div>
+        <div class="hero-grid-pattern"></div>
       </div>
-      <!-- Hero Grid Layout -->
-      <div class="wrap webagency-grid">
-        <!-- Left Column (Stepped photo layout) -->
-        <div class="webagency-left-column">
-          <!-- Heading at the top-left (Leading Web Design Agency in a single line/row) -->
-          <div class="webagency-heading-wrap" style="position: relative">
-            <h1 class="webagency-heading photo-heading">
-              <div style="position: relative; display: inline-block">
-                <span class="heading-top">Leading Web Design Agency</span>
-                <span class="heading-top mask-overlay" aria-hidden="true"
-                  >Leading Web Design Agency</span
-                >
-              </div>
-              <span class="heading-sub"
-                >Crafting Exceptional Websites &amp; Driving Digital
-                Success</span
-              >
-            </h1>
+
+      <div class="wrap hero-v2-container">
+        <!-- Floating Interactive Badge Orbit Container -->
+        <div class="hero-center-content">
+          <!-- Top Eyebrow Tag -->
+          <div class="hero-eyebrow-pill reveal">
+            <span class="hero-sparkle">✦</span>
+            <span>Leading Digital &amp; Web Design Agency</span>
           </div>
-          <!-- Photo Card (No stepped cutout corner overlay) -->
-          <div class="webagency-photo-card">
-            <!-- Two Floating Cards Overlapping the Top-Right of the Image -->
-            <div class="webagency-floating-tags-container">
-              <!-- Floating Card 1: Web Design -->
-              <div class="webagency-floating-tag tag-1">Web Design</div>
-              <!-- Floating Card 2: SEO Analytics -->
-              <div class="webagency-floating-tag tag-2">SEO Analytics</div>
-            </div>
-            <!-- Overlapping White AI Banner (Bottom Left) -->
-            <div class="webagency-hero-banner">
-              <p>SEO Dashboard 2.3 Released with AI Technology</p>
-            </div>
+
+          <!-- Main Hero Headline -->
+          <h1 class="hero-v2-title reveal">
+            Revitalize Your Digital Impact <br />
+            through <span class="gradient-text">Boundless Creativity</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="hero-v2-subtitle reveal">
+            We craft visually stunning, high-converting websites, result-driven SEO optimization, and targeted Google Ads campaigns. Explore our capabilities to see the power of effective design in action.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-v2-actions reveal">
+            <a href="contact.html" class="hero-btn-primary">
+              <span>Let's Work Together</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="contact.html" class="hero-btn-secondary">
+              <span>Book a Discovery Call</span>
+            </a>
           </div>
-        </div>
-        <!-- Right Card Block - Lime -->
-        <div class="webagency-right-card">
-          <div class="webagency-right-top">
-            <h2>Benefits &amp;<br />services</h2>
-            <a href="services.html" class="webagency-read-more">Read More</a>
-            <div class="webagency-acc-group">
-              <!-- Accordion 1 -->
-              <div class="webagency-accordion-wrapper">
-                <div class="webagency-accordion" onclick="toggleAcc(this)">
-                  <span>Web Design &amp; Development</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-                <div class="webagency-accordion-content">
-                  <p>
-                    Stunning, Responsive Websites tailored to Grow your
-                    Business.
-                  </p>
-                </div>
-              </div>
-              <!-- Accordion 2 -->
-              <div class="webagency-accordion-wrapper">
-                <div class="webagency-accordion" onclick="toggleAcc(this)">
-                  <span>SEO Optimization</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-                <div class="webagency-accordion-content">
-                  <p>
-                    Boost Rankings, Drive Traffic, and Dominate Search Results.
-                  </p>
-                </div>
-              </div>
-              <!-- Accordion 3 -->
-              <div class="webagency-accordion-wrapper">
-                <div class="webagency-accordion" onclick="toggleAcc(this)">
-                  <span>Google Ads Services</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-                <div class="webagency-accordion-content">
-                  <p>
-                    Targeted Google Ads Campaigns to Maximize Leads &amp;
-                    Conversions.
-                  </p>
-                </div>
-              </div>
+
+          <!-- Floating Skill Pills (Orbiting surrounding pills like attached reference image) -->
+          <div class="hero-floating-pills-wrap">
+            <div class="floating-pill pill-pos-1 float-anim-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+              <span>Digital Marketing</span>
             </div>
-          </div>
-          <!-- Bottom Profile/Appointment Card -->
-          <div
-            class="webagency-app-card"
-            tabindex="0"
-            role="link"
-            onclick="window.location.href = 'contact.html'"
-            onkeydown="
-              if (event.key === 'Enter' || event.key === ' ') {
-                window.location.href = 'contact.html';
-                event.preventDefault();
-              }
-            "
-          >
-            <div class="webagency-app-avatar">
-              <!-- User Profile Icon -->
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+
+            <div class="floating-pill pill-pos-2 float-anim-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              <span>Graphic Design</span>
             </div>
-            <div class="webagency-app-info">
-              <b>Book a Discovery Call</b> <span>Schedule Now</span>
+
+            <div class="floating-pill pill-pos-3 float-anim-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>Web Design</span>
             </div>
-            <div class="webagency-app-arrow">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#2563EB"
-                stroke-width="3"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+
+            <div class="floating-pill pill-pos-4 float-anim-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              <span>UX/UI Design</span>
+            </div>
+
+            <div class="floating-pill pill-pos-5 float-anim-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Brand Strategy</span>
+            </div>
+
+            <div class="floating-pill pill-pos-6 float-anim-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              <span>Video Production</span>
+            </div>
+
+            <div class="floating-pill pill-pos-7 float-anim-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span>Advertising Campaigns</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- METRICS BAR SECTION -->
-    <section class="section-metrics">
-      <div class="wrap">
-        <!-- Header -->
-        <div class="reveal metrics-header">
-          <h3>An Overview of Our Expertise</h3>
-          <p>Showcasing Key Metrics &amp; Achievements</p>
-        </div>
-        <!-- Metrics Grid -->
-        <div class="grid-4 metrics-grid">
-          <!-- Metric 1: Years of Experience -->
-          <div class="reveal-scale metric-item">
-            <span class="metric-number">
+
+        <!-- 4 Trust Stat Cards (Matching Reference Image Bottom Grid) -->
+        <div class="hero-stats-grid reveal">
+          <div class="hero-stat-card">
+            <div class="stat-number">
+              <span data-count="300" data-suffix="+">0</span>
+            </div>
+            <div class="stat-label">Projects completed</div>
+          </div>
+
+          <div class="hero-stat-card">
+            <div class="stat-number">
+              <span data-count="16" data-suffix="+">0</span>
+            </div>
+            <div class="stat-label">Awards Received</div>
+          </div>
+
+          <div class="hero-stat-card">
+            <div class="stat-number">
               <span data-count="12" data-suffix="+">0</span>
-            </span>
-            <span class="metric-label">Years of Experience</span>
+            </div>
+            <div class="stat-label">Years of experience</div>
           </div>
-          <!-- Metric 2: Projects Finished -->
-          <div class="reveal-scale metric-item" style="--i: 1">
-            <span class="metric-number">
-              <span data-count="50" data-suffix="k+">0</span>
-            </span>
-            <span class="metric-label">Projects Finished</span>
-          </div>
-          <!-- Metric 3: Client Satisfaction -->
-          <div class="reveal-scale metric-item" style="--i: 2">
-            <span class="metric-number">
-              <span data-count="100" data-suffix="%">0</span>
-            </span>
-            <span class="metric-label">Client Satisfaction</span>
-          </div>
-          <!-- Metric 4: Team Members -->
-          <div class="reveal-scale metric-item" style="--i: 3">
-            <span class="metric-number">
-              <span data-count="50" data-suffix="+">0</span>
-            </span>
-            <span class="metric-label">Team Members</span>
+
+          <div class="hero-stat-card">
+            <div class="stat-number">
+              <span data-count="34" data-suffix="+">0</span>
+            </div>
+            <div class="stat-label">Team members</div>
           </div>
         </div>
       </div>
@@ -570,63 +471,89 @@
         </div>
       </div>
     </section>
-    <!-- SERVICES (Premium Pricing Cards) -->
+    <!-- SERVICES (Overlapping Circles) -->
     <section class="section" id="servicesSection">
       <div class="wrap">
         <!-- Header for Services -->
-        <div class="reveal services-header" style="text-align: center; margin-bottom: 60px;">
-          <div class="eyebrow" style="justify-content: center;">Our Services</div>
-          <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-top: 16px;">Top-Notch <br /><em>Digital Services</em></h2>
-          <p style="margin: 20px auto 0; max-width: 600px;">
+        <div class="reveal services-header">
+          <div class="eyebrow">Our Services</div>
+          <h2>Explore Our Top-Notch <br /><em>Digital Services</em></h2>
+          <p>
             Discover a wide range of expert services, including Web Design, SEO,
             Google Ads, and more, tailored to skyrocket your business online.
           </p>
         </div>
-        
-        <!-- Premium Cards Grid with Simple Original Content -->
-        <div class="services-pricing-grid">
-          
-          <!-- Card 1: Web Development -->
-          <div class="service-pricing-card reveal">
-            <h3>Web Development</h3>
-            <p class="description">
+        <!-- Overlapping Circles Container (3 Circles for 3 services) -->
+        <div class="services-circles-container">
+          <!-- Circle 1: Web Development -->
+          <div
+            class="services-circle services-circle-left"
+            tabindex="0"
+            role="link"
+            aria-label="Web Development Service"
+            onclick="window.location.href = 'services.html'"
+            onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href = 'services.html'; event.preventDefault(); }"
+          >
+            <div class="shiny-sweep"></div>
+            <h4>Web Development</h4>
+            <p>
               Our development services focus on creating dynamic,
               high-performing websites that deliver seamless UX &amp; drive
               results.
             </p>
-            <a href="services.html" class="btn btn-outline card-btn">
+            <a href="services.html" class="get-started-btn" tabindex="-1">
               Get Started
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 12px; height: 12px; margin-left: 4px; vertical-align: middle;"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
-
-          <!-- Card 2: Google Ads (Highlighted) -->
-          <div class="service-pricing-card highlight reveal" style="animation-delay: 0.1s;">
+          <!-- Circle 2: Google Ads -->
+          <div
+            class="services-circle services-circle-center highlight"
+            style="--i: 1"
+            tabindex="0"
+            role="link"
+            aria-label="Google Ads Service"
+            onclick="window.location.href = 'services.html'"
+            onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href = 'services.html'; event.preventDefault(); }"
+          >
             <div class="shiny-sweep"></div>
-            <h3>Google Ads</h3>
-            <p class="description">
+            <h4>Google Ads</h4>
+            <p>
               Maximize your ROI with expertly crafted ad campaigns designed to
               target the right audience and generate quality leads.
             </p>
-            <a href="services.html" class="btn btn-accent card-btn">
+            <a href="services.html" class="get-started-btn" tabindex="-1">
               Get Started
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 12px; height: 12px; margin-left: 4px; vertical-align: middle;"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
-
-          <!-- Card 3: SEO Optimization -->
-          <div class="service-pricing-card reveal" style="animation-delay: 0.2s;">
-            <h3>SEO Optimization</h3>
-            <p class="description">
+          <!-- Circle 3: SEO Optimization -->
+          <div
+            class="services-circle services-circle-right"
+            style="--i: 2"
+            tabindex="0"
+            role="link"
+            aria-label="SEO Optimization Service"
+            onclick="window.location.href = 'services.html'"
+            onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href = 'services.html'; event.preventDefault(); }"
+          >
+            <div class="shiny-sweep"></div>
+            <h4>SEO Optimization</h4>
+            <p>
               Boost your visibility with cutting-edge SEO strategies that ensure
               your business ranks higher and attracts organic traffic.
             </p>
-            <a href="services.html" class="btn btn-outline card-btn">
+            <a href="services.html" class="get-started-btn" tabindex="-1">
               Get Started
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 12px; height: 12px; margin-left: 4px; vertical-align: middle;"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
-
         </div>
       </div>
     </section>
