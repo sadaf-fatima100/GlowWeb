@@ -418,7 +418,7 @@ header.site-header.webagency-header {
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 40px);
-  max-width: 1440px;
+  max-width: 1300px;
   height: 76px;
   background: var(--surface);
   border-radius: 99px;
