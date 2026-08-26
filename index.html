@@ -267,6 +267,39 @@
         <path d="M-80 -160 C 320 50, 400 370, 10 580" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.9" />
       </svg>
 
+      <!-- Top-Right Shiny Layer Fluid Wave Ribbon (Symmetrical Matching) -->
+      <svg class="hero-shiny-wave-topright" viewBox="0 0 850 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="waveGradR1" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00d98f" stop-opacity="0.95" />
+            <stop offset="50%" stop-color="#4FEBFD" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#00d98f" stop-opacity="0.0" />
+          </linearGradient>
+          <linearGradient id="waveGradR2" x1="100%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+            <stop offset="40%" stop-color="#00d98f" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#4FEBFD" stop-opacity="0.0" />
+          </linearGradient>
+          <filter id="waveGlowR" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="30" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Outer Soft Ambient Aura Ribbon -->
+        <path d="M1030 -120 C 590 90, 530 440, 940 680 C 1050 500, 750 200, 1030 -120 Z" fill="url(#waveGradR1)" opacity="0.45" filter="url(#waveGlowR)" />
+        
+        <!-- Main Electric Glowing Wave Ribbon -->
+        <path d="M970 -140 C 570 80, 490 420, 890 640" stroke="url(#waveGradR1)" stroke-width="58" stroke-linecap="round" filter="url(#waveGlowR)" opacity="0.85" />
+        
+        <!-- Inner Intense Core Light Strand -->
+        <path d="M950 -150 C 550 60, 470 390, 860 600" stroke="url(#waveGradR2)" stroke-width="18" stroke-linecap="round" filter="url(#waveGlowR)" opacity="0.95" />
+        <path d="M930 -160 C 530 50, 450 370, 840 580" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+      </svg>
+
       <!-- Background Ambient Glow & Light Orbs -->
       <div class="hero-aurora-glow">
         <div class="aurora-wave wave-1"></div>
@@ -388,126 +421,82 @@
     <!-- TRUSTED PARTNER SECTION -->
     <section class="trusted-partner-section">
       <div class="wrap">
-        <div class="trusted-partner-grid">
-          <!-- Left side: Unique Framed Image & Rating Badge -->
-          <div class="trusted-image-container reveal">
-            <div class="trusted-image-glow"></div>
-            <div class="trusted-image-frame">
-              <img
-                src="https://webagency.tryshort.com/wp-content/uploads/2025/05/Web_Agency_Image.jpg"
-                alt="Web Agency Team Working on Site Design"
-                loading="lazy"
-              />
+        <div class="trusted-partner-grid-v2">
+          
+          <!-- Left side: Image Collage -->
+          <div class="tp-collage reveal">
+            <div class="tp-img-col-left">
+              <div class="tp-img-box tp-img-small">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team discussing digital strategy" loading="lazy" />
+              </div>
+              <div class="tp-stat-box">
+                <span class="tp-stat-number">20K+</span>
+                <span class="tp-stat-text">Happy Clients</span>
+              </div>
             </div>
-            <!-- Floating Rating Badge -->
-            <div class="trusted-rating-badge">
-              <div class="badge-icon">🏆</div>
-              <div class="badge-text">
-                <span class="stars">★★★★★</span>
-                <span class="title">Top-Rated Agency</span>
+            
+            <div class="tp-img-col-right">
+              <div class="tp-img-box tp-img-large">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trusted professional agency handshake" loading="lazy" />
+              </div>
+            </div>
+            
+            <!-- Floating Review -->
+            <div class="tp-floating-review">
+              <div class="tp-avatar">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client Avatar" loading="lazy" />
+              </div>
+              <div class="tp-review-content">
+                <div class="tp-rating">4.9/5 <span class="stars">★★★★★</span></div>
+                <div class="tp-reviews-count">From 1,200+ Reviews</div>
               </div>
             </div>
           </div>
-          <!-- Right side: Content & Checklist -->
-          <div class="trusted-partner-content reveal-right">
-            <div class="eyebrow">About Web Agency</div>
-            <h2>
-              Your <span class="accent-text">Trusted Partner</span> for Digital
-              Growth & Excellence
+          
+          <!-- Right side: Content -->
+          <div class="tp-content reveal-right">
+            <div class="tp-eyebrow"><span class="dot"></span> ABOUT US</div>
+            <h2 class="tp-heading">
+              Your <span class="accent-text">Trusted Partner</span> for Digital Growth & Excellence
             </h2>
-            <p class="desc-lead">
-              Our Web Design Agency is your ultimate partner for innovative,
-              professional, and result-driven digital solutions. We specialize
-              in creating tailored websites, delivering seamless user
-              experiences, and driving measurable growth through cutting-edge
-              strategies, advanced tools, and a client-centric approach.
+            <p class="tp-desc">
+              We simplify the digital landscape with expert guidance, cutting-edge strategies, and tailored solutions to fit your exact business needs. Experience unparalleled ROI and sustainable online growth.
             </p>
-            <p class="desc-body">
-              Choose us for exceptional web design, expert development, SEO
-              mastery, and ROI-focused digital marketing. With a team of skilled
-              professionals, competitive pricing, and unparalleled expertise, we
-              ensure your online success with tailored solutions, fast delivery,
-              and 24/7 support.
-            </p>
-            <!-- Checklist Grid -->
-            <div class="trusted-checklist-grid">
-              <div class="checklist-item">
-                <span class="checklist-icon">
-                  <svg viewBox="0 0 512 512" fill="currentColor">
-                    <path
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    />
-                  </svg>
-                </span>
-                <span>Custom Website Design Solutions</span>
+            
+            <div class="tp-features-container">
+              <div class="tp-experience-box">
+                <div class="tp-exp-overlay"></div>
+                <div class="tp-exp-content">
+                  <span class="tp-exp-num">15+</span>
+                  <span class="tp-exp-text">Years of<br/>Experience</span>
+                </div>
               </div>
-              <div class="checklist-item">
-                <span class="checklist-icon">
-                  <svg viewBox="0 0 512 512" fill="currentColor">
-                    <path
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    />
-                  </svg>
-                </span>
-                <span>Fast & Reliable Turnaround</span>
-              </div>
-              <div class="checklist-item">
-                <span class="checklist-icon">
-                  <svg viewBox="0 0 512 512" fill="currentColor">
-                    <path
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    />
-                  </svg>
-                </span>
-                <span>SEO & Digital Marketing Experts</span>
-              </div>
-              <div class="checklist-item">
-                <span class="checklist-icon">
-                  <svg viewBox="0 0 512 512" fill="currentColor">
-                    <path
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    />
-                  </svg>
-                </span>
-                <span>24/7 Dedicated Support</span>
-              </div>
-              <div class="checklist-item">
-                <span class="checklist-icon">
-                  <svg viewBox="0 0 512 512" fill="currentColor">
-                    <path
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    />
-                  </svg>
-                </span>
-                <span>Trusted by Businesses Worldwide</span>
-              </div>
-              <div class="checklist-item">
-                <span class="checklist-icon">
-                  <svg viewBox="0 0 512 512" fill="currentColor">
-                    <path
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    />
-                  </svg>
-                </span>
-                <span>Client-Focused Approach</span>
-              </div>
+              
+              <ul class="tp-checklist">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Expert digital advice
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Customized growth solutions
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Fast and hassle-free process
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  Dedicated support at every step
+                </li>
+              </ul>
             </div>
-            <!-- CTA -->
-            <div class="trusted-action">
-              <a href="#interactiveBasin" class="btn btn-solid">
-                <span>Contact Us Now</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  style="width: 14px; height: 14px"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+            
+            <a href="#servicesSection" class="btn btn-solid tp-btn">
+              Learn More About Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px; margin-left: 8px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
           </div>
+          
         </div>
       </div>
     </section>
