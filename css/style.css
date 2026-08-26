@@ -134,9 +134,9 @@ button {
 }
 
 .wrap {
-  max-width: var(--maxw);
+  width: calc(100% - 40px);
+  max-width: 1300px;
   margin: 0 auto;
-  padding-inline: var(--gutter);
   position: relative;
   z-index: 2;
 }
@@ -925,7 +925,6 @@ html[data-theme="dark"] .theme-toggle .knob {
   padding-bottom: clamp(60px, 8vw, 100px);
   background: var(--bg);
   overflow: hidden;
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4200,6 +4199,8 @@ html[data-theme="dark"] .project-carousel-frame::after {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .marquee-col {
@@ -6322,8 +6323,8 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
 .proc-v2-line {
   position: absolute;
   top: 126px; /* 20px (padding-top) + 80px (number height) + 20px (margin) + 6px (half dot) = 126px */
-  left: 12.5%;
-  right: 12.5%;
+  left: 0;
+  right: 0;
   height: 2px;
   background: var(--border-strong);
   z-index: 0;
@@ -6519,19 +6520,22 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
   50% { transform: rotate(5deg) scale(1.05); }
   100% { transform: rotate(0deg) scale(1); }
 }
+
 /* Analytics Animation */
-.analytic-badge {
+.bento-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 24px;
+  right: 24px;
   background: var(--bg-primary);
   border: 1px solid var(--border-glow);
   color: var(--text-primary);
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   box-shadow: 0 0 10px var(--accent-glow);
-  z-index: 3;
+  z-index: 10;
+  display: flex;
+  align-items: center;
 }
 .analytic-path {
   width: 100%;
@@ -6740,8 +6744,8 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
 }
 @keyframes grow-bar { 100% { height: var(--target-height); } }
 @keyframes pulse-bar {
-  0% { opacity: 0.8; filter: brightness(1); }
-  100% { opacity: 1; filter: brightness(1.3); }
+  0% { opacity: 0.8; filter: brightness(1); height: var(--target-height); }
+  100% { opacity: 1; filter: brightness(1.3); height: calc(var(--target-height) - 15%); }
 }
 @keyframes fade-in-delay {
   100% { opacity: 1; }
@@ -6765,10 +6769,8 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
 .trusted-partner-grid-v2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 /* Left Collage */
 .tp-collage {
@@ -7691,4 +7693,9 @@ html[data-theme="dark"] .hero-stat-card::after {
 .pill-orbit-bl { bottom: 15%; left: -100px; transform: rotate(4deg); }
 .pill-orbit-bc { bottom: -20px; left: 45%; transform: rotate(-2deg); }
 .pill-orbit-br { bottom: 10%; right: -80px; transform: rotate(-5deg); }
+
+
+
+
+
 
