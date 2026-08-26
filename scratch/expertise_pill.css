@@ -1,0 +1,24 @@
+/* Update 5: Fix spacing and change highlight to Pill Shape */
+.expertise-slides-text {
+  min-height: 200px !important;
+}
+.expertise-nav {
+  margin-top: 15px !important;
+  padding-top: 0px !important;
+}
+
+/* Pill Shape instead of underline */
+.highlight-text {
+  background: rgba(0, 217, 143, 0.1) !important;
+  border: 1.5px solid var(--accent-primary) !important;
+  border-radius: 50px !important;
+  padding: 4px 18px !important;
+  margin: 0 4px !important;
+  text-shadow: none !important;
+  display: inline-block !important;
+  box-shadow: 0 0 15px rgba(0, 217, 143, 0.15) !important;
+  font-weight: 800 !important;
+}
+.highlight-text::after {
+  display: none !important;
+}

@@ -1,0 +1,253 @@
+
+/* Update 4: Expertise Section Redesign & Animations */
+
+/* Highlight Text (Replacing sticker-tag) */
+.expertise-slide-text-item h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem) !important;
+  line-height: 1.25 !important;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+.highlight-text {
+  color: var(--accent-primary);
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 0 20px var(--accent-glow);
+  font-weight: 800;
+  padding: 0 4px;
+}
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
+  border-radius: 2px;
+}
+
+/* Animations Right Column */
+.expertise-anim-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.2), 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* 1. Web Dev Anim */
+.anim-code-window {
+  width: 70%;
+  background: #060a08;
+  border: 1px solid rgba(0, 217, 143, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  animation: floatWindow 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.window-header {
+  background: rgba(255,255,255,0.05);
+  padding: 12px 15px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.window-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #333;
+}
+.window-header .dot:nth-child(1) { background: #ff5f56; }
+.window-header .dot:nth-child(2) { background: #ffbd2e; }
+.window-header .dot:nth-child(3) { background: #27c93f; }
+.window-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.code-line {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  animation: pulseCode 2s infinite alternate;
+}
+.code-line.w-70 { width: 70%; }
+.code-line.w-40 { width: 40%; animation-delay: 0.2s; }
+.code-line.w-80 { width: 80%; animation-delay: 0.4s; }
+.code-line.w-30 { width: 30%; animation-delay: 0.6s; }
+.code-line.w-60 { width: 60%; animation-delay: 0.8s; }
+.code-line.w-50 { width: 50%; animation-delay: 1.0s; }
+.code-line.indent { margin-left: 20px; }
+.code-line.w-80, .code-line.w-40 {
+  background: rgba(0, 217, 143, 0.3);
+  box-shadow: 0 0 10px rgba(0, 217, 143, 0.2);
+}
+
+.floating-ui-element {
+  position: absolute;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+.ui-1 {
+  width: 140px; height: 80px;
+  top: 15%; right: 5%;
+  animation: floatWindow 7s ease-in-out infinite reverse;
+}
+.ui-2 {
+  width: 100px; height: 100px;
+  bottom: 20%; left: 5%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,217,143,0.1) 0%, transparent 70%);
+  border: 1px solid var(--accent-primary);
+  animation: floatWindow 5s ease-in-out infinite;
+}
+
+@keyframes floatWindow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes pulseCode {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* 2. SEO Anim */
+.anim-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  height: 200px;
+  position: relative;
+  z-index: 2;
+}
+.chart-bar {
+  width: 35px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px 6px 0 0;
+  transition: height 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+.expertise-graphic-item.active .chart-bar.h-30 { height: 30%; animation: growBar 1.5s ease forwards; }
+.expertise-graphic-item.active .chart-bar.h-50 { height: 50%; animation: growBar 1.5s 0.2s ease forwards; }
+.expertise-graphic-item.active .chart-bar.h-40 { height: 40%; animation: growBar 1.5s 0.4s ease forwards; }
+.expertise-graphic-item.active .chart-bar.h-70 { height: 70%; animation: growBar 1.5s 0.6s ease forwards; }
+.expertise-graphic-item.active .chart-bar.h-100 { height: 100%; animation: growBar 1.5s 0.8s ease forwards; background: rgba(0, 217, 143, 0.2); border: 1px solid var(--accent-primary); border-bottom: none; box-shadow: 0 0 30px rgba(0, 217, 143, 0.2); }
+.chart-line {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 3;
+  overflow: visible;
+}
+.expertise-graphic-item.active .chart-line polyline {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawLine 2s 1s ease forwards;
+}
+
+.seo-target-circle {
+  position: absolute;
+  top: 15%; right: 15%;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 2px dashed rgba(0, 217, 143, 0.5);
+  animation: spinSlow 15s linear infinite;
+}
+.seo-target-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 24px; height: 24px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--accent-primary);
+}
+
+@keyframes growBar {
+  0% { transform: scaleY(0); transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+/* 3. Dashboard / Ads Anim */
+.anim-dashboard {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dash-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,217,143,0.3);
+  z-index: 2;
+}
+.dash-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.dash-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  line-height: 1;
+}
+.cursor-anim {
+  position: absolute;
+  bottom: 0px; right: 0px;
+  width: 48px; height: 48px;
+  z-index: 3;
+  animation: clickAnim 4s infinite;
+}
+.dash-pulse-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  animation: pulseRing 2s infinite;
+}
+
+@keyframes clickAnim {
+  0% { transform: translate(60px, 60px); }
+  30% { transform: translate(0, 0); }
+  40% { transform: translate(0, 0) scale(0.8); }
+  50% { transform: translate(0, 0) scale(1); }
+  80% { transform: translate(60px, 60px); }
+  100% { transform: translate(60px, 60px); }
+}
+@keyframes pulseRing {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+

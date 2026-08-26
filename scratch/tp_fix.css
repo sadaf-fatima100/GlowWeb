@@ -1,0 +1,94 @@
+/* Update 2: Fixes based on feedback */
+.tp-img-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(0, 217, 143, 0.25));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.tp-img-box img {
+  filter: brightness(0.85) contrast(1.1) grayscale(0.1);
+}
+
+/* Merged Stat & Review Card */
+.tp-stat-review-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(0, 217, 143, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.tp-stat-review-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(0,217,143,0.1), transparent);
+  pointer-events: none;
+}
+.tp-stat-top {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.tp-stat-num {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.tp-stat-label {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.tp-stat-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+[data-theme='light'] .tp-stat-divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+.tp-review-bottom {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* "15+ Years" Box Solid BG */
+.tp-experience-box {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(0, 217, 143, 0.08) 100%) !important;
+  border-color: rgba(0, 217, 143, 0.2) !important;
+}
+.tp-exp-overlay {
+  display: none !important; /* Removed the background image overlay */
+}
+
+/* Fix Button Styling */
+.tp-btn {
+  background: var(--accent) !important;
+  color: #000 !important;
+  border: none !important;
+  border-radius: 30px !important;
+  font-weight: 600;
+  padding: 16px 36px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 217, 143, 0.3) !important;
+}
+.tp-btn svg {
+  stroke: #000 !important;
+}

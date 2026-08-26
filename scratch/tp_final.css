@@ -1,0 +1,50 @@
+/* Update 3: Final Polishing & Variable Fixes */
+
+/* Solid 20K+ Box */
+.tp-stat-box {
+  background: linear-gradient(135deg, #0a110e 0%, rgba(0, 217, 143, 0.1) 100%) !important;
+  border: 1px solid rgba(0, 217, 143, 0.25) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+}
+
+/* Floating Review Pill Centered */
+.tp-floating-review {
+  bottom: 10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(10, 15, 13, 0.85) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 12px 24px !important;
+  border-radius: 50px !important;
+  width: max-content !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Hide the merged card since we reverted to split layout */
+.tp-stat-review-card {
+  display: none !important;
+}
+
+/* Better 15+ Box Contrast */
+.tp-experience-box {
+  background: linear-gradient(135deg, #0a110e 0%, rgba(0, 217, 143, 0.15) 100%) !important;
+  border: 1px solid rgba(0, 217, 143, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+.tp-exp-num {
+  color: var(--accent-primary) !important;
+}
+[data-theme='light'] .tp-exp-num {
+  color: var(--accent-primary) !important;
+}
+
+/* Button Guarantee */
+.tp-btn {
+  background: var(--accent-primary) !important;
+  background-color: var(--accent-primary) !important;
+  background-image: none !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 217, 143, 0.2) !important;
+}
