@@ -1,0 +1,4 @@
+/* Update 11: Perfect Gap for the strictly structured 3-line format */
+.expertise-slides-text {
+  min-height: 380px !important; /* Perfect gap below the button */
+}

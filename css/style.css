@@ -414,7 +414,7 @@ header.site-header {
 /* Web Agency Theme Header Classes - Extracted from inline styles */
 header.site-header.webagency-header {
   position: fixed;
-  top: 75px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 40px);
@@ -921,15 +921,14 @@ html[data-theme="dark"] .theme-toggle .knob {
 /* ---------- Graphizo-Style Illuminated Hero Section V2 ---------- */
 .webagency-hero-v2 {
   position: relative;
-  padding-top: clamp(180px, 16vw, 220px);
+  padding-top: clamp(100px, 12vw, 140px);
   padding-bottom: clamp(60px, 8vw, 100px);
   background: var(--bg);
   overflow: hidden;
-  min-height: 88vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .webagency-hero-v2::after {
@@ -1113,7 +1112,8 @@ html[data-theme="dark"] .theme-toggle .knob {
   -webkit-text-fill-color: transparent;
   display: inline-block;
   filter: drop-shadow(0 0 25px var(--accent-glow));
-  padding-bottom: 4px;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
 }
 
 .hero-v2-subtitle {
@@ -6306,29 +6306,30 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
 }
 
 /* --- PROCESS SECTION --- */
-.process-section {
+.proc-v2-section {
   padding: 100px 0;
   position: relative;
   overflow: hidden;
 }
-.process-steps {
+
+.proc-v2-steps {
   position: relative;
-  margin-top: 60px;
+  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-.process-line {
+.proc-v2-line {
   position: absolute;
-  top: 55px; /* Center with the dot */
-  left: 10%;
-  right: 10%;
+  top: 126px; /* 20px (padding-top) + 80px (number height) + 20px (margin) + 6px (half dot) = 126px */
+  left: 12.5%;
+  right: 12.5%;
   height: 2px;
   background: var(--border-strong);
   z-index: 0;
   overflow: hidden;
 }
-.process-line-glow {
+.proc-v2-line-glow {
   position: absolute;
   top: 0;
   left: -100%;
@@ -6341,20 +6342,46 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
   0% { transform: translateX(0%); }
   100% { transform: translateX(200%); }
 }
-.process-step {
+.proc-v2-step {
   position: relative;
   z-index: 1;
   text-align: center;
+  transition: transform 0.3s ease;
+  padding-top: 20px; /* Space for the top line */
 }
-.process-number {
-  font-size: 3.5rem;
+.proc-v2-step:hover .proc-v2-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 20px 8px var(--accent-glow);
+}
+.proc-v2-step:hover .proc-v2-title {
+  color: var(--accent-primary);
+  transform: translateY(-5px);
+}
+.proc-v2-step:hover .proc-v2-desc {
+  color: var(--text-primary);
+}
+.proc-v2-step:hover .proc-v2-number {
+  color: var(--accent-primary);
+  opacity: 1;
+  text-shadow: 0 0 25px var(--accent-glow);
+  transform: scale(1.1);
+}
+
+.proc-v2-number {
+  font-size: 4.5rem;
   font-weight: 700;
   color: var(--fg-soft);
   margin-bottom: 20px;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   font-family: var(--font-display);
   opacity: 0.5;
+  line-height: 0.8;
+  transition: all 0.4s var(--ease);
 }
-.process-dot {
+.proc-v2-dot {
   width: 12px;
   height: 12px;
   background: var(--accent-primary);
@@ -6362,8 +6389,9 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
   margin: 0 auto 30px;
   box-shadow: 0 0 15px 4px var(--accent-glow);
   position: relative;
+  transition: all 0.3s ease;
 }
-.process-dot::before {
+.proc-v2-dot::before {
   content: '';
   position: absolute;
   inset: -6px;
@@ -6372,33 +6400,32 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
   opacity: 0.4;
   animation: pulse-glow 2s infinite ease-in-out alternate;
 }
-@keyframes pulse-glow {
-  0% { transform: scale(1); opacity: 0.4; }
-  100% { transform: scale(1.5); opacity: 0; }
-}
-.process-title {
+.proc-v2-title {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: var(--fg);
+  transition: all 0.3s ease;
 }
-.process-desc {
+.proc-v2-desc {
   font-size: 0.95rem;
   color: var(--fg-soft);
-  line-height: 1.6;
+  line-height: 1.7; /* Increased line-height */
+  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1024px) {
-  .process-steps {
+  .proc-v2-steps {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
-  .process-line {
-    display: none; /* Hide line on smaller screens as it breaks grid */
+  .proc-v2-line {
+    display: none;
   }
 }
 
 @media (max-width: 600px) {
-  .process-steps {
+  .proc-v2-steps {
     grid-template-columns: 1fr;
   }
 }
@@ -7457,4 +7484,211 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
   line-height: 1.1 !important;
   box-shadow: 0 0 20px rgba(0, 217, 143, 0.15) !important;
 }
+
+
+
+/* Update 7: Final Polishing Fixes */
+
+/* 1. Hero floating pills pushed further out */
+.pill-orbit-tl { left: -220px !important; }
+.pill-orbit-ml { left: -240px !important; }
+.pill-orbit-tr { right: -200px !important; }
+.pill-orbit-mr { right: -220px !important; }
+
+@media (max-width: 1400px) {
+  .pill-orbit-tl { left: -140px !important; }
+  .pill-orbit-ml { left: -160px !important; }
+  .pill-orbit-tr { right: -120px !important; }
+  .pill-orbit-mr { right: -140px !important; }
+}
+
+/* 2. Shining animation for hero metrics cards */
+.hero-stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.hero-stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(-25deg);
+  animation: shine-card 6s infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+html[data-theme="dark"] .hero-stat-card::after {
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 143, 0.12), transparent);
+}
+@keyframes shine-card {
+  0% { left: -150%; }
+  15% { left: 200%; }
+  100% { left: 200%; }
+}
+
+/* 3. Floating Review Pill moved to not overlap "Happy Clients" */
+.tp-floating-review {
+  left: 30px !important;
+  bottom: -20px !important;
+  transform: none !important;
+  z-index: 10 !important;
+}
+
+/* 4. Increase Expertise desc text size to fill empty space */
+.expertise-desc {
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+}
+
+
+/* Update 8: Perfect Floating Review Positioning */
+.tp-floating-review {
+  top: 60% !important;
+  left: 45% !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* Update 9: Expertise natural wrapping & space reduction */
+
+/* Ensure text flows naturally but pill stays whole */
+.highlight-text {
+  white-space: nowrap !important;
+  margin: 4px 6px !important;
+}
+
+/* Reduce container height since text wrapping takes fewer vertical lines */
+.expertise-slides-text {
+  min-height: 280px !important;
+}
+
+
+/* Update 10: Expertise content update and button styling */
+
+.expertise-slides-text {
+  min-height: 420px !important; /* Increase to fit buttons and longer text */
+}
+
+.expertise-btn {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  background: var(--accent-primary);
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  width: max-content;
+}
+
+.expertise-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 217, 143, 0.3);
+}
+
+.expertise-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.expertise-btn:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* Update 11: Perfect Gap for the strictly structured 3-line format */
+.expertise-slides-text {
+  min-height: 380px !important; /* Perfect gap below the button */
+}
+
+/* Update 12: Simple Navbar Layout (Override Complex Icon Layout) */
+
+/* Hide the complex UI elements */
+.webagency-nav-item-pocket-curve,
+.webagency-nav-item-active-icon,
+.webagency-nav-item-icon-wrap {
+  display: none !important;
+}
+
+/* Reset Nav Item styling */
+.webagency-nav-item {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 18px !important;
+  height: auto !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  width: auto !important;
+}
+
+/* Reset Inner Wrappers */
+.webagency-nav-item-inner {
+  flex-direction: row !important;
+  gap: 6px !important;
+}
+
+/* Style the Labels */
+.webagency-nav-item-label,
+.webagency-nav-item-label-inactive {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important; /* Reset translateY from old design */
+  transition: color 0.3s ease !important;
+}
+
+/* Active State Underline */
+.webagency-nav-item.active .webagency-nav-item-label {
+  color: var(--accent-primary) !important;
+  position: relative;
+}
+
+.webagency-nav-item.active .webagency-nav-item-label::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+}
+
+/* Hover States */
+.webagency-nav-item:hover .webagency-nav-item-label-inactive,
+.webagency-nav-item:hover .webagency-nav-item-label {
+  color: var(--accent-primary) !important;
+}
+
+/* Dropdown arrow alignment */
+.webagency-nav-item-label-inactive svg {
+  margin-left: 4px;
+}
+
+/* Update 13: Hide Topbar across all pages */
+.topbar {
+  display: none !important;
+}
+
+
+
+
+/* New bottom scattered pills */
+.pill-orbit-bl { bottom: 15%; left: -100px; transform: rotate(4deg); }
+.pill-orbit-bc { bottom: -20px; left: 45%; transform: rotate(-2deg); }
+.pill-orbit-br { bottom: 10%; right: -80px; transform: rotate(-5deg); }
 

@@ -1,0 +1,4 @@
+/* Update 13: Hide Topbar across all pages */
+.topbar {
+  display: none !important;
+}

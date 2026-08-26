@@ -196,10 +196,10 @@
       const scrolled = window.scrollY || document.documentElement.scrollTop;
       if (scrolled > 30) {
         topbar.style.transform = 'translateY(-100%)';
-        header.style.top = '24px';
+        header.style.top = '10px';
       } else {
         topbar.style.transform = 'translateY(0)';
-        header.style.top = '75px';
+        header.style.top = '10px';
       }
     };
     document.addEventListener('scroll', handleHeaderScroll, { passive: true });

@@ -1,0 +1,34 @@
+/* Update 10: Expertise content update and button styling */
+
+.expertise-slides-text {
+  min-height: 420px !important; /* Increase to fit buttons and longer text */
+}
+
+.expertise-btn {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  background: var(--accent-primary);
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  width: max-content;
+}
+
+.expertise-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 217, 143, 0.3);
+}
+
+.expertise-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.expertise-btn:hover svg {
+  transform: translateX(4px);
+}
