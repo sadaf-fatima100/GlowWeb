@@ -1,0 +1,43 @@
+/* Update 6: Fix overlapping, line-height, and pill shape */
+
+.expertise-left {
+  justify-content: space-between !important;
+  padding-bottom: 20px !important;
+}
+
+.expertise-slides-text {
+  min-height: 340px !important; /* Prevents text from overlapping tabs */
+  position: relative !important;
+}
+
+.expertise-slide-text-item {
+  top: 50% !important;
+  transform: translateY(calc(-50% + 20px)) !important;
+  margin: 0 !important;
+}
+.expertise-slide-text-item.active {
+  transform: translateY(-50%) !important;
+}
+
+.expertise-nav {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
+/* Fix Line Height & Pill padding */
+.expertise-slide-text-item h3 {
+  line-height: 1.5 !important;
+  margin-bottom: 28px !important;
+}
+
+.highlight-text {
+  padding: 8px 24px !important;
+  margin: 0 8px !important;
+  border-radius: 99px !important;
+  display: inline-block !important;
+  transform: translateY(-4px) !important;
+  border: 1.5px solid rgba(0, 217, 143, 0.5) !important;
+  background: rgba(0, 217, 143, 0.08) !important;
+  line-height: 1.1 !important;
+  box-shadow: 0 0 20px rgba(0, 217, 143, 0.15) !important;
+}

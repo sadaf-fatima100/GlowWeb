@@ -4013,35 +4013,71 @@ body:hover .custom-cursor-follower {
 }
 
 .project-scroll-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE */
-  scroll-behavior: smooth;
-  padding-block: 20px;
   width: 100%;
-}
-
-.project-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  padding-block: 20px;
 }
 
 .project-carousel-slide {
-  flex-shrink: 0;
-  width: calc((100% - 60px) / 3); /* Exactly 3 items in one row on desktop */
-  scroll-snap-align: start;
+  width: 100%;
 }
 
 .project-carousel-frame {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  border: 1.5px solid var(--border-strong);
-  box-shadow: var(--shadow-sm);
+  border: 1.5px solid rgba(0, 217, 143, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 217, 143, 0.05);
   transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
   cursor: pointer;
   background: var(--surface-raised);
+}
+
+html[data-theme="dark"] .project-carousel-frame {
+  border: 1.5px solid rgba(0, 217, 143, 0.15);
+}
+
+/* Dark Theme Opacity Overlay */
+html[data-theme="dark"] .project-carousel-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+
+html[data-theme="dark"] .project-carousel-frame:hover::before {
+  opacity: 0.1;
+}
+
+/* Shining Sweep Animation */
+.project-carousel-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-25deg);
+  animation: shine-project 6s infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+html[data-theme="dark"] .project-carousel-frame::after {
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 143, 0.2), transparent);
+}
+
+@keyframes shine-project {
+  0% { left: -150%; }
+  15% { left: 200%; }
+  100% { left: 200%; }
 }
 
 .project-carousel-frame img {
@@ -4053,12 +4089,12 @@ body:hover .custom-cursor-follower {
 
 .project-carousel-frame:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 20px 40px rgba(0, 217, 143, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 217, 143, 0.2);
   transform: translateY(-6px);
 }
 
 .project-carousel-frame:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .project-carousel-overlay {
@@ -4066,8 +4102,8 @@ body:hover .custom-cursor-follower {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 24px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  padding: 30px 24px 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -4075,6 +4111,7 @@ body:hover .custom-cursor-follower {
   opacity: 0;
   transition: opacity 0.4s var(--ease);
   pointer-events: none;
+  z-index: 3;
 }
 
 .project-carousel-frame:hover .project-carousel-overlay {
@@ -4097,18 +4134,16 @@ body:hover .custom-cursor-follower {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Carousel responsiveness overrides */
+/* Grid responsiveness */
 @media (max-width: 991px) {
-  .project-carousel-slide {
-    width: calc((100% - 30px) / 2); /* 2 items per row on tablet */
+  .project-scroll-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 575px) {
-  .project-carousel-slide {
-    width: 82%; /* Swipeable slide deck on mobile */
-  }
   .project-scroll-container {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }
@@ -7378,5 +7413,49 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
 }
 .highlight-text::after {
   display: none !important;
+}
+
+/* Update 6: Fix overlapping, line-height, and pill shape */
+
+.expertise-left {
+  justify-content: space-between !important;
+  padding-bottom: 20px !important;
+}
+
+.expertise-slides-text {
+  min-height: 340px !important; /* Prevents text from overlapping tabs */
+  position: relative !important;
+}
+
+.expertise-slide-text-item {
+  top: 50% !important;
+  transform: translateY(calc(-50% + 20px)) !important;
+  margin: 0 !important;
+}
+.expertise-slide-text-item.active {
+  transform: translateY(-50%) !important;
+}
+
+.expertise-nav {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
+/* Fix Line Height & Pill padding */
+.expertise-slide-text-item h3 {
+  line-height: 1.5 !important;
+  margin-bottom: 28px !important;
+}
+
+.highlight-text {
+  padding: 8px 24px !important;
+  margin: 0 8px !important;
+  border-radius: 99px !important;
+  display: inline-block !important;
+  transform: translateY(-4px) !important;
+  border: 1.5px solid rgba(0, 217, 143, 0.5) !important;
+  background: rgba(0, 217, 143, 0.08) !important;
+  line-height: 1.1 !important;
+  box-shadow: 0 0 20px rgba(0, 217, 143, 0.15) !important;
 }
 
