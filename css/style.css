@@ -1207,24 +1207,37 @@ html[data-theme="dark"] .theme-toggle .knob {
   color: var(--accent-primary);
 }
 
-/* Outer Side Orbit Pills Container (Safely outside center content) */
-.hero-orbit-pills-container {
+/* Outer Side Orbit Pills Container (Locked inside 1240px container!) */
+.hero-orbit-pills-wrap {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 6;
 }
 
-.hero-orbit-pills-container .floating-pill {
+.hero-orbit-pills-wrap .floating-pill {
   position: absolute;
   pointer-events: auto;
 }
 
-/* Positioning Outer Pills */
-.pill-orbit-left-top { top: 22%; left: 3%; transform: rotate(-5deg); }
-.pill-orbit-left-mid { top: 48%; left: 4%; transform: rotate(-2deg); }
-.pill-orbit-right-top { top: 24%; right: 3%; transform: rotate(5deg); }
-.pill-orbit-right-mid { top: 50%; right: 4%; transform: rotate(3deg); }
+/* Precise Orbit Placement locked relative to 1240px container */
+.pill-orbit-tl { top: 8%; left: -10px; transform: rotate(-5deg); }
+.pill-orbit-ml { top: 40%; left: 10px; transform: rotate(-2deg); }
+.pill-orbit-tr { top: 10%; right: -10px; transform: rotate(5deg); }
+.pill-orbit-mr { top: 42%; right: 10px; transform: rotate(3deg); }
+
+@media (max-width: 1240px) {
+  .pill-orbit-tl { left: 10px; }
+  .pill-orbit-ml { left: 15px; }
+  .pill-orbit-tr { right: 10px; }
+  .pill-orbit-mr { right: 15px; }
+}
+
+@media (max-width: 992px) {
+  .hero-orbit-pills-wrap {
+    display: none; /* Mobile/tablet cleanliness */
+  }
+}
 
 /* Curved Bottom Arc Pills (Underneath CTA Buttons) */
 .hero-pills-bottom-arc {
