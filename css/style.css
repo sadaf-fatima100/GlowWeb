@@ -8170,12 +8170,25 @@ html[data-theme="dark"] .hero-stat-card::after {
 /* ---------- Premium CTA Section ---------- */
 .cta-premium-section {
   position: relative;
-  padding: 160px 0;
-  background: radial-gradient(circle at center, rgba(0, 217, 143, 0.08) 0%, var(--bg) 50%);
-  overflow: hidden;
+  padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cta-box-container {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(0, 217, 143, 0.1) 0%, var(--bg-secondary) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  overflow: hidden;
+  padding: 120px 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(0, 217, 143, 0.2);
+}
+
+[data-theme='light'] .cta-box-container {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(0, 217, 143, 0.2);
 }
 
 /* Circuit Background & Lines */
