@@ -8179,7 +8179,7 @@ html[data-theme="dark"] .hero-stat-card::after {
 .cta-box-container {
   position: relative;
   width: 100%;
-  background: radial-gradient(circle at center, rgba(0, 217, 143, 0.1) 0%, var(--bg-secondary) 100%);
+  background: linear-gradient(135deg, rgba(0, 217, 143, 0.2) 0%, var(--bg-secondary) 50%, rgba(0, 217, 143, 0.1) 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   overflow: hidden;
@@ -8192,6 +8192,7 @@ html[data-theme="dark"] .hero-stat-card::after {
 }
 
 [data-theme='light'] .cta-box-container {
+  background: linear-gradient(135deg, rgba(0, 217, 143, 0.1) 0%, #ffffff 50%, rgba(0, 217, 143, 0.05) 100%);
   border-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(0, 217, 143, 0.2);
 }
@@ -8311,28 +8312,6 @@ html[data-theme="dark"] .hero-stat-card::after {
   margin: 0 auto;
 }
 
-.cta-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 20px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-[data-theme='light'] .cta-eyebrow {
-  border-color: rgba(0, 0, 0, 0.1);
-  background: rgba(0, 0, 0, 0.03);
-  color: var(--text-primary);
-}
-
 .cta-heading {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   font-weight: 700;
@@ -8343,6 +8322,7 @@ html[data-theme="dark"] .hero-stat-card::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  text-align: center;
 }
 
 [data-theme='light'] .cta-heading {
@@ -8417,4 +8397,50 @@ html[data-theme="dark"] .hero-stat-card::after {
     width: 100%;
   }
 }
+
+/* CTA Floating Cards */
+.cta-floating-card {
+  position: absolute;
+  background: rgba(0, 217, 143, 0.05);
+  border: 1px solid rgba(0, 217, 143, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 16px 24px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+  color: var(--text-primary);
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='light'] .cta-floating-card {
+  background: rgba(0, 217, 143, 0.1);
+  border-color: rgba(0, 217, 143, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cta-floating-card svg {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-primary);
+}
+
+.cta-card-left {
+  top: 25%;
+  left: 6%;
+}
+
+.cta-card-right {
+  bottom: 25%;
+  right: 6%;
+}
+
+@media (max-width: 1024px) {
+  .cta-card-left, .cta-card-right {
+    display: none;
+  }
+}
+
 
