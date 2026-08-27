@@ -1,0 +1,205 @@
+/* =========================================================
+   LIGHT THEME HERO & NETWORK HUB STYLING REFINEMENTS
+   ========================================================= */
+
+/* 1. Fix Hero Padding so headline is never hidden behind fixed navbar */
+.webagency-hero-v2 {
+  padding-top: clamp(140px, 14vw, 175px) !important;
+}
+
+/* 2. Light Theme Network Hub Cards & Glassmorphism */
+html:not([data-theme="dark"]) .hub-glass-card,
+[data-theme='light'] .hub-glass-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1.5px solid rgba(0, 217, 143, 0.3) !important;
+  box-shadow: 0 20px 45px rgba(10, 26, 16, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 25px rgba(0, 217, 143, 0.08) !important;
+  color: #0a1a10 !important;
+}
+
+html:not([data-theme="dark"]) .hub-glass-card:hover,
+[data-theme='light'] .hub-glass-card:hover {
+  border-color: rgba(0, 217, 143, 0.6) !important;
+  box-shadow: 0 25px 55px rgba(10, 26, 16, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 1), 0 0 35px rgba(0, 217, 143, 0.18) !important;
+}
+
+html:not([data-theme="dark"]) .hub-card-title,
+[data-theme='light'] .hub-card-title {
+  color: #0a1a10 !important;
+  font-weight: 800 !important;
+}
+
+html:not([data-theme="dark"]) .hub-arrow-icon,
+[data-theme='light'] .hub-arrow-icon {
+  color: #4a5c50 !important;
+}
+
+html:not([data-theme="dark"]) .hub-card-growth-sub,
+[data-theme='light'] .hub-card-growth-sub {
+  color: #4a5c50 !important;
+}
+
+/* Left Card: Performance columns in light mode */
+html:not([data-theme="dark"]) .perf-val,
+[data-theme='light'] .perf-val {
+  color: #0a1a10 !important;
+  font-weight: 800 !important;
+}
+
+html:not([data-theme="dark"]) .perf-tag,
+[data-theme='light'] .perf-tag {
+  color: #5a6e60 !important;
+  font-weight: 700 !important;
+}
+
+html:not([data-theme="dark"]) .perf-bar-track,
+[data-theme='light'] .perf-bar-track {
+  background: rgba(0, 217, 143, 0.08) !important;
+  border: 1px solid rgba(0, 217, 143, 0.18) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not([data-theme="dark"]) .perf-bar-fill::after,
+[data-theme='light'] .perf-bar-fill::after {
+  background: #ffffff !important;
+  box-shadow: 0 0 6px rgba(0, 217, 143, 0.8) !important;
+}
+
+html:not([data-theme="dark"]) .perf-trend,
+[data-theme='light'] .perf-trend {
+  color: #00a86b !important;
+}
+
+/* Right Card: Revenue Headline & Chart in light mode */
+html:not([data-theme="dark"]) .hub-revenue-headline,
+[data-theme='light'] .hub-revenue-headline {
+  color: #0a1a10 !important;
+}
+
+html:not([data-theme="dark"]) .chart-hover-pill,
+[data-theme='light'] .chart-hover-pill {
+  background: #0a1a10 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not([data-theme="dark"]) .chart-hover-pill::after,
+[data-theme='light'] .chart-hover-pill::after {
+  border-color: #0a1a10 transparent transparent !important;
+}
+
+html:not([data-theme="dark"]) .chart-axis-labels,
+[data-theme='light'] .chart-axis-labels {
+  color: #5a6e60 !important;
+}
+
+/* 3. Center Hexagon Core Badge in light mode */
+html:not([data-theme="dark"]) .core-hexagon-badge,
+[data-theme='light'] .core-hexagon-badge {
+  background: linear-gradient(145deg, #ffffff 0%, #edf7f1 100%) !important;
+  border: 2px solid #00d98f !important;
+  box-shadow: 0 12px 35px rgba(0, 217, 143, 0.22), inset 0 0 20px rgba(0, 217, 143, 0.1) !important;
+}
+
+html:not([data-theme="dark"]) .core-hexagon-badge:hover,
+[data-theme='light'] .core-hexagon-badge:hover {
+  box-shadow: 0 16px 45px rgba(0, 217, 143, 0.35), inset 0 0 25px rgba(0, 217, 143, 0.2) !important;
+}
+
+html:not([data-theme="dark"]) .core-brand-label,
+[data-theme='light'] .core-brand-label {
+  color: #0a1a10 !important;
+}
+
+html:not([data-theme="dark"]) .core-sub-label,
+[data-theme='light'] .core-sub-label {
+  color: #00a86b !important;
+}
+
+html:not([data-theme="dark"]) .core-radial-aura,
+[data-theme='light'] .core-radial-aura {
+  background: radial-gradient(circle, rgba(0, 217, 143, 0.25) 0%, rgba(0, 217, 143, 0.06) 50%, transparent 75%) !important;
+}
+
+html:not([data-theme="dark"]) .core-rotating-ring,
+[data-theme='light'] .core-rotating-ring {
+  border-color: rgba(0, 217, 143, 0.3) !important;
+}
+
+/* Satellite Hexagons in light mode */
+html:not([data-theme="dark"]) .satellite-hex,
+[data-theme='light'] .satellite-hex {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1.5px solid rgba(0, 217, 143, 0.45) !important;
+  box-shadow: 0 8px 20px rgba(0, 217, 143, 0.12), inset 0 0 10px rgba(0, 217, 143, 0.08) !important;
+  color: #00a86b !important;
+}
+
+html:not([data-theme="dark"]) .satellite-node:hover .satellite-hex,
+[data-theme='light'] .satellite-node:hover .satellite-hex {
+  border-color: #00d98f !important;
+  box-shadow: 0 12px 30px rgba(0, 217, 143, 0.35) !important;
+  background: #00d98f !important;
+  color: #060a08 !important;
+}
+
+html:not([data-theme="dark"]) .sat-label,
+[data-theme='light'] .sat-label {
+  color: #4a5c50 !important;
+  font-weight: 700 !important;
+}
+
+/* PCB Circuit Lines in light mode */
+html:not([data-theme="dark"]) .pcb-bus,
+[data-theme='light'] .pcb-bus {
+  stroke: rgba(0, 217, 143, 0.35) !important;
+}
+
+html:not([data-theme="dark"]) .pcb-sub-bus,
+[data-theme='light'] .pcb-sub-bus {
+  stroke: rgba(0, 217, 143, 0.22) !important;
+}
+
+/* 4. Secondary CTA Button in light mode */
+html:not([data-theme="dark"]) .hero-btn-secondary,
+[data-theme='light'] .hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1.5px solid rgba(0, 217, 143, 0.3) !important;
+  color: #0a1a10 !important;
+  box-shadow: 0 6px 20px rgba(10, 26, 16, 0.05) !important;
+}
+
+html:not([data-theme="dark"]) .hero-btn-secondary:hover,
+[data-theme='light'] .hero-btn-secondary:hover {
+  border-color: #00d98f !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(0, 217, 143, 0.15) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+}
+
+/* 5. Hexagonal Blocks in light mode */
+html:not([data-theme="dark"]) .hero-hex-blocks,
+[data-theme='light'] .hero-hex-blocks {
+  opacity: 0.85 !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-blocks svg path,
+[data-theme='light'] .hero-hex-blocks svg path {
+  stroke: rgba(0, 180, 115, 0.32) !important;
+}
+
+/* 6. Eyebrow badge in light mode */
+html:not([data-theme="dark"]) .hero-eyebrow-pill,
+[data-theme='light'] .hero-eyebrow-pill {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1.5px solid rgba(0, 217, 143, 0.25) !important;
+  color: #0a1a10 !important;
+  box-shadow: 0 4px 15px rgba(10, 26, 16, 0.04) !important;
+}
+
+/* 7. Scroll indicator in light mode */
+html:not([data-theme="dark"]) .reading,
+[data-theme='light'] .reading {
+  color: #4a5c50 !important;
+}
