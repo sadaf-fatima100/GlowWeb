@@ -4034,7 +4034,8 @@ body:hover .custom-cursor-follower {
 }
 
 html[data-theme="dark"] .project-carousel-frame {
-  border: 2px solid rgba(0, 217, 143, 0.8);
+  border: 1.5px solid rgba(0, 217, 143, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Dark Theme Opacity Overlay */
@@ -4042,15 +4043,15 @@ html[data-theme="dark"] .project-carousel-frame::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--accent-primary);
-  opacity: 0.12;
+  background: #000000;
+  opacity: 0.3;
   z-index: 1;
   pointer-events: none;
   transition: opacity 0.4s var(--ease);
 }
 
 html[data-theme="dark"] .project-carousel-frame:hover::before {
-  opacity: 0.1;
+  opacity: 0;
 }
 
 /* Shining Sweep Animation */
