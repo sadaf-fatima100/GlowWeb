@@ -1,0 +1,13 @@
+/* Update: Reduce gap between hero CTA buttons and network hub */
+.hero-center-content {
+  padding-bottom: 0px !important;
+}
+
+.hero-v2-actions {
+  margin-bottom: 0px !important;
+}
+
+.hero-network-hub {
+  margin-top: 16px !important;
+  margin-bottom: 40px !important;
+}
