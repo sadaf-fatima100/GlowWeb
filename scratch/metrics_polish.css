@@ -1,0 +1,101 @@
+/* Update: Centered Standalone Agency Metrics with Shining Animation */
+.agency-metrics-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 5;
+  background: var(--bg);
+}
+
+.agency-metric-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 20px;
+  padding: 36px 24px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  transition: all 0.4s var(--ease);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.agency-metric-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 45px -10px var(--accent-glow);
+}
+
+/* Continuous Shining Animation Across Cards */
+.agency-metric-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-25deg);
+  animation: shine-metric-card 6s infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+html[data-theme='dark'] .agency-metric-card::after {
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 143, 0.2), transparent);
+}
+
+@keyframes shine-metric-card {
+  0% { left: -150%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+.metric-icon-wrap {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 14px !important;
+  background: rgba(0, 217, 143, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 20px !important;
+  color: var(--accent-primary) !important;
+  transition: all 0.3s var(--ease);
+  border: 1px solid rgba(0, 217, 143, 0.2);
+}
+
+.agency-metric-card:hover .metric-icon-wrap {
+  transform: scale(1.1);
+  background: var(--accent-primary) !important;
+  color: #060a08 !important;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.metric-icon-wrap svg {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.metric-card-content {
+  text-align: center !important;
+  width: 100%;
+}
+
+.metric-card-content .stat-number {
+  font-size: clamp(2.2rem, 3.4vw, 2.8rem) !important;
+  font-weight: 800 !important;
+  color: var(--fg) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 8px !important;
+  font-family: var(--font-display) !important;
+  text-align: center !important;
+}
+
+.metric-card-content .stat-label {
+  font-size: 0.98rem !important;
+  color: var(--fg-soft) !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+}

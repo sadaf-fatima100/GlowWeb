@@ -1,0 +1,26 @@
+/* CTA Gradient Swoosh Curves */
+.cta-swoosh {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-swoosh-bl {
+  width: 280px;
+  height: 180px;
+  bottom: 10%;
+  left: 3%;
+}
+
+.cta-swoosh-tr {
+  width: 260px;
+  height: 160px;
+  top: 8%;
+  right: 3%;
+}
+
+@media (max-width: 900px) {
+  .cta-swoosh {
+    display: none;
+  }
+}
