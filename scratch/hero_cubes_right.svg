@@ -1,0 +1,112 @@
+<svg viewBox="0 0 620 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="neonGlowRight" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3.5" result="blur1"/>
+    <feGaussianBlur stdDeviation="8" result="blur2"/>
+    <feMerge>
+      <feMergeNode in="blur2"/>
+      <feMergeNode in="blur1"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <linearGradient id="topGlowGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#00d98f" stop-opacity="0.32"/>
+    <stop offset="100%" stop-color="#004830" stop-opacity="0.08"/>
+  </linearGradient>
+  <radialGradient id="ambientRight" cx="80%" cy="35%" r="65%">
+    <stop offset="0%" stop-color="#00d98f" stop-opacity="0.22"/>
+    <stop offset="60%" stop-color="#00d98f" stop-opacity="0.05"/>
+    <stop offset="100%" stop-color="#00d98f" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect class="ambient-glow-rect" x="0" y="0" width="620" height="920" fill="url(#ambientRight)" pointer-events="none"/>
+<g class="iso-cube style-filled_glow" opacity="0.95">
+  <polygon class="cube-face-top" points="570.0,28.2 642.0,70.0 570.0,111.8 498.0,70.0" fill="url(#topGlowGradRight)" stroke="rgba(0,255,170,0.65)" stroke-width="1.4"/>
+  <polygon class="cube-face-left" points="498.0,70.0 570.0,111.8 570.0,189.8 498.0,148.0" fill="rgba(0,35,22,0.5)" stroke="rgba(0,217,143,0.35)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="570.0,111.8 642.0,70.0 642.0,148.0 570.0,189.8" fill="rgba(0,20,12,0.65)" stroke="rgba(0,217,143,0.25)" stroke-width="1.1"/>
+  <polyline class="cube-glow-edge" points="498.0,70.0 570.0,28.2 642.0,70.0" fill="none" stroke="#00ffaa" stroke-width="2" filter="url(#neonGlowRight)"/>
+  <line class="cube-glow-edge" x1="570.0" y1="111.8" x2="570.0" y2="28.2" stroke="#00ffaa" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+  <circle class="cube-glow-dot" cx="570.0" cy="28.2" r="3" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="570.0" cy="111.8" r="2.5" fill="#00d98f"/>
+</g>
+<g class="iso-cube style-wireframe_bright" opacity="0.90">
+  <polygon class="cube-face-top" points="570.0,198.2 642.0,240.0 570.0,281.8 498.0,240.0" fill="none" stroke="rgba(0,255,170,0.85)" stroke-width="1.6"/>
+  <polygon class="cube-face-left" points="498.0,240.0 570.0,281.8 570.0,359.8 498.0,318.0" fill="none" stroke="rgba(0,217,143,0.4)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="570.0,281.8 642.0,240.0 642.0,318.0 570.0,359.8" fill="none" stroke="rgba(0,217,143,0.3)" stroke-width="1.1"/>
+  <line class="cube-glow-edge" x1="570.0" y1="281.8" x2="570.0" y2="359.8" stroke="#00ffaa" stroke-width="1.8" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="570.0" cy="281.8" r="2.5" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+</g>
+<g class="iso-cube style-glass_top" opacity="0.85">
+  <polygon class="cube-face-top" points="570.0,378.2 642.0,420.0 570.0,461.8 498.0,420.0" fill="rgba(0,255,170,0.18)" stroke="rgba(0,255,170,0.75)" stroke-width="1.5"/>
+  <polygon class="cube-face-left" points="498.0,420.0 570.0,461.8 570.0,539.8 498.0,498.0" fill="none" stroke="rgba(0,217,143,0.35)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="570.0,461.8 642.0,420.0 642.0,498.0 570.0,539.8" fill="none" stroke="rgba(0,217,143,0.28)" stroke-width="1.1"/>
+  <polyline class="cube-glow-edge" points="498.0,420.0 570.0,378.2 642.0,420.0" fill="none" stroke="#00ffaa" stroke-width="2" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="570.0" cy="378.2" r="3" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+</g>
+<g class="iso-cube style-filled_subtle" opacity="0.75">
+  <polygon class="cube-face-top" points="570.0,558.2 642.0,600.0 570.0,641.8 498.0,600.0" fill="rgba(0,217,143,0.09)" stroke="rgba(0,217,143,0.45)" stroke-width="1.1"/>
+  <polygon class="cube-face-left" points="498.0,600.0 570.0,641.8 570.0,719.8 498.0,678.0" fill="rgba(0,25,18,0.35)" stroke="rgba(0,217,143,0.25)" stroke-width="1"/>
+  <polygon class="cube-face-right" points="570.0,641.8 642.0,600.0 642.0,678.0 570.0,719.8" fill="none" stroke="rgba(0,217,143,0.2)" stroke-width="1"/>
+</g>
+<g class="iso-cube style-wireframe_subtle" opacity="0.60">
+  <polygon class="cube-face-top" points="570.0,738.2 642.0,780.0 570.0,821.8 498.0,780.0" fill="none" stroke="rgba(0,217,143,0.45)" stroke-width="1"/>
+  <polygon class="cube-face-left" points="498.0,780.0 570.0,821.8 570.0,899.8 498.0,858.0" fill="none" stroke="rgba(0,217,143,0.25)" stroke-width="0.9"/>
+  <polygon class="cube-face-right" points="570.0,821.8 642.0,780.0 642.0,858.0 570.0,899.8" fill="none" stroke="rgba(0,217,143,0.2)" stroke-width="0.9"/>
+</g>
+<g class="iso-cube style-glass_top" opacity="0.92">
+  <polygon class="cube-face-top" points="426.0,113.2 498.0,155.0 426.0,196.8 354.0,155.0" fill="rgba(0,255,170,0.18)" stroke="rgba(0,255,170,0.75)" stroke-width="1.5"/>
+  <polygon class="cube-face-left" points="354.0,155.0 426.0,196.8 426.0,274.8 354.0,233.0" fill="none" stroke="rgba(0,217,143,0.35)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="426.0,196.8 498.0,155.0 498.0,233.0 426.0,274.8" fill="none" stroke="rgba(0,217,143,0.28)" stroke-width="1.1"/>
+  <polyline class="cube-glow-edge" points="354.0,155.0 426.0,113.2 498.0,155.0" fill="none" stroke="#00ffaa" stroke-width="2" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="426.0" cy="113.2" r="3" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+</g>
+<g class="iso-cube style-filled_glow" opacity="0.90">
+  <polygon class="cube-face-top" points="426.0,288.2 498.0,330.0 426.0,371.8 354.0,330.0" fill="url(#topGlowGradRight)" stroke="rgba(0,255,170,0.65)" stroke-width="1.4"/>
+  <polygon class="cube-face-left" points="354.0,330.0 426.0,371.8 426.0,449.8 354.0,408.0" fill="rgba(0,35,22,0.5)" stroke="rgba(0,217,143,0.35)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="426.0,371.8 498.0,330.0 498.0,408.0 426.0,449.8" fill="rgba(0,20,12,0.65)" stroke="rgba(0,217,143,0.25)" stroke-width="1.1"/>
+  <polyline class="cube-glow-edge" points="354.0,330.0 426.0,288.2 498.0,330.0" fill="none" stroke="#00ffaa" stroke-width="2" filter="url(#neonGlowRight)"/>
+  <line class="cube-glow-edge" x1="426.0" y1="371.8" x2="426.0" y2="288.2" stroke="#00ffaa" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+  <circle class="cube-glow-dot" cx="426.0" cy="288.2" r="3" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="426.0" cy="371.8" r="2.5" fill="#00d98f"/>
+</g>
+<g class="iso-cube style-wireframe_bright" opacity="0.80">
+  <polygon class="cube-face-top" points="426.0,468.2 498.0,510.0 426.0,551.8 354.0,510.0" fill="none" stroke="rgba(0,255,170,0.85)" stroke-width="1.6"/>
+  <polygon class="cube-face-left" points="354.0,510.0 426.0,551.8 426.0,629.8 354.0,588.0" fill="none" stroke="rgba(0,217,143,0.4)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="426.0,551.8 498.0,510.0 498.0,588.0 426.0,629.8" fill="none" stroke="rgba(0,217,143,0.3)" stroke-width="1.1"/>
+  <line class="cube-glow-edge" x1="426.0" y1="551.8" x2="426.0" y2="629.8" stroke="#00ffaa" stroke-width="1.8" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="426.0" cy="551.8" r="2.5" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+</g>
+<g class="iso-cube style-filled_subtle" opacity="0.70">
+  <polygon class="cube-face-top" points="426.0,648.2 498.0,690.0 426.0,731.8 354.0,690.0" fill="rgba(0,217,143,0.09)" stroke="rgba(0,217,143,0.45)" stroke-width="1.1"/>
+  <polygon class="cube-face-left" points="354.0,690.0 426.0,731.8 426.0,809.8 354.0,768.0" fill="rgba(0,25,18,0.35)" stroke="rgba(0,217,143,0.25)" stroke-width="1"/>
+  <polygon class="cube-face-right" points="426.0,731.8 498.0,690.0 498.0,768.0 426.0,809.8" fill="none" stroke="rgba(0,217,143,0.2)" stroke-width="1"/>
+</g>
+<g class="iso-cube style-filled_glow" opacity="0.85">
+  <polygon class="cube-face-top" points="282.0,199.4 352.0,240.0 282.0,280.6 212.0,240.0" fill="url(#topGlowGradRight)" stroke="rgba(0,255,170,0.65)" stroke-width="1.4"/>
+  <polygon class="cube-face-left" points="212.0,240.0 282.0,280.6 282.0,356.6 212.0,316.0" fill="rgba(0,35,22,0.5)" stroke="rgba(0,217,143,0.35)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="282.0,280.6 352.0,240.0 352.0,316.0 282.0,356.6" fill="rgba(0,20,12,0.65)" stroke="rgba(0,217,143,0.25)" stroke-width="1.1"/>
+  <polyline class="cube-glow-edge" points="212.0,240.0 282.0,199.4 352.0,240.0" fill="none" stroke="#00ffaa" stroke-width="2" filter="url(#neonGlowRight)"/>
+  <line class="cube-glow-edge" x1="282.0" y1="280.6" x2="282.0" y2="199.4" stroke="#00ffaa" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+  <circle class="cube-glow-dot" cx="282.0" cy="199.4" r="3" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="282.0" cy="280.6" r="2.5" fill="#00d98f"/>
+</g>
+<g class="iso-cube style-wireframe_subtle" opacity="0.65">
+  <polygon class="cube-face-top" points="282.0,379.4 352.0,420.0 282.0,460.6 212.0,420.0" fill="none" stroke="rgba(0,217,143,0.45)" stroke-width="1"/>
+  <polygon class="cube-face-left" points="212.0,420.0 282.0,460.6 282.0,536.6 212.0,496.0" fill="none" stroke="rgba(0,217,143,0.25)" stroke-width="0.9"/>
+  <polygon class="cube-face-right" points="282.0,460.6 352.0,420.0 352.0,496.0 282.0,536.6" fill="none" stroke="rgba(0,217,143,0.2)" stroke-width="0.9"/>
+</g>
+<g class="iso-cube style-glass_top" opacity="0.75">
+  <polygon class="cube-face-top" points="282.0,559.4 352.0,600.0 282.0,640.6 212.0,600.0" fill="rgba(0,255,170,0.18)" stroke="rgba(0,255,170,0.75)" stroke-width="1.5"/>
+  <polygon class="cube-face-left" points="212.0,600.0 282.0,640.6 282.0,716.6 212.0,676.0" fill="none" stroke="rgba(0,217,143,0.35)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="282.0,640.6 352.0,600.0 352.0,676.0 282.0,716.6" fill="none" stroke="rgba(0,217,143,0.28)" stroke-width="1.1"/>
+  <polyline class="cube-glow-edge" points="212.0,600.0 282.0,559.4 352.0,600.0" fill="none" stroke="#00ffaa" stroke-width="2" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="282.0" cy="559.4" r="3" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+</g>
+<g class="iso-cube style-wireframe_bright" opacity="0.70">
+  <polygon class="cube-face-top" points="145.0,292.9 209.0,330.0 145.0,367.1 81.0,330.0" fill="none" stroke="rgba(0,255,170,0.85)" stroke-width="1.6"/>
+  <polygon class="cube-face-left" points="81.0,330.0 145.0,367.1 145.0,437.1 81.0,400.0" fill="none" stroke="rgba(0,217,143,0.4)" stroke-width="1.1"/>
+  <polygon class="cube-face-right" points="145.0,367.1 209.0,330.0 209.0,400.0 145.0,437.1" fill="none" stroke="rgba(0,217,143,0.3)" stroke-width="1.1"/>
+  <line class="cube-glow-edge" x1="145.0" y1="367.1" x2="145.0" y2="437.1" stroke="#00ffaa" stroke-width="1.8" filter="url(#neonGlowRight)"/>
+  <circle class="cube-glow-dot" cx="145.0" cy="367.1" r="2.5" fill="#00ffaa" filter="url(#neonGlowRight)"/>
+</g>
+</svg>

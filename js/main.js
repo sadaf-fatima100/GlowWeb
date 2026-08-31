@@ -969,6 +969,16 @@
       });
     });
     
+    // Global method to switch slides from external cards/buttons
+    window.goToExpertiseSlide = (index) => {
+      showSlide(index);
+      startProgress();
+      const el = document.getElementById('expertiseSection');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    };
+
     // Initialize
     showSlide(0);
     startProgress();
