@@ -29,7 +29,7 @@
   margin-bottom: 20px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
   /* HyWiz Green Theme — Light Mode */
@@ -1102,7 +1102,8 @@ html[data-theme="dark"] .theme-toggle .knob {
 .hero-center-content {
   position: relative;
   text-align: center;
-  max-width: 840px;
+  max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
   padding: 10px 10px 30px;
 }
@@ -8737,7 +8738,7 @@ html[data-theme='dark'] .agency-metric-card::after {
 
 /* 1. Fix Hero Padding so headline is never hidden behind fixed navbar */
 .webagency-hero-v2 {
-  padding-top: clamp(140px, 14vw, 175px) !important;
+  padding-top: clamp(108px, 9vw, 128px) !important;
 }
 
 /* 2. Light Theme Network Hub Cards & Glassmorphism */
@@ -9561,5 +9562,122 @@ html:not([data-theme="dark"]) .hub-chart-svg .chart-stroke-spline,
 [data-theme='light'] .hub-chart-svg .chart-stroke-spline {
   stroke: #00a86b !important;
   stroke-width: 2.8px !important;
+}
+
+/* =========================================================
+   ELITE PROFESSIONAL AGENCY TYPOGRAPHY & HERO SCALE SYSTEM
+   ========================================================= */
+
+/* 1. Global Headings Font System (Tier-1 Tech Agency Typography) */
+h1, h2, h3, h4,
+.hero-v2-title,
+.tp-heading,
+.bento-title,
+.cta-heading,
+.section-head h2,
+.services-header h2,
+.metrics-main-head h2,
+.expertise-header h2,
+.process-header h2,
+.portfolio-header h2 {
+  font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01" !important;
+  text-transform: none !important;
+}
+
+/* 2. Hero Headline H1 (Clean, Professional 2-Line Flow across Laptops & Desktops) */
+.hero-center-content {
+  max-width: 1140px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.hero-v2-title,
+h1.hero-v2-title,
+.webagency-hero-v2 h1 {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+  font-size: clamp(36px, 4.2vw, 54px) !important;
+  font-weight: 800 !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.034em !important;
+  color: var(--fg) !important;
+  max-width: 1080px !important;
+  margin: 0 auto 20px !important;
+  text-wrap: balance !important;
+}
+
+.hero-br {
+  display: inline;
+}
+
+.hero-eyebrow-pill {
+  margin-bottom: 16px !important;
+}
+
+/* 3. Hero Subtitle */
+.hero-v2-subtitle {
+  font-size: clamp(1.02rem, 1.5vw, 1.15rem) !important;
+  line-height: 1.65 !important;
+  max-width: 720px !important;
+  margin: 0 auto 26px !important;
+  color: var(--fg-soft) !important;
+  font-weight: 400 !important;
+  text-wrap: balance !important;
+}
+
+/* 4. Section H2 Headings (Crisp, Authoritative & Proportional: 42px-46px) */
+h2,
+.section-head h2,
+.services-header h2,
+.tp-heading,
+.bento-title,
+.cta-heading,
+.metrics-main-head h2,
+.expertise-header h2,
+.process-header h2,
+.portfolio-header h2 {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+  font-size: clamp(32px, 4vw, 44px) !important;
+  font-weight: 800 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.032em !important;
+  text-wrap: balance !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-v2-title,
+  h1.hero-v2-title,
+  .webagency-hero-v2 h1 {
+    font-size: 38px !important;
+    line-height: 1.18 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-br {
+    display: none !important;
+  }
+  
+  .hero-v2-title,
+  h1.hero-v2-title,
+  .webagency-hero-v2 h1 {
+    font-size: 30px !important;
+    line-height: 1.22 !important;
+  }
+  
+  h2,
+  .section-head h2,
+  .services-header h2,
+  .tp-heading,
+  .bento-title,
+  .cta-heading,
+  .metrics-main-head h2 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
 }
 
