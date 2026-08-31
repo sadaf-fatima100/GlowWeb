@@ -8911,21 +8911,48 @@ html:not([data-theme="dark"]) .hero-btn-secondary:hover,
   transform: translateY(-3px) scale(1.02) !important;
 }
 
-/* 5. Hexagonal Blocks in light mode */
+/* 5. Hexagonal Blocks in light mode - Ultra clean, airy modern tech aesthetic */
 html:not([data-theme="dark"]) .hero-hex-blocks,
 [data-theme='light'] .hero-hex-blocks {
-  opacity: 0.85 !important;
+  opacity: 0.6 !important;
 }
 
-html:not([data-theme="dark"]) .hero-hex-blocks svg path,
-html:not([data-theme="dark"]) .hero-hex-blocks svg polygon,
-html:not([data-theme="dark"]) .hero-hex-blocks svg polyline,
-html:not([data-theme="dark"]) .hero-hex-blocks svg line,
-[data-theme='light'] .hero-hex-blocks svg path,
-[data-theme='light'] .hero-hex-blocks svg polygon,
-[data-theme='light'] .hero-hex-blocks svg polyline,
-[data-theme='light'] .hero-hex-blocks svg line {
-  stroke: rgba(0, 160, 100, 0.4) !important;
+html:not([data-theme="dark"]) .hero-hex-blocks .ambient-glow-rect,
+[data-theme='light'] .hero-hex-blocks .ambient-glow-rect {
+  opacity: 0.4 !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-blocks .cube-face-top,
+[data-theme='light'] .hero-hex-blocks .cube-face-top {
+  fill: rgba(0, 217, 143, 0.09) !important;
+  stroke: rgba(0, 175, 110, 0.35) !important;
+  stroke-width: 1px !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-blocks .cube-face-left,
+[data-theme='light'] .hero-hex-blocks .cube-face-left {
+  fill: rgba(0, 217, 143, 0.02) !important;
+  stroke: rgba(0, 160, 100, 0.2) !important;
+  stroke-width: 0.8px !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-blocks .cube-face-right,
+[data-theme='light'] .hero-hex-blocks .cube-face-right {
+  fill: rgba(0, 217, 143, 0.01) !important;
+  stroke: rgba(0, 160, 100, 0.16) !important;
+  stroke-width: 0.8px !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-blocks .cube-glow-edge,
+[data-theme='light'] .hero-hex-blocks .cube-glow-edge {
+  stroke: #00c780 !important;
+  stroke-width: 1.4px !important;
+  filter: drop-shadow(0 0 3px rgba(0, 199, 128, 0.4)) !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-blocks .cube-glow-dot,
+[data-theme='light'] .hero-hex-blocks .cube-glow-dot {
+  fill: #00c780 !important;
 }
 
 /* 6. Eyebrow badge in light mode */
