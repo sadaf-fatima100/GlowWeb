@@ -1,10 +1,16 @@
 <!doctype html>
-<html lang="en" data-default-theme="light">
+<html lang="en" data-default-theme="dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us — Agency</title>
+    <title>Contact Us — Web Agency</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -39,7 +45,7 @@
     <div class="topbar">
       <div class="wrap">
         <div class="promo">
-          <span class="dot"></span> Leading Digital Agency — Web Design,
+          <span class="dot"></span> Leading Web Agency — Web Design,
           Development, SEO &amp; Google Ads
         </div>
         <div>hello@hywiz.com</div>
@@ -163,26 +169,28 @@
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
     </div>
     <style>
-      /* Contact hero layout */
+      /* Contact hero layout matching Home Page Design System */
       .contact-hero-wrapper {
         position: relative;
         width: 100%;
-        padding-top: clamp(220px, 22vw, 260px);
-        padding-bottom: 120px;
+        padding-top: clamp(118px, 10vw, 142px);
+        padding-bottom: clamp(60px, 6vw, 90px);
         text-align: center;
         overflow: hidden;
       }
       .contact-hero-title {
-        font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-        font-weight: 800;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
+        font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+        font-size: clamp(38px, 4.6vw, 62px) !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.034em !important;
         color: var(--fg);
-        margin-bottom: 40px;
+        margin-bottom: 24px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        text-wrap: balance !important;
       }
       .contact-hero-row {
         display: inline-flex;
@@ -194,84 +202,114 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: clamp(32px, 5vw, 60px);
-        height: clamp(32px, 5vw, 60px);
+        width: clamp(32px, 5vw, 56px);
+        height: clamp(32px, 5vw, 56px);
         border-radius: 50%;
         background: var(--accent-primary);
-        color: #fff;
-        font-size: clamp(16px, 2.5vw, 24px);
-        box-shadow: 0 10px 20px rgba(0, 217, 143, 0.3);
-        transform: translateY(-4px);
+        color: #03140a;
+        font-size: clamp(16px, 2.5vw, 22px);
+        box-shadow: 0 10px 20px rgba(0, 217, 143, 0.35);
+        transform: translateY(-2px);
       }
       .title-toggle-switch {
         display: inline-flex;
         align-items: center;
-        width: clamp(90px, 14vw, 170px);
-        height: clamp(45px, 7vw, 85px);
+        width: clamp(90px, 14vw, 160px);
+        height: clamp(45px, 7vw, 80px);
         background: linear-gradient(
           135deg,
-          rgba(0, 217, 143, 0.2),
+          rgba(0, 217, 143, 0.25),
           var(--accent-primary)
         );
         border-radius: 999px;
         padding: clamp(4px, 1vw, 10px);
-        box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.15);
         position: relative;
-        transform: translateY(4px);
+        transform: translateY(2px);
       }
       .title-toggle-knob {
-        width: clamp(36px, 5.5vw, 64px);
-        height: clamp(36px, 5.5vw, 64px);
+        width: clamp(36px, 5.5vw, 60px);
+        height: clamp(36px, 5.5vw, 60px);
         background: #fff;
         border-radius: 50%;
         box-shadow:
-          0 4px 12px rgba(0, 0, 0, 0.2),
+          0 4px 12px rgba(0, 0, 0, 0.25),
           inset 0 -2px 4px rgba(0, 0, 0, 0.05);
       }
       .title-cursor-icon {
-        width: clamp(32px, 5vw, 60px);
+        width: clamp(32px, 5vw, 56px);
         height: auto;
         color: var(--fg);
         transform: rotate(-15deg);
       }
       .contact-hero-desc {
-        font-size: clamp(14px, 1.8vw, 17px);
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: clamp(1rem, 1.4vw, 1.125rem);
         color: var(--fg-soft);
-        font-weight: 500;
-        max-width: 600px;
-        margin: 0 auto 40px auto;
-        line-height: 1.6;
+        font-weight: 400;
+        max-width: 620px;
+        margin: 0 auto 32px auto;
+        line-height: 1.65;
+        text-wrap: balance;
       }
       .contact-hero-cta {
         display: inline-flex;
-        background: var(--accent-gold);
-        color: #000;
-        font-weight: 800;
-        padding: 16px 40px;
-        border-radius: 999px;
-        font-size: 16px;
-        text-decoration: none;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        margin-bottom: 24px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--accent-primary) !important;
+        color: #03140a !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-weight: 700 !important;
+        padding: 16px 38px !important;
+        border-radius: 999px !important;
+        font-size: 16px !important;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(0, 217, 143, 0.35) !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        margin-bottom: 18px !important;
       }
       .contact-hero-cta:hover {
-        transform: scale(1.03);
-        box-shadow: 0 10px 20px rgba(255, 184, 0, 0.3);
+        background: #00ffaa !important;
+        transform: translateY(-2px) scale(1.02) !important;
+        box-shadow: 0 14px 30px rgba(0, 217, 143, 0.5) !important;
+        color: #03140a !important;
       }
       .contact-hero-link {
         display: inline-block;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
         font-size: 14px;
-        font-weight: 700;
-        color: var(--fg);
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        transition: color 0.3s;
+        font-weight: 600;
+        color: var(--fg-soft);
+        text-decoration: none;
+        transition: color 0.25s ease;
       }
       .contact-hero-link:hover {
         color: var(--accent-primary);
-      } /* Removed floating lines */
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      .contact-info h2 {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: clamp(30px, 3.5vw, 42px) !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.032em !important;
+        color: var(--fg) !important;
+      }
+      .contact-info h2 em {
+        font-style: normal;
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 50%, #4de6b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .contact-form label,
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea,
+      .info-row {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+      }
       @media (max-width: 768px) {
         .contact-hero-row {
           flex-wrap: wrap;
@@ -288,25 +326,20 @@
           height: 36px;
         }
         .contact-hero-title {
-          gap: 4px;
+          gap: 6px;
         }
       }
     </style>
     <section class="contact-hero-wrapper">
       <div class="wrap" style="position: relative; z-index: 2">
-        <div
-          class="eyebrow reveal"
-          style="
-            justify-content: center;
-            margin-bottom: 24px;
-            margin-inline: auto;
-          "
-        >
-          Consulting, Programming & Design
+        <div class="hero-eyebrow-pill reveal" style="margin: 0 auto 20px; display: inline-flex;">
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+          <span>Consulting, Programming &amp; Design</span>
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
         </div>
         <div class="contact-hero-title reveal" style="animation-delay: 0.1s">
           <div class="contact-hero-row">
-            <span>We support</span>
+            <span>We Support</span>
             <span class="title-icon-btn"
               ><svg
                 viewBox="0 0 24 24"
@@ -322,13 +355,13 @@
             ></span>
           </div>
           <div class="contact-hero-row">
-            <span>gr</span>
+            <span>Gr</span>
             <span class="title-toggle-switch"
               ><span class="title-toggle-knob"></span
             ></span>
             <span>wth</span>
           </div>
-          <div class="contact-hero-row"><span>of your business</span></div>
+          <div class="contact-hero-row"><span>Of Your Business</span></div>
         </div>
         <div class="contact-hero-desc reveal" style="animation-delay: 0.2s">
           We turn great ideas into working products.<br />
@@ -351,11 +384,15 @@
         </div>
       </div>
     </section>
-    <section class="section" style="padding-top: 0">
+    <section class="section" style="padding-top: 0; padding-bottom: 80px;">
       <div class="wrap contact-grid">
         <div class="contact-info reveal-left">
-          <div class="eyebrow">Contact information</div>
-          <h2>We usually <em>reply</em> within one business day</h2>
+          <div class="hero-eyebrow-pill" style="margin-bottom: 16px; display: inline-flex;">
+            <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+            <span>Contact Information</span>
+            <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+          </div>
+          <h2>We Usually <em>Reply</em> Within One Business Day</h2>
           <div class="info-row">
             <svg
               viewBox="0 0 24 24"
@@ -470,10 +507,10 @@
             </label>
             <button
               type="submit"
-              class="btn btn-accent"
-              style="width: 100%; justify-content: center"
+              class="btn btn-primary"
+              style="width: 100%; justify-content: center; font-weight: 700; font-size: 16px; padding: 15px; border-radius: 999px;"
             >
-              — Send Message
+              Send Message <span style="margin-left: 8px;">→</span>
             </button>
           </form>
         </div>
