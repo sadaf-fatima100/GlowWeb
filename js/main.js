@@ -8,7 +8,7 @@
   /* ---------- Theme Handling ---------- */
   const root = document.documentElement;
   const THEME_KEY = 'webagency-theme';
-  const DEFAULT_THEME = root.getAttribute('data-default-theme') || 'light';
+  const DEFAULT_THEME = root.getAttribute('data-default-theme') || 'dark';
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
