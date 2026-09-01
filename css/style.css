@@ -1211,11 +1211,13 @@ html:not([data-theme="dark"]) .hero-live-text,
   line-height: 1;
 }
 
+html:not([data-theme="dark"]) .section-num-label .sec-slash,
 [data-theme='light'] .section-num-label .sec-slash {
-  color: rgba(10, 26, 16, 0.2);
+  color: rgba(10, 26, 16, 0.35);
 }
+html:not([data-theme="dark"]) .section-num-label .sec-tag,
 [data-theme='light'] .section-num-label .sec-tag {
-  color: rgba(10, 26, 16, 0.45);
+  color: rgba(10, 26, 16, 0.65);
 }
 
 /* Hero Title - Controlled Proportions & Clean 2-Line Flow */

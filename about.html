@@ -1614,20 +1614,227 @@
       </div>
     </section>
       <style>
-        @keyframes floatCore {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
+        /* ============ CORE VALUES — Editorial Stacked Rows ============ */
+        .core-values-section {
+          padding: 32px 0 80px;
         }
-        .core-card-anim {
+
+        .core-values-list {
+          display: flex;
+          flex-direction: column;
+          max-width: 960px;
+          margin: 0 auto;
+          gap: 0;
+        }
+
+        /* Each row = one value */
+        .cv-row {
+          display: grid;
+          grid-template-columns: 80px 1px 1fr;
+          gap: 0 36px;
+          align-items: start;
+          padding: 48px 0;
           position: relative;
-          width: 100%;
-          height: 100%;
-          animation: floatCore 6s ease-in-out infinite;
-          transition: transform 0.4s ease;
+          cursor: default;
+          transition: background 0.3s ease;
         }
-        .core-card-wrapper:nth-child(1) .core-card-anim { animation-delay: 0s; }
-        .core-card-wrapper:nth-child(2) .core-card-anim { animation-delay: -2s; }
-        .core-card-wrapper:nth-child(3) .core-card-anim { animation-delay: -4s; }
+
+        /* Horizontal divider between rows */
+        .cv-row + .cv-row {
+          border-top: 1px solid var(--border);
+        }
+
+        /* Subtle hover bg flush */
+        .cv-row:hover {
+          background: rgba(0, 217, 143, 0.03);
+        }
+
+        /* Left: Large index number */
+        .cv-index {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          color: var(--accent-primary);
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          padding-top: 6px;
+          line-height: 1;
+          opacity: 0.85;
+        }
+
+        /* Center: 1px vertical rule */
+        .cv-rule {
+          width: 1px;
+          background: var(--border);
+          align-self: stretch;
+          min-height: 100%;
+          transition: background 0.3s ease;
+        }
+
+        .cv-row:hover .cv-rule {
+          background: rgba(0, 217, 143, 0.5);
+        }
+
+        /* Right: Content block */
+        .cv-body {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          align-items: start;
+          gap: 24px;
+        }
+
+        .cv-text {}
+
+        /* Tag above title */
+        .cv-tag {
+          display: inline-block;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 10.5px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          margin-bottom: 12px;
+          color: var(--accent-primary);
+          opacity: 0.8;
+        }
+
+        .cv-title {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: clamp(1.5rem, 2.8vw, 2rem);
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          line-height: 1.15;
+          color: var(--fg);
+          margin: 0 0 14px;
+          transition: color 0.3s ease;
+        }
+
+        .cv-row:hover .cv-title {
+          color: var(--accent-primary);
+        }
+
+        .cv-desc {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+          line-height: 1.7;
+          color: var(--fg-soft);
+          margin: 0;
+          max-width: 520px;
+        }
+
+        /* Right: Icon glyph */
+        .cv-icon {
+          width: 52px;
+          height: 52px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          opacity: 0.55;
+          transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .cv-row:hover .cv-icon {
+          opacity: 1;
+          transform: scale(1.12) rotate(4deg);
+        }
+
+        /* Light mode tweaks */
+        html:not([data-theme="dark"]) .cv-row + .cv-row,
+        [data-theme='light'] .cv-row + .cv-row {
+          border-top: 1px solid rgba(10, 26, 16, 0.1);
+        }
+
+        html:not([data-theme="dark"]) .cv-rule,
+        [data-theme='light'] .cv-rule {
+          background: rgba(10, 26, 16, 0.12);
+        }
+
+        html:not([data-theme="dark"]) .cv-row:hover .cv-rule,
+        [data-theme='light'] .cv-row:hover .cv-rule {
+          background: rgba(0, 143, 88, 0.55);
+        }
+
+        html:not([data-theme="dark"]) .cv-row:hover {
+          background: rgba(0, 143, 88, 0.04);
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+          .cv-row {
+            grid-template-columns: 1fr;
+            gap: 0;
+            padding: 36px 0;
+          }
+          .cv-rule { display: none; }
+          .cv-index { margin-bottom: 16px; }
+          .cv-body { grid-template-columns: 1fr; }
+          .cv-icon { display: none; }
+        }
+      </style>
+
+      <section class="core-values-section">
+        <div class="wrap">
+          <div class="core-values-list">
+
+            <!-- History -->
+            <div class="cv-row reveal">
+              <span class="cv-index">01</span>
+              <div class="cv-rule"></div>
+              <div class="cv-body">
+                <div class="cv-text">
+                  <span class="cv-tag">The Beginning</span>
+                  <h3 class="cv-title">Our History</h3>
+                  <p class="cv-desc">From humble beginnings to a trusted web agency, we've consistently transformed ideas into impactful results for businesses worldwide.</p>
+                </div>
+                <div class="cv-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vision -->
+            <div class="cv-row reveal">
+              <span class="cv-index">02</span>
+              <div class="cv-rule"></div>
+              <div class="cv-body">
+                <div class="cv-text">
+                  <span class="cv-tag">The Future</span>
+                  <h3 class="cv-title">Our Vision</h3>
+                  <p class="cv-desc">To be a global leader in delivering cutting-edge web solutions that inspire innovation, redefining online success, &amp; serving digital world globally.</p>
+                </div>
+                <div class="cv-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mission -->
+            <div class="cv-row reveal">
+              <span class="cv-index">03</span>
+              <div class="cv-rule"></div>
+              <div class="cv-body">
+                <div class="cv-text">
+                  <span class="cv-tag">The Goal</span>
+                  <h3 class="cv-title">Our Mission</h3>
+                  <p class="cv-desc">Our mission is to empower businesses with innovative web solutions that drive growth, enhance online presence, and deliver exceptional results.</p>
+                </div>
+                <div class="cv-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
         .core-card-wrapper {
           position: relative;
