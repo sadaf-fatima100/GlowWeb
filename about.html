@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" data-default-theme="light">
+<html lang="en" data-default-theme="dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us — Web Agency | Trusted Digital Growth Partners</title>
     <meta
       name="description"
-      content="Learn about Web Agency — a team obsessed with one idea: a digital agency should be judged by the depth of the results it delivers. Our story, mission, and vision."
+      content="Learn about Web Agency — a team obsessed with one idea: a web agency should be judged by the depth of the results it delivers. Our story, mission, and vision."
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
@@ -704,7 +704,7 @@
     <div class="topbar">
       <div class="wrap">
         <div class="promo">
-          <span class="dot"></span> Leading Digital Agency — Web Design,
+          <span class="dot"></span> Leading Web Agency — Web Design,
           Development, SEO &amp; Google Ads
         </div>
         <div>hello@hywiz.com</div>
@@ -827,36 +827,79 @@
       <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
     </div>
-    <!-- ============================ HERO SECTION ============================ -->
-    <section class="about-hero" style="padding-bottom: 60px">
+    <!-- ============================ HERO SECTION (NEW SIGNATURE STYLING) ============================ -->
+    <section class="about-hero">
       <div class="about-orb about-orb-1"></div>
       <div class="about-orb about-orb-2"></div>
       <div class="wrap" style="position: relative; z-index: 2">
-        <div
-          class="eyebrow about-hero-eyebrow reveal"
-          style="justify-content: center; margin-inline: auto"
-        >
-          About Us
+        <!-- Eyebrow Pill -->
+        <div class="hero-eyebrow-pill reveal" style="margin: 0 auto 20px; display: inline-flex;">
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+          <span>Who We Are &amp; Our Mission</span>
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
         </div>
-        <h1 class="reveal" style="max-width: 20ch">
-          You can always <em>count on us</em> during your journey
-        </h1>
-        <p class="lede reveal">
-          At our Web Design Agency, we are dedicated to helping businesses
-          thrive in the digital landscape. With a passionate team of experts, we
-          deliver tailored strategies that drive results and elevate your brand.
-        </p>
-        <!-- Hero Image Gallery Layout -->
-        <div class="about-hero-gallery">
-          <div class="about-hero-gallery-left">
-            <img src="images/about-hero-illustration.png" alt="Digital Agency Illustration" />
+        <!-- Centered Creative Title With Interactive Toggle & Icon Badges (Contact & Home Parity) -->
+        <div class="about-hero-title reveal" style="animation-delay: 0.1s">
+          <div class="about-hero-row">
+            <span>We Craft Websites</span>
+            <span class="title-icon-btn" title="Engineering Excellence">
+              <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </span>
+            <span>&amp; Growth</span>
           </div>
-          <div class="about-hero-gallery-right">
-            <div class="about-hero-gallery-right-img">
-              <img src="images/hero-2.png" alt="Digital Agency Workspace" />
+          <div class="about-hero-row">
+            <span>That Elevate Your</span>
+            <span class="title-toggle-switch" aria-hidden="true">
+              <span class="title-toggle-knob"></span>
+            </span>
+            <em>Brand.</em>
+            <svg class="title-cursor-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.9 2.1c-.5-.3-1.1 0-1.3.5-.1.2-.1.5 0 .7l5.6 17.2c.2.6.9.9 1.5.6.3-.1.5-.4.6-.7l2.8-5.7 5.7-2.8c.6-.3.8-1 .5-1.6-.1-.3-.4-.5-.7-.6L4.6 2.2c-.2-.1-.5-.1-.7-.1z"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Subtitle Lede -->
+        <p class="about-hero-desc reveal">
+          We are a dedicated team of web engineers, UI/UX designers, and growth marketers passionate about building high-converting digital platforms that turn ambitious brands into industry leaders.
+        </p>
+        <!-- Value Chips -->
+        <div class="about-value-chips reveal">
+          <div class="about-value-chip">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Ultra-Fast Performance</span>
+          </div>
+          <div class="about-value-chip">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>Client-Obsessed Delivery</span>
+          </div>
+          <div class="about-value-chip">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>
+            <span>Scalable Architecture</span>
+          </div>
+        </div>
+        <!-- Modern 3-Column Bento Showcase Gallery -->
+        <div class="about-hero-gallery-v2 reveal">
+          <div class="about-gallery-card">
+            <img src="images/hero-2.png" alt="Creative Collaboration" loading="lazy" />
+            <div class="about-gallery-card-badge">
+              <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#00d98f;"></span>
+              <span>Creative Collaboration</span>
             </div>
-            <div class="about-hero-gallery-right-img">
-              <img src="images/hero-1.png" alt="SEO Expert at Work" />
+          </div>
+          <div class="about-gallery-card">
+            <img src="images/about-hero-illustration.png" alt="Full-Stack Capabilities" loading="lazy" />
+            <div class="about-gallery-card-badge">
+              <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#00d98f;"></span>
+              <span>Full-Stack Capabilities</span>
+            </div>
+          </div>
+          <div class="about-gallery-card">
+            <img src="images/hero-1.png" alt="Agile Execution" loading="lazy" />
+            <div class="about-gallery-card-badge">
+              <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#00d98f;"></span>
+              <span>Agile Execution</span>
             </div>
           </div>
         </div>
@@ -2343,7 +2386,7 @@
                 </div>
                 <div class="core-card-text">
                   <h3 class="core-card-title">Our History</h3>
-                  <p>From humble beginnings to a trusted digital agency, we’ve consistently transformed ideas into impactful results for businesses worldwide.</p>
+                  <p>From humble beginnings to a trusted web agency, we’ve consistently transformed ideas into impactful results for businesses worldwide.</p>
                 </div>
               </div>
             </div>
@@ -2360,7 +2403,7 @@
                 </div>
                 <div class="core-card-text">
                   <h3 class="core-card-title" style="color: #fff;">Our Vision</h3>
-                  <p>To be a global leader in delivering cutting-edge digital solutions that inspire innovation, redefining online success, & serving digital world globally.</p>
+                  <p>To be a global leader in delivering cutting-edge web solutions that inspire innovation, redefining online success, & serving digital world globally.</p>
                 </div>
               </div>
             </div>
@@ -2377,7 +2420,7 @@
                 </div>
                 <div class="core-card-text">
                   <h3 class="core-card-title">Our Mission</h3>
-                  <p>Our mission is to empower businesses with innovative digital solutions that drive growth, enhance online presence, and deliver exceptional results.</p>
+                  <p>Our mission is to empower businesses with innovative web solutions that drive growth, enhance online presence, and deliver exceptional results.</p>
                 </div>
               </div>
             </div>
@@ -2415,7 +2458,7 @@
                 >hello@hywiz.com</strong
               >
               or fill out the form given here to start your journey toward
-              exceptional digital solutions.
+              exceptional web solutions.
             </p>
           </div>
           <!-- Right side: Contact Card Form -->

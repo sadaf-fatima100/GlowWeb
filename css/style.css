@@ -10573,3 +10573,180 @@ html:not([data-theme="dark"]) .blog-hero-row em,
     border-radius: 20px;
   }
 }
+
+
+/* =========================================================
+   ABOUT US HERO SECTION (SIGNATURE DESIGN SYSTEM)
+   ========================================================= */
+.about-hero {
+  position: relative;
+  width: 100%;
+  padding-top: clamp(118px, 10vw, 142px);
+  padding-bottom: clamp(60px, 6vw, 90px);
+  overflow: hidden;
+  background: var(--bg);
+  text-align: center;
+}
+
+.about-hero-title {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+  font-size: clamp(38px, 4.6vw, 62px) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.034em !important;
+  color: var(--fg) !important;
+  max-width: 920px !important;
+  margin: 0 auto 22px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-wrap: balance !important;
+}
+
+.about-hero-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.about-hero-row em {
+  font-style: normal;
+  background: linear-gradient(135deg, #00d98f 0%, #00ffaa 50%, #4de6b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html:not([data-theme="dark"]) .about-hero-row em,
+[data-theme='light'] .about-hero-row em {
+  background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #007a49 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.about-hero-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: var(--fg-soft);
+  font-weight: 400;
+  max-width: 680px;
+  margin: 0 auto 28px auto;
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+.about-value-chips {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 auto clamp(36px, 4vw, 54px) auto;
+}
+
+.about-value-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--fg-soft);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.about-value-chip:hover {
+  border-color: rgba(0, 217, 143, 0.4);
+  color: var(--fg);
+  transform: translateY(-2px);
+}
+
+.about-value-chip svg {
+  color: var(--accent-primary);
+}
+
+.about-hero-gallery-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.about-gallery-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  height: clamp(260px, 28vw, 340px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.about-gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 217, 143, 0.15);
+  border-color: rgba(0, 217, 143, 0.35);
+}
+
+.about-gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+.about-gallery-card-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  background: rgba(10, 15, 12, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+@media (max-width: 900px) {
+  .about-hero-gallery-v2 {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    gap: 16px;
+  }
+  .about-gallery-card {
+    height: 240px;
+  }
+  .about-hero-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .about-hero-title {
+    gap: 6px;
+  }
+}
