@@ -1291,410 +1291,159 @@
     </section>
     <!-- ============================ WHY CHOOSE US ============================ -->
     <style>
-      /* --- Why Choose Us Custom Animation --- */
+      /* --- Why Choose Us Section with Illuminating Shining Glow Cards --- */
       .about-why-section {
         position: relative;
         overflow: hidden;
         background: var(--bg);
-        padding: 60px 0 !important;
-        min-height: 600px;
+        padding: clamp(60px, 7vw, 100px) 0;
       }
-      @media (max-width: 960px) {
-        .about-why-section {
-          min-height: 900px;
-        }
+      .about-why-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
       }
-      @media (max-width: 600px) {
-        .about-why-section {
-          min-height: 1450px;
-        }
-      }
-      .anim-puff-bg {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: transparent;
-        border: 130em solid var(--accent-primary);
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        display: block;
-      }
-      .about-why-section.is-in .anim-puff-bg {
-        animation:
-          anim-puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
-          anim-borderRadius 0.2s 2.3s linear forwards;
-      }
-      .anim-card {
-        background: var(--accent-gold);
-        width: 56px;
-        height: 56px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 2;
-        overflow: hidden;
-        opacity: 0;
-        margin-top: 70px;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        box-shadow:
-          0px 3px 6px rgba(0, 0, 0, 0.16),
-          0px 3px 6px rgba(0, 0, 0, 0.23);
-      }
-      .about-why-section.is-in .anim-card {
-        animation:
-          anim-init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
-          anim-moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
-          anim-moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-          anim-materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-      }
-      .anim-content {
-        opacity: 0;
-        margin-top: 50px;
-        width: 100%;
-        height: 100%;
-        padding: 80px 0 20px 0; /* Added top padding to push pill down */
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; /* Start from top */
-      }
-      .about-why-section.is-in .anim-content {
-        animation: anim-moveIn 1s 3.1s ease forwards;
-      }
-      @keyframes anim-init {
-        0% {
-          width: 0px;
-          height: 0px;
-        }
-        100% {
-          width: 56px;
-          height: 56px;
-          margin-top: 0px;
-          opacity: 1;
-        }
-      }
-      @keyframes anim-puff {
-        0% {
-          top: 100%;
-          height: 0px;
-          padding: 0px;
-        }
-        100% {
-          top: 50%;
-          height: 100%;
-          padding: 0px 100%;
-        }
-      }
-      @keyframes anim-borderRadius {
-        0% {
-          border-radius: 50%;
-        }
-        100% {
-          border-radius: 0px;
-        }
-      }
-      @keyframes anim-moveDown {
-        0% {
-          top: 50%;
-        }
-        50% {
-          top: 40%;
-        }
-        100% {
-          top: 100%;
-        }
-      }
-      @keyframes anim-moveUp {
-        0% {
-          background: var(--accent-gold);
-          top: 100%;
-        }
-        50% {
-          top: 40%;
-        }
-        100% {
-          top: 50%;
-          background: var(--bg-3);
-        }
-      }
-      @keyframes anim-materia {
-        0% {
-          background: var(--bg-3);
-        }
-        50% {
-          border-radius: 0;
-        }
-        100% {
-          width: 100%;
-          max-width: 100%;
-          height: 100%;
-          background: var(--surface);
-          border-radius: 0;
-        }
-      }
-      @media (max-width: 960px) {
-        @keyframes anim-materia {
-          0% {
-            background: var(--bg-3);
-          }
-          50% {
-            border-radius: 0;
-          }
-          100% {
-            width: 100%;
-            max-width: 100%;
-            height: 100%;
-            background: var(--surface);
-            border-radius: 0;
-          }
-        }
-      }
-      @media (max-width: 600px) {
-        @keyframes anim-materia {
-          0% {
-            background: var(--bg-3);
-          }
-          50% {
-            border-radius: 0;
-          }
-          100% {
-            width: 100%;
-            max-width: 100%;
-            height: 100%;
-            background: var(--surface);
-            border-radius: 0;
-          }
-        }
-      }
-      @keyframes anim-moveIn {
-        0% {
-          margin-top: 50px;
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-          margin-top: 0px;
-        }
-      } /* --- Professional Sharp Edge Card Styling --- */
       .about-why-card {
         position: relative;
-        padding: 0;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        z-index: 1;
-        margin-bottom: 20px;
-      } /* The Main Card Surface */
-      .about-why-card-inner {
-        position: relative;
-        background: var(--surface) !important;
-        padding: 30px 20px; /* Reduced padding for smaller cards */ /* Sharp edges */
-        border-radius: 18px !important; border: 1px solid var(--border) !important;
-        z-index: -1;
-        transition: all 0.4s ease;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 36px 26px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center; /* No generic borders, just shadow */
-        
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
-      } /* Hover Animation: Clean lift */
-      .about-why-card:hover .about-why-card-inner {
+        align-items: flex-start;
+        text-align: left;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.4s ease,
+                    box-shadow 0.4s ease;
+        cursor: pointer;
+      }
+      /* Illuminating Shining Sheen on Hover */
+      .about-why-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 80%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.08),
+          rgba(0, 217, 143, 0.28),
+          transparent
+        );
+        transform: skewX(-20deg);
+        pointer-events: none;
+        z-index: 3;
+      }
+      .about-why-card:hover::after {
+        left: 160%;
+        transition: left 0.75s ease-in-out;
+      }
+      /* Illuminating Glowing Border on Hover */
+      .about-why-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
-      } /* Unique Icon Container - Transparent Background */
-      .about-why-icon {
-        margin: 0 auto 15px; /* Reduced margin */
-        width: 48px;
-        height: 48px; /* Smaller icon footprint */
-        background: transparent !important; /* No background */
-        color: var(--accent-teal);
+        border-color: var(--accent-primary) !important;
+        box-shadow: 
+          0 16px 40px -10px rgba(0, 217, 143, 0.35),
+          0 0 25px rgba(0, 217, 143, 0.25),
+          inset 0 0 15px rgba(0, 217, 143, 0.08);
+      }
+      .about-why-icon-wrap {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: rgba(0, 217, 143, 0.08);
+        border: 1px solid rgba(0, 217, 143, 0.25);
+        color: var(--accent-primary);
         display: flex;
         align-items: center;
-        justify-content: center; /* Sharp square */
-        border-radius: 0;
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: none;
+        justify-content: center;
+        margin-bottom: 22px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
       }
-      .about-why-icon svg {
-        width: 40px;
-        height: 40px; /* Make the actual icon a bit larger since it has no background */
-      } /* Individual card icon colors */
-      .about-why-card:nth-child(2) .about-why-icon {
-        color: var(--accent-gold);
+      .about-why-card:hover .about-why-icon-wrap {
+        transform: scale(1.1) rotate(4deg);
+        box-shadow: 0 0 20px rgba(0, 217, 143, 0.4);
       }
-      .about-why-card:nth-child(3) .about-why-icon {
-        color: var(--accent-primary);
+      .about-why-card h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--fg);
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
       }
-      .about-why-card:nth-child(4) .about-why-icon {
-        color: var(--accent-primary);
-      } /* Hover Icon - just scale up, keep background transparent */
-      .about-why-card:hover .about-why-icon {
-        transform: scale(1.15);
+      .about-why-card p {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 14px;
+        line-height: 1.62;
+        color: var(--fg-soft);
+        margin: 0;
+      }
+      @media (max-width: 1024px) {
+        .about-why-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .about-why-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
-    <section class="about-why-section reveal">
-      <div class="anim-puff-bg"></div>
-      <div class="anim-card">
-        <div class="anim-content">
-          <div class="wrap">
-            <div
-              class="section-head center reveal"
-              style="margin-inline: auto; text-align: center"
-            >
-              <div class="eyebrow" style="justify-content: center">
-                Why Choose Us
-              </div>
-              <h2>Why Choose Us for Your <em>Digital Journey?</em></h2>
-              <p class="lede" style="margin-inline: auto">
-                Experience unmatched expertise, tailored strategies, and a
-                proven track record of delivering measurable results.
-              </p>
+    <section class="about-why-section section reveal">
+      <div class="wrap">
+        <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 48px;">
+          <!-- Top Eyebrow Tag -->
+          <div class="hero-eyebrow-pill reveal" style="margin: 0 auto 16px; display: inline-flex;">
+            <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+            <span>Why Choose Us</span>
+            <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+          </div>
+          <h2 class="reveal">Why Choose Us for Your <em>Web Journey?</em></h2>
+          <p class="section-subtitle reveal" style="margin-inline: auto;">Experience unmatched expertise, tailored strategies, and a proven track record of delivering measurable results.</p>
+        </div>
+
+        <div class="about-why-grid">
+          <!-- Card 1: Expert Team -->
+          <div class="about-why-card spotlight-card reveal-up">
+            <div class="about-why-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
             </div>
-            <div class="about-why-grid">
-              <div class="about-why-card reveal-up">
-                <div class="about-why-card-inner">
-                  <div class="about-why-icon">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <h3
-                    style="
-                      font-size: 1.25rem;
-                      font-weight: 800;
-                      margin-bottom: 12px;
-                      letter-spacing: -0.02em;
-                    "
-                  >
-                    Expert Team
-                  </h3>
-                  <p style="color: var(--fg-soft); font-size: 0.95rem">
-                    Our skilled professionals bring years of industry experience
-                    to deliver high-quality solutions.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="about-why-card reveal-up"
-                style="transition-delay: 0.1s"
-              >
-                <div class="about-why-card-inner">
-                  <div class="about-why-icon">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <h3
-                    style="
-                      font-size: 1.25rem;
-                      font-weight: 800;
-                      margin-bottom: 12px;
-                      letter-spacing: -0.02em;
-                    "
-                  >
-                    Tailored Strategies
-                  </h3>
-                  <p style="color: var(--fg-soft); font-size: 0.95rem">
-                    We customize our approaches to fit your specific business
-                    needs and goals.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="about-why-card reveal-up"
-                style="transition-delay: 0.2s"
-              >
-                <div class="about-why-card-inner">
-                  <div class="about-why-icon">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                      ></path>
-                    </svg>
-                  </div>
-                  <h3
-                    style="
-                      font-size: 1.25rem;
-                      font-weight: 800;
-                      margin-bottom: 12px;
-                      letter-spacing: -0.02em;
-                    "
-                  >
-                    Proven Results
-                  </h3>
-                  <p style="color: var(--fg-soft); font-size: 0.95rem">
-                    Our portfolio showcases a history of successful projects
-                    that drive significant growth.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="about-why-card reveal-up"
-                style="transition-delay: 0.3s"
-              >
-                <div class="about-why-card-inner">
-                  <div class="about-why-icon">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <h3
-                    style="
-                      font-size: 1.25rem;
-                      font-weight: 800;
-                      margin-bottom: 12px;
-                      letter-spacing: -0.02em;
-                    "
-                  >
-                    24/7 Support
-                  </h3>
-                  <p style="color: var(--fg-soft); font-size: 0.95rem">
-                    We offer round-the-clock support to ensure your digital
-                    presence remains flawless.
-                  </p>
-                </div>
-              </div>
+            <h3>Expert Team</h3>
+            <p>Our skilled professionals bring years of engineering mastery to deliver high-converting web solutions.</p>
+          </div>
+
+          <!-- Card 2: Tailored Strategies -->
+          <div class="about-why-card spotlight-card reveal-up" style="--i: 1">
+            <div class="about-why-icon-wrap" style="color: var(--accent-gold); border-color: rgba(244, 196, 48, 0.3); background: rgba(244, 196, 48, 0.08);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
+            <h3>Tailored Strategies</h3>
+            <p>We customize our technical roadmaps to fit your unique business objectives, architecture, and revenue targets.</p>
+          </div>
+
+          <!-- Card 3: Proven Results -->
+          <div class="about-why-card spotlight-card reveal-up" style="--i: 2">
+            <div class="about-why-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <h3>Proven Results</h3>
+            <p>Our portfolio showcases a history of successful deployments that drive significant ROI and organic reach.</p>
+          </div>
+
+          <!-- Card 4: 24/7 Dedicated Support -->
+          <div class="about-why-card spotlight-card reveal-up" style="--i: 3">
+            <div class="about-why-icon-wrap" style="color: var(--accent-teal); border-color: rgba(79, 235, 253, 0.3); background: rgba(79, 235, 253, 0.08);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <h3>24/7 Dedicated Support</h3>
+            <p>We offer round-the-clock technical monitoring and ongoing support to ensure your digital infrastructure remains flawless.</p>
           </div>
         </div>
       </div>
@@ -2086,17 +1835,17 @@
         </div>
       </div>
     </section>
-      <!-- ============================ CORE VALUES (HISTORY, VISION, MISSION) ============================ -->
       <style>
         @keyframes floatCore {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
+          50% { transform: translateY(-10px); }
         }
         .core-card-anim {
           position: relative;
           width: 100%;
           height: 100%;
           animation: floatCore 6s ease-in-out infinite;
+          transition: transform 0.4s ease;
         }
         .core-card-wrapper:nth-child(1) .core-card-anim { animation-delay: 0s; }
         .core-card-wrapper:nth-child(2) .core-card-anim { animation-delay: -2s; }
@@ -2104,134 +1853,155 @@
 
         .core-card-wrapper {
           position: relative;
-          margin: 0 auto 90px auto;
+          margin: 0 auto 70px auto;
           width: 95%;
-          max-width: 850px;
-          perspective: 1000px;
+          max-width: 880px;
+          cursor: pointer;
         }
+
+        /* Pause floating animation smoothly on hover */
+        .core-card-wrapper:hover .core-card-anim {
+          animation-play-state: paused;
+        }
+
         .core-card-content {
           position: relative;
-          padding: 40px;
+          padding: 42px 48px;
           z-index: 2;
-          border-radius: 6px;
+          border-radius: 20px !important;
           display: flex;
           align-items: center;
-          gap: 30px;
+          gap: 36px;
+          background: var(--surface) !important;
+          border: 1px solid var(--border) !important;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15) !important;
+          overflow: hidden;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.4s ease,
+                      box-shadow 0.4s ease !important;
         }
+
+        /* Illuminating Shining Sheen Sweep on Hover */
+        .core-card-content::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -120%;
+          width: 70%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.12),
+            rgba(0, 217, 143, 0.35),
+            transparent
+          );
+          transform: skewX(-20deg);
+          pointer-events: none;
+          z-index: 4;
+        }
+        .core-card-wrapper:hover .core-card-content::after {
+          left: 170%;
+          transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Illuminating Glowing Border on Hover */
+        .core-card-wrapper:hover .core-card-content {
+          transform: translateY(-8px) scale(1.015) !important;
+          border-color: #00d98f !important;
+          box-shadow: 
+            0 0 35px rgba(0, 217, 143, 0.45),
+            0 20px 50px rgba(0, 0, 0, 0.4),
+            inset 0 0 20px rgba(0, 217, 143, 0.15) !important;
+        }
+
         .core-card-icon {
           flex-shrink: 0;
-          width: 140px;
-          height: 140px;
-          background: rgba(0, 217, 143, 0.08);
-          border-radius: 16px;
+          width: 130px;
+          height: 130px;
+          background: rgba(0, 217, 143, 0.08) !important;
+          border: 1px solid rgba(0, 217, 143, 0.25) !important;
+          border-radius: 18px !important;
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid rgba(0, 217, 143, 0.25);
+          transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
         }
+
+        .core-card-wrapper:hover .core-card-icon {
+          transform: scale(1.1) rotate(4deg) !important;
+          border-color: #00d98f !important;
+          box-shadow: 0 0 30px rgba(0, 217, 143, 0.6) !important;
+        }
+
+        .core-card-wrapper:hover .core-card-icon svg {
+          filter: drop-shadow(0 0 10px #00d98f);
+        }
+
+        .core-card-title {
+          font-family: 'Plus Jakarta Sans', sans-serif !important;
+          font-size: clamp(1.8rem, 3vw, 2.2rem);
+          font-weight: 700;
+          margin-bottom: 12px;
+          letter-spacing: -0.025em;
+          color: var(--fg) !important;
+        }
+
         .core-card-text p {
-          font-size: clamp(1rem, 1.8vw, 1.15rem);
-          font-weight: 500;
-          line-height: 1.6;
+          font-family: 'Plus Jakarta Sans', sans-serif !important;
+          font-size: clamp(1rem, 1.6vw, 1.125rem);
+          font-weight: 400;
+          line-height: 1.65;
+          color: var(--fg-soft) !important;
           margin: 0;
         }
-        .core-card-title {
-          font-size: clamp(1.8rem, 3vw, 2.2rem);
-          font-weight: 800;
-          margin-bottom: 12px;
-          letter-spacing: -0.02em;
-        }
+
         .core-card-badge {
           position: absolute;
-          top: -18px;
-          padding: 8px 24px;
-          font-weight: 800;
-          font-size: 13px;
+          top: -16px;
+          padding: 7px 22px;
+          font-family: 'Plus Jakarta Sans', sans-serif !important;
+          font-size: 11.5px !important;
+          font-weight: 700 !important;
+          letter-spacing: 0.06em !important;
           text-transform: uppercase;
-          letter-spacing: 1.5px;
           z-index: 3;
-          border-radius: 4px;
-          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+          border-radius: 999px !important;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
         }
+
         .core-card-bg-layer {
           position: absolute;
           top: 0; left: 0; width: 100%; height: 100%;
           background: var(--surface-raised);
           z-index: 1;
-          border-radius: 6px;
+          border-radius: 20px;
           box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+          border: 1px solid var(--border);
+          transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-          .core-card-content {
-            flex-direction: column;
-            text-align: center;
-            padding: 30px 20px;
-          }
-          .core-card-icon {
-            width: 100px; height: 100px;
-          }
-          .core-card-wrapper:nth-child(even) .core-card-content {
-            flex-direction: column;
-          }
-        }
-
-        /* Global Core Card Refinements matching Green Brand Palette */
-        .core-card-content {
-          background: var(--surface) !important;
-          border: 1px solid var(--border) !important;
-          color: var(--fg) !important;
-          border-radius: 18px !important;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15) !important;
-          transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
-        }
-        .core-card-content:hover {
-          border-color: rgba(0, 217, 143, 0.4) !important;
-          box-shadow: 0 20px 50px rgba(0, 217, 143, 0.15) !important;
-        }
-        .core-card-icon {
-          background: rgba(0, 217, 143, 0.08) !important;
-          border: 1px solid rgba(0, 217, 143, 0.25) !important;
-          border-radius: 14px !important;
-        }
-        .core-card-title {
-          color: var(--fg) !important;
-        }
-        .core-card-text p {
-          color: var(--fg-soft) !important;
-        }
-        .core-card-badge {
-          border-radius: 999px !important;
-          font-family: 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 11.5px !important;
-          font-weight: 700 !important;
-          letter-spacing: 0.05em !important;
-          padding: 6px 18px !important;
-          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+        .core-card-wrapper:hover .core-card-bg-layer {
+          border-color: rgba(0, 217, 143, 0.4);
+          box-shadow: 0 0 35px rgba(0, 217, 143, 0.25);
         }
 
         /* 1. History (Emerald Green Aura) */
         .core-card-wrapper:nth-child(1) .core-card-content {
-          background: linear-gradient(135deg, rgba(0, 217, 143, 0.06) 0%, var(--surface) 100%) !important;
+          background: linear-gradient(135deg, rgba(0, 217, 143, 0.08) 0%, var(--surface) 100%) !important;
           border: 1px solid rgba(0, 217, 143, 0.25) !important;
-          transform: rotate(-1deg);
         }
         .core-card-wrapper:nth-child(1) .core-card-badge {
           background: rgba(0, 217, 143, 0.15) !important;
           color: var(--accent-primary) !important;
           border: 1px solid rgba(0, 217, 143, 0.35) !important;
-          left: 40px; transform: rotate(-1.5deg);
-        }
-        .core-card-wrapper:nth-child(1) .core-card-bg-layer {
-          transform: rotate(1deg) scale(1.02) translate(4px, 4px);
+          left: 40px;
         }
         
         /* 2. Vision (High-Impact Hero Emerald Card with Perfect 11:1 Dark Contrast) */
         .core-card-wrapper:nth-child(2) .core-card-content {
           background: linear-gradient(135deg, rgba(0, 217, 143, 0.15) 0%, var(--surface-raised) 100%) !important;
           border: 1px solid rgba(0, 217, 143, 0.4) !important;
-          transform: rotate(1deg);
           flex-direction: row-reverse;
           text-align: right;
         }
@@ -2239,27 +2009,39 @@
           background: var(--accent-primary) !important;
           color: #03140a !important;
           font-weight: 800 !important;
-          right: 40px; transform: rotate(1.5deg);
+          right: 40px;
           box-shadow: 0 4px 16px rgba(0, 217, 143, 0.4) !important;
-        }
-        .core-card-wrapper:nth-child(2) .core-card-bg-layer {
-          transform: rotate(-1deg) scale(1.02) translate(-4px, -3px);
         }
 
         /* 3. Mission (Cyan Teal Aura) */
         .core-card-wrapper:nth-child(3) .core-card-content {
-          background: linear-gradient(135deg, rgba(79, 235, 253, 0.06) 0%, var(--surface) 100%) !important;
+          background: linear-gradient(135deg, rgba(79, 235, 253, 0.08) 0%, var(--surface) 100%) !important;
           border: 1px solid rgba(79, 235, 253, 0.25) !important;
-          transform: rotate(-0.8deg);
         }
         .core-card-wrapper:nth-child(3) .core-card-badge {
           background: rgba(79, 235, 253, 0.15) !important;
           color: var(--accent-teal) !important;
           border: 1px solid rgba(79, 235, 253, 0.35) !important;
-          left: 40px; transform: rotate(-1deg);
+          left: 40px;
         }
-        .core-card-wrapper:nth-child(3) .core-card-bg-layer {
-          transform: rotate(0.8deg) scale(1.02) translate(3px, -4px);
+
+        @media (max-width: 768px) {
+          .core-card-content {
+            flex-direction: column !important;
+            text-align: center !important;
+            padding: 34px 24px;
+            gap: 20px;
+          }
+          .core-card-icon {
+            width: 90px; height: 90px;
+          }
+          .core-card-wrapper:nth-child(2) .core-card-badge,
+          .core-card-wrapper:nth-child(1) .core-card-badge,
+          .core-card-wrapper:nth-child(3) .core-card-badge {
+            left: 50% !important;
+            right: auto !important;
+            transform: translateX(-50%) !important;
+          }
         }
       </style>
 
