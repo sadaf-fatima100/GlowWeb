@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio — Agency</title>
+    <title>Portfolio — Web Agency | Selected Client Work & Case Studies</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -162,28 +168,20 @@
       <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
     </div>
-    <section class="page-hero portfolio-hero">
+    <section class="portfolio-hero">
       <div
         class="wrap"
         style="position: relative; z-index: 2; text-align: center"
       >
-        <div class="eyebrow reveal" style="margin: 0 auto 24px auto">
-          Our Creative Work
+        <!-- Eyebrow Pill with Sparkles -->
+        <div class="hero-eyebrow-pill reveal" style="margin: 0 auto 20px; display: inline-flex;">
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+          <span>Our Creative Portfolio</span>
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
         </div>
-        <h1
-          class="reveal"
-          style="
-            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            max-width: 20ch;
-            margin: 0 auto 40px;
-            color: var(--fg);
-          "
-        >
-          Elevating your brand with exceptional <br />
-          <span class="sticker-tag">PROJECTS</span>
+        <h1 class="reveal portfolio-hero-title">
+          Elevating Your Brand With <br />
+          <span class="portfolio-hero-accent">Exceptional Projects</span>
         </h1>
         <!-- Randomly Stacked Gallery -->
         <div class="stacked-gallery-container reveal">
@@ -228,46 +226,44 @@
         <p
           class="reveal"
           style="
-            font-size: clamp(15px, 1.8vw, 19px);
+            font-size: clamp(15px, 1.4vw, 17px);
             color: var(--fg-soft);
-            line-height: 1.6;
-            max-width: 46ch;
-            margin: 40px auto 0;
+            line-height: 1.65;
+            max-width: 58ch;
+            margin: 32px auto 0;
             font-weight: 400;
+            text-wrap: pretty;
           "
         >
-          <strong>Web Agency</strong> is a hard-working web agency that
-          propels good companies to discover greatness. We're pragmatic
-          creatives who get our kicks helping brands win through design,
-          development, and digital experiences.
+          <strong>Web Agency</strong> is a dedicated web engineering agency that
+          propels ambitious companies to discover greatness. We build high-converting
+          websites, scalable web platforms, and impactful digital experiences that drive measurable growth.
         </p>
-        <div class="reveal" style="margin-top: 32px; display: flex; justify-content: center; gap: 16px; align-items: center; flex-wrap: wrap;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 217, 143, 0.1); border: 1px solid rgba(0, 217, 143, 0.2); padding: 10px 20px; border-radius: 30px; color: var(--accent-primary); font-weight: 600; font-size: 14px; backdrop-filter: blur(10px);">
+        <div class="reveal" style="margin-top: 24px; display: flex; justify-content: center; gap: 16px; align-items: center; flex-wrap: wrap;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 217, 143, 0.1); border: 1px solid rgba(0, 217, 143, 0.25); padding: 8px 20px; border-radius: 999px; color: var(--accent-primary); font-weight: 700; font-size: 13.5px; backdrop-filter: blur(10px);">
             🎉 100+ Successful Projects
           </div>
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(115, 238, 252, 0.1); border: 1px solid rgba(115, 238, 252, 0.2); padding: 10px 20px; border-radius: 30px; color: var(--accent-teal); font-weight: 600; font-size: 14px; backdrop-filter: blur(10px);">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(79, 235, 253, 0.1); border: 1px solid rgba(79, 235, 253, 0.25); padding: 8px 20px; border-radius: 999px; color: var(--accent-teal); font-weight: 700; font-size: 13.5px; backdrop-filter: blur(10px);">
             ⭐ 5.0/5 Average Rating
           </div>
         </div>
       </div>
     </section>
-    <section class="section" style="padding-top: 0">
+    <section class="section" style="padding-top: 0; padding-bottom: clamp(64px, 7vw, 104px);">
       <div class="wrap">
         <div
           class="filter-row reveal"
           style="
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 16px;
             margin-bottom: 40px;
             flex-wrap: wrap;
           "
         >
-          <button class="filter-pill active" data-filter="web">
-            Web Design
-          </button>
+          <button class="filter-pill active" data-filter="web">Web Design</button>
           <button class="filter-pill" data-filter="ads">Google Ads</button>
-          <button class="filter-pill" data-filter="seo">SEO</button>
+          <button class="filter-pill" data-filter="seo">SEO Optimization</button>
         </div>
         <div class="portfolio-grid" id="portfolioGrid">
           <div
@@ -861,678 +857,485 @@
         </div>
       </div>
     </section>
-    <!-- INFINITE VERTICAL SCROLL TESTIMONIALS MARQUEE SECTION -->
-    <section class="testimonial-marquee-section">
+    <!-- ============================ TRUSTED BRANDS LOGO MARQUEE ============================ -->
+    <section class="section-trusted-brands">
       <div class="wrap">
-        <!-- Section Head -->
-        <div
-          class="section-head center reveal"
-          style="margin-inline: auto; text-align: center"
-        >
-          <div class="eyebrow" style="justify-content: center">
-            See from our client
-          </div>
-          <h2
-            style="
-              font-size: clamp(2.2rem, 4vw, 3.4rem);
-              line-height: 1.1;
-              letter-spacing: -0.02em;
-              margin-top: 8px;
-            "
-          >
-            What Our
-            <svg
-              class="globe-icon-inline"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.6"
+        <div class="trusted-brands-head reveal">
+          <h3>
+            Trusted by Global Brands.
+            <span class="accent-text"
+              >Join Hundreds of Customers Around the Globe.</span
             >
-              <circle cx="12" cy="12" r="10" />
-              <path
-                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-              />
-            </svg>
-            Client Says
-          </h2>
-          <p>
-            Hear directly from the business owners, founders, and product
-            managers who partnered with us to craft their digital presence and
-            drive substantial growth.
-          </p>
+          </h3>
         </div>
       </div>
-      <!-- Marquee Viewport Container -->
-      <div class="testimonial-marquee-viewport reveal">
-        <div class="testimonial-marquee-grid">
-          <!-- Column 1: Scrolls Up -->
-          <div class="marquee-col marquee-col-1">
-            <div class="marquee-track up">
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Working with Vantage was a collaborative and enjoyable
-                  journey. Team's dedication is outstanding."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #ffeed9;
-                      color: #d97706;
-                      font-weight: 700;
-                    "
-                  >
-                    VA
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Vantage Agency</b><span>Branding & UI/UX</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "The creativity and professionalism of this team are
-                  unmatched. They delivered real impact."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #e1e5fc;
-                      color: #2563eb;
-                      font-weight: 700;
-                    "
-                  >
-                    ST
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Sarah Thampaer</b><span>Lead UI Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "I have waited my entire life for a design partner like this.
-                  Less is truly more. Period."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #ebfcdb;
-                      color: #4f5e2d;
-                      font-weight: 700;
-                    "
-                  >
-                    AW
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Azunyan U. Wu</b><span>CEO, planetX.ai</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Duplicates -->
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Working with Vantage was a collaborative and enjoyable
-                  journey. Team's dedication is outstanding."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #ffeed9;
-                      color: #d97706;
-                      font-weight: 700;
-                    "
-                  >
-                    VA
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Vantage Agency</b><span>Branding & UI/UX</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "The creativity and professionalism of this team are
-                  unmatched. They delivered real impact."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #e1e5fc;
-                      color: #2563eb;
-                      font-weight: 700;
-                    "
-                  >
-                    ST
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Sarah Thampaer</b><span>Lead UI Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "I have waited my entire life for a design partner like this.
-                  Less is truly more. Period."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #ebfcdb;
-                      color: #4f5e2d;
-                      font-weight: 700;
-                    "
-                  >
-                    AW
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Azunyan U. Wu</b><span>CEO, planetX.ai</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="brands-marquee reveal">
+        <div class="brands-track">
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-1.png"
+              alt="Company Logo 1"
+            />
           </div>
-          <!-- Column 2: Scrolls Down -->
-          <div class="marquee-col marquee-col-2">
-            <div class="marquee-track down">
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "As a busy founder, I built our SaaS product with their design
-                  system in record time."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #d8fdf0;
-                      color: #065f46;
-                      font-weight: 700;
-                    "
-                  >
-                    AW
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Azunyan U. Wu</b><span>CEO, fintechwin.ai</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Clean, responsive, and incredibly easy to maintain. Highly
-                  recommended."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #fce1e8;
-                      color: #be185d;
-                      font-weight: 700;
-                    "
-                  >
-                    XM
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>X_MLA_YD</b><span>Product Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "A remarkable execution from start to finish. Our project
-                  engagement increased."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #c3f7f2;
-                      color: #0d9488;
-                      font-weight: 700;
-                    "
-                  >
-                    BO
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>BarackObarna</b><span>Former President</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Duplicates -->
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "As a busy founder, I built our SaaS product with their design
-                  system in record time."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #d8fdf0;
-                      color: #065f46;
-                      font-weight: 700;
-                    "
-                  >
-                    AW
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Azunyan U. Wu</b><span>CEO, fintechwin.ai</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Clean, responsive, and incredibly easy to maintain. Highly
-                  recommended."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #fce1e8;
-                      color: #be185d;
-                      font-weight: 700;
-                    "
-                  >
-                    XM
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>X_MLA_YD</b><span>Product Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "A remarkable execution from start to finish. Our project
-                  engagement increased."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #c3f7f2;
-                      color: #0d9488;
-                      font-weight: 700;
-                    "
-                  >
-                    BO
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>BarackObarna</b><span>Former President</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-2.png"
+              alt="Company Logo 2"
+            />
           </div>
-          <!-- Column 3: Scrolls Up -->
-          <div class="marquee-col marquee-col-3">
-            <div class="marquee-track up">
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Their UX consulting completely transformed our conversion
-                  rate within weeks."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #e0f2fe;
-                      color: #0369a1;
-                      font-weight: 700;
-                    "
-                  >
-                    LV
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Liam Vance</b><span>VP Design, ApexFlow</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Their SEO strategy targeted high-intent keywords that boosted
-                  organic sales."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #f3e8ff;
-                      color: #7e22ce;
-                      font-weight: 700;
-                    "
-                  >
-                    SM
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Sophia Miller</b><span>Marketing Director</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "The micro-animations and aesthetics they designed became our
-                  signature branding."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #fef3c7;
-                      color: #b45309;
-                      font-weight: 700;
-                    "
-                  >
-                    KS
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Kenji Sato</b><span>Co-Founder, TokyoLabs</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Duplicates -->
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Their UX consulting completely transformed our conversion
-                  rate within weeks."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #e0f2fe;
-                      color: #0369a1;
-                      font-weight: 700;
-                    "
-                  >
-                    LV
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Liam Vance</b><span>VP Design, ApexFlow</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Their SEO strategy targeted high-intent keywords that boosted
-                  organic sales."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #f3e8ff;
-                      color: #7e22ce;
-                      font-weight: 700;
-                    "
-                  >
-                    SM
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Sophia Miller</b><span>Marketing Director</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "The micro-animations and aesthetics they designed became our
-                  signature branding."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #fef3c7;
-                      color: #b45309;
-                      font-weight: 700;
-                    "
-                  >
-                    KS
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Kenji Sato</b><span>Co-Founder, TokyoLabs</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-3.png"
+              alt="Company Logo 3"
+            />
           </div>
-          <!-- Column 4: Scrolls Down -->
-          <div class="marquee-col marquee-col-4">
-            <div class="marquee-track down">
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Fast, precise, and creative. They work like an extension of
-                  our team."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #ffedd5;
-                      color: #c2410c;
-                      font-weight: 700;
-                    "
-                  >
-                    ER
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Elena Rostova</b><span>PM, FinLyft</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Turned our outdated corporate site into a high-performance
-                  experience."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #fce7f3;
-                      color: #be185d;
-                      font-weight: 700;
-                    "
-                  >
-                    MT
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Marcus Thorne</b><span>CTO, HelixCorp</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Outstanding execution. We've seen a 45% signup increase since
-                  launch."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #e0f2fe;
-                      color: #0369a1;
-                      font-weight: 700;
-                    "
-                  >
-                    CD
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Clara DuPont</b><span>Founder, ParisVibe</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Duplicates -->
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Fast, precise, and creative. They work like an extension of
-                  our team."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #ffedd5;
-                      color: #c2410c;
-                      font-weight: 700;
-                    "
-                  >
-                    ER
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Elena Rostova</b><span>PM, FinLyft</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Turned our outdated corporate site into a high-performance
-                  experience."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #fce7f3;
-                      color: #be185d;
-                      font-weight: 700;
-                    "
-                  >
-                    MT
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Marcus Thorne</b><span>CTO, HelixCorp</span>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee-card">
-                <div class="marquee-card-stars">★★★★★</div>
-                <p>
-                  "Outstanding execution. We've seen a 45% signup increase since
-                  launch."
-                </p>
-                <div class="marquee-card-author">
-                  <div
-                    class="marquee-card-avatar"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: #e0f2fe;
-                      color: #0369a1;
-                      font-weight: 700;
-                    "
-                  >
-                    CD
-                  </div>
-                  <div class="marquee-card-info">
-                    <b>Clara DuPont</b><span>Founder, ParisVibe</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-4.png"
+              alt="Company Logo 4"
+            />
+          </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-5.png"
+              alt="Company Logo 5"
+            />
+          </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/nku-logo-small-removebg-preview-removebg-preview.png"
+              alt="NKU Logo"
+            />
+          </div>
+          <!-- Duplicates for Infinite Loop -->
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-1.png"
+              alt="Company Logo 1"
+            />
+          </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-2.png"
+              alt="Company Logo 2"
+            />
+          </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-3.png"
+              alt="Company Logo 3"
+            />
+          </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-4.png"
+              alt="Company Logo 4"
+            />
+          </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/logo-comapny-5.png"
+              alt="Company Logo 5"
+            />
+          </div>
+          <div class="brand-logo-item">
+            <img
+              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/nku-logo-small-removebg-preview-removebg-preview.png"
+              alt="NKU Logo"
+            />
           </div>
         </div>
       </div>
     </section>
-        <!-- CONTACT FORM SECTION -->
+
+    <!-- ============================ TESTIMONIALS SECTION ============================ -->
+    <section class="testimonial-marquee-section" id="testimonialsSection">
+      <div class="wrap">
+        <!-- Section Head -->
+        <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 40px;">
+          <div class="hero-eyebrow-pill" style="margin: 0 auto 20px; display: inline-flex;">
+            <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+            <span>Client Reviews</span>
+            <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+          </div>
+          <h2>
+            What Our Clients Say
+          </h2>
+          <p class="section-subtitle">
+            Hear directly from founders, product leaders, and CMOs who scaled their revenue and digital impact with us.
+          </p>
+        </div>
+      </div>
+
+      <!-- Dual-Row Smooth Horizontal Continuous Marquee -->
+      <div class="h-marquee-container reveal">
+        <!-- Row 1: Leftward Scroll -->
+        <div class="h-marquee-row row-left">
+          <div class="h-marquee-track track-left">
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Working with HyWiz was a collaborative and enjoyable journey. Their engineering depth and UI/UX craftsmanship delivered a 4.9x ROAS surge."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #123b2c; color: #00ffaa;">MV</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Marcus Vance</span>
+                    <span class="h-test-role">Founder, Vantage Media</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"The creativity and speed of this team are unmatched. They redesigned our SaaS web app in record time and boosted signups by +140%."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #182a44; color: #60a5fa;">ST</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Sarah Thampaer</span>
+                    <span class="h-test-role">Lead Product Designer, CloudScale</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"I have searched for years for an agency that understands both world-class aesthetics and extreme performance. HyWiz is the gold standard."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-role">CEO, PlanetX.ai</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Our SEO traffic tripled within 90 days. Their technical audits and data-backed content architecture completely dominated our niche."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #331a38; color: #e879f9;">DS</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">David Sterling</span>
+                    <span class="h-test-role">Growth Director, Apex Health</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Working with HyWiz was a collaborative and enjoyable journey. Their engineering depth and UI/UX craftsmanship delivered a 4.9x ROAS surge."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #123b2c; color: #00ffaa;">MV</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Marcus Vance</span>
+                    <span class="h-test-role">Founder, Vantage Media</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"The creativity and speed of this team are unmatched. They redesigned our SaaS web app in record time and boosted signups by +140%."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #182a44; color: #60a5fa;">ST</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Sarah Thampaer</span>
+                    <span class="h-test-role">Lead Product Designer, CloudScale</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"I have searched for years for an agency that understands both world-class aesthetics and extreme performance. HyWiz is the gold standard."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-role">CEO, PlanetX.ai</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Our SEO traffic tripled within 90 days. Their technical audits and data-backed content architecture completely dominated our niche."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #331a38; color: #e879f9;">DS</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">David Sterling</span>
+                    <span class="h-test-role">Growth Director, Apex Health</span>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Rightward Scroll -->
+        <div class="h-marquee-row row-right">
+          <div class="h-marquee-track track-right">
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Outstanding execution from start to finish. They built an ultra-fast, responsive web platform that consistently converts enterprise leads."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #1a3330; color: #34d399;">CD</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Clara DuPont</span>
+                    <span class="h-test-role">VP Marketing, ParisVibe Global</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Their Google Ads management reduced our CAC by 42% while doubling our qualified demo bookings. Truly indispensable growth partners."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #18233c; color: #38bdf8;">ER</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Elena Rostova</span>
+                    <span class="h-test-role">Head of Acquisition, FinLeap</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-role">CTO, HelixCorp Security</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Pixel-perfect visual execution, flawless mobile responsiveness, and remarkable communication. We could not recommend them higher!"</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #222a18; color: #a3e635;">SM</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Sophia Mitchell</span>
+                    <span class="h-test-role">Operations Director, NexaFlow</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Outstanding execution from start to finish. They built an ultra-fast, responsive web platform that consistently converts enterprise leads."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #1a3330; color: #34d399;">CD</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Clara DuPont</span>
+                    <span class="h-test-role">VP Marketing, ParisVibe Global</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Their Google Ads management reduced our CAC by 42% while doubling our qualified demo bookings. Truly indispensable growth partners."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #18233c; color: #38bdf8;">ER</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Elena Rostova</span>
+                    <span class="h-test-role">Head of Acquisition, FinLeap</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-role">CTO, HelixCorp Security</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-testimonial-card">
+                <div class="h-test-top">
+                  <div class="h-test-stars" aria-label="5 out of 5 stars"><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ffb800"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="h-test-google-badge">
+                    <svg viewBox="0 0 24 24" width="15" height="15" class="google-g-icon">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Review</span>
+                  </div>
+                </div>
+                <p class="h-test-quote">"Pixel-perfect visual execution, flawless mobile responsiveness, and remarkable communication. We could not recommend them higher!"</p>
+                <div class="h-test-author">
+                  <div class="h-test-avatar" style="background: #222a18; color: #a3e635;">SM</div>
+                  <div class="h-test-info">
+                    <span class="h-test-name">Sophia Mitchell</span>
+                    <span class="h-test-role">Operations Director, NexaFlow</span>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
     <section class="section-contact-form" id="contactSection">
       <div class="wrap">
         <div class="contact-form-grid">
@@ -1632,6 +1435,85 @@
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PREMIUM CTA SECTION ============================ -->
+        <!-- CALL TO ACTION (CTA) SECTION - 2-COLUMN WITH RIGHT VISUAL -->
+    <section class="cta-premium-section" id="ctaSection">
+      <div class="wrap">
+        <div class="cta-box-container cta-split-layout">
+          <!-- Background Glow Halo -->
+          <div class="cta-aurora-bg"><div class="cta-aurora-glow"></div></div>
+
+          <!-- Left Column: Content -->
+          <div class="cta-content-col reveal">
+            <div class="hero-eyebrow-pill" style="margin-bottom: 20px; display: inline-flex;">
+              <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+              <span>Let's Build Something Exceptional</span>
+              <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+            </div>
+
+            <h2 class="cta-split-heading">
+              Ready to Scale Your <br/>
+              <span class="cta-gradient-accent">Digital Presence?</span>
+            </h2>
+
+            <p class="cta-split-subtitle">
+              Partner with our elite web agency to engineer high-converting platforms, dominate search rankings, and accelerate compounding business growth.
+            </p>
+
+            <div class="cta-benefits-list">
+              <div class="cta-benefit-item">
+                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <span>100% Custom Engineering</span>
+              </div>
+              <div class="cta-benefit-item">
+                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <span>Sub-Second Speeds</span>
+              </div>
+              <div class="cta-benefit-item">
+                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <span>Dedicated Specialists</span>
+              </div>
+            </div>
+
+            <div class="cta-split-actions">
+              <a href="contact.html" class="btn btn-solid cta-main-action">
+                <span>Get Started Now</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="services.html" class="btn btn-ghost cta-secondary-action">Explore Services</a>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual with Badges -->
+          <div class="cta-visual-col reveal-right">
+            <div class="cta-image-wrapper">
+              <div class="cta-image-glow"></div>
+              
+              <div class="cta-float-badge badge-top-left float-anim-1">
+                <div class="badge-icon-star">★</div>
+                <div class="badge-text-group">
+                  <span class="badge-val">4.9 / 5.0</span>
+                  <span class="badge-lbl">Client Rating</span>
+                </div>
+              </div>
+
+              <div class="cta-float-badge badge-bottom-right float-anim-3">
+                <div class="badge-icon-growth">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                </div>
+                <div class="badge-text-group">
+                  <span class="badge-val">+250% Growth</span>
+                  <span class="badge-lbl">Proven Results</span>
+                </div>
+              </div>
+
+              <img src="images/cta-person-illustration.png" alt="Web Agency Specialist" class="cta-person-img" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>

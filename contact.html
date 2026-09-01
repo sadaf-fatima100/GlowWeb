@@ -198,6 +198,22 @@
         gap: 16px;
         white-space: nowrap;
       }
+      .contact-hero-accent,
+      .contact-hero-row em {
+        font-style: normal;
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block;
+      }
+      html:not([data-theme="dark"]) .contact-hero-accent,
+      [data-theme='light'] .contact-hero-accent,
+      html:not([data-theme="dark"]) .contact-hero-row em,
+      [data-theme='light'] .contact-hero-row em {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
       .title-icon-btn {
         display: inline-flex;
         align-items: center;
@@ -361,7 +377,7 @@
             ></span>
             <span>wth</span>
           </div>
-          <div class="contact-hero-row"><span>Of Your Business</span></div>
+          <div class="contact-hero-row"><span class="contact-hero-accent">Of Your Business.</span></div>
         </div>
         <div class="contact-hero-desc reveal" style="animation-delay: 0.2s">
           We turn great ideas into working products.<br />

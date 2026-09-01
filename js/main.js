@@ -134,35 +134,38 @@
   const portCards = document.querySelectorAll('.port-card.mix');
 
   if (filterPills.length > 0 && portCards.length > 0) {
+    const applyFilter = (filterValue) => {
+      portCards.forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        if (filterValue === 'all' || filterValue === cardCat) {
+          card.classList.remove('mix-hidden-layout');
+          requestAnimationFrame(() => {
+            card.classList.remove('mix-hide');
+          });
+        } else {
+          card.classList.add('mix-hide');
+          setTimeout(() => {
+            if (card.classList.contains('mix-hide')) {
+              card.classList.add('mix-hidden-layout');
+            }
+          }, 350);
+        }
+      });
+    };
+
+    // Initialize with whatever pill is marked active by default (e.g. web)
+    const initialActive = document.querySelector('.filter-pill.active');
+    if (initialActive) {
+      const initFilter = initialActive.getAttribute('data-filter') || 'web';
+      applyFilter(initFilter);
+    }
+
     filterPills.forEach(pill => {
       pill.addEventListener('click', () => {
-        // Remove active class from all pills
         filterPills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
-
         const filterValue = pill.getAttribute('data-filter');
-
-        portCards.forEach(card => {
-          const cardCat = card.getAttribute('data-cat');
-          
-          if (filterValue === 'all' || filterValue === cardCat) {
-            // Show Card
-            card.classList.remove('mix-hidden-layout');
-            // Small delay to allow layout to settle before fading in
-            setTimeout(() => {
-              card.classList.remove('mix-hide');
-            }, 50);
-          } else {
-            // Hide Card
-            card.classList.add('mix-hide');
-            // Wait for opacity transition before hiding layout
-            setTimeout(() => {
-              if (card.classList.contains('mix-hide')) {
-                card.classList.add('mix-hidden-layout');
-              }
-            }, 500); // 500ms matches the CSS transition duration
-          }
-        });
+        applyFilter(filterValue);
       });
     });
   }
