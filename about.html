@@ -1959,15 +1959,20 @@
         .core-card-badge {
           position: absolute;
           top: -16px;
-          padding: 7px 22px;
+          padding: 8px 24px;
           font-family: 'Plus Jakarta Sans', sans-serif !important;
           font-size: 11.5px !important;
-          font-weight: 700 !important;
-          letter-spacing: 0.06em !important;
+          font-weight: 800 !important;
+          letter-spacing: 0.08em !important;
           text-transform: uppercase;
-          z-index: 3;
+          z-index: 10 !important;
           border-radius: 999px !important;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .core-card-wrapper:hover .core-card-badge {
+          transform: translateY(-4px) scale(1.04);
         }
 
         .core-card-bg-layer {
@@ -1995,7 +2000,8 @@
           background: rgba(0, 217, 143, 0.15) !important;
           color: var(--accent-primary) !important;
           border: 1px solid rgba(0, 217, 143, 0.35) !important;
-          left: 40px;
+          left: 48px;
+          box-shadow: 0 0 20px rgba(0, 217, 143, 0.35) !important;
         }
         
         /* 2. Vision (High-Impact Hero Emerald Card with Perfect 11:1 Dark Contrast) */
@@ -2009,8 +2015,8 @@
           background: var(--accent-primary) !important;
           color: #03140a !important;
           font-weight: 800 !important;
-          right: 40px;
-          box-shadow: 0 4px 16px rgba(0, 217, 143, 0.4) !important;
+          right: 48px;
+          box-shadow: 0 0 28px rgba(0, 217, 143, 0.6), 0 4px 16px rgba(0, 217, 143, 0.4) !important;
         }
 
         /* 3. Mission (Cyan Teal Aura) */
@@ -2022,7 +2028,8 @@
           background: rgba(79, 235, 253, 0.15) !important;
           color: var(--accent-teal) !important;
           border: 1px solid rgba(79, 235, 253, 0.35) !important;
-          left: 40px;
+          left: 48px;
+          box-shadow: 0 0 20px rgba(0, 217, 143, 0.35) !important;
         }
 
         @media (max-width: 768px) {
@@ -2045,15 +2052,15 @@
         }
       </style>
 
-      <section class="section" style="padding-bottom: 40px; overflow: hidden;">
+      <section class="section" style="padding-top: 30px; padding-bottom: 60px; overflow: visible;">
         <div class="wrap">
           
           <!-- History -->
           <div class="core-card-wrapper reveal">
             <div class="core-card-anim">
               <div class="core-card-bg-layer"></div>
+              <div class="core-card-badge">THE BEGINNING</div>
               <div class="core-card-content">
-                <div class="core-card-badge">THE BEGINNING</div>
                 <div class="core-card-icon" style="background: rgba(0, 217, 143, 0.08);">
                   <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
@@ -2069,8 +2076,8 @@
           <div class="core-card-wrapper reveal">
             <div class="core-card-anim">
               <div class="core-card-bg-layer"></div>
+              <div class="core-card-badge">THE FUTURE</div>
               <div class="core-card-content">
-                <div class="core-card-badge" style="background: var(--accent-primary); color: #fff;">THE FUTURE</div>
                 <div class="core-card-icon" style="background: rgba(0, 217, 143, 0.12);">
                   <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                 </div>
@@ -2086,8 +2093,8 @@
           <div class="core-card-wrapper reveal">
             <div class="core-card-anim">
               <div class="core-card-bg-layer"></div>
+              <div class="core-card-badge">THE GOAL</div>
               <div class="core-card-content">
-                <div class="core-card-badge">THE GOAL</div>
                 <div class="core-card-icon" style="background: rgba(0, 217, 143, 0.08);">
                   <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                 </div>
