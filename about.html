@@ -877,24 +877,24 @@
             <span>Scalable Architecture</span>
           </div>
         </div>
-        <!-- Modern 3-Column Symmetrical Showcase Gallery -->
+        <!-- Modern 3-Column Overlapping Photo Collage -->
         <div class="about-hero-gallery-v2 reveal">
           <div class="about-gallery-card">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=85" alt="Creative Collaboration" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=85" alt="Creative Collaboration" loading="lazy" />
             <div class="about-gallery-card-badge">
               <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00d98f;"></span>
               <span>Creative Collaboration</span>
             </div>
           </div>
           <div class="about-gallery-card">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=85" alt="Full-Stack Engineering" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85" alt="Full-Stack Capabilities" loading="lazy" />
             <div class="about-gallery-card-badge">
               <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00d98f;"></span>
               <span>Full-Stack Engineering</span>
             </div>
           </div>
           <div class="about-gallery-card">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=85" alt="Agile Execution" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="Agile Execution" loading="lazy" />
             <div class="about-gallery-card-badge">
               <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00d98f;"></span>
               <span>Agile Execution</span>
@@ -1613,444 +1613,92 @@
         </div>
       </div>
     </section>
-      <style>
-        /* ============ CORE VALUES — Editorial Stacked Rows ============ */
-        .core-values-section {
-          padding: 32px 0 80px;
-        }
+    <!-- =========================================================
+         OUR FOUNDATION, VISION & MISSION (EDITORIAL SPLIT / NO CARDS)
+         ========================================================= -->
+    <section class="about-philosophy-section section" id="philosophySection">
+      <div class="wrap">
+        <div class="philosophy-layout">
+          <!-- Left Column: Sticky Editorial Header -->
+          <div class="philosophy-header-col reveal-left">
+            <div class="section-num-label">
+              <span class="sec-num">04</span>
+              <span class="sec-slash">/</span>
+              <span class="sec-tag">Brand Philosophy</span>
+            </div>
+            <h2 class="philosophy-main-title">
+              The Purpose Behind <br />
+              <span class="gradient-text">Everything We Build.</span>
+            </h2>
+            <p class="philosophy-lead">
+              We don't just write code or design interfaces. We align our heritage, long-term vision, and daily execution to engineer transformative digital growth for our partners worldwide.
+            </p>
+            
+            <!-- Live status badge (home page parity) -->
+            <div class="hero-live-eyebrow">
+              <span class="hero-live-dot"></span>
+              <span class="hero-live-text">Engineered for Ambitious Brands</span>
+            </div>
+          </div>
 
-        .core-values-list {
-          display: flex;
-          flex-direction: column;
-          max-width: 960px;
-          margin: 0 auto;
-          gap: 0;
-        }
-
-        /* Each row = one value */
-        .cv-row {
-          display: grid;
-          grid-template-columns: 80px 1px 1fr;
-          gap: 0 36px;
-          align-items: start;
-          padding: 48px 0;
-          position: relative;
-          cursor: default;
-          transition: background 0.3s ease;
-        }
-
-        /* Horizontal divider between rows */
-        .cv-row + .cv-row {
-          border-top: 1px solid var(--border);
-        }
-
-        /* Subtle hover bg flush */
-        .cv-row:hover {
-          background: rgba(0, 217, 143, 0.03);
-        }
-
-        /* Left: Large index number */
-        .cv-index {
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 11px;
-          font-weight: 700;
-          color: var(--accent-primary);
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          padding-top: 6px;
-          line-height: 1;
-          opacity: 0.85;
-        }
-
-        /* Center: 1px vertical rule */
-        .cv-rule {
-          width: 1px;
-          background: var(--border);
-          align-self: stretch;
-          min-height: 100%;
-          transition: background 0.3s ease;
-        }
-
-        .cv-row:hover .cv-rule {
-          background: rgba(0, 217, 143, 0.5);
-        }
-
-        /* Right: Content block */
-        .cv-body {
-          display: grid;
-          grid-template-columns: 1fr auto;
-          align-items: start;
-          gap: 24px;
-        }
-
-        .cv-text {}
-
-        /* Tag above title */
-        .cv-tag {
-          display: inline-block;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 10.5px;
-          font-weight: 700;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          margin-bottom: 12px;
-          color: var(--accent-primary);
-          opacity: 0.8;
-        }
-
-        .cv-title {
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: clamp(1.5rem, 2.8vw, 2rem);
-          font-weight: 700;
-          letter-spacing: -0.03em;
-          line-height: 1.15;
-          color: var(--fg);
-          margin: 0 0 14px;
-          transition: color 0.3s ease;
-        }
-
-        .cv-row:hover .cv-title {
-          color: var(--accent-primary);
-        }
-
-        .cv-desc {
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-          line-height: 1.7;
-          color: var(--fg-soft);
-          margin: 0;
-          max-width: 520px;
-        }
-
-        /* Right: Icon glyph */
-        .cv-icon {
-          width: 52px;
-          height: 52px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          opacity: 0.55;
-          transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1);
-        }
-
-        .cv-row:hover .cv-icon {
-          opacity: 1;
-          transform: scale(1.12) rotate(4deg);
-        }
-
-        /* Light mode tweaks */
-        html:not([data-theme="dark"]) .cv-row + .cv-row,
-        [data-theme='light'] .cv-row + .cv-row {
-          border-top: 1px solid rgba(10, 26, 16, 0.1);
-        }
-
-        html:not([data-theme="dark"]) .cv-rule,
-        [data-theme='light'] .cv-rule {
-          background: rgba(10, 26, 16, 0.12);
-        }
-
-        html:not([data-theme="dark"]) .cv-row:hover .cv-rule,
-        [data-theme='light'] .cv-row:hover .cv-rule {
-          background: rgba(0, 143, 88, 0.55);
-        }
-
-        html:not([data-theme="dark"]) .cv-row:hover {
-          background: rgba(0, 143, 88, 0.04);
-        }
-
-        /* Mobile */
-        @media (max-width: 640px) {
-          .cv-row {
-            grid-template-columns: 1fr;
-            gap: 0;
-            padding: 36px 0;
-          }
-          .cv-rule { display: none; }
-          .cv-index { margin-bottom: 16px; }
-          .cv-body { grid-template-columns: 1fr; }
-          .cv-icon { display: none; }
-        }
-      </style>
-
-      <section class="core-values-section">
-        <div class="wrap">
-          <div class="core-values-list">
-
-            <!-- History -->
-            <div class="cv-row reveal">
-              <span class="cv-index">01</span>
-              <div class="cv-rule"></div>
-              <div class="cv-body">
-                <div class="cv-text">
-                  <span class="cv-tag">The Beginning</span>
-                  <h3 class="cv-title">Our History</h3>
-                  <p class="cv-desc">From humble beginnings to a trusted web agency, we've consistently transformed ideas into impactful results for businesses worldwide.</p>
-                </div>
-                <div class="cv-icon">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                  </svg>
+          <!-- Right Column: 3 Editorial Rows (NO CARDS) -->
+          <div class="philosophy-content-col reveal-right">
+            
+            <!-- Row 1: History -->
+            <div class="philosophy-row">
+              <div class="philosophy-row-num">01</div>
+              <div class="philosophy-row-body">
+                <span class="philosophy-row-eyebrow">The Beginning · Foundation</span>
+                <h3 class="philosophy-row-title">Our History</h3>
+                <p class="philosophy-row-desc">
+                  From humble beginnings to an elite web agency, we’ve consistently transformed ambitious ideas into impactful, high-converting digital results for businesses worldwide.
+                </p>
+                <div class="philosophy-row-tags">
+                  <span class="philosophy-mini-tag">Rooted in Craft</span>
+                  <span class="philosophy-mini-tag">Independent &amp; Agile</span>
+                  <span class="philosophy-mini-tag">Proven Track Record</span>
                 </div>
               </div>
             </div>
 
-            <!-- Vision -->
-            <div class="cv-row reveal">
-              <span class="cv-index">02</span>
-              <div class="cv-rule"></div>
-              <div class="cv-body">
-                <div class="cv-text">
-                  <span class="cv-tag">The Future</span>
-                  <h3 class="cv-title">Our Vision</h3>
-                  <p class="cv-desc">To be a global leader in delivering cutting-edge web solutions that inspire innovation, redefining online success, &amp; serving digital world globally.</p>
-                </div>
-                <div class="cv-icon">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
-                  </svg>
+            <!-- Row 2: Vision -->
+            <div class="philosophy-row">
+              <div class="philosophy-row-num">02</div>
+              <div class="philosophy-row-body">
+                <span class="philosophy-row-eyebrow">The Future · Trajectory</span>
+                <h3 class="philosophy-row-title">Our Vision</h3>
+                <p class="philosophy-row-desc">
+                  To be a global leader in delivering cutting-edge web solutions that inspire technological innovation, redefining online success, &amp; serving the digital world globally.
+                </p>
+                <div class="philosophy-row-tags">
+                  <span class="philosophy-mini-tag">Global Scalability</span>
+                  <span class="philosophy-mini-tag">Edge-First Architecture</span>
+                  <span class="philosophy-mini-tag">Next-Gen UX</span>
                 </div>
               </div>
             </div>
 
-            <!-- Mission -->
-            <div class="cv-row reveal">
-              <span class="cv-index">03</span>
-              <div class="cv-rule"></div>
-              <div class="cv-body">
-                <div class="cv-text">
-                  <span class="cv-tag">The Goal</span>
-                  <h3 class="cv-title">Our Mission</h3>
-                  <p class="cv-desc">Our mission is to empower businesses with innovative web solutions that drive growth, enhance online presence, and deliver exceptional results.</p>
-                </div>
-                <div class="cv-icon">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="1.5">
-                    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
-                  </svg>
+            <!-- Row 3: Mission -->
+            <div class="philosophy-row">
+              <div class="philosophy-row-num">03</div>
+              <div class="philosophy-row-body">
+                <span class="philosophy-row-eyebrow">The Goal · Commitment</span>
+                <h3 class="philosophy-row-title">Our Mission</h3>
+                <p class="philosophy-row-desc">
+                  Our mission is to empower businesses with innovative web solutions that drive compounding growth, enhance online presence, and deliver exceptional, measurable ROI.
+                </p>
+                <div class="philosophy-row-tags">
+                  <span class="philosophy-mini-tag">Revenue Focused</span>
+                  <span class="philosophy-mini-tag">Client-Obsessed</span>
+                  <span class="philosophy-mini-tag">Compounding ROI</span>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
-      </section>
-
-
-
-
-
-
-
-
-        <!-- CONTACT FORM SECTION -->
-
-
-
-
-
-        /* Illuminating Glowing Border on Hover */
-        .core-card-wrapper:hover .core-card-content {
-          transform: translateY(-8px) scale(1.015) !important;
-          border-color: #00d98f !important;
-          box-shadow: 
-            0 0 35px rgba(0, 217, 143, 0.45),
-            0 20px 50px rgba(0, 0, 0, 0.4),
-            inset 0 0 20px rgba(0, 217, 143, 0.15) !important;
-        }
-
-        .core-card-icon {
-          flex-shrink: 0;
-          width: 130px;
-          height: 130px;
-          background: rgba(0, 217, 143, 0.08) !important;
-          border: 1px solid rgba(0, 217, 143, 0.25) !important;
-          border-radius: 18px !important;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
-        }
-
-        .core-card-wrapper:hover .core-card-icon {
-          transform: scale(1.1) rotate(4deg) !important;
-          border-color: #00d98f !important;
-          box-shadow: 0 0 30px rgba(0, 217, 143, 0.6) !important;
-        }
-
-        .core-card-wrapper:hover .core-card-icon svg {
-          filter: drop-shadow(0 0 10px #00d98f);
-        }
-
-        .core-card-title {
-          font-family: 'Plus Jakarta Sans', sans-serif !important;
-          font-size: clamp(1.8rem, 3vw, 2.2rem);
-          font-weight: 700;
-          margin-bottom: 12px;
-          letter-spacing: -0.025em;
-          color: var(--fg) !important;
-        }
-
-        .core-card-text p {
-          font-family: 'Plus Jakarta Sans', sans-serif !important;
-          font-size: clamp(1rem, 1.6vw, 1.125rem);
-          font-weight: 400;
-          line-height: 1.65;
-          color: var(--fg-soft) !important;
-          margin: 0;
-        }
-
-        .core-card-badge {
-          position: absolute;
-          top: -16px;
-          padding: 8px 24px;
-          font-family: 'Plus Jakarta Sans', sans-serif !important;
-          font-size: 11.5px !important;
-          font-weight: 800 !important;
-          letter-spacing: 0.08em !important;
-          text-transform: uppercase;
-          z-index: 10 !important;
-          border-radius: 999px !important;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-        }
-
-        .core-card-wrapper:hover .core-card-badge {
-          transform: translateY(-4px) scale(1.04);
-        }
-
-        .core-card-bg-layer {
-          position: absolute;
-          top: 0; left: 0; width: 100%; height: 100%;
-          background: var(--surface-raised);
-          z-index: 1;
-          border-radius: 20px;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-          border: 1px solid var(--border);
-          transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .core-card-wrapper:hover .core-card-bg-layer {
-          border-color: rgba(0, 217, 143, 0.4);
-          box-shadow: 0 0 35px rgba(0, 217, 143, 0.25);
-        }
-
-        /* 1. History (Emerald Green Aura) */
-        .core-card-wrapper:nth-child(1) .core-card-content {
-          background: linear-gradient(135deg, rgba(0, 217, 143, 0.08) 0%, var(--surface) 100%) !important;
-          border: 1px solid rgba(0, 217, 143, 0.25) !important;
-        }
-        .core-card-wrapper:nth-child(1) .core-card-badge {
-          background: rgba(0, 217, 143, 0.15) !important;
-          color: var(--accent-primary) !important;
-          border: 1px solid rgba(0, 217, 143, 0.35) !important;
-          left: 48px;
-          box-shadow: 0 0 20px rgba(0, 217, 143, 0.35) !important;
-        }
-        
-        /* 2. Vision (High-Impact Hero Emerald Card with Perfect 11:1 Dark Contrast) */
-        .core-card-wrapper:nth-child(2) .core-card-content {
-          background: linear-gradient(135deg, rgba(0, 217, 143, 0.15) 0%, var(--surface-raised) 100%) !important;
-          border: 1px solid rgba(0, 217, 143, 0.4) !important;
-          flex-direction: row-reverse;
-          text-align: right;
-        }
-        .core-card-wrapper:nth-child(2) .core-card-badge {
-          background: var(--accent-primary) !important;
-          color: #03140a !important;
-          font-weight: 800 !important;
-          right: 48px;
-          box-shadow: 0 0 28px rgba(0, 217, 143, 0.6), 0 4px 16px rgba(0, 217, 143, 0.4) !important;
-        }
-
-        /* 3. Mission (Cyan Teal Aura) */
-        .core-card-wrapper:nth-child(3) .core-card-content {
-          background: linear-gradient(135deg, rgba(79, 235, 253, 0.08) 0%, var(--surface) 100%) !important;
-          border: 1px solid rgba(79, 235, 253, 0.25) !important;
-        }
-        .core-card-wrapper:nth-child(3) .core-card-badge {
-          background: rgba(79, 235, 253, 0.15) !important;
-          color: var(--accent-teal) !important;
-          border: 1px solid rgba(79, 235, 253, 0.35) !important;
-          left: 48px;
-          box-shadow: 0 0 20px rgba(0, 217, 143, 0.35) !important;
-        }
-
-        @media (max-width: 768px) {
-          .core-card-content {
-            flex-direction: column !important;
-            text-align: center !important;
-            padding: 32px 24px;
-            gap: 20px;
-          }
-          .core-card-icon {
-            width: 90px; height: 90px;
-          }
-          .core-card-wrapper:nth-child(2) .core-card-badge,
-          .core-card-wrapper:nth-child(1) .core-card-badge,
-          .core-card-wrapper:nth-child(3) .core-card-badge {
-            left: 50% !important;
-            right: auto !important;
-            transform: translateX(-50%) !important;
-          }
-        }
-      </style>
-
-      <section class="section" style="padding-top: 40px; padding-bottom: 72px; overflow: visible;">
-        <div class="wrap">
-          
-          <!-- History -->
-          <div class="core-card-wrapper reveal">
-            <div class="core-card-anim">
-              <div class="core-card-bg-layer"></div>
-              <div class="core-card-badge">THE BEGINNING</div>
-              <div class="core-card-content">
-                <div class="core-card-icon" style="background: rgba(0, 217, 143, 0.08);">
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div class="core-card-text">
-                  <h3 class="core-card-title">Our History</h3>
-                  <p>From humble beginnings to a trusted web agency, we’ve consistently transformed ideas into impactful results for businesses worldwide.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Vision -->
-          <div class="core-card-wrapper reveal">
-            <div class="core-card-anim">
-              <div class="core-card-bg-layer"></div>
-              <div class="core-card-badge">THE FUTURE</div>
-              <div class="core-card-content">
-                <div class="core-card-icon" style="background: rgba(0, 217, 143, 0.12);">
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                </div>
-                <div class="core-card-text">
-                  <h3 class="core-card-title">Our Vision</h3>
-                  <p>To be a global leader in delivering cutting-edge web solutions that inspire innovation, redefining online success, & serving digital world globally.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mission -->
-          <div class="core-card-wrapper reveal">
-            <div class="core-card-anim">
-              <div class="core-card-bg-layer"></div>
-              <div class="core-card-badge">THE GOAL</div>
-              <div class="core-card-content">
-                <div class="core-card-icon" style="background: rgba(0, 217, 143, 0.08);">
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                </div>
-                <div class="core-card-text">
-                  <h3 class="core-card-title">Our Mission</h3>
-                  <p>Our mission is to empower businesses with innovative web solutions that drive growth, enhance online presence, and deliver exceptional results.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      </div>
+    </section>
         <!-- CONTACT FORM SECTION -->
     <section class="section-contact-form" id="contactSection">
       <div class="wrap">
