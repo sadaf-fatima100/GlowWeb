@@ -60,8 +60,9 @@
         margin-bottom: 16px;
       }
       .blog-tag {
-        background: rgba(255, 74, 90, 0.08);
-        color: #ff4a5a;
+        background: rgba(0, 217, 143, 0.12);
+        color: var(--accent-primary);
+        border: 1px solid rgba(0, 217, 143, 0.28);
         padding: 6px 14px;
         border-radius: 999px;
         font-size: 11px;
@@ -69,6 +70,11 @@
         font-family: var(--font-mono);
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        box-shadow: 0 0 10px rgba(0, 217, 143, 0.1);
+        display: inline-block;
+      }
+      .blog-card {
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, box-shadow 0.3s ease;
       }
       .blog-date {
         font-size: 12px;
@@ -413,87 +419,71 @@
         }
       }
     </style>
-    <div class="blog-hero-wrapper">
-      <div class="wrap blog-hero-grid">
-        <div class="blog-hero-text reveal">
-          <div class="eyebrow">Our Blog</div>
-          <h1
-            class="webagency-heading photo-heading"
-            style="margin-bottom: 24px"
-          >
-            <span class="heading-top">Our Blog -</span>
-            <span class="heading-sub"
-              >Insights, Tips, and Trends for Digital Success</span
-            >
-          </h1>
-          <p class="blog-hero-lede">
-            Stay updated with the latest industry trends, expert tips, and
-            actionable insights to enhance your digital strategy and stay ahead
-            of the competition around the globe.
-          </p>
-          <div
-            class="blog-hero-action-row"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 40px;
-              flex-wrap: wrap;
-            "
-          >
-            <a
-              href="contact.html"
-              class="blog-hero-cta"
-              style="margin-bottom: 0"
-              >Contact Us Now</a
-            >
-            <div class="blog-hero-stats">
-              <div class="stat-col">
-                <div class="stat-eyebrow">Upto</div>
-                <div class="stat-val">15%</div>
-                <div class="stat-label">Discount on 1st order</div>
-              </div>
-              <div class="stat-col">
-                <div class="stat-eyebrow">Upto</div>
-                <div class="stat-val">50%</div>
-                <div class="stat-label">Growth Estimate</div>
-              </div>
-            </div>
+    <!-- Centered Blog Hero Section (Contact Page Parity) -->
+    <div class="blog-hero-centered-wrapper">
+      <div class="wrap" style="position: relative; z-index: 2">
+        <div class="hero-eyebrow-pill reveal" style="margin: 0 auto 20px; display: inline-flex;">
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+          <span>Web Agency Journal &amp; Insights</span>
+          <span class="hero-sparkle"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/></svg></span>
+        </div>
+        <div class="blog-hero-title reveal" style="animation-delay: 0.1s">
+          <div class="blog-hero-row">
+            <span>Explore Ideas</span>
+            <span class="title-icon-btn" title="Curated Insights">
+              <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </span>
+            <span>&amp; Strategies</span>
+          </div>
+          <div class="blog-hero-row">
+            <span>That Fuel Modern</span>
+            <span class="title-toggle-switch" aria-hidden="true">
+              <span class="title-toggle-knob"></span>
+            </span>
+            <em>Growth.</em>
+            <svg class="title-cursor-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.9 2.1c-.5-.3-1.1 0-1.3.5-.1.2-.1.5 0 .7l5.6 17.2c.2.6.9.9 1.5.6.3-.1.5-.4.6-.7l2.8-5.7 5.7-2.8c.6-.3.8-1 .5-1.6-.1-.3-.4-.5-.7-.6L4.6 2.2c-.2-.1-.5-.1-.7-.1z"/>
+            </svg>
           </div>
         </div>
-        <div class="blog-hero-image-wrap hero-animate-right">
-          <img src="blog_hero_pills.png" alt="Blog Hero Pills Composition" />
+        <p class="blog-hero-desc reveal">
+          Actionable frameworks, engineering deep-dives, and performance marketing playbooks curated by our web specialists to accelerate your digital growth.
+        </p>
+        <div class="blog-filter-bar reveal">
+          <button type="button" class="blog-filter-tag active" data-filter="all">All Articles</button>
+          <button type="button" class="blog-filter-tag" data-filter="webdev">Web Development</button>
+          <button type="button" class="blog-filter-tag" data-filter="seo">SEO Strategy</button>
+          <button type="button" class="blog-filter-tag" data-filter="googleads">Google Ads</button>
+          <button type="button" class="blog-filter-tag" data-filter="ecommerce">E-Commerce</button>
         </div>
       </div>
     </div>
     <section class="section" style="padding-top: 0">
       <div class="wrap blog-grid">
-        <!-- POST 1: Digital Marketing -->
-        <a href="blog-post.html?id=digitalmarketing" target="_blank" class="blog-card reveal-scale spotlight-card">
+        <!-- POST 1: Google Ads -->
+        <a href="blog-post.html?id=googleads" target="_blank" class="blog-card reveal-scale spotlight-card" data-category="googleads">
           <div class="blog-cover media-frame">
             <img
               src="https://webagency.tryshort.com/wp-content/uploads/2025/05/B1-Web-Agency.jpg"
-              alt="Digital Marketing Success"
+              alt="Google Ads Success"
             />
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-tag">Digital Marketing</span>
+              <span class="blog-tag">Google Ads</span>
               <span class="blog-date">January 20, 2022</span>
             </div>
-            <h3>The Ultimate Guide to Digital Marketing Success</h3>
+            <h3>The Ultimate Guide to Google Ads &amp; High-ROI Campaigns</h3>
             <p>
-              Discover actionable strategies to build a robust digital marketing
-              funnel that converts visitors into loyal customers.
+              Discover actionable strategies to craft hyper-targeted PPC ad campaigns that lower CAC and convert visitors into high-value clients.
             </p>
           </div>
         </a>
         <!-- POST 2: SEO -->
-        <a
-          href="blog-post.html?id=seo"
-          target="_blank"
-          class="blog-card reveal-scale spotlight-card"
-          style="--i: 1"
-        >
+        <a href="blog-post.html?id=seo" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 1" data-category="seo">
           <div class="blog-cover media-frame">
             <img
               src="https://webagency.tryshort.com/wp-content/uploads/2025/05/b3-Web-Agency.jpg"
@@ -502,7 +492,7 @@
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-tag">SEO</span>
+              <span class="blog-tag">SEO Strategy</span>
               <span class="blog-date">January 20, 2022</span>
             </div>
             <h3>The Complete Guide to SEO for Better Online Visibility</h3>
@@ -513,7 +503,7 @@
           </div>
         </a>
         <!-- POST 3: Development -->
-        <a href="blog-post.html?id=development" target="_blank" class="blog-card reveal-scale spotlight-card">
+        <a href="blog-post.html?id=development" target="_blank" class="blog-card reveal-scale spotlight-card" data-category="webdev">
           <div class="blog-cover media-frame">
             <img
               src="https://webagency.tryshort.com/wp-content/uploads/2025/05/B2-Web-Agency.jpg"
@@ -522,7 +512,7 @@
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-tag">Development</span>
+              <span class="blog-tag">Web Development</span>
               <span class="blog-date">January 20, 2022</span>
             </div>
             <h3>The Ultimate Guide to Web Development for Businesses</h3>
@@ -533,12 +523,7 @@
           </div>
         </a>
         <!-- POST 4: E-Commerce -->
-        <a
-          href="blog-post.html?id=ecommerce"
-          target="_blank"
-          class="blog-card reveal-scale spotlight-card"
-          style="--i: 1"
-        >
+        <a href="blog-post.html?id=ecommerce" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 1" data-category="ecommerce">
           <div class="blog-cover media-frame">
             <img
               src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
@@ -870,6 +855,41 @@
       </div>
     </footer>
     <script src="js/main.js"></script>
+      <!-- Interactive Category Filter Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.blog-filter-tag');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            blogCards.forEach(card => {
+              const cardCat = card.getAttribute('data-category');
+              if (filter === 'all' || cardCat === filter) {
+                card.style.display = 'flex';
+                requestAnimationFrame(() => {
+                  card.style.opacity = '1';
+                  card.style.transform = 'translateY(0) scale(1)';
+                });
+              } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(12px) scale(0.98)';
+                setTimeout(() => {
+                  if (btn.getAttribute('data-filter') !== 'all' && card.getAttribute('data-category') !== btn.getAttribute('data-filter')) {
+                    card.style.display = 'none';
+                  }
+                }, 220);
+              }
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>
 

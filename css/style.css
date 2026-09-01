@@ -1142,7 +1142,7 @@ html[data-theme="dark"] .theme-toggle .knob {
 .hero-v2-title {
   font-size: clamp(40px, 5.5vw, 68px);
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--fg);
   margin: 0 auto 24px;
@@ -1151,13 +1151,13 @@ html[data-theme="dark"] .theme-toggle .knob {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--fg) 20%, var(--accent-primary) 100%);
+  background: linear-gradient(135deg, #00ffaa 0%, #00d98f 60%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
-  filter: drop-shadow(0 0 25px var(--accent-glow));
-  padding-top: 0.8em; margin-top: -0.8em; padding-bottom: 0.8em;
-  margin-bottom: -0.8em;
+  display: inline;
+  filter: none;
+  padding: 0;
+  margin: 0;
 }
 
 .hero-v2-subtitle {
@@ -3185,18 +3185,46 @@ body:hover .custom-cursor-follower {
 .services-header .eyebrow {
   margin-bottom: 12px;
   display: inline-block;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--accent-primary);
 }
+
+.services-header h2 {
+  color: var(--fg) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+}
+
 .services-header h2 em {
   font-style: normal;
-  color: #ffffff;
+  color: var(--accent-primary);
+  background: linear-gradient(135deg, #00d98f 0%, #00ffaa 50%, #4de6b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+html:not([data-theme="dark"]) .services-header h2,
+[data-theme='light'] .services-header h2 {
+  color: #06170d !important;
+}
+
+html:not([data-theme="dark"]) .services-header h2 em,
+[data-theme='light'] .services-header h2 em {
+  background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #007a49 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .services-header p {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--fg-soft) !important;
   line-height: 1.6;
   margin: 0;
+}
+
+html:not([data-theme="dark"]) .services-header p,
+[data-theme='light'] .services-header p {
+  color: #2b4234 !important;
 }
 
 /* Modern Growth Pillars Grid (Clean, Non-Overlapping Bento-Style Grid) */
@@ -4409,26 +4437,49 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
   animation-play-state: paused;
 }
 
+/* =========================================================
+   UI/UX EXPERT LOGOS VISIBILITY (HIGH CONTRAST & THEME HARMONY)
+   ========================================================= */
 .brand-logo-item {
-  width: 150px;
-  height: 50px;
+  width: 160px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* 1. Dark Mode: Luminous Crisp White Silhouettes (Tier-1 Silicon Valley Standard) */
 .brand-logo-item img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: none !important; /* No grayscale filter - display exact original brand colors */
-  opacity: 1 !important;
-  transition: transform var(--dur-fast) var(--ease);
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.72 !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .brand-logo-item:hover img {
-  transform: scale(1.08);
+  opacity: 1 !important;
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(0, 217, 143, 0.5)) !important;
+  transform: scale(1.08) !important;
+}
+
+/* 2. Light Mode: Clean Charcoal / Full Contrast with Original Reveal on Hover */
+html:not([data-theme="dark"]) .brand-logo-item img,
+[data-theme='light'] .brand-logo-item img {
+  filter: grayscale(100%) brightness(0.2) !important;
+  opacity: 0.65 !important;
+}
+
+html:not([data-theme="dark"]) .brand-logo-item:hover img,
+[data-theme='light'] .brand-logo-item:hover img {
+  filter: none !important;
+  opacity: 1 !important;
+  transform: scale(1.08) !important;
 }
 
 @keyframes brandsScroll {
@@ -4769,6 +4820,7 @@ html[data-theme="dark"] .trusted-brands-head h3 .accent-text {
 .site-footer-premium {
   background: var(--bg);
   color: var(--fg-soft);
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
   padding-top: 80px;
   padding-bottom: 40px;
   border-top: 1px solid var(--border);
@@ -9287,12 +9339,12 @@ h1, h2, h3, h4,
 
 /* 3. Natural Organic Gradient Text (No rigid boxes, no clipped bounds) */
 .gradient-text {
-  background: linear-gradient(135deg, #00d98f 0%, #4FEBFD 100%) !important;
+  background: linear-gradient(135deg, #00ffaa 0%, #00d98f 50%, #38bdf8 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   display: inline !important; /* Pure inline flow - not inline-block */
   font-weight: inherit !important;
-  filter: drop-shadow(0 0 24px rgba(0, 217, 143, 0.4)) !important;
+  filter: none !important; /* Strictly no drop-shadow on clipped text to eliminate sharp rectangular edges */
   padding: 0 !important;
   margin: 0 !important;
   box-decoration-break: clone !important;
@@ -9565,7 +9617,7 @@ h1, h2, h3, h4,
 
 /* 2. Hero Headline H1 (Requested Desktop/Laptop Spec: 82px / 86.92px / 800) */
 .hero-center-content {
-  max-width: 1240px !important;
+  max-width: 980px !important;
   width: 100% !important;
   margin: 0 auto !important;
 }
@@ -9574,13 +9626,13 @@ h1, h2, h3, h4,
 h1.hero-v2-title,
 .webagency-hero-v2 h1 {
   font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
-  font-size: clamp(54px, 5.7vw, 82px) !important;
-  font-weight: 800 !important;
-  line-height: clamp(60px, 6vw, 86.92px) !important;
+  font-size: clamp(38px, 4.6vw, 62px) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
   letter-spacing: -0.034em !important;
   color: var(--fg) !important;
-  max-width: 1200px !important;
-  margin: 0 auto 20px !important;
+  max-width: 920px !important;
+  margin: 0 auto 22px !important;
   text-wrap: balance !important;
 }
 
@@ -9588,9 +9640,9 @@ h1.hero-v2-title,
   .hero-v2-title,
   h1.hero-v2-title,
   .webagency-hero-v2 h1 {
-    font-size: 82px !important;
-    line-height: 86.92px !important;
-    font-weight: 800 !important;
+    font-size: 62px !important;
+    line-height: 1.15 !important;
+    font-weight: 700 !important;
   }
 }
 
@@ -10230,4 +10282,292 @@ html:not([data-theme="dark"]) .h-marquee-container,
 .services-circle:hover .get-started-btn {
   gap: 10px;
   color: #00ffaa !important;
+}
+
+
+/* =========================================================
+   LIGHT THEME 3D ISOMETRIC CUBES & HEADLINE CLARITY OVERRIDES
+   ========================================================= */
+
+/* 1. Light Theme Shapes: Ultra-Clean, Non-Cluttery Whisper-Light Wireframes */
+html:not([data-theme="dark"]) .hero-hex-blocks,
+[data-theme='light'] .hero-hex-blocks {
+  opacity: 0.42 !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-left,
+[data-theme='light'] .hero-hex-left {
+  mask-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 55%, transparent 88%) !important;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 55%, transparent 88%) !important;
+}
+
+html:not([data-theme="dark"]) .hero-hex-right,
+[data-theme='light'] .hero-hex-right {
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 55%, transparent 88%) !important;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 55%, transparent 88%) !important;
+}
+
+html:not([data-theme="dark"]) .iso-face-top,
+[data-theme='light'] .iso-face-top,
+html:not([data-theme="dark"]) .cube-face-top,
+[data-theme='light'] .cube-face-top {
+  fill: rgba(0, 217, 143, 0.05) !important;
+  stroke: rgba(0, 168, 107, 0.5) !important;
+  stroke-width: 0.95px !important;
+}
+
+html:not([data-theme="dark"]) .iso-face-left,
+[data-theme='light'] .iso-face-left,
+html:not([data-theme="dark"]) .cube-face-left,
+[data-theme='light'] .cube-face-left {
+  fill: none !important;
+  stroke: rgba(0, 168, 107, 0.28) !important;
+  stroke-width: 0.85px !important;
+}
+
+html:not([data-theme="dark"]) .iso-face-right,
+[data-theme='light'] .iso-face-right,
+html:not([data-theme="dark"]) .cube-face-right,
+[data-theme='light'] .cube-face-right {
+  fill: none !important;
+  stroke: rgba(0, 168, 107, 0.2) !important;
+  stroke-width: 0.85px !important;
+}
+
+html:not([data-theme="dark"]) .iso-glow-edge,
+[data-theme='light'] .iso-glow-edge,
+html:not([data-theme="dark"]) .cube-glow-edge,
+[data-theme='light'] .cube-glow-edge {
+  stroke: rgba(0, 179, 116, 0.65) !important;
+  stroke-width: 1.2px !important;
+  filter: none !important;
+}
+
+html:not([data-theme="dark"]) .iso-spine,
+[data-theme='light'] .iso-spine {
+  stroke: rgba(0, 179, 116, 0.45) !important;
+  stroke-width: 1px !important;
+  filter: none !important;
+}
+
+html:not([data-theme="dark"]) .iso-dot,
+[data-theme='light'] .iso-dot,
+html:not([data-theme="dark"]) .cube-glow-dot,
+[data-theme='light'] .cube-glow-dot {
+  fill: #00b374 !important;
+  opacity: 0.7 !important;
+  filter: none !important;
+}
+
+.constellation-lines,
+.constellation-lines line {
+  display: none !important;
+}
+
+/* 2. Light Mode Hero Headline & Subtitle Strict High-Contrast Color */
+html:not([data-theme="dark"]) .hero-v2-title,
+[data-theme='light'] .hero-v2-title,
+html:not([data-theme="dark"]) h1.hero-v2-title,
+[data-theme='light'] h1.hero-v2-title,
+html:not([data-theme="dark"]) .webagency-hero-v2 h1,
+[data-theme='light'] .webagency-hero-v2 h1 {
+  color: #06170d !important;
+}
+
+html:not([data-theme="dark"]) .gradient-text,
+[data-theme='light'] .gradient-text {
+  background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #007a49 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html:not([data-theme="dark"]) .hero-v2-subtitle,
+[data-theme='light'] .hero-v2-subtitle {
+  color: #2c4235 !important;
+  font-weight: 500 !important;
+}
+
+
+/* Bento Card Feature Pills Styling */
+.bento-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 99px;
+  background: var(--surface-raised, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border);
+  color: var(--fg-soft);
+  transition: all 0.25s ease;
+  line-height: 1;
+}
+
+.bento-pill.bento-pill-accent {
+  background: rgba(0, 217, 143, 0.12);
+  border-color: rgba(0, 217, 143, 0.35);
+  color: var(--accent-primary);
+}
+
+.bento-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--fg);
+  transform: translateY(-1px);
+}
+
+.hero-sparkle svg {
+  display: inline-block;
+  vertical-align: middle;
+  fill: var(--accent-primary);
+}
+
+/* =========================================================
+   UNIVERSAL LIGHT THEME CONTRAST & VISIBILITY SAFEGUARDS
+   ========================================================= */
+html:not([data-theme="dark"]) h1,
+[data-theme='light'] h1,
+html:not([data-theme="dark"]) h2,
+[data-theme='light'] h2,
+html:not([data-theme="dark"]) h3,
+[data-theme='light'] h3,
+html:not([data-theme="dark"]) h4,
+[data-theme='light'] h4,
+html:not([data-theme="dark"]) .section-head h2,
+[data-theme='light'] .section-head h2,
+html:not([data-theme="dark"]) .services-header h2,
+[data-theme='light'] .services-header h2 {
+  color: #06170d !important;
+}
+
+html:not([data-theme="dark"]) h2 em,
+[data-theme='light'] h2 em,
+html:not([data-theme="dark"]) h3 em,
+[data-theme='light'] h3 em,
+html:not([data-theme="dark"]) .services-header h2 em,
+[data-theme='light'] .services-header h2 em {
+  background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #007a49 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html:not([data-theme="dark"]) .services-header p,
+[data-theme='light'] .services-header p,
+html:not([data-theme="dark"]) .section-head p,
+[data-theme='light'] .section-head p,
+html:not([data-theme="dark"]) .bento-section-header p,
+[data-theme='light'] .bento-section-header p {
+  color: #2c4235 !important;
+}
+
+
+/* =========================================================
+   CENTERED BLOG HERO SECTION (CONTACT PAGE PARITY)
+   ========================================================= */
+.blog-hero-centered-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: clamp(118px, 10vw, 142px);
+  padding-bottom: clamp(50px, 5vw, 75px);
+  text-align: center;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.blog-hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.034em;
+  color: var(--fg);
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.blog-hero-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.blog-hero-row em {
+  font-style: normal;
+  background: linear-gradient(135deg, #00d98f 0%, #00ffaa 50%, #4de6b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html:not([data-theme="dark"]) .blog-hero-row em,
+[data-theme='light'] .blog-hero-row em {
+  background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #007a49 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.blog-hero-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: var(--fg-soft);
+  font-weight: 400;
+  max-width: 640px;
+  margin: 0 auto 34px auto;
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+.blog-filter-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+}
+
+.blog-filter-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-soft);
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.blog-filter-tag:hover {
+  color: var(--fg);
+  background: rgba(0, 217, 143, 0.08);
+}
+
+.blog-filter-tag.active {
+  background: var(--accent-primary);
+  color: #03140a;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 217, 143, 0.35);
+}
+
+@media (max-width: 768px) {
+  .blog-hero-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .blog-hero-title {
+    gap: 6px;
+  }
+  .blog-filter-bar {
+    border-radius: 20px;
+  }
 }
