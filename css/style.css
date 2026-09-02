@@ -9493,7 +9493,7 @@ html:not([data-theme="dark"]) .cta-gradient-accent {
 
 .cta-split-subtitle {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: clamp(14.5px, 1.15vw, 16px) !important;
+  font-size: 16px !important;
   color: rgba(255, 255, 255, 0.72) !important;
   line-height: 1.65 !important;
   max-width: 520px !important;
@@ -10050,8 +10050,13 @@ html[data-theme='dark'] .agency-metric-card::after {
   height: 100% !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  opacity: 0.82 !important;
+  opacity: 0.58 !important;
   overflow: visible !important;
+}
+
+[data-theme="dark"] .hero-hex-blocks,
+html[data-theme="dark"] .hero-hex-blocks {
+  opacity: 0.58 !important;
 }
 
 .hero-hex-blocks svg {
@@ -10095,7 +10100,7 @@ html[data-theme='dark'] .agency-metric-card::after {
 @media (max-width: 1200px) {
   .hero-hex-blocks {
     width: 320px;
-    opacity: 0.75;
+    opacity: 0.52 !important;
   }
 }
 
