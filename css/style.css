@@ -7785,31 +7785,42 @@ html:not([data-theme="dark"]) .ads-step-card,
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  max-width: 1200px;
+  max-width: 1216px !important;
+  width: 100% !important;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
+
 .bento-card {
   background: var(--bento-card-bg);
   border: 1px solid var(--bento-card-border);
   border-radius: 24px;
-  padding: 40px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  width: 100%;
 }
+
 .bento-card:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 10px 40px -10px var(--accent-glow);
+  box-shadow: 0 12px 40px -10px var(--accent-glow);
+  transform: translateY(-4px);
 }
+
 .bento-card.card-large {
   grid-column: span 2;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 280px 1fr;
   align-items: center;
-  gap: 64px;
+  gap: 40px;
+  padding: 40px;
 }
+
 .bento-card h3 {
   font-family: var(--font-display) !important;
   font-size: clamp(20px, 1.4vw, 24px) !important;
@@ -7818,16 +7829,20 @@ html:not([data-theme="dark"]) .ads-step-card,
   color: var(--text-primary);
   letter-spacing: -0.02em;
 }
+
 .bento-card p {
   font-family: var(--font-body) !important;
   color: var(--text-secondary);
   line-height: 1.65 !important;
-  font-size: 16px !important;
+  font-size: 15px !important;
 }
+
 .bento-card .bento-content {
   flex: 1;
   z-index: 2;
+  width: 100%;
 }
+
 .bento-card .bento-visual {
   flex: 1;
   min-height: 200px;
@@ -7836,7 +7851,54 @@ html:not([data-theme="dark"]) .ads-step-card,
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
+
+.bento-card.card-large .bento-visual {
+  background: radial-gradient(circle, rgba(0, 217, 143, 0.12) 0%, rgba(0, 217, 143, 0.02) 60%, transparent 70%);
+  border-radius: 20px;
+}
+
+.bento-card.card-large .bento-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bento-card.card-large h3 {
+  font-size: clamp(22px, 1.8vw, 26px) !important;
+  font-weight: 800 !important;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--fg);
+}
+
+.bento-card.card-large p {
+  font-size: 15px !important;
+  line-height: 1.65;
+  color: var(--fg-soft);
+  margin: 0;
+  max-width: 580px;
+}
+
+.bento-card.card-small {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 36px 32px;
+}
+
+.bento-card.card-small .bento-visual {
+  min-height: 180px;
+}
+
+.bento-card.card-small .bento-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 /* Globe Animation */
 .visual-globe svg {
   animation: float-rotate 20s linear infinite;
@@ -7851,19 +7913,21 @@ html:not([data-theme="dark"]) .ads-step-card,
 /* Analytics Animation */
 .bento-badge {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 20px;
   background: var(--bg-primary);
   border: 1px solid var(--border-glow);
   color: var(--text-primary);
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   box-shadow: 0 0 10px var(--accent-glow);
   z-index: 10;
   display: flex;
   align-items: center;
 }
+
 .analytic-path {
   width: 100%;
   height: 100%;
@@ -7899,10 +7963,11 @@ html:not([data-theme="dark"]) .ads-step-card,
   stroke: var(--accent-primary);
   width: 16px; height: 16px;
 }
+
 /* Orbit Intelligence */
 .orbit-center {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: var(--accent-glow);
   display: flex;
@@ -7916,15 +7981,15 @@ html:not([data-theme="dark"]) .ads-step-card,
   100% { box-shadow: 0 0 0 0 rgba(0, 217, 143, 0); }
 }
 .orbit-center-inner {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: var(--accent-primary);
 }
 .orbit-ring {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   border: 1px dashed var(--border-light);
   border-radius: 50%;
 }
@@ -7932,10 +7997,10 @@ html:not([data-theme="dark"]) .ads-step-card,
   position: absolute;
   top: 0;
   left: 50%;
-  width: 36px;
-  height: 36px;
-  margin-left: -18px;
-  margin-top: -18px;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  margin-top: -17px;
   background: var(--bg-primary);
   border: 1px solid var(--border-light);
   border-radius: 50%;
@@ -7943,13 +8008,13 @@ html:not([data-theme="dark"]) .ads-step-card,
   align-items: center;
   justify-content: center;
   color: var(--text-primary);
-  transform-origin: 18px 98px; /* 18px + 80px radius */
+  transform-origin: 17px 92px; /* 17px + 75px radius */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: border-color 0.3s;
 }
 .orbit-icon:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
 .orbit-icon svg {
-  width: 16px; height: 16px;
+  width: 15px; height: 15px;
 }
 
 .orbit-ring-animated {
@@ -7971,11 +8036,135 @@ html:not([data-theme="dark"]) .ads-step-card,
 @keyframes counter-spin-4 { 0% { transform: rotate(-216deg); } 100% { transform: rotate(-576deg); } }
 @keyframes counter-spin-5 { 0% { transform: rotate(-288deg); } 100% { transform: rotate(-648deg); } }
 
-/* Responsive */
+/* ═══════════════════════════════════════════════════════════
+   BENTO GRID RESPONSIVE SYSTEM (TABLET & MOBILE)
+   ═══════════════════════════════════════════════════════════ */
 @media (max-width: 991px) {
-  .bento-grid { grid-template-columns: 1fr; }
-  .bento-card.card-large { grid-column: span 1; flex-direction: column; gap: 32px; text-align: center; }
-  .bento-card { text-align: center; }
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .bento-card,
+  .bento-card.card-large,
+  .bento-card.card-small {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 32px 24px !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
+  }
+  .bento-card.card-large .bento-visual,
+  .bento-card.card-small .bento-visual {
+    width: 100% !important;
+    min-height: 160px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+  .bento-card.card-large .bento-content,
+  .bento-card.card-small .bento-content {
+    width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .bento-card.card-large .bento-feature-tags {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-capabilities-section {
+    padding: clamp(40px, 7vw, 60px) 0 !important;
+  }
+  .bento-card,
+  .bento-card.card-large,
+  .bento-card.card-small {
+    padding: 24px 18px !important;
+    border-radius: 18px !important;
+  }
+  .bento-card h3,
+  .bento-card.card-large h3,
+  .bento-card.card-small h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  .bento-card p,
+  .bento-card.card-large p,
+  .bento-card.card-small p {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+  .bento-badge {
+    top: 14px !important;
+    right: 14px !important;
+    padding: 4px 10px !important;
+    font-size: 11px !important;
+  }
+  .css-globe {
+    width: 130px !important;
+    height: 130px !important;
+  }
+  .orbit-ring {
+    width: 130px !important;
+    height: 130px !important;
+  }
+  .orbit-icon {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: -15px !important;
+    margin-top: -15px !important;
+    transform-origin: 15px 80px !important; /* 15px + 65px radius */
+  }
+  .orbit-icon svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .orbit-center {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .orbit-center-inner {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-grid {
+    gap: 16px !important;
+  }
+  .bento-card,
+  .bento-card.card-large,
+  .bento-card.card-small {
+    padding: 22px 14px !important;
+    border-radius: 16px !important;
+  }
+  .bento-card h3,
+  .bento-card.card-large h3,
+  .bento-card.card-small h3 {
+    font-size: 18.5px !important;
+  }
+  .bento-card p,
+  .bento-card.card-large p,
+  .bento-card.card-small p {
+    font-size: 13px !important;
+  }
+  .bento-feature-tags {
+    gap: 6px !important;
+  }
+  .bento-pill {
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+  }
 }
 
 
@@ -11298,71 +11487,7 @@ html:not([data-theme="dark"]) .h-testimonial-card,
   color: var(--fg-soft);
 }
 
-/* =========================================================
-   3. BENTO GRID CARD 1 VISUAL BALANCE & PROPORTIONS
-   ========================================================= */
-.bento-card.card-large {
-  grid-column: span 2;
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  align-items: center;
-  gap: 40px;
-  padding: 40px;
-}
 
-.bento-card.card-large .bento-visual {
-  position: relative;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle, rgba(0, 217, 143, 0.12) 0%, rgba(0, 217, 143, 0.02) 60%, transparent 70%);
-  border-radius: 20px;
-}
-
-.css-globe {
-  position: relative;
-  width: 170px;
-  height: 170px;
-  transform-style: preserve-3d;
-  animation: rotate-3d-globe 18s linear infinite;
-  z-index: 2;
-}
-
-.bento-card.card-large .bento-content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.bento-card.card-large h3 {
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0;
-  color: var(--fg);
-}
-
-.bento-card.card-large p {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--fg-soft);
-  margin: 0;
-  max-width: 580px;
-}
-
-@media (max-width: 991px) {
-  .bento-card.card-large {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 28px;
-    text-align: center;
-  }
-  
-  .bento-card.card-large .bento-visual {
-    min-height: 180px;
-  }
-}
 /* =========================================================
    UNIVERSAL BOX STRATEGY ALIGNMENT (NAVBAR & SECTION MATCHING)
    ========================================================= */
@@ -13281,77 +13406,117 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   }
 }
 
-/* ─── 06 Bento Capabilities ─── */
-@media (max-width: 991px) {
-  .bento-grid {
-    gap: 16px !important;
-  }
-  .bento-card {
-    padding: 28px 24px !important;
-  }
-}
 
-@media (max-width: 768px) {
-  .bento-capabilities-section {
-    padding: clamp(40px, 7vw, 60px) 0 !important;
-  }
-  .bento-card {
-    padding: 24px 20px !important;
-    border-radius: 18px !important;
-  }
-  .bento-title {
-    font-size: clamp(18px, 5vw, 22px) !important;
-    line-height: 1.25 !important;
-  }
-  .bento-desc {
-    font-size: 0.88rem !important;
-  }
-  .bento-feature-tags {
-    gap: 6px !important;
-  }
-  .bento-pill {
-    font-size: 0.7rem !important;
-    padding: 4px 10px !important;
-  }
-}
 
-@media (max-width: 480px) {
-  .bento-card {
-    padding: 20px 16px !important;
-    border-radius: 14px !important;
-  }
-  .bento-title { font-size: clamp(16px, 5vw, 20px) !important; }
-}
-
-/* ─── 07 Process Steps ─── */
-@media (max-width: 768px) {
-  .proc-v2-section {
-    padding: clamp(40px, 7vw, 60px) 0 !important;
-  }
-  .proc-v2-number {
-    font-size: 2.5rem !important;
-  }
-  .proc-v2-title {
-    font-size: 1.05rem !important;
-  }
-  .proc-v2-desc {
-    font-size: 0.88rem !important;
-  }
-  .proc-v2-step {
-    padding: 24px 20px !important;
-  }
-}
-
-@media (max-width: 480px) {
+/* ─── 07 Process Steps — Mobile & Tablet Professional Connected Design ─── */
+@media (max-width: 1024px) {
   .proc-v2-steps {
-    gap: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    max-width: 460px !important;
+    margin: 32px auto 0 !important;
   }
+
+  .proc-v2-line {
+    display: none !important;
+  }
+
   .proc-v2-step {
-    padding: 20px 16px !important;
+    padding: 20px 16px 0 !important;
+    text-align: center !important;
+    position: relative !important;
   }
-  .proc-v2-number { font-size: 2rem !important; }
-  .proc-v2-title { font-size: 1rem !important; }
+
+  /* Big elegant numbers matching desktop proportions */
+  .proc-v2-number {
+    font-size: clamp(3.5rem, 12vw, 4.5rem) !important;
+    font-weight: 800 !important;
+    font-family: var(--font-display) !important;
+    color: var(--fg-soft) !important;
+    opacity: 0.55 !important;
+    height: auto !important;
+    line-height: 1 !important;
+    margin-bottom: 14px !important;
+    letter-spacing: -0.04em !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Glowing dot */
+  .proc-v2-dot {
+    width: 14px !important;
+    height: 14px !important;
+    background: var(--accent-primary) !important;
+    border-radius: 50% !important;
+    margin: 0 auto 20px !important;
+    box-shadow: 0 0 16px 5px var(--accent-glow) !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /* Step Title */
+  .proc-v2-title {
+    font-size: clamp(1.3rem, 4.8vw, 1.55rem) !important;
+    font-weight: 800 !important;
+    margin-bottom: 10px !important;
+    color: var(--fg) !important;
+  }
+
+  /* Step Description */
+  .proc-v2-desc {
+    font-size: 15px !important;
+    color: var(--fg-soft) !important;
+    line-height: 1.65 !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Connected glowing vertical line between steps on mobile/tablet */
+  .proc-v2-step:not(:last-child)::after {
+    content: '' !important;
+    display: block !important;
+    width: 2px !important;
+    height: 48px !important;
+    background: linear-gradient(180deg, var(--accent-primary) 0%, rgba(0, 217, 143, 0.2) 100%) !important;
+    box-shadow: 0 0 12px rgba(0, 217, 143, 0.5) !important;
+    margin: 28px auto 0 !important;
+    border-radius: 2px !important;
+  }
 }
+
+@media (max-width: 480px) {
+  .proc-v2-section {
+    padding: 40px 0 !important;
+  }
+
+  .proc-v2-number {
+    font-size: clamp(3.2rem, 13vw, 4rem) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .proc-v2-dot {
+    width: 12px !important;
+    height: 12px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .proc-v2-title {
+    font-size: 1.25rem !important;
+  }
+
+  .proc-v2-desc {
+    font-size: 14px !important;
+    max-width: 300px !important;
+  }
+
+  .proc-v2-step:not(:last-child)::after {
+    height: 40px !important;
+    margin: 22px auto 0 !important;
+  }
+}
+
 
 /* ─── 08 Testimonials Marquee ─── */
 @media (max-width: 768px) {
