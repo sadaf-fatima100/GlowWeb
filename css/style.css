@@ -13461,6 +13461,43 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
 }
 
 /* ─── 11 CTA Split Section ─── */
+@media (max-width: 991px) {
+  /* Override existing 991px rule: hide person image column entirely — no room on tablet */
+  .cta-visual-col { display: none !important; }
+  /* Single column, content fills full width */
+  .cta-box-container.cta-split-layout {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    padding: 44px 28px !important;
+    gap: 0 !important;
+  }
+  .cta-content-col {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  /* Benefits list: center items properly */
+  .cta-benefits-list {
+    justify-content: center !important;
+    gap: 10px 20px !important;
+  }
+  .cta-benefit-item {
+    justify-content: center !important;
+  }
+  /* Actions: stack */
+  .cta-split-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .cta-main-action,
+  .cta-secondary-action {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
 @media (max-width: 768px) {
   .cta-premium-section {
     padding: clamp(32px, 6vw, 48px) 0 !important;
@@ -13468,35 +13505,15 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   .cta-box-container.cta-split-layout {
     padding: 36px 22px !important;
     border-radius: 20px !important;
-    gap: 28px !important;
   }
-  .cta-heading {
-    font-size: clamp(22px, 6vw, 28px) !important;
-    line-height: 1.22 !important;
+  /* Correct class names */
+  .cta-split-heading {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.2 !important;
   }
-  .cta-sub {
+  .cta-split-subtitle {
     font-size: 0.9rem !important;
-  }
-  .cta-split-actions {
-    flex-direction: column !important;
-    gap: 10px !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-  .cta-split-actions .hero-btn-primary,
-  .cta-split-actions .hero-btn-secondary {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-  .cta-image-wrapper {
-    max-height: 260px !important;
-    overflow: hidden !important;
-    border-radius: 14px !important;
-  }
-  .badge-top-left,
-  .badge-bottom-right {
-    font-size: 11px !important;
-    padding: 8px 12px !important;
+    max-width: 100% !important;
   }
 }
 
@@ -13505,17 +13522,17 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     padding: 28px 18px !important;
     border-radius: 16px !important;
   }
-  .cta-heading { font-size: clamp(20px, 6vw, 24px) !important; }
+  .cta-split-heading { font-size: clamp(22px, 6.5vw, 28px) !important; }
   .cta-benefits-list {
     flex-direction: column !important;
-    gap: 6px !important;
+    gap: 8px !important;
     align-items: center !important;
   }
-  .badge-top-left,
-  .badge-bottom-right {
-    display: none !important;
+  .cta-benefit-item {
+    font-size: 13px !important;
   }
 }
+
 
 /* ─── 12 Footer ─── */
 @media (max-width: 768px) {
