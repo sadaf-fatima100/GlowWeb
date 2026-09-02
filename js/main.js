@@ -1031,4 +1031,27 @@
     carousel.addEventListener('touchend', startScroll, { passive: true });
   }
 
+  /* ---------- Universal Global Accordion Toggler ---------- */
+  window.toggleAcc = function(el) {
+    const wrapper = el.closest('.webagency-accordion-wrapper');
+    if (!wrapper) return;
+    const content = wrapper.querySelector('.webagency-accordion-content');
+    const svg = el.querySelector('svg');
+    const allWrappers = document.querySelectorAll('.webagency-accordion-wrapper');
+    const allContents = document.querySelectorAll('.webagency-accordion-content');
+    const allSvgs = document.querySelectorAll('.webagency-accordion-header svg');
+
+    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+    allContents.forEach(c => { c.style.maxHeight = '0px'; });
+    allSvgs.forEach(s => { s.style.transform = 'rotate(0deg)'; });
+    allWrappers.forEach(w => { w.classList.remove('is-open'); });
+
+    if (!isOpen) {
+      content.style.maxHeight = (content.scrollHeight + 16) + 'px';
+      if (svg) svg.style.transform = 'rotate(180deg)';
+      wrapper.classList.add('is-open');
+    }
+  };
+
 })();
