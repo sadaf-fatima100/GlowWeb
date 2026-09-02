@@ -5144,14 +5144,14 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
   gap: 64px;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 }
 
 .footer-info-col .brand-logo-white {
   font-size: 26px;
   font-weight: 800;
   color: var(--fg) !important;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   display: inline-block;
   letter-spacing: -0.02em;
   text-decoration: none;
@@ -5162,8 +5162,9 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
   font-size: 16px;
   line-height: 1.65;
   color: var(--fg-soft);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   max-width: 36ch;
+  text-align: justify;
 }
 
 /* Social links icons row */
