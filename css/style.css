@@ -13313,24 +13313,102 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   }
 }
 
-/* ─── 02 Trusted Partner (collage + text) ─── */
+/* ─── 02 Trusted Partner (Collage + Content Redesign) ─── */
+.tp-heading .accent-text {
+  color: var(--accent-primary) !important;
+  background: linear-gradient(135deg, #00d98f 0%, #00ffaa 50%, #4febfd 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline !important;
+}
+
+html:not([data-theme="dark"]) .tp-heading .accent-text,
+[data-theme='light'] .tp-heading .accent-text {
+  background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 @media (max-width: 768px) {
   .trusted-partner-section {
-    padding: clamp(36px, 7vw, 52px) 0 !important;
+    padding: clamp(36px, 7vw, 54px) 0 !important;
     overflow: hidden !important;
   }
   .trusted-partner-grid-v2 {
     display: flex !important;
     flex-direction: column !important;
-    gap: 28px !important;
+    gap: 32px !important;
     width: 100% !important;
   }
+
+  /* Image Collage */
   .tp-collage {
     width: 100% !important;
     max-width: 100% !important;
     height: 300px !important;
+    display: flex !important;
+    gap: 12px !important;
     margin: 0 auto !important;
   }
+  .tp-img-col-left {
+    width: 48% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    height: 100% !important;
+  }
+  .tp-img-col-right {
+    width: 52% !important;
+    height: 100% !important;
+  }
+  .tp-img-box {
+    border-radius: 18px !important;
+    border: 1.5px solid var(--border-strong) !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12) !important;
+  }
+  .tp-img-box.tp-img-small {
+    height: 58% !important;
+  }
+  .tp-img-box.tp-img-large {
+    height: 100% !important;
+  }
+
+  /* 20K+ Stat Box inside collage */
+  .tp-stat-box {
+    height: 42% !important;
+    border-radius: 18px !important;
+    border: 1.5px solid rgba(0, 217, 143, 0.35) !important;
+    background: var(--surface) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 8px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  }
+  .tp-stat-number {
+    font-size: 1.85rem !important;
+    font-weight: 800 !important;
+    color: var(--accent-primary) !important;
+    line-height: 1 !important;
+    margin-bottom: 3px !important;
+    font-family: var(--font-display) !important;
+  }
+  .tp-stat-text {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: var(--fg-soft) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  /* Hide floating review pill on mobile to prevent clutter */
+  .tp-floating-review {
+    display: none !important;
+  }
+
+  /* Right Side Content */
   .tp-content {
     width: 100% !important;
     display: flex !important;
@@ -13338,67 +13416,122 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     align-items: flex-start !important;
   }
   .tp-heading {
-    font-size: clamp(22px, 6vw, 28px) !important;
+    font-size: clamp(22px, 6.2vw, 29px) !important;
     line-height: 1.25 !important;
     margin-bottom: 14px !important;
+    letter-spacing: -0.02em !important;
   }
   .tp-desc {
     font-size: 15px !important;
     line-height: 1.65 !important;
-    margin-bottom: 22px !important;
+    margin-bottom: 24px !important;
+    color: var(--fg-soft) !important;
   }
+
+  /* Features & Experience Container */
   .tp-features-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: 14px !important;
+    gap: 16px !important;
     width: 100% !important;
-    margin-bottom: 22px !important;
+    margin-bottom: 24px !important;
   }
+
+  /* Sleek horizontal experience badge on mobile */
   .tp-experience-box {
     width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    padding: 22px 16px !important;
-    min-height: auto !important;
-    border-radius: 16px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+    padding: 16px 20px !important;
+    border-radius: 18px !important;
+    background: var(--surface) !important;
+    border: 1.5px solid var(--border-strong) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+  }
+  .tp-exp-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    width: 100% !important;
   }
   .tp-exp-num {
-    font-size: 2.3rem !important;
+    font-size: 2.6rem !important;
+    font-weight: 800 !important;
+    color: var(--accent-primary) !important;
+    line-height: 1 !important;
+    margin-bottom: 0 !important;
+    font-family: var(--font-display) !important;
   }
+  .tp-exp-text {
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: var(--fg) !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+  }
+
+  /* Checklist items */
   .tp-checklist {
     width: 100% !important;
-    gap: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 11px !important;
   }
   .tp-checklist li {
-    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    color: var(--fg) !important;
   }
+  .tp-checklist li svg {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    padding: 4px !important;
+    border-radius: 50% !important;
+    background: rgba(0, 217, 143, 0.14) !important;
+    color: var(--accent-primary) !important;
+  }
+
+  /* Full-width action button */
   .tp-btn {
     width: 100% !important;
     justify-content: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
-    padding: 13px 20px !important;
+    padding: 14px 22px !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    border-radius: 999px !important;
   }
 }
 
 @media (max-width: 480px) {
   .tp-collage {
-    height: 260px !important;
-  }
-  .tp-img-col-left,
-  .tp-img-col-right {
-    gap: 8px !important;
-  }
-  .tp-stat-box {
-    padding: 10px 12px !important;
+    height: 270px !important;
   }
   .tp-stat-number {
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
   }
-  .tp-floating-review {
-    display: none !important;
+  .tp-stat-text {
+    font-size: 11px !important;
+  }
+  .tp-exp-num {
+    font-size: 2.3rem !important;
+  }
+  .tp-exp-text {
+    font-size: 13px !important;
   }
 }
+
 
 /* ─── 03 Services Circles (3 cards) ─── */
 @media (max-width: 768px) {
