@@ -13462,20 +13462,19 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
 
 /* ─── 11 CTA Split Section ─── */
 @media (max-width: 991px) {
-  /* Override existing 991px rule: hide person image column entirely — no room on tablet */
-  .cta-visual-col { display: none !important; }
-  /* Single column, content fills full width */
+  /* Single column: text above, image below */
   .cta-box-container.cta-split-layout {
     grid-template-columns: 1fr !important;
     text-align: center !important;
-    padding: 44px 28px !important;
+    padding: 40px 24px 0 !important;
     gap: 0 !important;
   }
   .cta-content-col {
     align-items: center !important;
     text-align: center !important;
+    padding-bottom: 28px !important;
   }
-  /* Benefits list: center items properly */
+  /* Benefits list: centered */
   .cta-benefits-list {
     justify-content: center !important;
     gap: 10px 20px !important;
@@ -13483,7 +13482,7 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   .cta-benefit-item {
     justify-content: center !important;
   }
-  /* Actions: stack */
+  /* Actions: stack full width */
   .cta-split-actions {
     flex-direction: column !important;
     align-items: center !important;
@@ -13496,6 +13495,37 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     justify-content: center !important;
     text-align: center !important;
   }
+
+  /* Image column: show below, compact height, bottom-flush */
+  .cta-visual-col {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    margin-top: 8px !important;
+  }
+  .cta-image-wrapper {
+    height: 100% !important;
+    max-width: 260px !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+  .cta-person-img {
+    height: 100% !important;
+    width: auto !important;
+    max-height: 220px !important;
+    object-fit: contain !important;
+    object-position: bottom !important;
+  }
+  .cta-image-glow {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  /* Hide floating badges — overlap badly on mobile */
+  .cta-float-badge {
+    display: none !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -13503,10 +13533,9 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     padding: clamp(32px, 6vw, 48px) 0 !important;
   }
   .cta-box-container.cta-split-layout {
-    padding: 36px 22px !important;
+    padding: 36px 22px 0 !important;
     border-radius: 20px !important;
   }
-  /* Correct class names */
   .cta-split-heading {
     font-size: clamp(24px, 6.5vw, 32px) !important;
     line-height: 1.2 !important;
@@ -13515,11 +13544,17 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     font-size: 0.9rem !important;
     max-width: 100% !important;
   }
+  .cta-visual-col {
+    height: 200px !important;
+  }
+  .cta-person-img {
+    max-height: 200px !important;
+  }
 }
 
 @media (max-width: 480px) {
   .cta-box-container.cta-split-layout {
-    padding: 28px 18px !important;
+    padding: 28px 18px 0 !important;
     border-radius: 16px !important;
   }
   .cta-split-heading { font-size: clamp(22px, 6.5vw, 28px) !important; }
@@ -13530,6 +13565,12 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   }
   .cta-benefit-item {
     font-size: 13px !important;
+  }
+  .cta-visual-col {
+    height: 170px !important;
+  }
+  .cta-person-img {
+    max-height: 170px !important;
   }
 }
 
