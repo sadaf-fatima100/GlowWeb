@@ -12832,9 +12832,13 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   .revenue-amount { font-size: 1.5rem !important; }
   .hub-chart-wrapper { margin-top: 12px !important; }
 
-  /* Performance columns spacing */
+  /* Performance columns spacing + bar height fix (was 72px = large colored blocks on mobile) */
   .hub-performance-columns { gap: 8px !important; }
   .perf-val { font-size: 0.88rem !important; }
+  .perf-bar-track { height: 52px !important; }
+
+  /* Hide circuit SVG stage on phones — orphaned without satellite nodes */
+  .hub-center-stage { display: none !important; }
 
   /* Satellite nodes — scale down */
   .satellite-node { width: 44px !important; height: 44px !important; }
@@ -12894,37 +12898,44 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     width: 100% !important;
     padding: 14px 22px !important;
     font-size: 0.93rem !important;
-    min-height: 48px !important; /* touch target */
+    min-height: 48px !important;
   }
 
-  /* Network hub compact */
-  .hero-network-hub { gap: 14px !important; margin-top: 22px !important; }
+  /* FIX 1: Hide the orphaned circuit SVG stage completely at phone size.
+     Only the two data glass cards show — cleaner, purpose-driven layout. */
+  .hub-center-stage { display: none !important; }
 
-  .hub-center-stage {
-    max-width: 100% !important;
-    height: 180px !important;
+  /* Network hub: tighter gap, no dead space */
+  .hero-network-hub {
+    gap: 12px !important;
+    margin-top: 20px !important;
   }
 
   .hub-glass-card,
   .hub-card-left,
   .hub-card-right {
     max-width: 100% !important;
-    padding: 15px 14px !important;
+    padding: 16px 16px !important;
   }
+
+  /* FIX 2: perf-bar-track was 72px — rendered as large colored blocks.
+     Reduce to 44px for proper mini-bar proportion on small screens. */
+  .perf-bar-track {
+    height: 44px !important;
+  }
+
+  /* FIX 3: bar fills proportional to new track height */
+  .perf-val { font-size: 0.82rem !important; }
+  .perf-tag { font-size: 0.6rem !important; }
+  .perf-trend { font-size: 0.6rem !important; }
+  .hub-performance-columns { gap: 10px !important; }
 
   /* Chart slightly smaller */
   .hub-chart-svg { height: 70px !important; }
   .chart-hover-pill { font-size: 0.7rem !important; padding: 3px 8px !important; }
 
-  /* Satellite nodes hidden at this size — too cramped */
-  .satellite-node { display: none !important; }
-
-  /* Core hub */
-  .hub-center-core { width: 60px !important; height: 60px !important; }
-  .core-hexagon-badge {
-    width: 52px !important; height: 52px !important;
-    border-radius: 11px !important;
-  }
+  /* Revenue */
+  .revenue-amount { font-size: 1.4rem !important; }
 
   /* Bottom arc pills: 2-up wrap */
   .hero-pills-bottom-arc {
