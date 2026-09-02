@@ -174,9 +174,10 @@
         position: relative;
         width: 100%;
         padding-top: clamp(118px, 10vw, 142px);
-        padding-bottom: clamp(60px, 6vw, 90px);
+        padding-bottom: clamp(50px, 5vw, 70px);
         text-align: center;
-        overflow: hidden;
+        overflow: visible;
+        background: transparent !important;
       }
       .contact-hero-title {
         font-family: var(--font-display) !important;
@@ -272,7 +273,7 @@
       }
       .contact-hero-desc {
         font-family: 'Plus Jakarta Sans', sans-serif !important;
-        font-size: 16px !important;
+        font-size: clamp(1.02rem, 1.5vw, 1.15rem) !important;
         color: var(--fg-soft) !important;
         font-weight: 400 !important;
         max-width: 680px !important;
@@ -280,6 +281,11 @@
         margin: 0 auto 32px auto !important;
         line-height: 1.65 !important;
         text-align: center !important;
+      }
+      html:not([data-theme="dark"]) .contact-hero-desc,
+      [data-theme='light'] .contact-hero-desc {
+        color: #2c4235 !important;
+        font-weight: 500 !important;
       }
       .contact-hero-actions {
         display: flex;
@@ -372,9 +378,181 @@
           gap: 6px;
         }
       }
+
+      /* =========================================================
+         UNIFIED SEAMLESS CONTACT PAGE CANVAS (NO HORIZONTAL CUTS)
+         ========================================================= */
+      .contact-page-universe {
+        position: relative;
+        width: 100%;
+        overflow-x: clip;
+        background: transparent;
+      }
+      .contact-page-universe section {
+        background: transparent !important;
+        isolation: auto !important;
+      }
+
+      /* Dark Theme Unified Full-Page Aurora Blooms */
+      html[data-theme="dark"] .contact-page-universe::before,
+      html:not([data-theme="light"]) .contact-page-universe::before {
+        content: '';
+        position: absolute;
+        top: 6%;
+        left: -14%;
+        width: 880px;
+        height: 880px;
+        background: radial-gradient(circle, rgba(0, 217, 143, 0.28) 0%, rgba(0, 255, 170, 0.12) 30%, rgba(5, 35, 20, 0.45) 60%, transparent 75%);
+        filter: blur(95px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.9;
+        animation: auroraPulseLeft 10s ease-in-out infinite alternate;
+      }
+      html[data-theme="dark"] .contact-page-universe::after,
+      html:not([data-theme="light"]) .contact-page-universe::after {
+        content: '';
+        position: absolute;
+        top: 26%;
+        right: -10%;
+        width: 780px;
+        height: 780px;
+        background: radial-gradient(circle, rgba(79, 235, 253, 0.18) 0%, rgba(0, 217, 143, 0.10) 35%, transparent 70%);
+        filter: blur(100px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.85;
+        animation: auroraPulseRight 12s ease-in-out infinite alternate;
+      }
+
+      /* Light Theme Unified Full-Page Aurora Blooms */
+      html:not([data-theme="dark"]) .contact-page-universe::before,
+      [data-theme='light'] .contact-page-universe::before {
+        content: '';
+        position: absolute;
+        top: 6%;
+        left: -14%;
+        width: 880px;
+        height: 880px;
+        background: radial-gradient(circle, rgba(0, 217, 143, 0.22) 0%, rgba(0, 255, 170, 0.10) 30%, transparent 75%);
+        filter: blur(90px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.95;
+        animation: auroraPulseLeft 10s ease-in-out infinite alternate;
+      }
+      html:not([data-theme="dark"]) .contact-page-universe::after,
+      [data-theme='light'] .contact-page-universe::after {
+        content: '';
+        position: absolute;
+        top: 26%;
+        right: -10%;
+        width: 780px;
+        height: 780px;
+        background: radial-gradient(circle, rgba(79, 235, 253, 0.20) 0%, rgba(0, 217, 143, 0.08) 35%, transparent 70%);
+        filter: blur(95px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.9;
+        animation: auroraPulseRight 12s ease-in-out infinite alternate;
+      }
+
+      @keyframes auroraPulseLeft {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.8; }
+        100% { transform: scale(1.08) translate(20px, -20px); opacity: 1; }
+      }
+      @keyframes auroraPulseRight {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.75; }
+        100% { transform: scale(1.06) translate(-20px, 20px); opacity: 0.95; }
+      }
+
+      /* Form Card & Inputs in Dark Theme */
+      html[data-theme="dark"] .form-card,
+      html:not([data-theme="light"]) .form-card {
+        background: linear-gradient(145deg, rgba(8, 28, 18, 0.75) 0%, rgba(3, 14, 9, 0.85) 100%) !important;
+        backdrop-filter: blur(32px) !important;
+        -webkit-backdrop-filter: blur(32px) !important;
+        border: 1.5px solid rgba(0, 217, 143, 0.3) !important;
+        box-shadow: 
+          0 30px 70px -15px rgba(0, 0, 0, 0.85),
+          0 0 35px -5px rgba(0, 217, 143, 0.16),
+          inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+        position: relative;
+        z-index: 2;
+      }
+
+      html[data-theme="dark"] .contact-form input,
+      html[data-theme="dark"] .contact-form select,
+      html[data-theme="dark"] .contact-form textarea,
+      html:not([data-theme="light"]) .contact-form input,
+      html:not([data-theme="light"]) .contact-form select,
+      html:not([data-theme="light"]) .contact-form textarea {
+        background: rgba(3, 16, 10, 0.65) !important;
+        border: 1px solid rgba(0, 217, 143, 0.2) !important;
+        color: var(--fg) !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      html[data-theme="dark"] .contact-form input:focus,
+      html[data-theme="dark"] .contact-form select:focus,
+      html[data-theme="dark"] .contact-form textarea:focus,
+      html:not([data-theme="light"]) .contact-form input:focus,
+      html:not([data-theme="light"]) .contact-form select:focus,
+      html:not([data-theme="light"]) .contact-form textarea:focus {
+        border-color: var(--accent-primary) !important;
+        box-shadow: 0 0 0 3px rgba(0, 217, 143, 0.25), 0 0 20px rgba(0, 217, 143, 0.15) !important;
+        background: rgba(4, 22, 14, 0.85) !important;
+      }
+
+      /* Form Card & Inputs in Light Theme */
+      html:not([data-theme="dark"]) .form-card,
+      [data-theme='light'] .form-card {
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(28px) !important;
+        -webkit-backdrop-filter: blur(28px) !important;
+        border: 1.5px solid rgba(0, 217, 143, 0.28) !important;
+        box-shadow: 
+          0 30px 70px -15px rgba(0, 40, 20, 0.08),
+          0 12px 28px -5px rgba(0, 217, 143, 0.14),
+          inset 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+        position: relative;
+        z-index: 2;
+      }
+
+      html:not([data-theme="dark"]) .contact-form input,
+      html:not([data-theme="dark"]) .contact-form select,
+      html:not([data-theme="dark"]) .contact-form textarea,
+      [data-theme='light'] .contact-form input,
+      [data-theme='light'] .contact-form select,
+      [data-theme='light'] .contact-form textarea {
+        background: rgba(246, 251, 248, 0.9) !important;
+        border: 1.5px solid rgba(0, 217, 143, 0.25) !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+        transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+      }
+      html:not([data-theme="dark"]) .contact-form input:focus,
+      html:not([data-theme="dark"]) .contact-form select:focus,
+      html:not([data-theme="dark"]) .contact-form textarea:focus,
+      [data-theme='light'] .contact-form input:focus,
+      [data-theme='light'] .contact-form select:focus,
+      [data-theme='light'] .contact-form textarea:focus {
+        border-color: var(--accent-primary) !important;
+        box-shadow: 0 0 0 3.5px rgba(0, 217, 143, 0.22), 0 4px 14px rgba(0, 217, 143, 0.12) !important;
+        background: #ffffff !important;
+      }
+
+      .info-row {
+        transition: transform 0.3s ease;
+      }
+      .info-row:hover {
+        transform: translateX(4px);
+      }
+      .info-row svg {
+        filter: drop-shadow(0 4px 10px rgba(0, 217, 143, 0.35));
+      }
     </style>
-    <section class="contact-hero-wrapper">
-      <div class="wrap" style="position: relative; z-index: 2">
+    <main class="contact-page-universe" id="main-content">
+      <section class="contact-hero-wrapper">
+        <div class="wrap" style="position: relative; z-index: 2">
         <!-- Eyebrow — Live dot, no pill -->
         <div class="hero-live-eyebrow reveal" style="justify-content: center;">
           <span class="hero-live-dot"></span>
@@ -540,6 +718,7 @@
         </div>
       </div>
     </section>
+    </main>
     <!-- FOOTER -->
     <footer class="site-footer-premium" id="footer">
       <div class="wrap footer-grid-premium">
