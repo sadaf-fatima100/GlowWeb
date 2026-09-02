@@ -713,7 +713,7 @@ html:not([data-theme="dark"]) .webagency-dropdown-menu a:hover,
 }
 
 .webagency-nav-item-label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--accent-primary);
   margin-top: 32px;
@@ -738,7 +738,7 @@ html:not([data-theme="dark"]) .webagency-dropdown-menu a:hover,
 }
 
 .webagency-nav-item-label-inactive {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--fg-soft);
   white-space: nowrap;
@@ -1272,7 +1272,7 @@ html:not([data-theme="dark"]) .section-num-label .sec-tag,
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--fg);
-  margin: 0 auto 24px;
+  margin: 0 auto 16px;
   max-width: 820px;
   text-wrap: balance;
 }
@@ -5159,10 +5159,10 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
 
 .footer-info-col p {
   font-family: var(--font-body) !important;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: var(--fg-soft);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   max-width: 36ch;
 }
 
@@ -5199,10 +5199,10 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
 /* Links Columns */
 .footer-links-col h4 {
   font-family: var(--font-display) !important;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   color: var(--fg);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   letter-spacing: 0.01em;
   text-decoration: underline;
   text-underline-offset: 5px;
@@ -5218,7 +5218,7 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
 
 .footer-links-list a {
   font-family: var(--font-body) !important;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--fg-soft);
   text-decoration: none;
   transition: color var(--dur-fast), transform var(--dur-fast);
@@ -5275,7 +5275,7 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
 
 .footer-contact-text {
   font-family: var(--font-body) !important;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--fg-soft);
   text-decoration: none;
   transition: color 0.3s var(--ease), transform 0.3s var(--ease);
@@ -5302,7 +5302,7 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
 
 .footer-contact-item span, .footer-contact-item a {
   font-family: var(--font-body) !important;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--fg-soft);
   transition: color var(--dur-fast);
 }
@@ -8868,7 +8868,7 @@ html[data-theme="dark"] .hero-stat-card::after {
 /* Style the Labels */
 .webagency-nav-item-label,
 .webagency-nav-item-label-inactive {
-  font-size: 1rem !important;
+  font-size: 16px !important;
   font-weight: 500 !important;
   color: var(--text-primary) !important;
   display: flex !important;
@@ -10380,7 +10380,7 @@ h1, h2, h3, h4,
   letter-spacing: -0.038em !important;
   color: var(--fg) !important;
   max-width: 820px !important;
-  margin: 0 auto 24px !important;
+  margin: 0 auto 16px !important;
   text-wrap: balance !important;
 }
 
@@ -10678,7 +10678,7 @@ h1.hero-v2-title,
   letter-spacing: -0.034em !important;
   color: var(--fg) !important;
   max-width: 920px !important;
-  margin: 0 auto 24px !important;
+  margin: 0 auto 16px !important;
   text-wrap: balance !important;
 }
 
