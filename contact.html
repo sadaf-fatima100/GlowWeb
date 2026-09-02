@@ -169,6 +169,21 @@
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
     </div>
     <style>
+      /* Global Premium Contact Background */
+      body {
+        background: radial-gradient(circle at 15% 10%, rgba(0, 217, 143, 0.12) 0%, transparent 45%),
+                    radial-gradient(circle at 85% 60%, rgba(79, 235, 253, 0.08) 0%, transparent 45%),
+                    var(--bg) !important;
+        background-attachment: fixed !important;
+      }
+      html:not([data-theme="dark"]) body,
+      [data-theme='light'] body {
+        background: radial-gradient(circle at 15% 10%, rgba(0, 217, 143, 0.07) 0%, transparent 45%),
+                    radial-gradient(circle at 85% 60%, rgba(79, 235, 253, 0.04) 0%, transparent 45%),
+                    var(--bg) !important;
+        background-attachment: fixed !important;
+      }
+      
       /* Contact hero layout matching Home Page Design System */
       .contact-hero-wrapper {
         position: relative;
