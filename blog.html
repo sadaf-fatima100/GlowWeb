@@ -13,11 +13,42 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      /* ─── Premium Blog Grid Layout ─── */
+      /* ─── Universal 1300px Box Strategy Alignment (Navbar Matching) ─── */
+      .blog-page-universe .wrap,
+      .blog-page-universe .blog-grid {
+        width: calc(100% - 40px) !important;
+        max-width: 1300px !important;
+        margin-inline: auto !important;
+        padding-inline: 0 !important;
+        box-sizing: border-box !important;
+      }
+
       .blog-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 0 auto;
+      }
+
+      /* Strict Section Boundary Parity with Navbar */
+      .blog-page-universe .contact-form-grid {
+        width: 100% !important;
+        max-width: 1300px !important;
+      }
+      .blog-page-universe .cta-premium-section .wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: 0 !important;
+      }
+      .blog-page-universe .cta-box-container {
+        width: calc(100% - 40px) !important;
+        max-width: 1300px !important;
+        margin: 0 auto !important;
+      }
+      .blog-page-universe footer.site-footer .wrap {
+        width: calc(100% - 40px) !important;
+        max-width: 1300px !important;
+        padding-inline: 0 !important;
       }
 
       /* ─── Card Shell ─── */
@@ -25,7 +56,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        border-radius: 20px;
+        border-radius: 16px;
         overflow: hidden;
         text-decoration: none;
         background: var(--surface);
@@ -39,7 +70,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        border-radius: 20px;
+        border-radius: 16px;
         border: 1.5px solid transparent;
         background: linear-gradient(135deg, rgba(0,217,143,0.35), rgba(79,235,253,0.15)) border-box;
         -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -51,8 +82,8 @@
         z-index: 10;
       }
       .blog-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 24px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,217,143,0.1);
+        transform: translateY(-6px);
+        box-shadow: 0 20px 48px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,217,143,0.1);
       }
       .blog-card:hover::before {
         opacity: 1;
@@ -61,7 +92,8 @@
       /* ─── Image Cover ─── */
       .blog-cover {
         width: 100%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 16 / 10;
+        max-height: 190px;
         position: relative;
         overflow: hidden;
         flex-shrink: 0;
@@ -126,9 +158,6 @@
       .blog-card[data-category="webdev"] .blog-cover::after {
         background: linear-gradient(to bottom, transparent 30%, rgba(30,0,80,0.65) 100%);
       }
-      .blog-card[data-category="ecommerce"] .blog-cover::after {
-        background: linear-gradient(to bottom, transparent 30%, rgba(70,20,0,0.65) 100%);
-      }
 
       /* Floating category pill on image */
       .blog-cover .blog-tag {
@@ -170,7 +199,7 @@
 
       /* ─── Card Body ─── */
       .blog-body {
-        padding: 24px 26px 28px;
+        padding: 18px 20px 22px;
         display: flex;
         flex-direction: column;
         flex: 1;
@@ -179,24 +208,24 @@
       .blog-meta-row {
         display: flex;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 12px;
+        gap: 8px;
+        margin-bottom: 8px;
       }
       .blog-tag {
         background: rgba(0, 217, 143, 0.1);
         color: var(--accent-primary);
         border: 1px solid rgba(0, 217, 143, 0.25);
-        padding: 4px 12px;
+        padding: 3px 9px;
         border-radius: 999px;
-        font-size: 10.5px;
+        font-size: 9.5px;
         font-weight: 800;
         font-family: var(--font-mono);
         text-transform: uppercase;
-        letter-spacing: 0.6px;
+        letter-spacing: 0.5px;
         display: inline-block;
       }
       .blog-date {
-        font-size: 12px;
+        font-size: 11.5px;
         color: var(--fg-soft);
         font-weight: 500;
         font-family: var(--font-mono);
@@ -204,11 +233,11 @@
       }
       .blog-body h3 {
         font-family: var(--font-display);
-        font-size: 1.2rem;
-        line-height: 1.35;
-        font-weight: 800;
+        font-size: 1.05rem;
+        line-height: 1.32;
+        font-weight: 700;
         color: var(--fg);
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         transition: color 0.25s ease;
         letter-spacing: -0.01em;
       }
@@ -216,29 +245,33 @@
         color: var(--accent-primary);
       }
       .blog-body p {
-        font-size: 14.5px;
+        font-size: 13px;
         color: var(--fg-soft);
-        line-height: 1.65;
-        margin: 0 0 18px;
+        line-height: 1.55;
+        margin: 0 0 14px;
         flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       /* Arrow CTA row */
       .blog-read-more {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        font-size: 13px;
+        gap: 5px;
+        font-size: 12px;
         font-weight: 700;
         color: var(--accent-primary);
         font-family: var(--font-body);
         margin-top: auto;
-        opacity: 0.7;
+        opacity: 0.8;
         transition: opacity 0.25s ease, gap 0.25s ease;
       }
       .blog-card:hover .blog-read-more {
         opacity: 1;
-        gap: 10px;
+        gap: 8px;
       }
       .blog-read-more svg {
         transition: transform 0.25s ease;
@@ -264,12 +297,22 @@
         background: rgba(255,255,255,0.85);
       }
 
-      @media (max-width: 1100px) {
-        .blog-grid { grid-template-columns: 1fr; }
+      @media (max-width: 1040px) {
+        .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
       }
-      @media (max-width: 640px) {
-        .blog-body { padding: 20px; }
-        .blog-body h3 { font-size: 1.05rem; }
+      @media (max-width: 768px) {
+        .blog-page-universe .wrap,
+        .blog-page-universe .blog-grid,
+        .blog-page-universe .cta-box-container,
+        .blog-page-universe .section-contact-form .wrap,
+        .blog-page-universe footer.site-footer .wrap {
+          width: 94vw !important;
+        }
+      }
+      @media (max-width: 660px) {
+        .blog-grid { grid-template-columns: 1fr; gap: 16px; }
+        .blog-body { padding: 16px 18px 18px; }
+        .blog-body h3 { font-size: 1rem; }
       }
     </style>
   </head>
@@ -429,157 +472,220 @@
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
     </div>
     <style>
-      .blog-hero-wrapper {
+      /* =========================================================
+         UNIFIED SEAMLESS BLOG PAGE CANVAS (DARK & LIGHT AURORA)
+         ========================================================= */
+      .blog-page-universe {
+        position: relative;
         width: 100%;
-        padding-top: clamp(220px, 22vw, 260px);
-        padding-bottom: 120px;
-        background: var(--bg);
-        overflow: hidden;
+        overflow-x: clip;
+        background: transparent;
       }
-      .blog-hero-wrapper .wrap {
-        width: 86vw;
-        max-width: 1240px;
-        padding-inline: 28px;
+      .blog-page-universe section {
+        background: transparent !important;
+        isolation: auto !important;
       }
-      .blog-hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        align-items: center;
-      }
-      .blog-hero-text {
-        padding-right: 40px;
-      }
-      .blog-hero-eyebrow {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--fg-soft);
-        margin-bottom: 8px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .blog-hero-heading {
-        font-size: clamp(3rem, 5vw, 4.5rem);
-        font-weight: 800;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
-        color: var(--accent-primary);
-        margin-bottom: 24px;
-      }
-      .blog-hero-lede {
-        font-size: 16px;
-        line-height: 1.7;
-        color: var(--fg-soft);
-        margin-bottom: 40px;
-        max-width: 480px;
-      }
-      .blog-hero-cta {
-        display: inline-flex;
-        background: var(--accent-primary);
-        color: #fff;
-        font-weight: 700;
-        font-size: 15px;
-        padding: 16px 32px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        margin-bottom: 60px;
-        box-shadow: 0 8px 16px rgba(0, 217, 143, 0.2);
-      }
-      .blog-hero-cta:hover {
-        transform: scale(1.03);
-        box-shadow: 0 16px 32px rgba(0, 217, 143, 0.4);
-        color: #fff;
-      }
-      .blog-hero-stats {
-        display: flex;
-        gap: 60px;
-      }
-      .stat-col .stat-eyebrow {
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--fg-soft);
-        margin-bottom: 4px;
-      }
-      .stat-col .stat-val {
-        font-size: 32px;
-        font-weight: 800;
-        color: var(--accent-primary);
-        line-height: 1;
-        margin-bottom: 6px;
-      }
-      .stat-col .stat-label {
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--fg-soft);
-        max-width: 140px;
-      }
-      .blog-hero-image-wrap {
+
+      .blog-hero-centered-wrapper {
+        position: relative;
         width: 100%;
-        max-width: 800px;
-        margin-left: -5%;
+        padding-top: clamp(118px, 10vw, 142px);
+        padding-bottom: clamp(40px, 5vw, 65px);
+        text-align: center;
+        overflow: visible;
+        background: transparent !important;
+      }
+
+      /* Dark Theme Unified Full-Page Aurora Blooms */
+      html[data-theme="dark"] .blog-page-universe::before,
+      html:not([data-theme="light"]) .blog-page-universe::before {
+        content: '';
+        position: absolute;
+        top: 6%;
+        left: -14%;
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(circle, rgba(0, 217, 143, 0.28) 0%, rgba(0, 255, 170, 0.12) 30%, rgba(5, 35, 20, 0.45) 60%, transparent 75%);
+        filter: blur(95px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.9;
+        animation: auroraPulseLeft 10s ease-in-out infinite alternate;
+      }
+      html[data-theme="dark"] .blog-page-universe::after,
+      html:not([data-theme="light"]) .blog-page-universe::after {
+        content: '';
+        position: absolute;
+        top: 24%;
+        right: -10%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(79, 235, 253, 0.18) 0%, rgba(0, 217, 143, 0.10) 35%, transparent 70%);
+        filter: blur(100px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.85;
+        animation: auroraPulseRight 12s ease-in-out infinite alternate;
+      }
+
+      /* Light Theme Unified Full-Page Aurora Blooms */
+      html:not([data-theme="dark"]) .blog-page-universe::before,
+      [data-theme='light'] .blog-page-universe::before {
+        content: '';
+        position: absolute;
+        top: 6%;
+        left: -14%;
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(circle, rgba(0, 217, 143, 0.22) 0%, rgba(0, 255, 170, 0.10) 30%, transparent 75%);
+        filter: blur(90px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.95;
+        animation: auroraPulseLeft 10s ease-in-out infinite alternate;
+      }
+      html:not([data-theme="dark"]) .blog-page-universe::after,
+      [data-theme='light'] .blog-page-universe::after {
+        content: '';
+        position: absolute;
+        top: 24%;
+        right: -10%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(79, 235, 253, 0.20) 0%, rgba(0, 217, 143, 0.08) 35%, transparent 70%);
+        filter: blur(95px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.9;
+        animation: auroraPulseRight 12s ease-in-out infinite alternate;
+      }
+
+      @keyframes auroraPulseLeft {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.8; }
+        100% { transform: scale(1.08) translate(20px, -20px); opacity: 1; }
+      }
+      @keyframes auroraPulseRight {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.75; }
+        100% { transform: scale(1.06) translate(-20px, 20px); opacity: 0.95; }
+      }
+
+      /* Filter Bar & Tags Glassmorphic Upgrade */
+      .blog-filter-bar {
         position: relative;
         z-index: 2;
       }
-      .blog-hero-image-wrap img {
-        width: 100%;
-        height: auto;
-        display: block;
-        transform: scale(1.25);
-        transform-origin: center center;
-        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+      html[data-theme="dark"] .blog-filter-tag,
+      html:not([data-theme="light"]) .blog-filter-tag {
+        background: rgba(8, 28, 18, 0.6) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border: 1px solid rgba(0, 217, 143, 0.25) !important;
+        color: var(--fg-soft) !important;
       }
-      @keyframes heroSlideRight {
-        0% {
-          opacity: 0;
-          transform: translateX(100px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      html[data-theme="dark"] .blog-filter-tag.active,
+      html[data-theme="dark"] .blog-filter-tag:hover,
+      html:not([data-theme="light"]) .blog-filter-tag.active,
+      html:not([data-theme="light"]) .blog-filter-tag:hover {
+        background: var(--accent-primary) !important;
+        color: #03140a !important;
+        box-shadow: 0 0 20px rgba(0, 217, 143, 0.35) !important;
+        border-color: var(--accent-primary) !important;
       }
-      .hero-animate-right {
-        opacity: 0;
-        animation: heroSlideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        animation-delay: 0.15s;
+
+      html:not([data-theme="dark"]) .blog-filter-tag,
+      [data-theme="light"] .blog-filter-tag {
+        background: rgba(246, 251, 248, 0.9) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border: 1px solid rgba(0, 217, 143, 0.25) !important;
+        color: var(--fg) !important;
       }
-      @media (max-width: 960px) {
-        .blog-hero-wrapper {
-          padding-bottom: 60px;
-        }
-        .blog-hero-grid {
-          grid-template-columns: 1fr;
-          gap: 80px;
-        }
-        .blog-hero-text {
-          padding-right: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-        .blog-hero-lede {
-          margin: 0 auto 40px auto;
-        }
-        .blog-hero-stats {
-          justify-content: center;
-          gap: 40px;
-        }
-        .blog-hero-image-wrap {
-          width: 100%;
-          margin: 0 auto;
-        }
-        .blog-hero-image-wrap img {
-          transform: none;
-        }
+      html:not([data-theme="dark"]) .blog-filter-tag.active,
+      html:not([data-theme="dark"]) .blog-filter-tag:hover,
+      [data-theme="light"] .blog-filter-tag.active,
+      [data-theme="light"] .blog-filter-tag:hover {
+        background: var(--accent-primary) !important;
+        color: #03140a !important;
+        box-shadow: 0 4px 15px rgba(0, 217, 143, 0.3) !important;
+        border-color: var(--accent-primary) !important;
+      }
+
+      /* Blog Cards in Dark Theme */
+      html[data-theme="dark"] .blog-card,
+      html:not([data-theme="light"]) .blog-card {
+        background: linear-gradient(145deg, rgba(8, 28, 18, 0.75) 0%, rgba(3, 14, 9, 0.85) 100%) !important;
+        backdrop-filter: blur(28px) !important;
+        -webkit-backdrop-filter: blur(28px) !important;
+        border: 1.5px solid rgba(0, 217, 143, 0.25) !important;
+        box-shadow: 
+          0 20px 50px -10px rgba(0, 0, 0, 0.8),
+          0 0 30px -5px rgba(0, 217, 143, 0.12),
+          inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+        position: relative;
+        z-index: 2;
+      }
+      html[data-theme="dark"] .blog-card:hover,
+      html:not([data-theme="light"]) .blog-card:hover {
+        transform: translateY(-8px) !important;
+        border-color: var(--accent-primary) !important;
+        box-shadow: 
+          0 25px 60px -10px rgba(0, 0, 0, 0.9),
+          0 0 40px rgba(0, 217, 143, 0.25),
+          inset 0 1px 1px rgba(255, 255, 255, 0.2) !important;
+      }
+
+      /* Blog Cards in Light Theme */
+      html:not([data-theme="dark"]) .blog-card,
+      [data-theme="light"] .blog-card {
+        background: rgba(255, 255, 255, 0.88) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        border: 1.5px solid rgba(0, 217, 143, 0.24) !important;
+        box-shadow: 
+          0 20px 50px -12px rgba(0, 30, 15, 0.07),
+          0 8px 20px -4px rgba(0, 217, 143, 0.08),
+          inset 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+        position: relative;
+        z-index: 2;
+      }
+      html:not([data-theme="dark"]) .blog-card:hover,
+      [data-theme="light"] .blog-card:hover {
+        transform: translateY(-8px) !important;
+        border-color: var(--accent-primary) !important;
+        box-shadow: 
+          0 25px 60px -10px rgba(0, 35, 18, 0.12),
+          0 0 30px rgba(0, 217, 143, 0.2),
+          inset 0 1px 2px rgba(255, 255, 255, 1) !important;
+      }
+
+      /* Contact Form Card on Blog Page */
+      html[data-theme="dark"] .contact-form-card,
+      html:not([data-theme="light"]) .contact-form-card {
+        background: linear-gradient(145deg, rgba(8, 28, 18, 0.75) 0%, rgba(3, 14, 9, 0.85) 100%) !important;
+        backdrop-filter: blur(32px) !important;
+        -webkit-backdrop-filter: blur(32px) !important;
+        border: 1.5px solid rgba(0, 217, 143, 0.3) !important;
+        box-shadow: 
+          0 30px 70px -15px rgba(0, 0, 0, 0.85),
+          0 0 35px -5px rgba(0, 217, 143, 0.16),
+          inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+      }
+      html:not([data-theme="dark"]) .contact-form-card,
+      [data-theme="light"] .contact-form-card {
+        background: rgba(255, 255, 255, 0.88) !important;
+        backdrop-filter: blur(28px) !important;
+        -webkit-backdrop-filter: blur(28px) !important;
+        border: 1.5px solid rgba(0, 217, 143, 0.28) !important;
+        box-shadow: 
+          0 30px 70px -15px rgba(0, 40, 20, 0.08),
+          0 12px 28px -5px rgba(0, 217, 143, 0.14),
+          inset 0 1px 2px rgba(255, 255, 255, 0.95) !important;
       }
     </style>
-    <!-- Centered Blog Hero Section (Contact Page Parity) -->
-    <div class="blog-hero-centered-wrapper">
-      <div class="wrap" style="position: relative; z-index: 2">
+    <main class="blog-page-universe" id="main-content">
+      <!-- Centered Blog Hero Section (Contact Page Parity) -->
+      <div class="blog-hero-centered-wrapper">
+        <div class="wrap" style="position: relative; z-index: 2">
         <!-- Eyebrow — Live dot, no pill -->
         <div class="hero-live-eyebrow reveal" style="justify-content: center;">
           <span class="hero-live-dot"></span>
@@ -608,39 +714,40 @@
           </div>
         </h1>
         <p class="blog-hero-desc reveal">
-          Actionable frameworks, engineering deep-dives, and performance marketing playbooks curated by our web specialists to accelerate your digital growth
+          Actionable frameworks, engineering deep-dives, and marketing playbooks<br />
+          curated by our web specialists to accelerate your business growth
         </p>
         <div class="blog-filter-bar reveal">
           <button type="button" class="blog-filter-tag active" data-filter="all">All Articles</button>
           <button type="button" class="blog-filter-tag" data-filter="webdev">Web Development</button>
           <button type="button" class="blog-filter-tag" data-filter="seo">SEO Strategy</button>
           <button type="button" class="blog-filter-tag" data-filter="googleads">Google Ads</button>
-          <button type="button" class="blog-filter-tag" data-filter="ecommerce">E-Commerce</button>
         </div>
       </div>
     </div>
     <section class="section" style="padding-top: 0">
       <div class="wrap blog-grid">
-        <!-- POST 1: Google Ads -->
+        <!-- POST 1: Google Ads (ROAS & Smart Bidding) -->
         <a href="blog-post.html?id=googleads" target="_blank" class="blog-card reveal-scale spotlight-card" data-category="googleads">
           <div class="blog-cover media-frame">
             <img
-              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/B1-Web-Agency.jpg"
-              alt="Google Ads Success"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+              alt="Performance Marketing and Google Ads Analytics"
+              loading="lazy"
             />
             <span class="blog-tag">Google Ads</span>
             <span class="blog-read-time">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              7 min read
+              8 min read
             </span>
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-date">Jan 20, 2022</span>
+              <span class="blog-date">Feb 24, 2026</span>
             </div>
-            <h3>The Ultimate Guide to Google Ads &amp; High-ROI Campaigns</h3>
+            <h3>Maximizing ROAS: How Modern Brands Scale High-Intent Google Ads</h3>
             <p>
-              Discover actionable strategies to craft hyper-targeted PPC ad campaigns that lower CAC and convert visitors into high-value clients
+              A strategic blueprint for Performance Max restructuring, exact-match bid orchestration, and high-converting landing page experiences
             </p>
             <span class="blog-read-more">
               Read Article
@@ -648,12 +755,43 @@
             </span>
           </div>
         </a>
-        <!-- POST 2: SEO -->
-        <a href="blog-post.html?id=seo" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 1" data-category="seo">
+
+        <!-- POST 2: Google Ads (Quality Score & CPC Reduction) -->
+        <a href="blog-post.html?id=googleadsqs" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 1" data-category="googleads">
           <div class="blog-cover media-frame">
             <img
-              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/b3-Web-Agency.jpg"
-              alt="SEO Visibility"
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"
+              alt="Google Ads Quality Score Optimization"
+              loading="lazy"
+            />
+            <span class="blog-tag">Google Ads</span>
+            <span class="blog-read-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              9 min read
+            </span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-date">Feb 08, 2026</span>
+            </div>
+            <h3>Quality Score Engineering: Slashing Cost-Per-Click in Competitive Auctions</h3>
+            <p>
+              How server-side conversion modeling, ad copy resonance, and message-matched post-click journeys cut advertising costs by 40%
+            </p>
+            <span class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- POST 3: SEO Strategy (Semantic Search & Entities) -->
+        <a href="blog-post.html?id=seo" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 2" data-category="seo">
+          <div class="blog-cover media-frame">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+              alt="SEO Strategy and Topical Authority Growth"
+              loading="lazy"
             />
             <span class="blog-tag">SEO Strategy</span>
             <span class="blog-read-time">
@@ -663,12 +801,11 @@
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-date">Jan 20, 2022</span>
+              <span class="blog-date">Feb 18, 2026</span>
             </div>
-            <h3>The Complete Guide to SEO for Better Online Visibility</h3>
+            <h3>Beyond Keywords: Mastering Semantic Search and Topical Authority</h3>
             <p>
-              Master the latest algorithmic changes and on-page tactics to
-              secure high rankings and drive organic traffic consistently
+              How to engineer comprehensive topic clusters, satisfy modern search algorithms, and build digital authority that survives core updates
             </p>
             <span class="blog-read-more">
               Read Article
@@ -676,27 +813,57 @@
             </span>
           </div>
         </a>
-        <!-- POST 3: Development -->
-        <a href="blog-post.html?id=development" target="_blank" class="blog-card reveal-scale spotlight-card" data-category="webdev">
+
+        <!-- POST 4: Technical SEO (Core Web Vitals & Schemas) -->
+        <a href="blog-post.html?id=technicalseo" target="_blank" class="blog-card reveal-scale spotlight-card" data-category="seo">
           <div class="blog-cover media-frame">
             <img
-              src="https://webagency.tryshort.com/wp-content/uploads/2025/05/B2-Web-Agency.jpg"
-              alt="Web Development for Businesses"
+              src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
+              alt="Technical SEO and Core Web Vitals"
+              loading="lazy"
+            />
+            <span class="blog-tag">SEO Strategy</span>
+            <span class="blog-read-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10 min read
+            </span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-date">Jan 25, 2026</span>
+            </div>
+            <h3>Technical SEO in 2026: INP Optimization, Schema Graphs & Crawl Budgets</h3>
+            <p>
+              A deep dive into sub-second Interaction to Next Paint, JSON-LD linked data entities, and headless site architecture for enterprise ranking
+            </p>
+            <span class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- POST 5: Web Development (Architecture & Performance) -->
+        <a href="blog-post.html?id=development" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 1" data-category="webdev">
+          <div class="blog-cover media-frame">
+            <img
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+              alt="High-Performance Modern Web Architecture"
+              loading="lazy"
             />
             <span class="blog-tag">Web Development</span>
             <span class="blog-read-time">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              11 min read
+              10 min read
             </span>
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-date">Jan 20, 2022</span>
+              <span class="blog-date">Feb 12, 2026</span>
             </div>
-            <h3>The Ultimate Guide to Web Development for Businesses</h3>
+            <h3>Architecture for Scale: Engineering Lightning-Fast Web Platforms</h3>
             <p>
-              Learn how a tailored, scalable web architecture directly impacts
-              your bottom line and improves user engagement
+              Exploring modern front-end design systems, sub-second load times, micro-interactions, and scalable architecture that drive real ROI
             </p>
             <span class="blog-read-more">
               Read Article
@@ -704,27 +871,28 @@
             </span>
           </div>
         </a>
-        <!-- POST 4: E-Commerce -->
-        <a href="blog-post.html?id=ecommerce" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 1" data-category="ecommerce">
+
+        <!-- POST 6: Web Development (Design Systems & Micro-Interactions) -->
+        <a href="blog-post.html?id=webdesign" target="_blank" class="blog-card reveal-scale spotlight-card" style="--i: 2" data-category="webdev">
           <div class="blog-cover media-frame">
             <img
-              src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-              alt="Building E-commerce"
+              src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80"
+              alt="Design Systems and Micro Interactions"
+              loading="lazy"
             />
-            <span class="blog-tag">E-Commerce</span>
+            <span class="blog-tag">Web Development</span>
             <span class="blog-read-time">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              8 min read
+              9 min read
             </span>
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-date">Jan 20, 2022</span>
+              <span class="blog-date">Jan 29, 2026</span>
             </div>
-            <h3>Building a Successful E-commerce Website for Growth</h3>
+            <h3>Design Systems & Micro-Interactions: Elevating Brand Perception</h3>
             <p>
-              From seamless checkout experiences to lightning-fast load times,
-              uncover the secrets behind high-converting stores
+              How tokenized design systems, mathematical fluid typography, and micro-motion turn standard websites into bespoke brand worlds
             </p>
             <span class="blog-read-more">
               Read Article
@@ -919,6 +1087,7 @@
         </div>
       </div>
     </section>
+    </main>
     <!-- FOOTER -->
     <footer class="site-footer-premium" id="footer">
       <div class="wrap footer-grid-premium">

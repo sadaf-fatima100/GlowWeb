@@ -5618,8 +5618,8 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
 
 .services-hero-creative {
   position: relative;
-  overflow: hidden;
-  background: var(--bg);
+  overflow: visible;
+  background: transparent !important;
   padding-bottom: clamp(64px, 7vw, 100px);
 }
 
@@ -6505,8 +6505,8 @@ html:not([data-theme="dark"]) .services-hero-gradient,
   align-items: center;
   padding-top: clamp(130px, 13vw, 165px);
   padding-bottom: clamp(70px, 8vw, 100px);
-  overflow: hidden;
-  background: var(--bg);
+  overflow: visible;
+  background: transparent !important;
   text-align: center;
 }
 
@@ -11617,10 +11617,10 @@ html:not([data-theme="dark"]) .blog-hero-row em,
 
 .blog-hero-desc {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  font-size: 16px !important;
   color: var(--fg-soft);
   font-weight: 400;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto 32px auto;
   line-height: 1.65;
   text-wrap: balance;
@@ -12433,4 +12433,136 @@ html:not([data-theme="dark"]) .philosophy-row:hover .philosophy-mini-tag {
   line-height: 1.65;
   max-width: 40ch;
   margin: 0 auto 24px;
+}
+
+/* =========================================================
+   UNIFIED SEAMLESS PAGE AURORA CANVAS SYSTEM (GLOBAL ENGINE)
+   Enables high-end studio aurora mesh gradients across all pages
+   ========================================================= */
+.about-page-universe,
+.portfolio-page-universe,
+.services-page-universe,
+.service-single-universe,
+.blog-single-universe {
+  position: relative;
+  width: 100%;
+  overflow-x: clip;
+  background: transparent;
+}
+
+.about-page-universe section,
+.portfolio-page-universe section,
+.services-page-universe section,
+.service-single-universe section,
+.blog-single-universe section {
+  background: transparent !important;
+  isolation: auto !important;
+}
+
+/* Dark Theme Full-Page Atmospheric Aurora Blooms */
+html[data-theme="dark"] .about-page-universe::before,
+html[data-theme="dark"] .portfolio-page-universe::before,
+html[data-theme="dark"] .services-page-universe::before,
+html[data-theme="dark"] .service-single-universe::before,
+html[data-theme="dark"] .blog-single-universe::before,
+html:not([data-theme="light"]) .about-page-universe::before,
+html:not([data-theme="light"]) .portfolio-page-universe::before,
+html:not([data-theme="light"]) .services-page-universe::before,
+html:not([data-theme="light"]) .service-single-universe::before,
+html:not([data-theme="light"]) .blog-single-universe::before {
+  content: '';
+  position: absolute;
+  top: 4%;
+  left: -14%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(0, 217, 143, 0.28) 0%, rgba(0, 255, 170, 0.12) 30%, rgba(5, 35, 20, 0.45) 60%, transparent 75%);
+  filter: blur(95px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  animation: auroraPulseLeft 10s ease-in-out infinite alternate;
+}
+
+html[data-theme="dark"] .about-page-universe::after,
+html[data-theme="dark"] .portfolio-page-universe::after,
+html[data-theme="dark"] .services-page-universe::after,
+html[data-theme="dark"] .service-single-universe::after,
+html[data-theme="dark"] .blog-single-universe::after,
+html:not([data-theme="light"]) .about-page-universe::after,
+html:not([data-theme="light"]) .portfolio-page-universe::after,
+html:not([data-theme="light"]) .services-page-universe::after,
+html:not([data-theme="light"]) .service-single-universe::after,
+html:not([data-theme="light"]) .blog-single-universe::after {
+  content: '';
+  position: absolute;
+  top: 22%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(79, 235, 253, 0.18) 0%, rgba(0, 217, 143, 0.10) 35%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+  animation: auroraPulseRight 12s ease-in-out infinite alternate;
+}
+
+/* Light Theme Full-Page Porcelain Mint-Emerald & Cyan Aurora Blooms */
+html:not([data-theme="dark"]) .about-page-universe::before,
+html:not([data-theme="dark"]) .portfolio-page-universe::before,
+html:not([data-theme="dark"]) .services-page-universe::before,
+html:not([data-theme="dark"]) .service-single-universe::before,
+html:not([data-theme="dark"]) .blog-single-universe::before,
+[data-theme='light'] .about-page-universe::before,
+[data-theme='light'] .portfolio-page-universe::before,
+[data-theme='light'] .services-page-universe::before,
+[data-theme='light'] .service-single-universe::before,
+[data-theme='light'] .blog-single-universe::before {
+  content: '';
+  position: absolute;
+  top: 4%;
+  left: -14%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(0, 217, 143, 0.22) 0%, rgba(0, 255, 170, 0.10) 30%, transparent 75%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.95;
+  animation: auroraPulseLeft 10s ease-in-out infinite alternate;
+}
+
+html:not([data-theme="dark"]) .about-page-universe::after,
+html:not([data-theme="dark"]) .portfolio-page-universe::after,
+html:not([data-theme="dark"]) .services-page-universe::after,
+html:not([data-theme="dark"]) .service-single-universe::after,
+html:not([data-theme="dark"]) .blog-single-universe::after,
+[data-theme='light'] .about-page-universe::after,
+[data-theme='light'] .portfolio-page-universe::after,
+[data-theme='light'] .services-page-universe::after,
+[data-theme='light'] .service-single-universe::after,
+[data-theme='light'] .blog-single-universe::after {
+  content: '';
+  position: absolute;
+  top: 22%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(79, 235, 253, 0.20) 0%, rgba(0, 217, 143, 0.08) 35%, transparent 70%);
+  filter: blur(95px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  animation: auroraPulseRight 12s ease-in-out infinite alternate;
+}
+
+/* Ensure all hero classes do not clip or have conflicting backgrounds */
+.about-hero,
+.portfolio-hero,
+.services-hero-creative,
+.ads-hero-section,
+.blog-post-wrapper {
+  overflow: visible !important;
+  background: transparent !important;
 }
