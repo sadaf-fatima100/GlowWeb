@@ -13058,63 +13058,162 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     font-size: 0.97rem !important;
   }
 
-  /* Network hub: fully stacked */
+  /* Network hub: fully stacked with Cyber Hub 3.0 Animation in the center */
   .hero-network-hub {
+    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 18px !important;
-    margin-top: 28px !important;
+    gap: 14px !important;
+    margin-top: 24px !important;
+    width: 100% !important;
   }
 
-  /* SVG circuit centre */
+  /* 1. Top Glass Card: Campaign Impact */
+  .hub-card-left {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Performance columns spacing & bar height */
+  .hub-performance-columns { gap: 8px !important; }
+  .perf-val { font-size: 0.88rem !important; }
+  .perf-bar-track { height: 50px !important; }
+
+  /* 2. Middle Cyber Hub 3.0 Animation Stage — Visible & Perfectly Scaled on Mobile */
   .hub-center-stage {
+    display: flex !important;
+    order: 2 !important;
     width: 100% !important;
-    max-width: 480px !important;
-    height: 220px !important;
-    order: -1 !important;
-    margin: 0 auto !important;
+    max-width: 100% !important;
+    height: 200px !important;
+    position: relative !important;
+    margin: 4px 0 !important;
+    overflow: visible !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  .hub-circuit-svg { height: 100% !important; }
 
-  /* Glass cards: stacked full-width */
-  .hub-glass-card,
-  .hub-card-left,
+  .hub-circuit-svg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+  }
+
+  /* Center Hexagon Core Badge */
+  .hub-center-core {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 8 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .core-radial-aura {
+    width: 160px !important;
+    height: 160px !important;
+    filter: blur(20px) !important;
+    opacity: 0.8 !important;
+  }
+
+  .core-rotating-ring {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .core-hexagon-badge {
+    width: 82px !important;
+    height: 92px !important;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) !important;
+    box-shadow: 0 0 25px rgba(0, 217, 143, 0.5), inset 0 0 16px rgba(0, 217, 143, 0.3) !important;
+  }
+
+  .core-logo-mark svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .core-brand-label {
+    font-size: 0.52rem !important;
+    letter-spacing: 1px !important;
+    margin-top: 2px !important;
+  }
+
+  .core-sub-label {
+    font-size: 0.42rem !important;
+    letter-spacing: 0.8px !important;
+  }
+
+  /* 4 Satellite Hexagonal Nodes on Mobile */
+  .satellite-node {
+    position: absolute !important;
+    z-index: 7 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .satellite-hex {
+    width: 38px !important;
+    height: 42px !important;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) !important;
+    box-shadow: 0 0 14px rgba(0, 217, 143, 0.3) !important;
+  }
+
+  .satellite-hex svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .sat-label {
+    font-size: 0.52rem !important;
+    font-weight: 700 !important;
+    margin-top: 3px !important;
+  }
+
+  .node-pos-tl {
+    top: 8px !important;
+    left: 4% !important;
+  }
+
+  .node-pos-bl {
+    top: auto !important;
+    bottom: 8px !important;
+    left: 4% !important;
+  }
+
+  .node-pos-tr {
+    top: 8px !important;
+    right: 4% !important;
+  }
+
+  .node-pos-br {
+    top: auto !important;
+    bottom: 8px !important;
+    right: 4% !important;
+  }
+
+  /* 3. Bottom Glass Card: Total Revenue Delivered */
   .hub-card-right {
+    order: 3 !important;
     width: 100% !important;
-    max-width: 480px !important;
-    margin-inline: auto !important;
+    max-width: 100% !important;
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Reduce internal padding on cards */
-  .hub-glass-card { padding: 18px 18px !important; }
-
-  /* Revenue headline tighten */
   .revenue-amount { font-size: 1.5rem !important; }
   .hub-chart-wrapper { margin-top: 12px !important; }
 
-  /* Performance columns spacing + bar height fix (was 72px = large colored blocks on mobile) */
-  .hub-performance-columns { gap: 8px !important; }
-  .perf-val { font-size: 0.88rem !important; }
-  .perf-bar-track { height: 52px !important; }
-
-  /* Hide circuit SVG stage on phones — orphaned without satellite nodes */
-  .hub-center-stage { display: none !important; }
-
-  /* Satellite nodes — scale down */
-  .satellite-node { width: 44px !important; height: 44px !important; }
-  .satellite-hex { width: 40px !important; height: 40px !important; }
-  .sat-label { font-size: 0.55rem !important; }
-
-  /* Core hub badge */
-  .hub-center-core { width: 72px !important; height: 72px !important; }
-  .core-hexagon-badge {
-    width: 64px !important; height: 64px !important;
-    border-radius: 14px !important;
-  }
-  .core-brand-label { font-size: 0.45rem !important; }
-  .core-sub-label { font-size: 0.4rem !important; }
-
-  /* Bottom arc pills: wrap cleanly */
+  /* Bottom arc pills */
   .hero-pills-bottom-arc {
     gap: 8px !important;
     margin-top: 20px !important;
@@ -13123,7 +13222,6 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   }
   .floating-pill { padding: 8px 16px !important; font-size: 0.82rem !important; }
 
-  /* ISO grid SVG: hide on small screens (decorative) */
   .hero-iso-grid { display: none !important; }
 }
 
@@ -13161,43 +13259,69 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     min-height: 48px !important;
   }
 
-  /* FIX 1: Hide the orphaned circuit SVG stage completely at phone size.
-     Only the two data glass cards show — cleaner, purpose-driven layout. */
-  .hub-center-stage { display: none !important; }
-
-  /* Network hub: tighter gap, no dead space */
-  .hero-network-hub {
-    gap: 12px !important;
-    margin-top: 20px !important;
+  /* Cyber Hub Stage on Small Phones */
+  .hub-center-stage {
+    height: 180px !important;
+    margin: 2px 0 !important;
   }
 
-  .hub-glass-card,
-  .hub-card-left,
-  .hub-card-right {
-    max-width: 100% !important;
-    padding: 16px 16px !important;
+  .core-hexagon-badge {
+    width: 74px !important;
+    height: 84px !important;
   }
 
-  /* FIX 2: perf-bar-track was 72px — rendered as large colored blocks.
-     Reduce to 44px for proper mini-bar proportion on small screens. */
+  .core-logo-mark svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .core-rotating-ring {
+    width: 108px !important;
+    height: 108px !important;
+  }
+
+  .core-radial-aura {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  .satellite-hex {
+    width: 34px !important;
+    height: 38px !important;
+  }
+
+  .satellite-hex svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .sat-label {
+    font-size: 0.48rem !important;
+  }
+
+  .node-pos-tl, .node-pos-tr {
+    top: 4px !important;
+  }
+
+  .node-pos-bl, .node-pos-br {
+    bottom: 4px !important;
+  }
+
+  /* Performance columns */
   .perf-bar-track {
     height: 44px !important;
   }
-
-  /* FIX 3: bar fills proportional to new track height */
   .perf-val { font-size: 0.82rem !important; }
   .perf-tag { font-size: 0.6rem !important; }
   .perf-trend { font-size: 0.6rem !important; }
   .hub-performance-columns { gap: 10px !important; }
 
-  /* Chart slightly smaller */
+  /* Chart */
   .hub-chart-svg { height: 70px !important; }
   .chart-hover-pill { font-size: 0.7rem !important; padding: 3px 8px !important; }
-
-  /* Revenue */
   .revenue-amount { font-size: 1.4rem !important; }
 
-  /* Bottom arc pills: 2-up wrap */
+  /* Bottom arc pills */
   .hero-pills-bottom-arc {
     justify-content: center !important;
     gap: 6px !important;
@@ -13209,11 +13333,11 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     gap: 6px !important;
   }
 
-  /* Eyebrow tighten */
   .hero-live-eyebrow { margin-bottom: 12px; }
   .hero-live-text { font-size: 12px; }
   .hero-live-dot { width: 7px !important; height: 7px !important; }
 }
+
 
 /* ─── 360px: Very Small Phone (old Androids) ─── */
 @media (max-width: 360px) {
