@@ -130,9 +130,11 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(circle at 15% 10%, rgba(0, 217, 143, 0.12) 0%, transparent 45%),
-              radial-gradient(circle at 85% 60%, rgba(79, 235, 253, 0.08) 0%, transparent 45%),
-              var(--bg);
+  background: 
+    radial-gradient(ellipse 70% 60% at 5% 15%, rgba(0, 217, 143, 0.16) 0%, rgba(0, 255, 170, 0.05) 35%, transparent 65%),
+    radial-gradient(ellipse 65% 55% at 95% 75%, rgba(79, 235, 253, 0.12) 0%, rgba(0, 217, 143, 0.06) 40%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 50% 100%, rgba(0, 217, 143, 0.08) 0%, transparent 60%),
+    var(--bg);
   background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font-body);
@@ -146,10 +148,10 @@ body {
 html:not([data-theme="dark"]) body,
 [data-theme="light"] body {
   background:
-    radial-gradient(ellipse 55% 45% at 0% 0%, rgba(0, 217, 143, 0.12) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 100% 0%, rgba(79, 235, 253, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 55% 45% at 0% 85%, rgba(0, 217, 143, 0.09) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 100% 90%, rgba(79, 235, 253, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 55% at 0% 5%, rgba(0, 217, 143, 0.18) 0%, rgba(0, 255, 170, 0.06) 35%, transparent 65%),
+    radial-gradient(ellipse 65% 50% at 100% 5%, rgba(79, 235, 253, 0.16) 0%, rgba(0, 217, 143, 0.05) 40%, transparent 65%),
+    radial-gradient(ellipse 65% 55% at 0% 85%, rgba(0, 217, 143, 0.16) 0%, rgba(0, 255, 170, 0.05) 35%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 100% 90%, rgba(79, 235, 253, 0.15) 0%, rgba(0, 217, 143, 0.06) 40%, transparent 65%),
     var(--bg);
   background-attachment: fixed;
 }
@@ -6093,7 +6095,7 @@ html:not([data-theme="dark"]) .services-hero-gradient,
 .expertise-content-creative p {
   color: var(--fg-soft);
   line-height: 1.7;
-  font-size: clamp(15px, 1.2vw, 16.5px);
+  font-size: 16px !important;
   margin-bottom: 32px;
   max-width: 540px;
 }
@@ -11567,8 +11569,8 @@ html:not([data-theme="dark"]) .bento-section-header p,
   padding-top: clamp(118px, 10vw, 142px);
   padding-bottom: clamp(50px, 5vw, 75px);
   text-align: center;
-  overflow: hidden;
-  background: var(--bg);
+  overflow: visible;
+  background: transparent;
 }
 
 .blog-hero-title {
