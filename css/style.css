@@ -3065,10 +3065,10 @@ html[data-theme="dark"] .webagency-right-card {
 }
 
 .field label {
-  font-size: 14px;
-  font-family: var(--font-mono);
-  color: var(--fg-soft);
-  letter-spacing: 0.05em;
+  font-size: 16px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--fg);
 }
 
 .field input, .field textarea, .field select {
@@ -3080,6 +3080,11 @@ html[data-theme="dark"] .webagency-right-card {
   font-size: 16px;
   font-family: inherit;
   transition: all var(--dur-fast) var(--ease);
+}
+
+.field select {
+  color-scheme: dark;
+  cursor: pointer;
 }
 
 .field input:focus, .field textarea:focus, .field select:focus {
@@ -3097,9 +3102,9 @@ html[data-theme="dark"] .webagency-right-card {
 .checkbox-row {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   margin: 24px 0;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--fg-soft);
   cursor: pointer;
   user-select: none;
@@ -3107,7 +3112,10 @@ html[data-theme="dark"] .webagency-right-card {
 
 .checkbox-row input {
   margin-top: 3px;
+  width: 20px;
+  height: 20px;
   accent-color: var(--accent-primary);
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
