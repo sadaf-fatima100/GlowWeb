@@ -3951,13 +3951,24 @@ html:not([data-theme="dark"]) .services-header p,
   height: 400px;
   width: 100%;
   border-radius: 24px;
-  background: rgba(0, 217, 143, 0.03);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border-strong);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .expertise-right {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 217, 143, 0.08) 0%, rgba(6, 20, 14, 0.95) 70%), linear-gradient(135deg, #091a12 0%, #050d09 100%) !important;
+  border-color: rgba(0, 217, 143, 0.22) !important;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(0, 217, 143, 0.05) !important;
+}
+
+html:not([data-theme="dark"]) .expertise-right {
+  background: radial-gradient(circle at 50% 30%, rgba(0, 217, 143, 0.14) 0%, rgba(234, 246, 239, 0.95) 60%), linear-gradient(135deg, #eaf6ef 0%, #d4ede0 100%) !important;
+  border-color: rgba(0, 217, 143, 0.32) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 217, 143, 0.18), 0 8px 24px -6px rgba(10, 26, 16, 0.06), inset 0 0 30px rgba(255, 255, 255, 0.7) !important;
 }
 
 .expertise-graphic-item {
@@ -7962,9 +7973,10 @@ html:not([data-theme="dark"]) .ads-step-card,
   max-width: 1216px !important;
   width: 100% !important;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 !important;
   box-sizing: border-box;
 }
+
 
 .bento-card {
   background: var(--bento-card-bg);
@@ -8217,6 +8229,9 @@ html:not([data-theme="dark"]) .ads-step-card,
   .bento-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .bento-card,
   .bento-card.card-large,
@@ -8259,11 +8274,18 @@ html:not([data-theme="dark"]) .ads-step-card,
   .bento-capabilities-section {
     padding: clamp(40px, 7vw, 60px) 0 !important;
   }
+  .bento-grid {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
   .bento-card,
   .bento-card.card-large,
   .bento-card.card-small {
     padding: 24px 18px !important;
     border-radius: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .bento-card h3,
   .bento-card.card-large h3,
@@ -8315,12 +8337,17 @@ html:not([data-theme="dark"]) .ads-step-card,
 @media (max-width: 480px) {
   .bento-grid {
     gap: 16px !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .bento-card,
   .bento-card.card-large,
   .bento-card.card-small {
     padding: 22px 14px !important;
     border-radius: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .bento-card h3,
   .bento-card.card-large h3,
@@ -8340,6 +8367,7 @@ html:not([data-theme="dark"]) .ads-step-card,
     padding: 4px 8px !important;
   }
 }
+
 
 
 /* Premium Card Glowing Border and Illumination */
@@ -8870,16 +8898,11 @@ html:not([data-theme="dark"]) .ads-step-card,
 .expertise-anim-wrap {
   width: 100%;
   height: 100%;
-  min-height: 480px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 50px rgba(0,0,0,0.2), 0 20px 50px rgba(0,0,0,0.3);
 }
 
 /* 1. Web Dev Anim */
