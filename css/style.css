@@ -3034,12 +3034,12 @@ html[data-theme="dark"] .webagency-right-card {
 
 .contact-info .info-row b {
   display: block;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 4px;
 }
 
 .contact-info .info-row span {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--fg-soft);
 }
 
@@ -3065,7 +3065,7 @@ html[data-theme="dark"] .webagency-right-card {
 }
 
 .field label {
-  font-size: 13px;
+  font-size: 14px;
   font-family: var(--font-mono);
   color: var(--fg-soft);
   letter-spacing: 0.05em;
@@ -3077,7 +3077,7 @@ html[data-theme="dark"] .webagency-right-card {
   border-radius: 12px;
   padding: 14px 16px;
   color: var(--fg);
-  font-size: 14.5px;
+  font-size: 16px;
   font-family: inherit;
   transition: all var(--dur-fast) var(--ease);
 }
@@ -3099,7 +3099,7 @@ html[data-theme="dark"] .webagency-right-card {
   align-items: flex-start;
   gap: 10px;
   margin: 24px 0;
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--fg-soft);
   cursor: pointer;
   user-select: none;
