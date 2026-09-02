@@ -13,29 +13,55 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <style>
+      /* ─── Premium Blog Grid Layout ─── */
       .blog-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+        gap: 28px;
       }
+
+      /* ─── Card Shell ─── */
       .blog-card {
         display: flex;
+        flex-direction: column;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        text-decoration: none;
         background: var(--surface);
         border: 1px solid var(--border);
-        border-radius: 12px;
-        overflow: hidden;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        text-decoration: none;
-        align-items: stretch;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.4s ease;
+        isolation: isolate;
+      }
+      .blog-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        border: 1.5px solid transparent;
+        background: linear-gradient(135deg, rgba(0,217,143,0.35), rgba(79,235,253,0.15)) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+        z-index: 10;
       }
       .blog-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow);
+        transform: translateY(-8px);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,217,143,0.1);
       }
+      .blog-card:hover::before {
+        opacity: 1;
+      }
+
+      /* ─── Image Cover ─── */
       .blog-cover {
-        width: 42%;
+        width: 100%;
+        aspect-ratio: 16 / 9;
         position: relative;
         overflow: hidden;
         flex-shrink: 0;
@@ -43,81 +69,207 @@
       .blog-cover img {
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
         object-fit: cover;
-        transition: transform 0.6s ease;
+        transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                    filter 0.7s ease;
+        filter: saturate(0.85) brightness(0.92);
+        display: block;
       }
       .blog-card:hover .blog-cover img {
-        transform: scale(1.05);
+        transform: scale(1.07);
+        filter: saturate(1.05) brightness(0.95);
       }
+
+      /* Gradient overlay on image */
+      .blog-cover::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 30%,
+          rgba(0,0,0,0.55) 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Shimmer glint sweep on hover */
+      .blog-cover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba(255,255,255,0.15) 50%,
+          transparent 100%
+        );
+        z-index: 2;
+        transition: left 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+      }
+      .blog-card:hover .blog-cover::before {
+        left: 140%;
+      }
+
+      /* Category-specific accent glows */
+      .blog-card[data-category="googleads"] .blog-cover::after {
+        background: linear-gradient(to bottom, transparent 30%, rgba(0,80,30,0.6) 100%);
+      }
+      .blog-card[data-category="seo"] .blog-cover::after {
+        background: linear-gradient(to bottom, transparent 30%, rgba(0,60,80,0.65) 100%);
+      }
+      .blog-card[data-category="webdev"] .blog-cover::after {
+        background: linear-gradient(to bottom, transparent 30%, rgba(30,0,80,0.65) 100%);
+      }
+      .blog-card[data-category="ecommerce"] .blog-cover::after {
+        background: linear-gradient(to bottom, transparent 30%, rgba(70,20,0,0.65) 100%);
+      }
+
+      /* Floating category pill on image */
+      .blog-cover .blog-tag {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        z-index: 3;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0,217,143,0.4);
+        color: var(--accent-primary);
+        padding: 5px 14px;
+        border-radius: 999px;
+        font-size: 10.5px;
+        font-weight: 800;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        box-shadow: 0 0 14px rgba(0,217,143,0.2);
+      }
+
+      /* Reading time on image */
+      .blog-cover .blog-read-time {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        z-index: 3;
+        font-size: 11px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.75);
+        font-family: var(--font-mono);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .blog-cover .blog-read-time svg {
+        opacity: 0.7;
+      }
+
+      /* ─── Card Body ─── */
       .blog-body {
-        width: 58%;
-        padding: 36px;
+        padding: 24px 26px 28px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        flex: 1;
+        gap: 0;
       }
       .blog-meta-row {
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 16px;
+        gap: 12px;
+        margin-bottom: 12px;
       }
       .blog-tag {
-        background: rgba(0, 217, 143, 0.12);
+        background: rgba(0, 217, 143, 0.1);
         color: var(--accent-primary);
-        border: 1px solid rgba(0, 217, 143, 0.28);
-        padding: 6px 14px;
+        border: 1px solid rgba(0, 217, 143, 0.25);
+        padding: 4px 12px;
         border-radius: 999px;
-        font-size: 11px;
+        font-size: 10.5px;
         font-weight: 800;
         font-family: var(--font-mono);
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        box-shadow: 0 0 10px rgba(0, 217, 143, 0.1);
+        letter-spacing: 0.6px;
         display: inline-block;
-      }
-      .blog-card {
-        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, box-shadow 0.3s ease;
       }
       .blog-date {
         font-size: 12px;
         color: var(--fg-soft);
-        font-weight: 600;
+        font-weight: 500;
+        font-family: var(--font-mono);
+        margin-left: auto;
       }
       .blog-body h3 {
-        font-size: 1.25rem;
-        line-height: 1.4;
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        line-height: 1.35;
         font-weight: 800;
         color: var(--fg);
-        margin-bottom: 12px;
+        margin-bottom: 10px;
+        transition: color 0.25s ease;
+        letter-spacing: -0.01em;
+      }
+      .blog-card:hover .blog-body h3 {
+        color: var(--accent-primary);
       }
       .blog-body p {
-        font-size: 16px;
+        font-size: 14.5px;
         color: var(--fg-soft);
         line-height: 1.65;
-        margin: 0;
+        margin: 0 0 18px;
+        flex: 1;
       }
+
+      /* Arrow CTA row */
+      .blog-read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--accent-primary);
+        font-family: var(--font-body);
+        margin-top: auto;
+        opacity: 0.7;
+        transition: opacity 0.25s ease, gap 0.25s ease;
+      }
+      .blog-card:hover .blog-read-more {
+        opacity: 1;
+        gap: 10px;
+      }
+      .blog-read-more svg {
+        transition: transform 0.25s ease;
+      }
+      .blog-card:hover .blog-read-more svg {
+        transform: translateX(4px);
+      }
+
+      /* Light theme overrides */
+      html:not([data-theme="dark"]) .blog-card,
+      [data-theme="light"] .blog-card {
+        background: rgba(255,255,255,0.85);
+        backdrop-filter: blur(12px);
+        border-color: rgba(0,0,0,0.07);
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      }
+      html:not([data-theme="dark"]) .blog-card:hover,
+      [data-theme="light"] .blog-card:hover {
+        box-shadow: 0 20px 50px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,217,143,0.2);
+      }
+      html:not([data-theme="dark"]) .blog-cover .blog-tag,
+      [data-theme="light"] .blog-cover .blog-tag {
+        background: rgba(255,255,255,0.85);
+      }
+
       @media (max-width: 1100px) {
-        .blog-grid {
-          grid-template-columns: 1fr;
-        }
+        .blog-grid { grid-template-columns: 1fr; }
       }
       @media (max-width: 640px) {
-        .blog-card {
-          flex-direction: column;
-        }
-        .blog-cover {
-          width: 100%;
-          padding-top: 60%;
-          position: relative;
-        }
-        .blog-body {
-          width: 100%;
-          padding: 24px;
-        }
+        .blog-body { padding: 20px; }
+        .blog-body h3 { font-size: 1.05rem; }
       }
     </style>
   </head>
@@ -476,16 +628,24 @@
               src="https://webagency.tryshort.com/wp-content/uploads/2025/05/B1-Web-Agency.jpg"
               alt="Google Ads Success"
             />
+            <span class="blog-tag">Google Ads</span>
+            <span class="blog-read-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              7 min read
+            </span>
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-tag">Google Ads</span>
-              <span class="blog-date">January 20, 2022</span>
+              <span class="blog-date">Jan 20, 2022</span>
             </div>
             <h3>The Ultimate Guide to Google Ads &amp; High-ROI Campaigns</h3>
             <p>
               Discover actionable strategies to craft hyper-targeted PPC ad campaigns that lower CAC and convert visitors into high-value clients
             </p>
+            <span class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
         <!-- POST 2: SEO -->
@@ -495,17 +655,25 @@
               src="https://webagency.tryshort.com/wp-content/uploads/2025/05/b3-Web-Agency.jpg"
               alt="SEO Visibility"
             />
+            <span class="blog-tag">SEO Strategy</span>
+            <span class="blog-read-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              9 min read
+            </span>
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-tag">SEO Strategy</span>
-              <span class="blog-date">January 20, 2022</span>
+              <span class="blog-date">Jan 20, 2022</span>
             </div>
             <h3>The Complete Guide to SEO for Better Online Visibility</h3>
             <p>
               Master the latest algorithmic changes and on-page tactics to
               secure high rankings and drive organic traffic consistently
             </p>
+            <span class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
         <!-- POST 3: Development -->
@@ -515,17 +683,25 @@
               src="https://webagency.tryshort.com/wp-content/uploads/2025/05/B2-Web-Agency.jpg"
               alt="Web Development for Businesses"
             />
+            <span class="blog-tag">Web Development</span>
+            <span class="blog-read-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11 min read
+            </span>
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-tag">Web Development</span>
-              <span class="blog-date">January 20, 2022</span>
+              <span class="blog-date">Jan 20, 2022</span>
             </div>
             <h3>The Ultimate Guide to Web Development for Businesses</h3>
             <p>
               Learn how a tailored, scalable web architecture directly impacts
               your bottom line and improves user engagement
             </p>
+            <span class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
         <!-- POST 4: E-Commerce -->
@@ -535,21 +711,30 @@
               src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
               alt="Building E-commerce"
             />
+            <span class="blog-tag">E-Commerce</span>
+            <span class="blog-read-time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              8 min read
+            </span>
           </div>
           <div class="blog-body">
             <div class="blog-meta-row">
-              <span class="blog-tag">E-Commerce</span>
-              <span class="blog-date">January 20, 2022</span>
+              <span class="blog-date">Jan 20, 2022</span>
             </div>
             <h3>Building a Successful E-commerce Website for Growth</h3>
             <p>
               From seamless checkout experiences to lightning-fast load times,
               uncover the secrets behind high-converting stores
             </p>
+            <span class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
       </div>
     </section>
+
     <!-- CONTACT FORM SECTION -->
     <section class="section-contact-form" id="contactSection">
       <div class="wrap">
