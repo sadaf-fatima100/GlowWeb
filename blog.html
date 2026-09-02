@@ -13,11 +13,11 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      /* ─── Universal 1300px Box Strategy Alignment (Navbar Matching) ─── */
+      /* ─── Universal Box Strategy Alignment (Navbar & Section Matching) ─── */
       .blog-page-universe .wrap,
       .blog-page-universe .blog-grid {
-        width: calc(100% - 40px) !important;
-        max-width: 1300px !important;
+        width: calc(100% - 64px) !important;
+        max-width: 1216px !important;
         margin-inline: auto !important;
         padding-inline: 0 !important;
         box-sizing: border-box !important;
@@ -33,7 +33,7 @@
       /* Strict Section Boundary Parity with Navbar */
       .blog-page-universe .contact-form-grid {
         width: 100% !important;
-        max-width: 1300px !important;
+        max-width: 1216px !important;
       }
       .blog-page-universe .cta-premium-section .wrap {
         width: 100% !important;
@@ -41,13 +41,13 @@
         padding-inline: 0 !important;
       }
       .blog-page-universe .cta-box-container {
-        width: calc(100% - 40px) !important;
-        max-width: 1300px !important;
+        width: calc(100% - 64px) !important;
+        max-width: 1216px !important;
         margin: 0 auto !important;
       }
       .blog-page-universe footer.site-footer .wrap {
-        width: calc(100% - 40px) !important;
-        max-width: 1300px !important;
+        width: calc(100% - 64px) !important;
+        max-width: 1216px !important;
         padding-inline: 0 !important;
       }
 
@@ -461,15 +461,42 @@
       </nav>
     </header>
     <div class="mobile-drawer">
-      <button
-        class="mobile-close btn btn-ghost"
-        style="position: absolute; top: 24px; right: 28px"
-      >
-        Close
-      </button>
-      <a href="index.html">Home</a> <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
-      <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
+      <button class="mobile-close btn btn-ghost">Close</button>
+      <a href="index.html">Home</a>
+      <div class="mobile-drawer-accordion">
+        <a
+          href="services.html"
+          class="accordion-toggle"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+          "
+        >
+          Services
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="accordion-icon"
+          >
+            <path d="M7 10l5 5 5-5z" />
+          </svg>
+        </a>
+        <div class="accordion-content">
+          <a href="web-development.html">Web Development</a>
+          <a href="google-ads.html">Google Ads</a>
+          <a href="search-engine-optimization.html"
+            >Search Engine Optimization</a
+          >
+        </div>
+      </div>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact Us</a>
     </div>
     <style>
       /* =========================================================
@@ -494,6 +521,23 @@
         text-align: center;
         overflow: visible;
         background: transparent !important;
+      }
+
+      .blog-hero-desc {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: clamp(1.02rem, 1.5vw, 1.15rem) !important;
+        color: var(--fg-soft) !important;
+        font-weight: 400 !important;
+        max-width: 680px !important;
+        margin: 0 auto 32px auto !important;
+        line-height: 1.65 !important;
+        text-align: center !important;
+        text-wrap: balance !important;
+      }
+      html:not([data-theme="dark"]) .blog-hero-desc,
+      [data-theme='light'] .blog-hero-desc {
+        color: #2c4235 !important;
+        font-weight: 500 !important;
       }
 
       /* Dark Theme Unified Full-Page Aurora Blooms */
@@ -679,7 +723,308 @@
         box-shadow: 
           0 30px 70px -15px rgba(0, 40, 20, 0.08),
           0 12px 28px -5px rgba(0, 217, 143, 0.14),
-          inset 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+      /* Hero Interactive Design Badges (Parity with Contact page) */
+      .title-icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(28px, 4.5vw, 52px);
+        height: clamp(28px, 4.5vw, 52px);
+        border-radius: 50%;
+        background: var(--accent-primary);
+        color: #03140a;
+        font-size: clamp(14px, 2.2vw, 20px);
+        box-shadow: 0 8px 18px rgba(0, 217, 143, 0.35);
+        transform: translateY(-2px);
+        flex-shrink: 0;
+      }
+      .title-toggle-switch {
+        display: inline-flex;
+        align-items: center;
+        width: clamp(60px, 11vw, 120px);
+        height: clamp(32px, 5.8vw, 62px);
+        background: linear-gradient(
+          135deg,
+          rgba(0, 217, 143, 0.25),
+          var(--accent-primary)
+        );
+        border-radius: 999px;
+        padding: clamp(3px, 0.8vw, 6px);
+        box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.15);
+        position: relative;
+        transform: translateY(2px);
+        flex-shrink: 0;
+      }
+      .title-toggle-knob {
+        width: clamp(26px, 4.8vw, 50px);
+        height: clamp(26px, 4.8vw, 50px);
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .title-cursor-icon {
+        width: clamp(24px, 4vw, 44px);
+        height: auto;
+        color: var(--fg);
+        transform: rotate(-15deg);
+        flex-shrink: 0;
+      }
+
+      /* ═══════════════════════════════════════════════════════════
+         TABLET RESPONSIVENESS (769px - 1024px)
+         ═══════════════════════════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .blog-hero-centered-wrapper {
+          padding-top: clamp(110px, 12vw, 130px);
+          padding-bottom: 40px;
+        }
+        .blog-hero-title {
+          font-size: clamp(32px, 5vw, 48px) !important;
+          line-height: 1.2 !important;
+          max-width: 750px !important;
+        }
+        .blog-hero-row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          white-space: normal !important;
+          gap: 12px;
+        }
+        .blog-hero-desc {
+          font-size: 15px !important;
+          max-width: 600px;
+          margin-bottom: 26px;
+        }
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 20px !important;
+        }
+        .contact-form-grid {
+          grid-template-columns: 1fr !important;
+          gap: 36px !important;
+        }
+        .contact-info-col {
+          position: static !important;
+          text-align: center !important;
+          max-width: 650px;
+          margin: 0 auto;
+        }
+        .contact-info-col .contact-graphic-decoration {
+          margin: 0 auto 16px;
+        }
+        .contact-form-card {
+          max-width: 700px;
+          margin: 0 auto;
+          width: 100%;
+          padding: 36px 28px !important;
+        }
+        .cta-box-container.cta-split-layout {
+          grid-template-columns: 1fr !important;
+          text-align: center;
+          padding: 40px 24px !important;
+          gap: 32px;
+        }
+        .cta-content-col {
+          align-items: center;
+          text-align: center;
+        }
+        .cta-split-subtitle {
+          margin: 0 auto 24px auto !important;
+          text-align: center;
+        }
+        .cta-benefits-list {
+          justify-content: center;
+        }
+        .cta-split-actions {
+          justify-content: center;
+        }
+        .footer-grid-premium {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 36px !important;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════════════════
+         MOBILE & PHABLET RESPONSIVENESS (<= 768px)
+         ═══════════════════════════════════════════════════════════ */
+      @media (max-width: 768px) {
+        .blog-page-universe .wrap,
+        .blog-page-universe .blog-grid,
+        .blog-page-universe .cta-box-container,
+        .blog-page-universe .section-contact-form .wrap,
+        .blog-page-universe footer.site-footer-premium .wrap {
+          width: 94vw !important;
+        }
+        .blog-hero-centered-wrapper {
+          padding-top: 105px;
+          padding-bottom: 28px;
+        }
+        .blog-hero-title {
+          font-size: clamp(26px, 6vw, 36px) !important;
+          gap: 8px !important;
+        }
+        .blog-hero-row {
+          gap: 8px;
+          white-space: normal !important;
+        }
+        .blog-filter-bar {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          border-radius: 16px !important;
+          padding: 6px;
+          gap: 6px;
+          width: 100%;
+          max-width: 100%;
+        }
+        .blog-filter-tag {
+          padding: 7px 14px;
+          font-size: 12px;
+          flex: 1 1 calc(50% - 10px);
+          text-align: center;
+          white-space: nowrap;
+        }
+        .contact-inputs-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        .contact-input-group.full-width {
+          grid-column: span 1 !important;
+        }
+        .footer-grid-premium {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+        }
+        .footer-info-col {
+          flex: none;
+          max-width: 100%;
+        }
+        .footer-bottom-premium {
+          flex-direction: column;
+          gap: 16px;
+          text-align: center;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════════════════
+         MOBILE PHONES (<= 640px)
+         ═══════════════════════════════════════════════════════════ */
+      @media (max-width: 640px) {
+        .blog-grid {
+          grid-template-columns: 1fr !important;
+          gap: 18px !important;
+        }
+        .blog-card {
+          border-radius: 14px;
+        }
+        .blog-cover {
+          max-height: 180px;
+        }
+        .blog-cover .blog-tag {
+          bottom: 10px;
+          left: 10px;
+          font-size: 9px;
+          padding: 3px 8px;
+        }
+        .blog-cover .blog-read-time {
+          bottom: 10px;
+          right: 10px;
+          font-size: 10px;
+        }
+        .blog-body {
+          padding: 16px !important;
+        }
+        .blog-body h3 {
+          font-size: 1rem !important;
+          line-height: 1.35;
+        }
+        .blog-body p {
+          font-size: 12.5px !important;
+          line-height: 1.5;
+          margin-bottom: 12px;
+        }
+        .contact-form-card {
+          padding: 24px 16px !important;
+          border-radius: 20px !important;
+        }
+        .contact-info-col h2 {
+          font-size: clamp(24px, 6vw, 32px) !important;
+        }
+        .contact-info-col p {
+          font-size: 13.5px !important;
+        }
+        .contact-checkbox-row {
+          font-size: 11.5px !important;
+          gap: 8px !important;
+        }
+        .contact-checkbox-row input {
+          margin-top: 2px;
+        }
+        .cta-box-container.cta-split-layout {
+          padding: 30px 14px !important;
+          border-radius: 20px !important;
+        }
+        .cta-split-heading {
+          font-size: clamp(22px, 6.5vw, 32px) !important;
+        }
+        .cta-split-subtitle {
+          font-size: 13.5px !important;
+        }
+        .cta-benefits-list {
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+        .cta-split-actions {
+          flex-direction: column;
+          width: 100%;
+          gap: 10px;
+        }
+        .cta-split-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .badge-top-left {
+          left: 0px !important;
+          top: 2% !important;
+          transform: scale(0.8);
+          transform-origin: left top;
+        }
+        .badge-bottom-right {
+          right: 0px !important;
+          bottom: 2% !important;
+          transform: scale(0.8);
+          transform-origin: right bottom;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════════════════
+         SMALL PHONES (<= 400px)
+         ═══════════════════════════════════════════════════════════ */
+      @media (max-width: 400px) {
+        .blog-hero-title {
+          font-size: 23px !important;
+        }
+        .title-toggle-switch {
+          width: 50px;
+          height: 26px;
+          padding: 2px;
+        }
+        .title-toggle-knob {
+          width: 22px;
+          height: 22px;
+        }
+        .title-icon-btn {
+          width: 26px;
+          height: 26px;
+          font-size: 13px;
+        }
+        .title-cursor-icon {
+          width: 20px;
+        }
+        .blog-filter-tag {
+          flex: 1 1 100%;
+        }
       }
     </style>
     <main class="blog-page-universe" id="main-content">
