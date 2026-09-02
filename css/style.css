@@ -12965,3 +12965,554 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   .hero-v2-subtitle { font-size: 0.88rem !important; }
   .hub-center-stage { height: 155px !important; }
 }
+
+/* =========================================================
+   HOME PAGE — FULL RESPONSIVE SYSTEM
+   All sections: 1024 → 768 → 576 → 480 → 360px
+   ========================================================= */
+
+/* ─── Global Wrap Padding on Mobile ─── */
+@media (max-width: 768px) {
+  .wrap {
+    padding-inline: clamp(16px, 5vw, 28px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding-inline: 16px !important;
+  }
+}
+
+/* ─── Section Head (heading + subtitle) ─── */
+@media (max-width: 768px) {
+  .section-head h2 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .section-subtitle {
+    font-size: 0.92rem !important;
+    max-width: 100% !important;
+    line-height: 1.6 !important;
+  }
+  .section-head {
+    margin-bottom: 32px !important;
+  }
+}
+
+/* ─── 01 Agency Metrics ─── */
+@media (max-width: 768px) {
+  .agency-metrics-section {
+    padding-top: clamp(36px, 7vw, 52px) !important;
+    padding-bottom: clamp(28px, 5vw, 40px) !important;
+  }
+  .agency-metric-card {
+    padding: 28px 20px !important;
+    border-radius: 16px !important;
+  }
+  .metric-icon-wrap {
+    width: 46px !important;
+    height: 46px !important;
+    margin-bottom: 14px !important;
+  }
+  .stat-number {
+    font-size: clamp(28px, 8vw, 38px) !important;
+  }
+  .stat-label {
+    font-size: 0.82rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 2-up grid on small phones */
+  .agency-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .agency-metric-card {
+    padding: 22px 14px !important;
+    border-radius: 14px !important;
+  }
+  .metric-icon-wrap {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .stat-number {
+    font-size: clamp(24px, 7vw, 30px) !important;
+  }
+}
+
+/* ─── 02 Trusted Partner (collage + text) ─── */
+@media (max-width: 768px) {
+  .trusted-partner-section {
+    padding: clamp(40px, 8vw, 60px) 0 !important;
+  }
+  .trusted-partner-grid-v2 {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .tp-collage {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+  .tp-heading {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.22 !important;
+  }
+  .tp-features-container {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .tp-experience-box {
+    min-height: 120px !important;
+  }
+  .tp-cta-row {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  .tp-cta-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tp-img-col-left,
+  .tp-img-col-right {
+    gap: 10px !important;
+  }
+  .tp-stat-box {
+    padding: 12px 14px !important;
+  }
+  .tp-stat-number {
+    font-size: 1.5rem !important;
+  }
+  .tp-floating-review {
+    display: none !important;
+  }
+}
+
+/* ─── 03 Services Circles (3 cards) ─── */
+@media (max-width: 768px) {
+  .services-circles-container {
+    max-width: 480px !important;
+    gap: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .services-circle {
+    padding: 28px 22px !important;
+    border-radius: 20px !important;
+  }
+  .services-circle h4 {
+    font-size: 19px !important;
+  }
+  .services-circle p {
+    font-size: 13px !important;
+    max-width: 100% !important;
+  }
+  .service-icon-anim {
+    width: 52px !important;
+    height: 52px !important;
+    margin-bottom: 16px !important;
+  }
+  .services-header h2 br {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-circles-container {
+    max-width: 100% !important;
+    gap: 12px !important;
+  }
+  .services-circle {
+    padding: 24px 18px !important;
+    min-height: unset !important;
+  }
+  .services-circle h4 { font-size: 17px !important; }
+  .service-icon-anim {
+    width: 44px !important;
+    height: 44px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* ─── 04 Expertise Slider ─── */
+@media (max-width: 768px) {
+  .expertise-section {
+    padding: clamp(44px, 8vw, 64px) 0 !important;
+  }
+  .expertise-slides-text {
+    min-height: 380px !important;
+  }
+  .expertise-slide-title {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.22 !important;
+  }
+  .expertise-slide-body {
+    font-size: 0.92rem !important;
+  }
+  .expertise-right {
+    height: 280px !important;
+  }
+  .expertise-anim-wrap {
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-slides-text {
+    min-height: 340px !important;
+  }
+  .expertise-right {
+    height: 220px !important;
+  }
+  .expertise-nav {
+    gap: 12px !important;
+    flex-direction: column !important;
+  }
+  .expertise-nav-item {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 12px 16px !important;
+  }
+}
+
+/* ─── 05 Portfolio Grid ─── */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: clamp(36px, 7vw, 52px) 0 !important;
+  }
+  .portfolio-tabs {
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+  .portfolio-tab {
+    padding: 8px 18px !important;
+    font-size: 0.88rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-tabs {
+    justify-content: center !important;
+    padding-inline: 0 !important;
+  }
+  .portfolio-tab {
+    padding: 7px 14px !important;
+    font-size: 0.82rem !important;
+  }
+  .portfolio-card-footer {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* ─── 06 Bento Capabilities ─── */
+@media (max-width: 991px) {
+  .bento-grid {
+    gap: 16px !important;
+  }
+  .bento-card {
+    padding: 28px 24px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-capabilities-section {
+    padding: clamp(40px, 7vw, 60px) 0 !important;
+  }
+  .bento-card {
+    padding: 24px 20px !important;
+    border-radius: 18px !important;
+  }
+  .bento-title {
+    font-size: clamp(18px, 5vw, 22px) !important;
+    line-height: 1.25 !important;
+  }
+  .bento-desc {
+    font-size: 0.88rem !important;
+  }
+  .bento-feature-tags {
+    gap: 6px !important;
+  }
+  .bento-pill {
+    font-size: 0.7rem !important;
+    padding: 4px 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-card {
+    padding: 20px 16px !important;
+    border-radius: 14px !important;
+  }
+  .bento-title { font-size: clamp(16px, 5vw, 20px) !important; }
+}
+
+/* ─── 07 Process Steps ─── */
+@media (max-width: 768px) {
+  .proc-v2-section {
+    padding: clamp(40px, 7vw, 60px) 0 !important;
+  }
+  .proc-v2-number {
+    font-size: 2.5rem !important;
+  }
+  .proc-v2-title {
+    font-size: 1.05rem !important;
+  }
+  .proc-v2-desc {
+    font-size: 0.88rem !important;
+  }
+  .proc-v2-step {
+    padding: 24px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .proc-v2-steps {
+    gap: 12px !important;
+  }
+  .proc-v2-step {
+    padding: 20px 16px !important;
+  }
+  .proc-v2-number { font-size: 2rem !important; }
+  .proc-v2-title { font-size: 1rem !important; }
+}
+
+/* ─── 08 Testimonials Marquee ─── */
+@media (max-width: 768px) {
+  .testimonial-marquee-section {
+    padding: clamp(36px, 7vw, 52px) 0 !important;
+  }
+  .testimonial-card {
+    padding: 24px 20px !important;
+    border-radius: 16px !important;
+  }
+  .testimonial-card .review-text {
+    font-size: 0.88rem !important;
+  }
+  .testimonial-marquee-viewport {
+    height: 440px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-marquee-viewport {
+    height: 400px !important;
+  }
+  .testimonial-card {
+    padding: 20px 16px !important;
+  }
+}
+
+/* ─── 09 Trusted Brands Logo Marquee ─── */
+@media (max-width: 768px) {
+  .section-trusted-brands {
+    padding-block: 36px 48px !important;
+  }
+  .trusted-brands-head h3 {
+    font-size: 18px !important;
+    margin-bottom: 24px !important;
+    padding-inline: 16px;
+  }
+  .brand-logo-item {
+    width: 120px !important;
+    height: 40px !important;
+  }
+  .brands-track {
+    gap: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo-item {
+    width: 100px !important;
+    height: 34px !important;
+  }
+  .brands-track { gap: 28px !important; }
+  .trusted-brands-head h3 { font-size: 16px !important; }
+}
+
+/* ─── 10 Contact Form Section (on home page) ─── */
+@media (max-width: 991px) {
+  .contact-form-grid {
+    gap: 48px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-contact-form {
+    padding: clamp(40px, 8vw, 60px) 0 !important;
+  }
+  .contact-form-card {
+    padding: 28px 24px !important;
+    border-radius: 18px !important;
+  }
+  .contact-info-col h2 {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.2 !important;
+  }
+  .contact-info-col p {
+    font-size: 0.9rem !important;
+  }
+  .contact-graphic-decoration {
+    display: none !important;
+  }
+  .contact-detail-item {
+    font-size: 0.88rem !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-card {
+    padding: 22px 16px !important;
+    border-radius: 14px !important;
+  }
+  .field label { font-size: 14px !important; }
+  .field input,
+  .field textarea,
+  .field select {
+    font-size: 15px !important;
+    padding: 12px 14px !important;
+  }
+  .field textarea {
+    min-height: 120px !important;
+  }
+  .submit-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 14px 22px !important;
+  }
+}
+
+/* ─── 11 CTA Split Section ─── */
+@media (max-width: 768px) {
+  .cta-premium-section {
+    padding: clamp(32px, 6vw, 48px) 0 !important;
+  }
+  .cta-box-container.cta-split-layout {
+    padding: 36px 22px !important;
+    border-radius: 20px !important;
+    gap: 28px !important;
+  }
+  .cta-heading {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.22 !important;
+  }
+  .cta-sub {
+    font-size: 0.9rem !important;
+  }
+  .cta-split-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .cta-split-actions .hero-btn-primary,
+  .cta-split-actions .hero-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .cta-image-wrapper {
+    max-height: 260px !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+  }
+  .badge-top-left,
+  .badge-bottom-right {
+    font-size: 11px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-box-container.cta-split-layout {
+    padding: 28px 18px !important;
+    border-radius: 16px !important;
+  }
+  .cta-heading { font-size: clamp(20px, 6vw, 24px) !important; }
+  .cta-benefits-list {
+    flex-direction: column !important;
+    gap: 6px !important;
+    align-items: center !important;
+  }
+  .badge-top-left,
+  .badge-bottom-right {
+    display: none !important;
+  }
+}
+
+/* ─── 12 Footer ─── */
+@media (max-width: 768px) {
+  .site-footer {
+    padding-top: clamp(36px, 7vw, 52px) !important;
+    padding-bottom: 20px !important;
+  }
+  .footer-brand-logo {
+    font-size: 1.3rem !important;
+  }
+  .footer-brand-desc {
+    font-size: 0.85rem !important;
+    max-width: 100% !important;
+  }
+  .footer-social-row {
+    gap: 10px !important;
+  }
+  .footer-social-link {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .footer-col h4 {
+    font-size: 0.92rem !important;
+    margin-bottom: 14px !important;
+  }
+  .footer-col a,
+  .footer-col li {
+    font-size: 0.84rem !important;
+  }
+  .footer-bottom-premium {
+    padding-top: 16px !important;
+    gap: 12px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid-premium {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .footer-bottom-premium {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+  .footer-bottom-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px 16px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Section heads already clamp fine — just ensure no overflow */
+  .section-head h2 {
+    font-size: clamp(19px, 6.5vw, 22px) !important;
+  }
+  .agency-metrics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .cta-box-container.cta-split-layout {
+    padding: 22px 14px !important;
+  }
+  .contact-form-card {
+    padding: 18px 12px !important;
+  }
+}
