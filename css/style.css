@@ -13460,34 +13460,65 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   }
 }
 
-/* ─── 11 CTA Split Section ─── */
+/* ─── 11 CTA Split Section — Professional Mobile Design ─── */
+/* 
+   Design principle: content top → person image bottom-flush.
+   Image sits at the card bottom edge like a cutout poster.
+   Gradient fade blends image top into card background seamlessly.
+   Floating badges hidden — they require 2D space unavailable on mobile.
+*/
 @media (max-width: 991px) {
-  /* Single column: text above, image below */
+
+  /* Card: single column, no bottom padding — image bleeds to card edge */
   .cta-box-container.cta-split-layout {
     grid-template-columns: 1fr !important;
-    text-align: center !important;
-    padding: 40px 24px 0 !important;
+    padding: 44px 28px 0 !important;
     gap: 0 !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
   }
+
+  /* Content: centered */
   .cta-content-col {
     align-items: center !important;
     text-align: center !important;
-    padding-bottom: 28px !important;
+    padding-bottom: 36px !important;
+    position: relative;
+    z-index: 4;
   }
-  /* Benefits list: centered */
+
+  /* Heading */
+  .cta-split-heading {
+    font-size: clamp(26px, 7vw, 36px) !important;
+    line-height: 1.18 !important;
+    text-wrap: balance !important;
+  }
+
+  /* Subtitle max-width so it doesn't run wall-to-wall */
+  .cta-split-subtitle {
+    max-width: 400px !important;
+    margin-inline: auto !important;
+    font-size: 15px !important;
+  }
+
+  /* Benefits: row on tablet, stays readable */
   .cta-benefits-list {
     justify-content: center !important;
     gap: 10px 20px !important;
+    margin-bottom: 28px !important;
   }
   .cta-benefit-item {
     justify-content: center !important;
   }
-  /* Actions: stack full width */
+
+  /* Buttons: full-width stacked */
   .cta-split-actions {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     gap: 12px !important;
     width: 100% !important;
+    max-width: 380px !important;
+    margin-inline: auto !important;
   }
   .cta-main-action,
   .cta-secondary-action {
@@ -13496,83 +13527,122 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
     text-align: center !important;
   }
 
-  /* Image column: show below, compact height, bottom-flush */
+  /* ── Image column: bottom-flush person cutout ── */
   .cta-visual-col {
     display: flex !important;
     justify-content: center !important;
     align-items: flex-end !important;
-    height: 220px !important;
+    width: 100% !important;
+    height: 280px !important;
+    position: relative !important;
     overflow: hidden !important;
-    margin-top: 8px !important;
+    margin-top: 0 !important;
   }
+
+  /* Gradient fade: card bg → transparent, so image top melts into card */
+  /* Dark mode */
+  .cta-visual-col::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, #071f13 0%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
   .cta-image-wrapper {
-    height: 100% !important;
-    max-width: 260px !important;
-    justify-content: center !important;
-    align-items: flex-end !important;
-  }
-  .cta-person-img {
-    height: 100% !important;
     width: auto !important;
-    max-height: 220px !important;
-    object-fit: contain !important;
-    object-position: bottom !important;
+    max-width: none !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    position: relative !important;
   }
+
+  /* Glow orb: move to bottom of image, not center of wrapper */
   .cta-image-glow {
-    width: 200px !important;
-    height: 200px !important;
+    top: auto !important;
+    bottom: -40px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 280px !important;
+    height: 280px !important;
+    opacity: 0.7;
   }
-  /* Hide floating badges — overlap badly on mobile */
+
+  /* Person image: contain, aligned bottom, let it breathe */
+  .cta-person-img {
+    position: relative !important;
+    z-index: 2 !important;
+    width: auto !important;
+    height: 100% !important;
+    max-height: 280px !important;
+    object-fit: contain !important;
+    object-position: bottom center !important;
+    filter: drop-shadow(0 -8px 24px rgba(0, 217, 143, 0.18)) !important;
+  }
+
+  /* Floating badges: hide — no physical space on mobile */
   .cta-float-badge {
     display: none !important;
   }
 }
 
+/* Light mode: gradient uses light card bg */
+html:not([data-theme="dark"]) .cta-visual-col::before,
+[data-theme='light'] .cta-visual-col::before {
+  background: linear-gradient(to bottom, #f4faf6 0%, transparent 100%);
+}
+
+/* ── 768px tweaks ── */
 @media (max-width: 768px) {
   .cta-premium-section {
-    padding: clamp(32px, 6vw, 48px) 0 !important;
+    padding: clamp(28px, 5vw, 44px) 0 !important;
   }
   .cta-box-container.cta-split-layout {
     padding: 36px 22px 0 !important;
     border-radius: 20px !important;
   }
   .cta-split-heading {
-    font-size: clamp(24px, 6.5vw, 32px) !important;
-    line-height: 1.2 !important;
-  }
-  .cta-split-subtitle {
-    font-size: 0.9rem !important;
-    max-width: 100% !important;
+    font-size: clamp(24px, 6.5vw, 30px) !important;
   }
   .cta-visual-col {
-    height: 200px !important;
+    height: 240px !important;
   }
   .cta-person-img {
-    max-height: 200px !important;
+    max-height: 240px !important;
   }
 }
 
+/* ── 480px: small phone ── */
 @media (max-width: 480px) {
   .cta-box-container.cta-split-layout {
-    padding: 28px 18px 0 !important;
+    padding: 30px 18px 0 !important;
     border-radius: 16px !important;
   }
-  .cta-split-heading { font-size: clamp(22px, 6.5vw, 28px) !important; }
+  .cta-split-heading {
+    font-size: clamp(22px, 6.5vw, 26px) !important;
+  }
+  .cta-split-subtitle {
+    font-size: 14px !important;
+    max-width: 320px !important;
+  }
   .cta-benefits-list {
-    flex-direction: column !important;
-    gap: 8px !important;
-    align-items: center !important;
+    gap: 8px 14px !important;
   }
   .cta-benefit-item {
     font-size: 13px !important;
   }
   .cta-visual-col {
-    height: 170px !important;
+    height: 210px !important;
   }
   .cta-person-img {
-    max-height: 170px !important;
+    max-height: 210px !important;
   }
 }
+
 
 
 /* ─── 12 Footer ─── */
