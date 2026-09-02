@@ -13651,10 +13651,16 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   }
 }
 
-/* Light mode: gradient uses light card bg, bottom→transparent to match image-top layout */
+/* Light mode fixes for CTA image */
 html:not([data-theme="dark"]) .cta-visual-col::before,
 [data-theme='light'] .cta-visual-col::before {
   background: linear-gradient(to top, #f4faf6 0%, transparent 100%);
+}
+
+/* Light mode: white PNG elements in illustration vanish with multiply blend mode */
+html:not([data-theme="dark"]) .cta-person-img,
+[data-theme='light'] .cta-person-img {
+  mix-blend-mode: multiply !important;
 }
 
 /* ── 768px tweaks ── */
