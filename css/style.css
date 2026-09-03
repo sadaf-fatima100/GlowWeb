@@ -3888,50 +3888,87 @@ html:not([data-theme="dark"]) .services-header p,
   transform: translateX(4px);
 }
 
-/* Timeline Tab Nav */
+/* Top Segmented Navigation Tabs (Option 2 - Apple Style) */
 .expertise-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 580px;
+  margin: 0 auto clamp(36px, 5vw, 56px) auto;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid var(--border-strong);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+html[data-theme="dark"] .expertise-nav {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(0, 217, 143, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+html:not([data-theme="dark"]) .expertise-nav {
+  background: rgba(0, 217, 143, 0.06);
+  border-color: rgba(0, 217, 143, 0.22);
+  box-shadow: 0 10px 30px rgba(0, 217, 143, 0.08);
 }
 
 .expertise-nav-btn {
+  flex: 1;
   background: transparent;
   border: none;
-  text-align: left;
-  padding: 0;
+  text-align: center;
+  padding: 11px 20px;
+  border-radius: 999px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .expertise-nav-btn span {
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--fg-soft);
   transition: color 0.3s;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  position: relative;
+  z-index: 2;
+}
+
+.expertise-nav-btn:hover span {
+  color: var(--fg);
+}
+
+.expertise-nav-btn.active {
+  background: var(--accent-primary);
+  box-shadow: 0 4px 18px rgba(0, 217, 143, 0.35);
+  transform: translateY(-1px);
 }
 
 .expertise-nav-btn.active span {
-  color: var(--fg);
+  color: #03140a !important;
   font-weight: 800;
 }
 
 .expertise-nav-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 3px;
-  background: var(--border-strong);
+  height: 2.5px;
+  background: rgba(0, 0, 0, 0.08);
   border-radius: 2px;
-  position: relative;
   overflow: hidden;
 }
 
@@ -3941,7 +3978,7 @@ html:not([data-theme="dark"]) .services-header p,
   left: 0;
   height: 100%;
   width: 0%;
-  background: var(--accent-primary);
+  background: #03140a;
   border-radius: 2px;
 }
 
@@ -4024,16 +4061,16 @@ html:not([data-theme="dark"]) .expertise-right {
 
   /* 1. TOP SEGMENTED NAV TABS - STRICT SINGLE ROW */
   .expertise-nav {
-    order: 1 !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     gap: 6px !important;
-    margin: 0 0 16px 0 !important;
+    margin: 0 auto 20px auto !important;
     padding: 0 !important;
     border: none !important;
     background: transparent !important;
     width: 100% !important;
+    max-width: 100% !important;
   }
   .expertise-nav-btn {
     flex: 1 1 0 !important;
@@ -5232,6 +5269,118 @@ html:not([data-theme="dark"]) .brand-logo-item:hover img,
   line-height: 1.7 !important;
   margin-bottom: 28px !important;
   font-weight: 400 !important;
+}
+
+/* --- High-End Capability Spec Grid (Compact, Balanced, Zero-Bloat) --- */
+.cap-lead-desc {
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  line-height: 1.62 !important;
+  color: var(--fg-soft) !important;
+  margin: 0 0 20px 0 !important;
+  max-width: 580px;
+}
+
+.cap-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 22px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.cap-spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 0;
+  transition: transform 0.25s ease;
+}
+
+.cap-spec-item:hover {
+  transform: translateX(3px);
+}
+
+.cap-spec-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(0, 217, 143, 0.1);
+  border: 1px solid rgba(0, 217, 143, 0.25);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.25s ease;
+}
+
+.cap-spec-item:hover .cap-spec-icon {
+  background: var(--accent-primary);
+  color: #03140a;
+  box-shadow: 0 4px 14px rgba(0, 217, 143, 0.35);
+}
+
+.cap-spec-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cap-spec-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cap-spec-text strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.cap-spec-text span {
+  font-size: 12px;
+  color: var(--fg-soft);
+  line-height: 1.4;
+}
+
+.cap-action-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cap-trust-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--fg-soft);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0, 217, 143, 0.05);
+  border: 1px solid rgba(0, 217, 143, 0.18);
+}
+
+.cap-trust-tag .pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .cap-spec-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 
 /* Checklist Grid - Clean, Professional List (Consistent across all service pages) */
@@ -10057,6 +10206,7 @@ html:not([data-theme="dark"]) .cta-benefit-item {
   padding: 8px 14px;
   border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  transform: rotate(0deg) !important;
 }
 
 [data-theme='light'] .cta-float-badge,
@@ -10067,14 +10217,34 @@ html:not([data-theme="dark"]) .cta-float-badge {
 }
 
 .badge-top-left {
-  top: 10%;
-  left: -24px;
+  top: 27% !important;
+  left: -24px !important;
 }
 
 .badge-bottom-right {
-  bottom: 4%;
-  right: -20px;
+  bottom: 6% !important;
+  right: -20px !important;
 }
+
+/* Strictly straight horizontal floating animations (0deg tilt) */
+.cta-float-badge.float-anim-1 {
+  animation: cta-float-straight-1 4.5s ease-in-out infinite alternate !important;
+}
+
+.cta-float-badge.float-anim-3 {
+  animation: cta-float-straight-2 5s ease-in-out infinite alternate !important;
+}
+
+@keyframes cta-float-straight-1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(0deg); }
+}
+
+@keyframes cta-float-straight-2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(8px) rotate(0deg); }
+}
+
 
 .badge-icon-star {
   width: 28px;
