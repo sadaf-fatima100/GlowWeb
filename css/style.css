@@ -4162,21 +4162,23 @@ html:not([data-theme="dark"]) .expertise-right {
   /* 4. ANIMATION GRAPHIC PREVIEW CARD */
   .expertise-right {
     order: 3 !important;
-    height: 240px !important;
+    height: 260px !important;
     width: 100% !important;
     border-radius: 20px !important;
-    background: rgba(0, 217, 143, 0.03) !important;
-    border: 1px solid var(--border) !important;
     overflow: hidden !important;
     position: relative !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-top: 8px !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+    margin-top: 10px !important;
   }
   .expertise-anim-wrap {
-    transform: scale(0.85) !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: scale(0.9) !important;
     transform-origin: center center !important;
   }
 }
@@ -4214,11 +4216,59 @@ html:not([data-theme="dark"]) .expertise-right {
     font-size: 10px !important;
   }
   .expertise-right {
-    height: 210px !important;
+    height: 250px !important;
+    border-radius: 18px !important;
+    margin-top: 8px !important;
+  }
+  .expertise-anim-wrap {
+    transform: scale(0.84) !important;
+    transform-origin: center center !important;
+  }
+  .anim-code-window {
+    width: 82% !important;
+    max-width: 270px !important;
+  }
+  .window-body {
+    padding: 16px !important;
+    gap: 12px !important;
+  }
+  .ui-1 {
+    width: 90px !important;
+    height: 55px !important;
+    top: 6% !important;
+    right: 3% !important;
+  }
+  .ui-2 {
+    width: 65px !important;
+    height: 65px !important;
+    bottom: 6% !important;
+    left: 3% !important;
+  }
+  .anim-chart {
+    gap: 12px !important;
+    height: 160px !important;
+  }
+  .chart-bar {
+    width: 28px !important;
+  }
+  .anim-dashboard {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .dash-card {
+    padding: 22px 26px !important;
+  }
+  .dash-value {
+    font-size: 2.8rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .expertise-right {
+    height: 240px !important;
   }
   .expertise-anim-wrap {
     transform: scale(0.78) !important;
-    transform-origin: center center !important;
   }
 }
 
@@ -8705,13 +8755,16 @@ html:not([data-theme="dark"]) .ads-step-card,
   font-weight: 500;
 }
 .tp-checklist li svg {
-  width: 20px;
-  height: 20px;
-  color: var(--accent-primary);
-  background: rgba(0, 217, 143, 0.1);
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  color: #03140a !important;
+  background: var(--accent-primary) !important;
   border-radius: 50%;
   padding: 4px;
+  box-shadow: 0 2px 10px rgba(0, 217, 143, 0.35);
 }
+
 .tp-btn {
   display: inline-flex;
   align-items: center;
@@ -13644,9 +13697,11 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     min-width: 22px !important;
     padding: 4px !important;
     border-radius: 50% !important;
-    background: rgba(0, 217, 143, 0.14) !important;
-    color: var(--accent-primary) !important;
+    background: var(--accent-primary) !important;
+    color: #03140a !important;
+    box-shadow: 0 2px 10px rgba(0, 217, 143, 0.35) !important;
   }
+
 
   /* Full-width action button */
   .tp-btn {
