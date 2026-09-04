@@ -34,8 +34,8 @@
       .about-hero {
         position: relative;
         padding: 200px 0 100px;
-        overflow: hidden;
-        background: var(--bg);
+        overflow: visible;
+        background: transparent !important;
         text-align: center;
       }
       .about-hero::before {
@@ -47,10 +47,6 @@
         justify-content: center;
       }
       .about-hero h1 {
-        font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-        font-weight: 800;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
         max-width: 20ch;
         margin-inline: auto;
         margin-bottom: 24px;
@@ -79,29 +75,6 @@
       .about-hero-meta-item svg {
         color: var(--accent-primary);
         flex-shrink: 0;
-      } /* Floating decorative orbs */
-      .about-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.12;
-        pointer-events: none;
-      }
-      .about-orb-1 {
-        width: 400px;
-        height: 400px;
-        background: var(--accent-primary);
-        top: -100px;
-        right: 5%;
-        animation: orb-drift 12s ease-in-out infinite alternate;
-      }
-      @keyframes orb-drift {
-        from {
-          transform: translate(0, 0) scale(1);
-        }
-        to {
-          transform: translate(20px, -30px) scale(1.1);
-        }
       } /* --- About Story Section (2-col) --- */
       .about-story-section {
         padding: clamp(60px, 7vw, 100px) 0;
@@ -599,9 +572,6 @@
         .about-stats-grid {
           grid-template-columns: 1fr;
         }
-        .about-hero h1 {
-          font-size: 2.2rem;
-        }
         .about-cta-inner {
           flex-direction: column;
           text-align: center;
@@ -831,36 +801,28 @@
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
     </div>
     <!-- ============================ HERO SECTION (NEW SIGNATURE STYLING) ============================ -->
-    <section class="about-hero">
-      <div class="about-orb about-orb-1"></div>
-      <div class="wrap" style="position: relative; z-index: 2">
+    <main class="about-page-universe" id="main-content">
+      <section class="about-hero">
+        <div class="wrap" style="position: relative; z-index: 2">
         <!-- Eyebrow — Live dot, no pill -->
         <div class="hero-live-eyebrow reveal" style="justify-content: center;">
           <span class="hero-live-dot"></span>
           <span class="hero-live-text">Who We Are &amp; Our Mission</span>
         </div>
 
-        <!-- Centered Creative Title With Interactive Toggle & Icon Badges (Contact & Home Parity) -->
+        <!-- Main Hero Headline (Desktop: 2 rows, Mobile: 3 balanced rows — identical font size & weight) -->
         <h1 class="about-hero-title reveal" style="animation-delay: 0.1s">
-          <div class="about-hero-row">
-            <span>We Craft Websites</span>
-            <span class="title-icon-btn" title="Engineering Excellence">
-              <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </span>
-            <span>&amp; Growth</span>
-          </div>
-          <div class="about-hero-row">
-            <span>That</span>
-            <span class="title-toggle-switch" aria-hidden="true">
-              <span class="title-toggle-knob"></span>
-            </span>
-            <span class="about-hero-accent">Elevate Your Brand</span>
-            <svg class="title-cursor-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3.9 2.1c-.5-.3-1.1 0-1.3.5-.1.2-.1.5 0 .7l5.6 17.2c.2.6.9.9 1.5.6.3-.1.5-.4.6-.7l2.8-5.7 5.7-2.8c.6-.3.8-1 .5-1.6-.1-.3-.4-.5-.7-.6L4.6 2.2c-.2-.1-.5-.1-.7-.1z"/>
-            </svg>
-          </div>
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Layout -->
+          <span class="about-desk-title">
+            <span class="about-title-row-1">We Craft Digital Platforms</span>
+            <span class="about-title-row-2">That <span class="about-hero-accent">Elevate Your Brand</span></span>
+          </span>
+          <!-- Mobile (<=600px): Perfectly Balanced 3-Row Layout -->
+          <span class="about-mob-title">
+            <span class="about-mob-row">We Craft Digital</span>
+            <span class="about-mob-row">Platforms That</span>
+            <span class="about-mob-row"><span class="about-hero-accent">Elevate Your Brand</span></span>
+          </span>
         </h1>
         <!-- Subtitle Lede -->
         <p class="about-hero-desc reveal">
@@ -916,8 +878,8 @@
             <span class="sec-slash">/</span>
             <span class="sec-tag">Our Proven Impact</span>
           </div>
-          <h2 >
-            Numbers That Define Our Excellence
+          <h2>
+            Numbers That Define <em>Our Excellence</em>
           </h2>
           <p class="section-subtitle">
             Empowering brands worldwide with data-driven strategies and measurable digital growth
@@ -1071,7 +1033,7 @@
           <span class="sec-slash">/</span>
           <span class="sec-tag">Creative Solutions &amp; Commitment</span>
         </div>
-        <h2 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important; font-size: clamp(32px, 4vw, 48px) !important; font-weight: 700 !important; line-height: 1.18 !important; letter-spacing: -0.034em !important; color: var(--fg) !important; margin: 0 auto !important; text-align: center !important;">
+        <h2>
           Driving Measurable Success <span class="tech-gradient-text">&amp; Lasting Growth</span>
         </h2>
         <p class="section-subtitle reveal" style="margin-inline: auto; margin-top: 14px; max-width: 680px;">From high-yield marketing architectures to relentless client dedication, we empower ambitious brands to dominate their markets</p>
@@ -1080,18 +1042,19 @@
       <!-- Row 1: Creative Solutions (Left content, Right image) -->
       <div class="expertise-row-creative" style="margin-top: 40px">
         <div class="expertise-content-creative reveal-left">
-          <div class="hero-live-eyebrow" style="margin-bottom: 16px;">
-            <span class="hero-live-dot"></span>
-            <span class="hero-live-text">Creative Solutions</span>
+          <div class="section-num-label" style="margin-bottom: 14px;">
+            <span class="sec-num">01</span>
+            <span class="sec-slash">/</span>
+            <span class="sec-tag">Creative Solutions</span>
           </div>
-          <h2>Explode Your Sales with Ready-to-Buy Customers</h2>
+          <h3 class="expertise-row-title">Explode Your Sales with <em>Ready-to-Buy Customers</em></h3>
           <p>
             Our integrated web and marketing solutions drive high-intent traffic to your site and secure dominant first-page rankings across search engines and paid channels. We bridge the gap between creative brand storytelling and data-backed conversion engineering, ensuring your business captures its full market share.
           </p>
-          <p style="margin-top: -16px; margin-bottom: 28px;">
+          <p style="margin-bottom: 24px;">
             Backed by over 500+ successful client deployments across 10+ competitive sectors, we develop in-depth marketing blueprints that solidify your brand identity and scale revenue sustainably.
           </p>
-          <a href="services.html" class="btn btn-solid mt-4">Get Started Now</a>
+          <a href="services.html" class="btn btn-solid">Get Started Now</a>
         </div>
         <div class="expertise-image-creative reveal-right">
           <img
@@ -1105,18 +1068,19 @@
       <!-- Row 2: Experience & Dedication (Reverse: Right content, Left image) -->
       <div class="expertise-row-creative reverse">
         <div class="expertise-content-creative reveal-right">
-          <div class="hero-live-eyebrow" style="margin-bottom: 16px;">
-            <span class="hero-live-dot"></span>
-            <span class="hero-live-text">Proven Reliability</span>
+          <div class="section-num-label" style="margin-bottom: 14px;">
+            <span class="sec-num">02</span>
+            <span class="sec-slash">/</span>
+            <span class="sec-tag">Proven Reliability</span>
           </div>
-          <h2>Experience Tells Its Story — We Never Let You Down</h2>
+          <h3 class="expertise-row-title">Experience Tells Its Story — <em>We Never Let You Down</em></h3>
           <p>
             With over 7+ years of digital marketing and web engineering experience, our multidisciplinary team of strategists, designers, writers, and technical experts is equipped to handle multifaceted projects with speed and precision.
           </p>
-          <p style="margin-top: -16px; margin-bottom: 28px;">
+          <p style="margin-bottom: 24px;">
             As your business scales, our capabilities grow alongside you. Our team continually undertakes advanced industry certifications and masters emerging technologies to ensure your digital services stay sharp, modern, and high-performing.
           </p>
-          <a href="contact.html" class="btn btn-solid mt-4">Grow With Us</a>
+          <a href="contact.html" class="btn btn-solid">Grow With Us</a>
         </div>
         <div class="expertise-image-creative reveal-left">
           <img
@@ -1130,18 +1094,19 @@
       <!-- Row 3: Client Focus & Partnership (Left content, Right image) -->
       <div class="expertise-row-creative">
         <div class="expertise-content-creative reveal-left">
-          <div class="hero-live-eyebrow" style="margin-bottom: 16px;">
-            <span class="hero-live-dot"></span>
-            <span class="hero-live-text">Client Commitment</span>
+          <div class="section-num-label" style="margin-bottom: 14px;">
+            <span class="sec-num">03</span>
+            <span class="sec-slash">/</span>
+            <span class="sec-tag">Client Commitment</span>
           </div>
-          <h2>Our Clients Always Matter — Marketed to Perfection</h2>
+          <h3 class="expertise-row-title">Our Clients Always Matter — <em>Marketed to Perfection</em></h3>
           <p>
             At the foundation of our agency is a single unwavering principle: keeping our clients delighted by exceeding expectations on every milestone. We treat your brand as our own, ensuring every digital touchpoint communicates quality, credibility, and authority.
           </p>
-          <p style="margin-top: -16px; margin-bottom: 28px;">
+          <p style="margin-bottom: 24px;">
             We build long-term, transparent partnerships that put your business needs first. By aligning closely with your vision, we become an indispensable strategic partner championing your ongoing success.
           </p>
-          <a href="contact.html" class="btn btn-solid mt-4">Partner With Us</a>
+          <a href="contact.html" class="btn btn-solid">Partner With Us</a>
         </div>
         <div class="expertise-image-creative reveal-right">
           <img
@@ -1234,13 +1199,13 @@
         box-shadow: 0 0 20px rgba(0, 217, 143, 0.4);
       }
       .about-why-card h3 {
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-family: var(--font-display) !important;
         font-size: 20px !important;
-        font-weight: 700;
+        font-weight: 800;
         line-height: 1.3;
         color: var(--fg);
         margin-bottom: 10px;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.025em;
         text-align: center;
       }
       .about-why-card p {
@@ -1329,7 +1294,7 @@
             <span class="sec-tag">Client Reviews</span>
           </div>
           <h2>
-            What Our Clients Say
+            What Our <em>Clients Say</em>
           </h2>
           <p class="section-subtitle">
             Hear directly from founders, product leaders, and CMOs who scaled their revenue and digital impact with us
@@ -1403,7 +1368,7 @@
                 <div class="h-test-author">
                   <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
                   </div>
                 </div>
@@ -1491,7 +1456,7 @@
                 <div class="h-test-author">
                   <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
                   </div>
                 </div>
@@ -1583,9 +1548,9 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
                   </div>
                 </div>
@@ -1671,9 +1636,9 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
                   </div>
                 </div>
@@ -1819,7 +1784,7 @@
                 <circle cx="10.5" cy="34" r="6" fill="currentColor" />
               </svg>
             </div>
-            <h2>Have a Project in Mind? <span class="wave-hand">👋</span></h2>
+            <h2>Have a Project <em>in Mind?</em> <span class="wave-hand">👋</span></h2>
             <p>
               Send us a message at
               <strong style="color: var(--accent-primary)"
@@ -1925,21 +1890,6 @@
               Partner with our elite web agency to engineer high-converting platforms, dominate search rankings, and accelerate compounding business growth
             </p>
 
-            <div class="cta-benefits-list">
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>100% Custom Engineering</span>
-              </div>
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Sub-Second Speeds</span>
-              </div>
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Dedicated Specialists</span>
-              </div>
-            </div>
-
             <div class="cta-split-actions">
               <a href="contact.html" class="btn btn-solid cta-main-action">
                 <span>Get Started Now</span>
@@ -1980,6 +1930,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="site-footer-premium" id="footer">

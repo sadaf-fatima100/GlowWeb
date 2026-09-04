@@ -180,11 +180,6 @@
         background: transparent !important;
       }
       .contact-hero-title {
-        font-family: var(--font-display) !important;
-        font-size: clamp(38px, 4.6vw, 62px) !important;
-        font-weight: 700 !important;
-        line-height: 1.18 !important;
-        letter-spacing: -0.034em !important;
         color: var(--fg) !important;
         margin-bottom: 24px !important;
         display: flex !important;
@@ -194,6 +189,7 @@
         gap: 12px !important;
         text-align: center !important;
         width: 100% !important;
+        text-wrap: balance !important;
       }
       .contact-hero-row {
         display: flex !important;
@@ -272,8 +268,8 @@
         transform: rotate(-15deg);
       }
       .contact-hero-desc {
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
-        font-size: clamp(1.02rem, 1.5vw, 1.15rem) !important;
+        font-family: var(--font-body) !important;
+        font-size: 16px !important;
         color: var(--fg-soft) !important;
         font-weight: 400 !important;
         max-width: 680px !important;
@@ -302,11 +298,11 @@
         gap: 8px;
         background: var(--accent-primary) !important;
         color: #03140a !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-family: var(--font-body) !important;
         font-weight: 700 !important;
-        padding: 14px 34px !important;
+        padding: 13px 32px !important;
         border-radius: 999px !important;
-        font-size: 16px !important;
+        font-size: 15px !important;
         text-decoration: none !important;
         box-shadow: 0 10px 25px rgba(0, 217, 143, 0.35) !important;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -321,11 +317,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
-        font-size: 16px !important;
+        font-family: var(--font-body) !important;
+        font-size: 15px !important;
         font-weight: 600 !important;
         color: var(--fg) !important;
-        padding: 14px 30px !important;
+        padding: 13px 28px !important;
         border-radius: 999px !important;
         border: 1.5px solid var(--border-strong) !important;
         background: transparent !important;
@@ -338,14 +334,6 @@
         background: rgba(0, 217, 143, 0.08) !important;
         transform: translateY(-2px);
       }
-      .contact-info h2 {
-        font-family: var(--font-display) !important;
-        font-size: clamp(30px, 3.5vw, 42px) !important;
-        font-weight: 700 !important;
-        line-height: 1.15 !important;
-        letter-spacing: -0.032em !important;
-        color: var(--fg) !important;
-      }
       .contact-info h2 em {
         font-style: normal;
         background: linear-gradient(135deg, #00d98f 0%, #00ffaa 50%, #4de6b8 100%);
@@ -357,25 +345,74 @@
       .contact-form select,
       .contact-form textarea,
       .info-row {
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-family: var(--font-body) !important;
+      }
+      @media (max-width: 1024px) {
+        .contact-grid {
+          gap: 36px !important;
+        }
+      }
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        .contact-info {
+          max-width: 650px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .contact-info .info-row {
+          justify-content: center;
+          text-align: left;
+        }
+        .form-card {
+          max-width: 650px;
+          margin: 0 auto;
+          width: 100%;
+        }
       }
       @media (max-width: 768px) {
+        .contact-hero-wrapper {
+          padding-top: 110px;
+          padding-bottom: 40px;
+        }
         .contact-hero-row {
-          flex-wrap: wrap;
+          white-space: nowrap !important;
+          flex-wrap: nowrap !important;
           justify-content: center;
-          gap: 8px;
+          gap: clamp(6px, 1.8vw, 10px);
         }
         .title-toggle-switch {
-          width: 90px;
-          height: 45px;
-          padding: 4px;
+          width: clamp(55px, 12vw, 90px);
+          height: clamp(28px, 6vw, 45px);
+          padding: 3px;
         }
         .title-toggle-knob {
-          width: 36px;
-          height: 36px;
+          width: clamp(22px, 5vw, 36px);
+          height: clamp(22px, 5vw, 36px);
         }
         .contact-hero-title {
           gap: 6px;
+        }
+        .field-row {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+          margin-bottom: 16px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .contact-hero-wrapper {
+          padding-top: 100px;
+          padding-bottom: 30px;
+        }
+        .form-card {
+          padding: 22px 16px !important;
+          border-radius: 18px !important;
+        }
+        .checkbox-row {
+          font-size: 12.5px !important;
+          gap: 8px !important;
         }
       }
 
@@ -712,7 +749,7 @@
               type="submit"
               class="btn btn-primary btn-full"
             >
-              Send Message <span style="margin-left: 8px;">→</span>
+              Send Message
             </button>
           </form>
         </div>

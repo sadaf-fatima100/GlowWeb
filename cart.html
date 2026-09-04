@@ -49,6 +49,52 @@
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .cart-wrap {
+        width: min(92vw, 1100px);
+        margin: 0 auto;
+        padding-top: clamp(100px, 12vw, 140px);
+        padding-bottom: clamp(40px, 6vw, 80px);
+      }
+      .cart-title {
+        margin-bottom: clamp(24px, 4vw, 40px);
+      }
+      .cart-table-box {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 32px;
+      }
+      .cart-table {
+        min-width: 600px;
+      }
+      @media (max-width: 768px) {
+        .cart-wrap {
+          width: 94vw;
+        }
+        .cart-coupon-box {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .cart-coupon-box .btn {
+          width: 100%;
+        }
+        .cart-totals-card {
+          padding: 24px 20px;
+        }
+        .footer-grid-premium {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+        }
+        .footer-info-col {
+          max-width: 100%;
+        }
+        .footer-bottom-premium {
+          flex-direction: column;
+          gap: 16px;
+          text-align: center;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Custom reactive mouse pointer -->

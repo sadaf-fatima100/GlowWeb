@@ -192,20 +192,17 @@
   }
 
   /* ---------- Dynamic Header Scroll Animation ---------- */
-  const topbar = document.querySelector('.topbar');
   const header = document.querySelector('.site-header');
-  if (topbar && header) {
+  if (header) {
     const handleHeaderScroll = () => {
-      const scrolled = window.scrollY || document.documentElement.scrollTop;
-      if (scrolled > 30) {
-        topbar.style.transform = 'translateY(-100%)';
-        header.style.top = '10px';
-      } else {
-        topbar.style.transform = 'translateY(0)';
-        header.style.top = '10px';
+      const isMobile = window.innerWidth <= 960;
+      if (isMobile) {
+        header.style.top = ''; // Clean CSS control on mobile
+        return;
       }
+      header.style.top = '10px';
     };
-    document.addEventListener('scroll', handleHeaderScroll, { passive: true });
+    window.addEventListener('resize', handleHeaderScroll, { passive: true });
     handleHeaderScroll();
   }
 
@@ -922,9 +919,11 @@
     let activeIndex = 0;
     let progressInterval = null;
     let elapsed = 0;
-    const duration = 3500; // Reduced from 6s to 3.5s per slide
+    const duration = 3500; // 3.5s per slide on desktop
     const intervalTick = 50; // check progress every 50ms
     
+    const isMobileView = () => window.innerWidth <= 991;
+
     const showSlide = (index) => {
       activeIndex = index;
       elapsed = 0;
@@ -944,9 +943,23 @@
     };
     
     const startProgress = () => {
-      if (progressInterval) clearInterval(progressInterval);
+      if (progressInterval) {
+        clearInterval(progressInterval);
+        progressInterval = null;
+      }
+      
+      // Never auto-advance on mobile — mobile users read at their own pace via manual tap tabs
+      if (isMobileView()) {
+        return;
+      }
       
       progressInterval = setInterval(() => {
+        if (isMobileView()) {
+          clearInterval(progressInterval);
+          progressInterval = null;
+          return;
+        }
+
         elapsed += intervalTick;
         const percentage = Math.min(100, (elapsed / duration) * 100);
         
@@ -957,7 +970,6 @@
         }
         
         if (elapsed >= duration) {
-          // Switch to next slide
           const nextIndex = (activeIndex + 1) % textSlides.length;
           showSlide(nextIndex);
         }
@@ -971,7 +983,25 @@
         startProgress();
       });
     });
-    
+
+    // Window resize handler
+    window.addEventListener('resize', () => {
+      if (isMobileView()) {
+        if (progressInterval) {
+          clearInterval(progressInterval);
+          progressInterval = null;
+        }
+        navBtns.forEach(btn => {
+          const fill = btn.querySelector('.expertise-nav-progress-fill');
+          if (fill) fill.style.width = '0%';
+        });
+      } else {
+        if (!progressInterval) {
+          startProgress();
+        }
+      }
+    }, { passive: true });
+
     // Global method to switch slides from external cards/buttons
     window.goToExpertiseSlide = (index) => {
       showSlide(index);
@@ -1054,4 +1084,217 @@
     }
   };
 
+  /* =========================================================
+     Universal Portfolio Fancybox / Lightbox Modal System
+     100% Centered, Fully Responsive, Keyboard & Touch Enabled
+     ========================================================= */
+  (function initPortfolioFancybox() {
+    let fancyboxEl = null;
+    let currentGallery = [];
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function createFancyboxDOM() {
+      const existing = document.getElementById('portfolioFancybox');
+      if (existing) return existing;
+
+      const el = document.createElement('div');
+      el.id = 'portfolioFancybox';
+      el.className = 'portfolio-fancybox';
+      el.setAttribute('aria-hidden', 'true');
+      el.setAttribute('role', 'dialog');
+      el.setAttribute('aria-modal', 'true');
+      el.setAttribute('aria-label', 'Portfolio Image Lightbox');
+
+      el.innerHTML = `
+        <div class="fancybox-backdrop"></div>
+        <div class="fancybox-wrapper">
+          <button class="fancybox-btn fancybox-close" type="button" aria-label="Close Lightbox" title="Close (Esc)">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <button class="fancybox-btn fancybox-prev" type="button" aria-label="Previous image" title="Previous (Left Arrow)">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="fancybox-btn fancybox-next" type="button" aria-label="Next image" title="Next (Right Arrow)">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="fancybox-container">
+            <div class="fancybox-media-wrap">
+              <div class="fancybox-spinner"></div>
+              <img class="fancybox-img" src="" alt="Portfolio Preview" />
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(el);
+      return el;
+    }
+
+    function getActiveItems(clickedCard) {
+      if (clickedCard && clickedCard.closest('.stacked-gallery-container')) {
+        return Array.from(document.querySelectorAll('.stacked-gallery-container .stacked-card'));
+      }
+      // On portfolio.html with .port-card
+      const portCards = document.querySelectorAll('.portfolio-grid .port-card, #portfolioGrid .port-card');
+      if (portCards.length > 0) {
+        const visible = Array.from(portCards).filter(c => !c.classList.contains('mix-hide') && !c.classList.contains('mix-hidden-layout') && c.offsetParent !== null);
+        return visible.length > 0 ? visible : Array.from(portCards);
+      }
+      // On index.html with .portfolio-item
+      const portItems = document.querySelectorAll('.portfolio-grid .portfolio-item');
+      if (portItems.length > 0) {
+        const visible = Array.from(portItems).filter(item => item.classList.contains('active') && item.offsetParent !== null);
+        return visible.length > 0 ? visible : Array.from(portItems);
+      }
+      return Array.from(document.querySelectorAll('.portfolio-item, .port-card, .stacked-card'));
+    }
+
+    function extractItemData(card) {
+      const img = card.querySelector('img');
+      const src = img ? (img.currentSrc || img.getAttribute('src') || '') : '';
+      const alt = img ? (img.getAttribute('alt') || '') : 'Portfolio Preview';
+      return { src, alt };
+    }
+
+    function renderSlide(index) {
+      if (!currentGallery.length) return;
+      if (index < 0) index = currentGallery.length - 1;
+      if (index >= currentGallery.length) index = 0;
+      currentIndex = index;
+
+      const item = currentGallery[currentIndex];
+      const img = fancyboxEl.querySelector('.fancybox-img');
+      const spinner = fancyboxEl.querySelector('.fancybox-spinner');
+      const prevBtn = fancyboxEl.querySelector('.fancybox-prev');
+      const nextBtn = fancyboxEl.querySelector('.fancybox-next');
+
+      if (currentGallery.length <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+      } else {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+      }
+
+      img.classList.add('is-loading');
+      spinner.classList.add('is-active');
+
+      const tempImg = new Image();
+      tempImg.onload = () => {
+        img.src = item.src;
+        img.alt = item.alt;
+        img.classList.remove('is-loading');
+        spinner.classList.remove('is-active');
+      };
+      tempImg.onerror = () => {
+        img.src = item.src;
+        img.classList.remove('is-loading');
+        spinner.classList.remove('is-active');
+      };
+      tempImg.src = item.src;
+    }
+
+    function openFancybox(card) {
+      fancyboxEl = createFancyboxDOM();
+      const items = getActiveItems(card);
+      currentGallery = items.map(extractItemData).filter(d => !!d.src);
+
+      const clickedImg = card.querySelector('img');
+      const clickedSrc = clickedImg ? (clickedImg.currentSrc || clickedImg.getAttribute('src')) : '';
+      let foundIndex = currentGallery.findIndex(d => d.src === clickedSrc);
+      if (foundIndex === -1) foundIndex = 0;
+
+      renderSlide(foundIndex);
+
+      fancyboxEl.classList.add('is-open');
+      fancyboxEl.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('fancybox-open');
+    }
+
+    function closeFancybox() {
+      if (!fancyboxEl) return;
+      fancyboxEl.classList.remove('is-open');
+      fancyboxEl.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('fancybox-open');
+    }
+
+    // Delegated click listener for any portfolio item
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('.portfolio-item, .port-card, .stacked-card, .project-carousel-frame, .port-frame');
+      if (card && !e.target.closest('.portfolio-fancybox')) {
+        const targetCard = card.closest('.portfolio-item, .port-card, .stacked-card') || card;
+        e.preventDefault();
+        openFancybox(targetCard);
+        return;
+      }
+
+      // Close button or backdrop click
+      if (e.target.closest('.fancybox-close') || e.target.classList.contains('fancybox-backdrop') || e.target.classList.contains('fancybox-wrapper')) {
+        closeFancybox();
+        return;
+      }
+
+      // Prev / Next button click
+      if (e.target.closest('.fancybox-prev')) {
+        e.stopPropagation();
+        renderSlide(currentIndex - 1);
+        return;
+      }
+      if (e.target.closest('.fancybox-next')) {
+        e.stopPropagation();
+        renderSlide(currentIndex + 1);
+        return;
+      }
+    });
+
+    // Keyboard navigation (Escape, ArrowLeft, ArrowRight)
+    document.addEventListener('keydown', (e) => {
+      if (!fancyboxEl || !fancyboxEl.classList.contains('is-open')) return;
+      if (e.key === 'Escape') {
+        closeFancybox();
+      } else if (e.key === 'ArrowLeft') {
+        renderSlide(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        renderSlide(currentIndex + 1);
+      }
+    });
+
+    // Touch swipe gestures for mobile devices
+    document.addEventListener('touchstart', (e) => {
+      if (!fancyboxEl || !fancyboxEl.classList.contains('is-open')) return;
+      if (e.touches && e.touches.length) {
+        touchStartX = e.touches[0].screenX;
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      if (!fancyboxEl || !fancyboxEl.classList.contains('is-open')) return;
+      if (e.changedTouches && e.changedTouches.length) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          renderSlide(currentIndex + 1); // Swipe left -> next
+        } else {
+          renderSlide(currentIndex - 1); // Swipe right -> prev
+        }
+      }
+    }
+  })();
+
 })();
+

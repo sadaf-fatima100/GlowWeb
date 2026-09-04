@@ -12,6 +12,201 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .portfolio-page-universe {
+        position: relative;
+        width: 100%;
+        overflow-x: clip;
+      }
+      .portfolio-hero {
+        position: relative;
+        width: 100%;
+        padding-top: clamp(120px, 14vw, 175px);
+        padding-bottom: clamp(40px, 5vw, 65px);
+        text-align: center;
+        overflow: visible;
+        background: transparent !important;
+      }
+      .portfolio-hero-title {
+        color: var(--fg);
+        margin-bottom: clamp(16px, 2.5vw, 24px);
+        text-wrap: balance;
+      }
+      .portfolio-hero-accent {
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block;
+      }
+      html:not([data-theme="dark"]) .portfolio-hero-accent,
+      [data-theme='light'] .portfolio-hero-accent {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+      .portfolio-hero-desc {
+        font-family: var(--font-body) !important;
+        font-size: clamp(15px, 1.3vw, 16.5px) !important;
+        color: var(--fg-soft) !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        line-height: 1.65 !important;
+        text-align: center !important;
+        text-wrap: balance !important;
+      }
+      .portfolio-stat-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 20px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        font-family: var(--font-body);
+        backdrop-filter: blur(12px);
+      }
+      .portfolio-stat-pill.success {
+        background: rgba(0, 217, 143, 0.12);
+        color: var(--accent-primary);
+        border: 1px solid rgba(0, 217, 143, 0.3);
+      }
+      .portfolio-stat-pill.teal {
+        background: rgba(79, 235, 253, 0.12);
+        color: #38bdf8;
+        border: 1px solid rgba(79, 235, 253, 0.3);
+      }
+      .filter-pill {
+        min-height: 44px;
+        padding: 8px 22px;
+        font-size: 13.5px;
+        font-weight: 700;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .port-card {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid rgba(0, 217, 143, 0.85) !important;
+        background: var(--surface);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(0, 217, 143, 0.22);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+      }
+      html[data-theme="dark"] .port-card,
+      html:not([data-theme="light"]) .port-card {
+        border: 2px solid rgba(0, 217, 143, 0.85) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(0, 217, 143, 0.22) !important;
+      }
+      html[data-theme="light"] .port-card,
+      [data-theme="light"] .port-card {
+        border: 2px solid #00a86b !important;
+        box-shadow: 0 8px 24px rgba(0, 30, 15, 0.12), 0 0 0 1px rgba(0, 168, 107, 0.25) !important;
+      }
+      .port-card:hover {
+        transform: translateY(-6px);
+        border-color: #00ffaa !important;
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 30px rgba(0, 217, 143, 0.35) !important;
+      }
+      html[data-theme="light"] .port-card:hover,
+      [data-theme="light"] .port-card:hover {
+        border-color: #008f58 !important;
+        box-shadow: 0 20px 48px rgba(0, 30, 15, 0.2), 0 0 20px rgba(0, 168, 107, 0.3) !important;
+      }
+      .port-frame img {
+        width: 100%;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
+        display: block;
+      }
+      /* Stacked Hero Gallery Borders */
+      .stacked-card {
+        border: 2px solid rgba(0, 217, 143, 0.75) !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 217, 143, 0.2) !important;
+      }
+      html[data-theme="light"] .stacked-card,
+      [data-theme="light"] .stacked-card {
+        border: 2px solid #00a86b !important;
+        box-shadow: 0 8px 24px rgba(0, 30, 15, 0.12) !important;
+      }
+      @media (max-width: 1024px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        .stacked-card {
+          width: 155px;
+          margin-inline: -16px;
+        }
+      }
+      @media (max-width: 768px) {
+        .portfolio-hero {
+          padding-top: 110px;
+          padding-bottom: 35px;
+        }
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .stacked-gallery-container {
+          padding: 16px 0;
+          margin: 20px auto;
+        }
+        .stacked-card {
+          width: 125px;
+          margin-inline: -14px;
+        }
+        .stacked-card.card-5,
+        .stacked-card.card-6 {
+          display: none;
+        }
+        .contact-inputs-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        .contact-input-group.full-width {
+          grid-column: span 1 !important;
+        }
+        .footer-grid-premium {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+        }
+        .footer-info-col {
+          max-width: 100%;
+        }
+        .footer-bottom-premium {
+          flex-direction: column;
+          gap: 16px;
+          text-align: center;
+        }
+      }
+      @media (max-width: 480px) {
+        .portfolio-hero {
+          padding-top: 100px;
+          padding-bottom: 28px;
+        }
+        .stacked-card {
+          width: 105px;
+          margin-inline: -12px;
+        }
+        .stacked-card.card-4 {
+          display: none;
+        }
+        .filter-pill {
+          padding: 7px 16px;
+          font-size: 12.5px;
+          flex: 1 1 calc(50% - 10px);
+        }
+        .contact-form-card {
+          padding: 24px 16px !important;
+          border-radius: 18px !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Custom reactive mouse pointer -->
@@ -168,7 +363,8 @@
       <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
       <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
     </div>
-    <section class="portfolio-hero">
+    <main class="portfolio-page-universe" id="main-content">
+      <section class="portfolio-hero">
       <div
         class="wrap"
         style="position: relative; z-index: 2; text-align: center"
@@ -178,9 +374,19 @@
           <span class="hero-live-dot"></span>
           <span class="hero-live-text">Award-Winning Projects</span>
         </div>
+        <!-- Main Hero Headline (Desktop: 2 rows, Mobile: 3 balanced rows — identical font size & weight) -->
         <h1 class="reveal portfolio-hero-title">
-          Elevating Your Brand With <br />
-          <span class="portfolio-hero-accent">Exceptional Projects</span>
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Layout -->
+          <span class="portfolio-desk-title">
+            <span class="portfolio-title-row-1">Exceptional Digital Projects</span>
+            <span class="portfolio-title-row-2">That <span class="portfolio-hero-accent">Deliver Real Results</span></span>
+          </span>
+          <!-- Mobile (<=600px): Perfectly Balanced 3-Row Layout -->
+          <span class="portfolio-mob-title">
+            <span class="portfolio-mob-row">Exceptional Digital</span>
+            <span class="portfolio-mob-row">Projects That Deliver</span>
+            <span class="portfolio-mob-row"><span class="portfolio-hero-accent">Real Results</span></span>
+          </span>
         </h1>
         <!-- Randomly Stacked Gallery -->
         <div class="stacked-gallery-container reveal">
@@ -872,7 +1078,7 @@
             <span class="sec-tag">Client Reviews</span>
           </div>
           <h2>
-            What Our Clients Say
+            What Our <em>Clients Say</em>
           </h2>
           <p class="section-subtitle">
             Hear directly from founders, product leaders, and CMOs who scaled their revenue and digital impact with us
@@ -946,7 +1152,7 @@
                 <div class="h-test-author">
                   <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
                   </div>
                 </div>
@@ -1034,7 +1240,7 @@
                 <div class="h-test-author">
                   <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
                   </div>
                 </div>
@@ -1126,9 +1332,9 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
                   </div>
                 </div>
@@ -1214,9 +1420,9 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
                   </div>
                 </div>
@@ -1361,7 +1567,7 @@
                 <circle cx="10.5" cy="34" r="6" fill="currentColor" />
               </svg>
             </div>
-            <h2>Have a Project in Mind? <span class="wave-hand">👋</span></h2>
+            <h2>Have a Project <em>in Mind?</em> <span class="wave-hand">👋</span></h2>
             <p>
               Send us a message at
               <strong style="color: var(--accent-primary)"
@@ -1468,25 +1674,9 @@
               Partner with our elite web agency to engineer high-converting platforms, dominate search rankings, and accelerate compounding business growth
             </p>
 
-            <div class="cta-benefits-list">
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>100% Custom Engineering</span>
-              </div>
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Sub-Second Speeds</span>
-              </div>
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Dedicated Specialists</span>
-              </div>
-            </div>
-
             <div class="cta-split-actions">
               <a href="contact.html" class="btn btn-solid cta-main-action">
                 <span>Get Started Now</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
               <a href="services.html" class="btn btn-ghost cta-secondary-action">Explore Services</a>
             </div>
@@ -1523,6 +1713,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="site-footer-premium" id="footer">

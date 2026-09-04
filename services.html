@@ -239,7 +239,8 @@
       <a href="contact.html">Get Started</a>
     </div>
     <!-- ============================ SERVICES HERO SECTION ============================ -->
-    <section class="services-hero-creative">
+    <main class="services-page-universe" id="main-content">
+      <section class="services-hero-creative">
       <!-- Background Ambient Aurora Glow -->
       <div class="hero-aurora-glow" style="opacity: 0.5; pointer-events: none;">
         <div class="aurora-wave wave-1"></div>
@@ -255,10 +256,19 @@
           <span class="hero-live-text">Specialized Agency Capabilities</span>
         </div>
 
-        <!-- Semantic H1 Heading -->
+        <!-- Main Hero Headline (Desktop: 2 rows, Mobile: 3 balanced rows — identical font size & weight) -->
         <h1 class="reveal services-hero-h1">
-          High-Impact Web Solutions <br />
-          <span class="services-hero-gradient">That Accelerate Growth</span>
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Layout -->
+          <span class="services-desk-title">
+            <span class="services-title-row-1">High-Impact Web Solutions</span>
+            <span class="services-title-row-2">That <span class="services-hero-gradient">Accelerate Your Growth</span></span>
+          </span>
+          <!-- Mobile (<=600px): Perfectly Balanced 3-Row Layout -->
+          <span class="services-mob-title">
+            <span class="services-mob-row">High-Impact Web</span>
+            <span class="services-mob-row">Solutions That</span>
+            <span class="services-mob-row"><span class="services-hero-gradient">Accelerate Your Growth</span></span>
+          </span>
         </h1>
 
         <!-- Lede Subtitle Paragraph -->
@@ -270,7 +280,6 @@
         <div class="reveal services-hero-actions">
           <a href="contact.html" class="btn btn-primary">
             <span>Start Your Project</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
           <a href="#processSection" class="btn btn-ghost">Explore Our Process</a>
         </div>
@@ -289,7 +298,7 @@
             <p class="pillar-desc">Bespoke, blazing-fast websites with fluid interactions, modern architecture, and sub-second loading speeds</p>
             <div class="pillar-footer">
               <span class="pillar-metric"><b style="color: var(--accent-primary);">&lt; 1s</b> Load Time</span>
-              <span class="pillar-link-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+
             </div>
           </a>
 
@@ -305,7 +314,7 @@
             <p class="pillar-desc">Data-driven PPC campaigns, precision keyword targeting, and conversion funnels engineered for maximum ROI</p>
             <div class="pillar-footer">
               <span class="pillar-metric"><b style="color: var(--accent-teal);">4.8x</b> Avg. ROAS</span>
-              <span class="pillar-link-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+
             </div>
           </a>
 
@@ -321,7 +330,7 @@
             <p class="pillar-desc">Dominating search engine results with technical audits, semantic keyword strategies, and authoritative content</p>
             <div class="pillar-footer">
               <span class="pillar-metric"><b style="color: var(--accent-gold);">+240%</b> Organic Reach</span>
-              <span class="pillar-link-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+
             </div>
           </a>
         </div>
@@ -338,7 +347,7 @@
             <span class="sec-tag">Our Process</span>
           </div>
           <h2>
-            Proven Process for Success
+            Proven Process for <em>Success</em>
           </h2>
           <p>We help you on every step of the journey</p>
         </div>
@@ -386,17 +395,16 @@
           <span class="sec-slash">/</span>
           <span class="sec-tag">In-Depth Capabilities</span>
         </div>
-        <h2 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important; font-size: clamp(32px, 4vw, 48px) !important; font-weight: 700 !important; line-height: 1.18 !important; letter-spacing: -0.034em !important; color: var(--fg) !important; margin: 0 auto !important; text-align: center !important;">
-          An Overview of Our <span class="tech-gradient-text">Expertise &amp; Solutions</span>
-        </h2>
+        <h2>An Overview of Our <em>Expertise &amp; Solutions</em></h2>
       </div>
       <div class="expertise-row-creative" style="margin-top: 40px">
         <div class="expertise-content-creative">
-          <div class="hero-live-eyebrow" style="margin-bottom: 16px;">
-            <span class="hero-live-dot"></span>
-            <span class="hero-live-text">Web Development</span>
+          <div class="section-num-label" style="margin-bottom: 14px;">
+            <span class="sec-num">01</span>
+            <span class="sec-slash">/</span>
+            <span class="sec-tag">Web Development</span>
           </div>
-          <h2>Bespoke Web Design &amp; Next-Gen Digital Engineering</h2>
+          <h3 class="expertise-row-title">Bespoke Web Design &amp; <em>Next-Gen Engineering</em></h3>
           <p>
             We fuse strategic creativity with cutting-edge architecture to
             engineer high-converting, lightning-fast websites. Through precision
@@ -417,11 +425,12 @@
       </div>
       <div class="expertise-row-creative reverse">
         <div class="expertise-content-creative">
-          <div class="hero-live-eyebrow" style="margin-bottom: 16px;">
-            <span class="hero-live-dot"></span>
-            <span class="hero-live-text">Search Engine Optimization</span>
+          <div class="section-num-label" style="margin-bottom: 14px;">
+            <span class="sec-num">02</span>
+            <span class="sec-slash">/</span>
+            <span class="sec-tag">Search Engine Optimization</span>
           </div>
-          <h2>Command Search Visibility with Strategic SEO Solutions</h2>
+          <h3 class="expertise-row-title">Command Search Visibility with <em>Strategic SEO</em></h3>
           <p>
             Our strategic SEO solutions position your brand at the top of search
             rankings to capture high-intent organic traffic. Through in-depth
@@ -442,11 +451,12 @@
       </div>
       <div class="expertise-row-creative">
         <div class="expertise-content-creative">
-          <div class="hero-live-eyebrow" style="margin-bottom: 16px;">
-            <span class="hero-live-dot"></span>
-            <span class="hero-live-text">Google Ads Services</span>
+          <div class="section-num-label" style="margin-bottom: 14px;">
+            <span class="sec-num">03</span>
+            <span class="sec-slash">/</span>
+            <span class="sec-tag">Google Ads Services</span>
           </div>
-          <h2>Scale Customer Acquisition with High-Yield Google Ads</h2>
+          <h3 class="expertise-row-title">Scale Customer Acquisition with <em>High-Yield Ads</em></h3>
           <p>
             Our data-driven paid media frameworks deploy high-intent search
             campaigns and conversion-focused landing funnels. From smart bid
@@ -572,7 +582,7 @@
             <span class="sec-tag">Client Reviews</span>
           </div>
           <h2>
-            What Our Clients Say
+            What Our <em>Clients Say</em>
           </h2>
           <p class="section-subtitle">
             Hear directly from founders, product leaders, and CMOs who scaled their revenue and digital impact with us
@@ -646,7 +656,7 @@
                 <div class="h-test-author">
                   <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
                   </div>
                 </div>
@@ -734,7 +744,7 @@
                 <div class="h-test-author">
                   <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Azunyan U. Wu</span>
+                    <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
                   </div>
                 </div>
@@ -826,9 +836,9 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
                   </div>
                 </div>
@@ -914,9 +924,9 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">MT</div>
+                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
                   <div class="h-test-info">
-                    <span class="h-test-name">Marcus Thorne</span>
+                    <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
                   </div>
                 </div>
@@ -1060,7 +1070,7 @@
                 <circle cx="10.5" cy="34" r="6" fill="currentColor" />
               </svg>
             </div>
-            <h2>Have a Project in Mind? <span class="wave-hand">👋</span></h2>
+            <h2>Have a Project <em>in Mind?</em> <span class="wave-hand">👋</span></h2>
             <p>
               Send us a message at
               <strong style="color: var(--accent-primary)"
@@ -1166,25 +1176,9 @@
               Partner with our elite web agency to engineer high-converting platforms, dominate search rankings, and accelerate compounding business growth
             </p>
 
-            <div class="cta-benefits-list">
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>100% Custom Engineering</span>
-              </div>
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Sub-Second Speeds</span>
-              </div>
-              <div class="cta-benefit-item">
-                <span class="cta-benefit-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Dedicated Specialists</span>
-              </div>
-            </div>
-
             <div class="cta-split-actions">
               <a href="contact.html" class="btn btn-solid cta-main-action">
                 <span>Get Started Now</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
               <a href="services.html" class="btn btn-ghost cta-secondary-action">Explore Services</a>
             </div>
@@ -1219,6 +1213,7 @@
         </div>
       </div>
     </section>
+    </main>
     <!-- FOOTER -->
     <footer class="site-footer-premium" id="footer">
       <div class="wrap footer-grid-premium">
