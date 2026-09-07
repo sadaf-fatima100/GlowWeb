@@ -4,10 +4,12 @@
 .section-subtitle {
   font-family: var(--font-body) !important;
   color: var(--fg-soft) !important;
-  max-width: 960px;
+  max-width: 680px;
   margin: 0 auto;
   font-size: 16px !important;
   line-height: 1.65 !important;
+  text-wrap: balance !important;
+  text-wrap: pretty !important;
 }
 
 .card-title {
@@ -76,13 +78,15 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-html[data-theme="dark"] {
+html[data-theme="dark"],
+[data-theme="dark"],
+html:not([data-theme="light"]) {
   --bg: #060a08;
   --bg-2: #0a0f0d;
   --bg-3: #111916;
   --bg-alt: #0d1410;
   --fg: #ffffff;
-  --fg-soft: rgba(255, 255, 255, 0.88);
+  --fg-soft: rgba(255, 255, 255, 0.90);
   --border: rgba(255, 255, 255, 0.05);
   --border-strong: rgba(255, 255, 255, 0.1);
   --surface: rgba(255, 255, 255, 0.03);
@@ -1471,19 +1475,19 @@ h1.hero-v2-title {
   .hero-desc-mob,
   .desc-mob {
     display: block !important;
+    text-wrap: balance !important;
+    text-wrap: pretty !important;
+    max-width: 92% !important;
+    margin-inline: auto !important;
+    text-align: center !important;
   }
   .hero-desc-mob .hero-desc-row-1,
-  .desc-mob .desc-row-1 {
-    display: block !important;
-    max-width: 100% !important;
-    text-align: center !important;
-  }
+  .desc-mob .desc-row-1,
   .hero-desc-mob .hero-desc-row-2,
   .desc-mob .desc-row-2 {
-    display: block !important;
-    max-width: 85% !important;
-    margin: 0 auto !important;
+    display: inline !important;
     text-align: center !important;
+    max-width: 100% !important;
   }
 }
 
@@ -7617,6 +7621,9 @@ html:not([data-theme="dark"]) .msg-consent-checkbox,
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .site-footer-premium {
+    padding-bottom: 74px;
   }
   .footer-bottom-premium {
     flex-direction: column;
@@ -14173,6 +14180,111 @@ h1.hero-v2-title,
   letter-spacing: -0.01em;
 }
 
+/* 3b. Section Subtitles & Inverted Pyramid Descriptions (High-Contrast Matching Hero & Navlinks) */
+html[data-theme="dark"] .section-subtitle,
+html:not([data-theme="light"]) .section-subtitle,
+html[data-theme="dark"] .desc-inverted-pyramid,
+html:not([data-theme="light"]) .desc-inverted-pyramid,
+html[data-theme="dark"] .tech-clean-subtitle,
+html:not([data-theme="light"]) .tech-clean-subtitle,
+html[data-theme="dark"] .bento-subtitle,
+html:not([data-theme="light"]) .bento-subtitle,
+html[data-theme="dark"] .section-head p,
+html:not([data-theme="light"]) .section-head p,
+html[data-theme="dark"] .services-header p,
+html:not([data-theme="light"]) .services-header p,
+html[data-theme="dark"] .metrics-header p,
+html:not([data-theme="light"]) .metrics-header p,
+html[data-theme="dark"] .philosophy-sub-lead,
+html:not([data-theme="light"]) .philosophy-sub-lead,
+html[data-theme="dark"] .services-hero-lede,
+html:not([data-theme="light"]) .services-hero-lede,
+html[data-theme="dark"] .desc-row-1,
+html:not([data-theme="light"]) .desc-row-1,
+html[data-theme="dark"] .desc-row-2,
+html:not([data-theme="light"]) .desc-row-2,
+html[data-theme="dark"] .hero-desc-row-1,
+html:not([data-theme="light"]) .hero-desc-row-1,
+html[data-theme="dark"] .hero-desc-row-2,
+html:not([data-theme="light"]) .hero-desc-row-2 {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 500 !important;
+}
+
+/* 3c. Body & Lead Paragraphs in Dark Mode (Crisp High-Visibility Legibility) */
+html[data-theme="dark"] .expertise-lead-desc,
+html:not([data-theme="light"]) .expertise-lead-desc,
+html[data-theme="dark"] .card-desc,
+html:not([data-theme="light"]) .card-desc,
+html[data-theme="dark"] .lead-paragraph,
+html:not([data-theme="light"]) .lead-paragraph,
+html[data-theme="dark"] .service-card p,
+html:not([data-theme="light"]) .service-card p,
+html[data-theme="dark"] .bento-card p,
+html:not([data-theme="light"]) .bento-card p,
+html[data-theme="dark"] .bento-card-desc,
+html:not([data-theme="light"]) .bento-card-desc,
+html[data-theme="dark"] .bcard-desc,
+html:not([data-theme="light"]) .bcard-desc,
+html[data-theme="dark"] .process-step p,
+html:not([data-theme="light"]) .process-step p,
+html[data-theme="dark"] .ads-step-card p,
+html:not([data-theme="light"]) .ads-step-card p,
+html[data-theme="dark"] .ads-step-desc,
+html:not([data-theme="light"]) .ads-step-desc,
+html[data-theme="dark"] .step-card p,
+html:not([data-theme="light"]) .step-card p,
+html[data-theme="dark"] .blog-body p,
+html:not([data-theme="light"]) .blog-body p,
+html[data-theme="dark"] .blog-post-content,
+html:not([data-theme="light"]) .blog-post-content,
+html[data-theme="dark"] .blog-post-content p,
+html:not([data-theme="light"]) .blog-post-content p,
+html[data-theme="dark"] .blog-post-content li,
+html:not([data-theme="light"]) .blog-post-content li,
+html[data-theme="dark"] .contact-info-col p,
+html:not([data-theme="light"]) .contact-info-col p,
+html[data-theme="dark"] .webagency-accordion-content p,
+html:not([data-theme="light"]) .webagency-accordion-content p,
+html[data-theme="dark"] .test-card p,
+html:not([data-theme="light"]) .test-card p,
+html[data-theme="dark"] .price-card .tier-desc,
+html:not([data-theme="light"]) .price-card .tier-desc,
+html[data-theme="dark"] .about-values-left p,
+html:not([data-theme="light"]) .about-values-left p,
+html[data-theme="dark"] .about-value-text p,
+html:not([data-theme="light"]) .about-value-text p,
+html[data-theme="dark"] .about-pillar p,
+html:not([data-theme="light"]) .about-pillar p,
+html[data-theme="dark"] .philo-card-desc,
+html:not([data-theme="light"]) .philo-card-desc,
+html[data-theme="dark"] .team-card-desc,
+html:not([data-theme="light"]) .team-card-desc,
+html[data-theme="dark"] .desc-lead,
+html:not([data-theme="light"]) .desc-lead,
+html[data-theme="dark"] .desc-body,
+html:not([data-theme="light"]) .desc-body,
+html[data-theme="dark"] .cap-desc-lead,
+html:not([data-theme="light"]) .cap-desc-lead,
+html[data-theme="dark"] .cap-desc-body,
+html:not([data-theme="light"]) .cap-desc-body,
+html[data-theme="dark"] .expertise-desc,
+html:not([data-theme="light"]) .expertise-desc,
+html[data-theme="dark"] .project-text-card p,
+html:not([data-theme="light"]) .project-text-card p,
+html[data-theme="dark"] .flow-card-desc,
+html:not([data-theme="light"]) .flow-card-desc,
+html[data-theme="dark"] .tech-card-info,
+html:not([data-theme="light"]) .tech-card-info,
+html[data-theme="dark"] .cta-split-subtitle,
+html:not([data-theme="light"]) .cta-split-subtitle,
+html[data-theme="dark"] .msg-form-sub,
+html:not([data-theme="light"]) .msg-form-sub,
+html[data-theme="dark"] .expertise-content-creative p:not(.expertise-highlight-desc) {
+  color: rgba(255, 255, 255, 0.90) !important;
+  font-weight: 450 !important;
+}
+
 /* 4. Section H2 & Featured Slide Headings (Crisp, Authoritative & Proportional) */
 .expertise-slides-text h3,
 .expertise-slide-text-item h3,
@@ -18865,16 +18977,17 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   }
 
   .cta-image-wrapper {
-    max-width: 280px !important;
+    max-width: 360px !important;
   }
 
   .cta-person-img {
-    max-height: 320px !important;
+    max-height: 340px !important;
   }
 
   .cta-float-badge {
     padding: 6px 12px !important;
     font-size: 12px !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -18902,12 +19015,12 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     width: 100% !important;
     min-height: auto !important;
     height: auto !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 14px !important;
   }
 
   .cta-image-wrapper {
     width: 100% !important;
-    max-width: 310px !important;
+    max-width: 360px !important;
     min-height: auto !important;
     height: auto !important;
     margin: 0 auto !important;
@@ -18918,13 +19031,13 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   }
 
   .cta-image-glow {
-    width: 270px !important;
-    height: 270px !important;
-    filter: blur(32px) !important;
+    width: 300px !important;
+    height: 300px !important;
+    filter: blur(34px) !important;
   }
 
   .cta-person-img {
-    max-height: 250px !important;
+    max-height: 280px !important;
     min-height: auto !important;
     width: 100% !important;
     object-fit: contain !important;
@@ -18935,11 +19048,13 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   /* Floating badges visible and nicely positioned */
   .cta-float-badge {
     display: inline-flex !important;
-    padding: 7px 12px !important;
+    padding: 7px 13px !important;
     border-radius: 12px !important;
     gap: 8px !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
   }
 
   /* Light theme floating badges on mobile */
@@ -18971,24 +19086,30 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     color: rgba(255, 255, 255, 0.88) !important;
   }
 
+  .cta-float-badge .badge-text-group {
+    white-space: nowrap !important;
+  }
+
   .cta-float-badge .badge-val {
     font-size: 11.5px !important;
     font-weight: 700 !important;
+    white-space: nowrap !important;
   }
   .cta-float-badge .badge-lbl {
     font-size: 9.5px !important;
+    white-space: nowrap !important;
   }
   .cta-float-badge svg {
     width: 13px !important;
     height: 13px !important;
   }
   .badge-top-left {
-    top: 10% !important;
-    left: -4px !important;
+    top: 6% !important;
+    left: 4px !important;
   }
   .badge-bottom-right {
-    bottom: 8% !important;
-    right: -4px !important;
+    bottom: 6% !important;
+    right: 4px !important;
   }
 
   /* 2. Content Column Below Image */
@@ -19002,7 +19123,7 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   }
 
   .cta-content-col .hero-live-eyebrow {
-    margin-bottom: 10px !important;
+    margin-bottom: 12px !important;
   }
 
   .cta-split-heading {
@@ -19035,7 +19156,9 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   .cta-main-action {
     width: auto !important;
     min-width: 165px !important;
+    min-height: 48px !important;
     display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
     padding: 12px 26px !important;
     font-size: 14px !important;
@@ -19046,52 +19169,66 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   .cta-secondary-action {
     width: auto !important;
     min-width: 155px !important;
+    min-height: 48px !important;
     display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
     padding: 11px 22px !important;
     font-size: 13.5px !important;
     border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.16) !important;
+    color: #ffffff !important;
+  }
+
+  html:not([data-theme="dark"]) .cta-secondary-action,
+  [data-theme='light'] .cta-secondary-action {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border: 1.5px solid rgba(0, 0, 0, 0.15) !important;
+    color: #0c2014 !important;
   }
 }
 
 @media (max-width: 480px) {
   .cta-box-container.cta-split-layout {
-    padding: 26px 14px 28px !important;
-    border-radius: 20px !important;
+    padding: 28px 16px 30px !important;
+    border-radius: 22px !important;
   }
 
   .cta-image-wrapper {
-    max-width: 275px !important;
+    max-width: 335px !important;
   }
 
   .cta-person-img {
-    max-height: 225px !important;
+    max-height: 260px !important;
   }
 
   .badge-top-left {
-    top: 6% !important;
-    left: 0px !important;
+    top: 4% !important;
+    left: 2px !important;
   }
   .badge-bottom-right {
-    bottom: 6% !important;
-    right: 0px !important;
+    bottom: 4% !important;
+    right: 2px !important;
   }
 
   .cta-split-actions {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 10px !important;
     width: 100% !important;
   }
 
   .cta-main-action,
   .cta-secondary-action {
     width: 100% !important;
-    max-width: 260px !important;
+    max-width: 290px !important;
+    min-height: 48px !important;
     margin: 0 auto !important;
     justify-content: center !important;
     text-align: center !important;
     display: inline-flex !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -19100,9 +19237,10 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
 
 /* ─── 12 Footer ─── */
 @media (max-width: 768px) {
-  .site-footer {
+  .site-footer,
+  .site-footer-premium {
     padding-top: clamp(36px, 7vw, 52px) !important;
-    padding-bottom: 20px !important;
+    padding-bottom: 72px !important;
   }
   .footer-brand-logo {
     font-size: 1.3rem !important;
@@ -19127,13 +19265,27 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     font-size: 0.84rem !important;
   }
   .footer-bottom-premium {
-    padding-top: 16px !important;
-    gap: 12px !important;
-    font-size: 0.78rem !important;
+    padding-top: 18px !important;
+    padding-bottom: 4px !important;
+    padding-inline: 16px !important;
+    gap: 10px !important;
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+  .footer-bottom-premium span {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
   }
 }
 
 @media (max-width: 480px) {
+  .site-footer,
+  .site-footer-premium {
+    padding-bottom: 74px !important;
+  }
   .footer-grid-premium {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
@@ -19143,6 +19295,17 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     align-items: center !important;
     text-align: center !important;
     gap: 8px !important;
+    padding-top: 16px !important;
+    padding-bottom: 4px !important;
+    padding-inline: 14px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.5 !important;
+  }
+  .footer-bottom-premium span {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
   }
   .footer-bottom-links {
     flex-wrap: wrap !important;
