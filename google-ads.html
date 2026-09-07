@@ -48,7 +48,7 @@
       content="https://hywiz.com/webagency_hero_team.jpg"
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
   </head>
   <body>
     <!-- Custom reactive mouse pointer -->
@@ -196,81 +196,141 @@
     </header>
     <!-- Mobile nav drawer -->
     <div class="mobile-drawer">
-      <button class="mobile-close btn btn-ghost">Close</button>
-      <a href="index.html">Home</a>
-      <div class="mobile-drawer-accordion">
-        <a
-          href="services.html"
-          class="accordion-toggle active"
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-          "
-        >
-          Services
-          <svg
-            viewBox="0 0 24 24"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="accordion-icon"
-          >
-            <path d="M7 10l5 5 5-5z" />
-          </svg>
-        </a>
-        <div class="accordion-content">
-          <a href="web-development.html">Web Development</a>
-          <a href="google-ads.html">Google Ads</a>
-          <a href="search-engine-optimization.html"
-            >Search Engine Optimization</a
-          >
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand webagency-brand">Web Agency</a>
+        <div class="mobile-drawer-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54c-.44-.06-.9-.1-1.36-.1z" />
+              </svg></span>
+          </button>
+          <button class="mobile-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
-      <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
-      <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
-      <a href="contact.html">Get Started</a>
+
+      <div class="mobile-drawer-nav">
+        <a href="index.html"><span>Home</span></a>
+        <div class="mobile-drawer-accordion open">
+          <a href="services.html" class="accordion-toggle">
+            <span>Services</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </a>
+          <div class="accordion-content">
+            <a href="web-development.html">Web Development</a>
+            <a href="google-ads.html" class="active">
+              <span>Google Ads</span>
+              <span class="drawer-active-indicator"></span>
+            </a>
+            <a href="search-engine-optimization.html">Search Engine Optimization</a>
+          </div>
+        </div>
+        <a href="portfolio.html"><span>Portfolio</span></a>
+        <a href="about.html"><span>About Us</span></a>
+        <a href="blog.html"><span>Blog</span></a>
+        <a href="contact.html"><span>Contact Us</span></a>
+      </div>
+
+      <div class="mobile-drawer-cta-wrap">
+        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <div class="drawer-footer-contact">
+          <span class="drawer-footer-lbl">Email us directly</span>
+          <a href="mailto:hello@hywiz.com" class="drawer-footer-email">hello@hywiz.com</a>
+        </div>
+        <div class="drawer-footer-status">
+          <span class="drawer-status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+      </div>
     </div>
     <!-- MAIN CONTENT -->
-    <main id="main-content" class="service-single-universe" style="padding-top: 40px; overflow-x: clip">
+    <main id="main-content" class="service-single-universe" style="overflow-x: clip">
       <!-- HERO SECTION -->
       <section class="ads-hero-section reveal">
         <div class="glow-orb ads-hero-glow"></div>
         <div class="wrap ads-hero-container">
           <div class="ads-hero-content">
-            <div class="hero-live-eyebrow reveal" style="margin-bottom: 20px; justify-content: center;">
+            <div class="hero-live-eyebrow reveal" style="justify-content: center;">
               <span class="hero-live-dot"></span>
               <span class="hero-live-text">High-ROI Paid Search &amp; PPC Management</span>
             </div>
-            <!-- Main Hero Headline (2-Row Balanced Structure — Consistent with Home Page) -->
+            <!-- Main Hero Headline (2-Row Balanced Structure — Wide Row 1, Shorter Accent Row 2) -->
             <h1 class="hero-title reveal">
-              <span class="service-title-row-1">Targeted Google Ads</span>
-              <span class="service-title-row-2">That <span class="accent-hero">Maximize Your Revenue</span></span>
+              <span class="service-title-row-1">Targeted Google Ads That</span>
+              <span class="service-title-row-2"><span class="accent-hero">Maximize Your Revenue</span></span>
             </h1>
-            <p class="hero-desc">
-              We design, optimize, and scale high-intent Google Ads campaigns that consistently deliver qualified traffic, maximize conversions, and generate exceptional ROAS — every single month
+            <p class="hero-desc hero-desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="hero-desc-desk">
+                <span class="hero-desc-row-1">We engineer high-converting Google Ads campaigns that capture qualified buyer traffic</span>
+                <span class="hero-desc-row-2">and aggressively maximize your return on ad spend.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="hero-desc-mob">
+                <span class="hero-desc-row-1">We engineer Google Ads campaigns that capture buyer traffic</span>
+                <span class="hero-desc-row-2">and maximize your return on ad spend.</span>
+              </span>
             </p>
             <div class="hero-ctas">
-              <a href="contact.html" class="btn btn-solid">Get Started Now</a>
-              <a href="#pricing" class="btn btn-ghost">View Pricing</a>
+              <a href="contact.html" class="hero-btn-primary">
+                <span>Get Started Now</span>
+              </a>
+              <a href="#pricing" class="hero-btn-secondary">
+                <span>View Pricing</span>
+              </a>
             </div>
-            <!-- Trust stat pills -->
-            <div class="hero-trust-row">
-              <div class="hero-trust-pill">
-                <span class="pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>4.9× Average ROAS</span>
-              </div>
-              <div class="pill-divider"></div>
-              <div class="hero-trust-pill">
-                <span class="pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Zero Wasted Ad Spend Policy</span>
-              </div>
-              <div class="pill-divider"></div>
-              <div class="hero-trust-pill">
-                <span class="pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Certified Google Partners</span>
-              </div>
+          </div>
+        </div>
+
+        <!-- Trendy Kinetic Scrolling Block (Squarespace-Inspired Typography Stream) -->
+        <div class="service-scrolling-block-wrap" aria-hidden="true">
+          <div class="service-scrolling-track">
+            <div class="service-scrolling-item">
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">High-Intent Search Scaling</span>
+              <span class="marquee-star">✦</span>
+              <span>4.2x+ Sustained Target ROAS</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Value-Based Smart Bidding</span>
+              <span class="marquee-star">✦</span>
+              <span>Server-Side sGTM Tracking</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">Negative Keyword Governance</span>
+              <span class="marquee-star">✦</span>
+              <span>Conversion Rate Optimization</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Certified Google Premier Partners</span>
+            </div>
+            <div class="service-scrolling-item">
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">High-Intent Search Scaling</span>
+              <span class="marquee-star">✦</span>
+              <span>4.2x+ Sustained Target ROAS</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Value-Based Smart Bidding</span>
+              <span class="marquee-star">✦</span>
+              <span>Server-Side sGTM Tracking</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">Negative Keyword Governance</span>
+              <span class="marquee-star">✦</span>
+              <span>Conversion Rate Optimization</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Certified Google Premier Partners</span>
             </div>
           </div>
         </div>
@@ -293,22 +353,22 @@
               <div class="section-num-label">
                 <span class="sec-num">01</span>
                 <span class="sec-slash">/</span>
-                <span class="sec-tag">High-Impact Testing</span>
+                <span class="sec-tag">Split Testing &amp; Iteration</span>
               </div>
               <h2>
-                Test! Test! Test! <br /><span class="accent-text">Data-Driven Experimentation</span>
+                Continuous Ad Split Testing That <span class="accent-text">Unlocks Maximum Conversions</span>
               </h2>
               <p class="desc-lead">
-                From ads and landing pages to bid strategies and new betas, we love testing and will prioritize tests that we see will make the most impact to results.
+                From custom landing pages and compelling ad copy to smart bid structures, we rigorously test every angle to identify what drives real revenue for your business.
+              </p>
+              <p class="desc-highlight">
+                Every test provides direct market feedback. By systematically refining headlines, creative assets, and audience targeting, we eliminate wasted spend and scale winning combinations.
               </p>
               <p class="desc-body">
-                We don’t believe in failed experiments, as there are valuable learnings from every test run. Without these learnings, the strategy would fail to evolve and adapt to competitive market changes.
-              </p>
-              <p class="desc-body">
-                By systematically testing creative angles, headline hooks, and audience segments, we continuously uncover high-converting opportunities and lower your acquisition costs.
+                We treat testing as an ongoing revenue engine — continuously optimizing your ad campaigns to lower your cost per lead and increase overall profitability.
               </p>
               <div style="margin-top: 24px">
-                <a href="contact.html" class="btn btn-solid">Start A/B Testing</a>
+                <a href="contact.html" class="btn btn-solid">Launch A/B Testing</a>
               </div>
             </div>
           </div>
@@ -324,19 +384,19 @@
               <div class="section-num-label">
                 <span class="sec-num">02</span>
                 <span class="sec-slash">/</span>
-                <span class="sec-tag">Depth Analysis</span>
+                <span class="sec-tag">Conversion Intelligence</span>
               </div>
               <h2>
-                In-Depth Analysis <br /><span class="accent-text">&amp; Meaningful Tracking</span>
+                Full-Funnel Conversion Tracking &amp; <span class="accent-text">Search Query Intelligence</span>
               </h2>
               <p class="desc-lead">
-                First, we make sure we’re tracking the right criteria. We work with the Ads Manager Reporting and Page Perceptivity tools to ensure the criteria are actually meaningful.
+                Before spending a dollar, we implement server-side tracking and verified conversion actions so every lead, call, and sale is accurately attributed.
+              </p>
+              <p class="desc-highlight">
+                We cut through misleading vanity metrics to focus strictly on real business outcomes. You'll always know exactly which search terms and campaigns generate genuine pipeline and profit.
               </p>
               <p class="desc-body">
-                Effective marketing is built on a series of ongoing tests &amp; optimizations. We are always testing new ideas and moving your account forward in a way that goes beyond basic "best-practice" management.
-              </p>
-              <p class="desc-body">
-                Through deep search query analysis, conversion signal verification, and multi-touch attribution, we give you transparent intelligence into exactly which ad dollars generate profit.
+                Through negative keyword filtering and search intent modeling, we ensure your budget targets only high-intent buyers ready to take action.
               </p>
               <div style="margin-top: 28px">
                 <a href="contact.html" class="btn btn-solid">Audit Your Tracking</a>
@@ -371,19 +431,19 @@
               <div class="section-num-label">
                 <span class="sec-num">03</span>
                 <span class="sec-slash">/</span>
-                <span class="sec-tag">Perfection &amp; Optimization</span>
+                <span class="sec-tag">Bid &amp; Quality Optimization</span>
               </div>
               <h2>
-                Perfect &amp; Optimize <br /><span class="accent-text">Traffic Quality &amp; ROAS</span>
+                Continuous Campaign Refinement That <span class="accent-text">Maximizes Target ROAS</span>
               </h2>
               <p class="desc-lead">
-                Using our holistic approach to campaign management, we’re able to improve the quality of traffic to your site. You don’t just want increased site traffic — understanding how to influence the quality of that traffic is equally as, if not more, important as the quantity.
+                We continuously fine-tune your campaigns to ensure your budget captures the highest-quality buyer traffic rather than empty clicks.
+              </p>
+              <p class="desc-highlight">
+                Better traffic quality translates into higher conversion rates and greater revenue. We calibrate Smart Bidding algorithms with verified conversion values to maximize your return on ad spend.
               </p>
               <p class="desc-body">
-                Increase sales and ROAS with Google Ads. More qualified traffic means more high-intent leads and stronger branding, which translates directly into new growth opportunities.
-              </p>
-              <p class="desc-body">
-                Through continuous negative keyword pruning, Smart Bidding refinements, and high Quality Score ad copy, we ensure your ad spend converts with maximal efficiency.
+                By actively managing auction dynamics and Quality Scores, we secure prime ad placements at lower cost-per-click rates.
               </p>
               <div style="margin-top: 24px">
                 <a href="contact.html" class="btn btn-solid">Optimize Your Campaigns</a>
@@ -402,19 +462,19 @@
               <div class="section-num-label">
                 <span class="sec-num">04</span>
                 <span class="sec-slash">/</span>
-                <span class="sec-tag">Increase Sales &amp; Scale</span>
+                <span class="sec-tag">Profitable Account Scaling</span>
               </div>
               <h2>
-                Scale to the Moon <br /><span class="accent-text">With Proven 4x+ ROAS</span>
+                Aggressive Campaign Scaling Built On <span class="accent-text">Predictable Profit Margins</span>
               </h2>
               <p class="desc-lead">
-                We’ve driven millions of dollars in revenue for our clients and have managed tens of millions in performance ad budget with proven, repeatable success.
+                Once your cost per acquisition is dialed in and profitable, we strategically scale your budget to capture dominant market share.
+              </p>
+              <p class="desc-highlight">
+                Scale without sacrificing efficiency. We expand into high-intent search themes and performance max campaigns with strict margin controls.
               </p>
               <p class="desc-body">
-                You can sit back and relax while focusing on your core strengths. Gain complete peace of mind knowing you’re working with an elite Google Ads agency that can fluently generate up to 4x ROAS or further.
-              </p>
-              <p class="desc-body">
-                Once the ads are profitable and we have perfected the system, we can scale the ads to the moon — driving unprecedented market share and exponential revenue growth.
+                Gain complete clarity with custom executive reporting dashboards showing direct revenue impact and return on ad spend every single week.
               </p>
               <div style="margin-top: 28px">
                 <a href="contact.html" class="btn btn-solid">Scale Your Revenue</a>
@@ -444,8 +504,17 @@
             <h2>
               Streamlined Steps for <span class="accent-text">PPC Dominance</span>
             </h2>
-            <p class="section-subtitle">
-              A data-driven methodology engineered to eliminate wasted ad spend, capture commercial buyer intent, and scale high-margin ROAS
+            <p class="section-subtitle desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="desc-desk">
+                <span class="desc-row-1">A data-driven methodology engineered to eliminate wasted ad spend and capture intent,</span>
+                <span class="desc-row-2">scaling predictable, high-margin ROAS.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="desc-mob">
+                <span class="desc-row-1">A data-driven methodology to capture commercial intent</span>
+                <span class="desc-row-2">and scale predictable ROAS.</span>
+              </span>
             </p>
           </div>
           <div class="ads-steps-grid">
@@ -519,8 +588,17 @@
             <h2>
               Flexible &amp; Transparent <span class="accent-text">PPC Management Packages</span>
             </h2>
-            <p class="section-subtitle">
-              Performance-based ad management tiers engineered for maximized return on ad spend and scalable acquisition
+            <p class="section-subtitle desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="desc-desk">
+                <span class="desc-row-1">Performance-based ad management tiers engineered for maximized return on ad spend</span>
+                <span class="desc-row-2">and scalable customer acquisition.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="desc-mob">
+                <span class="desc-row-1">Performance-based ad tiers engineered for high ROAS</span>
+                <span class="desc-row-2">and scalable acquisition.</span>
+              </span>
             </p>
           </div>
           <div class="ads-pricing-grid">
@@ -614,8 +692,17 @@
             <h2>
               Numbers That Define Our <span class="accent-text">Excellence</span>
             </h2>
-            <p class="section-subtitle">
-              Showcasing key performance benchmarks, custom architectures, and measurable digital growth
+            <p class="section-subtitle desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="desc-desk">
+                <span class="desc-row-1">Showcasing key performance benchmarks and custom architectures,</span>
+                <span class="desc-row-2">built for measurable digital growth.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="desc-mob">
+                <span class="desc-row-1">Key performance benchmarks and architectures</span>
+                <span class="desc-row-2">for measurable digital growth.</span>
+              </span>
             </p>
           </div>
 
@@ -683,8 +770,17 @@
           <h2>
             Client Reviews &amp; <span class="accent-text">Proven Results</span>
           </h2>
-          <p class="section-subtitle">
-            Discover how leading eCommerce brands, B2B SaaS companies, and high-growth startups scaled their profits with us
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Discover how leading eCommerce brands and B2B SaaS companies</span>
+              <span class="desc-row-2">scaled their profits and pipeline with us.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Discover how leading brands and SaaS companies</span>
+              <span class="desc-row-2">scaled their profits with us.</span>
+            </span>
           </p>
         </div>
       </div>
@@ -707,7 +803,7 @@
                 </div>
                 <p class="h-test-quote">Hywiz restructured our entire Google Ads account. Within 60 days, our blended ROAS went from 2.1x to 5.4x while lowering customer acquisition costs.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0f2fe; color: #0369a1;">HB</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Harrison Blake" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Harrison Blake</span>
                     <span class="h-test-role">Head of Growth, ScaleX Commerce</span>
@@ -729,7 +825,7 @@
                 </div>
                 <p class="h-test-quote">The Smart Bidding strategies and negative keyword management saved us over $14,000 in wasted ad spend in the first month alone.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ecfdf5; color: #047857;">JV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Jessica Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Jessica Vance</span>
                     <span class="h-test-role">Founder, Lumina Skincare</span>
@@ -751,7 +847,7 @@
                 </div>
                 <p class="h-test-quote">Their message match between search ad headlines and landing pages yielded a 9/10 Quality Score across our commercial keywords. Exceptional team.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fef3c7; color: #b45309;">TM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Tariq Al-Mansoor" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Tariq Al-Mansoor</span>
                     <span class="h-test-role">VP Marketing, Apex FinTech</span>
@@ -773,7 +869,7 @@
                 </div>
                 <p class="h-test-quote">We scaled from $20k to $120k monthly ad spend profitably. The real-time dashboard and proactive bid management give us complete peace of mind.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ffedd5; color: #c2410c;">LO</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-4.jpg" alt="Liam O’Connor" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Liam O’Connor</span>
                     <span class="h-test-role">CEO, Nexus B2B</span>
@@ -795,7 +891,7 @@
                 </div>
                 <p class="h-test-quote">Hywiz restructured our entire Google Ads account. Within 60 days, our blended ROAS went from 2.1x to 5.4x while lowering customer acquisition costs.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0f2fe; color: #0369a1;">HB</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Harrison Blake" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Harrison Blake</span>
                     <span class="h-test-role">Head of Growth, ScaleX Commerce</span>
@@ -817,7 +913,7 @@
                 </div>
                 <p class="h-test-quote">The Smart Bidding strategies and negative keyword management saved us over $14,000 in wasted ad spend in the first month alone.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ecfdf5; color: #047857;">JV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Jessica Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Jessica Vance</span>
                     <span class="h-test-role">Founder, Lumina Skincare</span>
@@ -839,7 +935,7 @@
                 </div>
                 <p class="h-test-quote">Their message match between search ad headlines and landing pages yielded a 9/10 Quality Score across our commercial keywords. Exceptional team.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fef3c7; color: #b45309;">TM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Tariq Al-Mansoor" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Tariq Al-Mansoor</span>
                     <span class="h-test-role">VP Marketing, Apex FinTech</span>
@@ -861,7 +957,7 @@
                 </div>
                 <p class="h-test-quote">We scaled from $20k to $120k monthly ad spend profitably. The real-time dashboard and proactive bid management give us complete peace of mind.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ffedd5; color: #c2410c;">LO</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-4.jpg" alt="Liam O’Connor" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Liam O’Connor</span>
                     <span class="h-test-role">CEO, Nexus B2B</span>
@@ -887,7 +983,7 @@
                 </div>
                 <p class="h-test-quote">Performance Max campaigns were a black hole for us until Hywiz re-engineered our asset groups and product feeds. 480% revenue increase.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fce7f3; color: #be185d;">CD</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-5.jpg" alt="Chloe Davenport" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Chloe Davenport</span>
                     <span class="h-test-role">COO, UrbanVibe Apparel</span>
@@ -909,7 +1005,7 @@
                 </div>
                 <p class="h-test-quote">Our cost per booked appointment dropped from $112 to $39. Their geo-targeted ad strategy completely filled our three clinic calendars.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #f3e8ff; color: #7e22ce;">ES</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Dr. Evan Sterling" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Dr. Evan Sterling</span>
                     <span class="h-test-role">Director, DentalCare Global</span>
@@ -931,7 +1027,7 @@
                 </div>
                 <p class="h-test-quote">Hywiz understands SaaS metrics like CAC, LTV, and payback period. They optimized for pipeline revenue instead of empty lead form submissions.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0e7ff; color: #4338ca;">SV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-7.jpg" alt="Sergei Volkov" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sergei Volkov</span>
                     <span class="h-test-role">Founder, CloudSaaS Suite</span>
@@ -953,7 +1049,7 @@
                 </div>
                 <p class="h-test-quote">We mandate Hywiz for all of our portfolio companies running paid search. Transparent, data-driven, and relentlessly focused on ROAS.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fee2e2; color: #b91c1c;">ML</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Maya Lin" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Maya Lin</span>
                     <span class="h-test-role">Managing Partner, Elevate Capital</span>
@@ -975,7 +1071,7 @@
                 </div>
                 <p class="h-test-quote">Performance Max campaigns were a black hole for us until Hywiz re-engineered our asset groups and product feeds. 480% revenue increase.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fce7f3; color: #be185d;">CD</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-5.jpg" alt="Chloe Davenport" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Chloe Davenport</span>
                     <span class="h-test-role">COO, UrbanVibe Apparel</span>
@@ -997,7 +1093,7 @@
                 </div>
                 <p class="h-test-quote">Our cost per booked appointment dropped from $112 to $39. Their geo-targeted ad strategy completely filled our three clinic calendars.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #f3e8ff; color: #7e22ce;">ES</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Dr. Evan Sterling" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Dr. Evan Sterling</span>
                     <span class="h-test-role">Director, DentalCare Global</span>
@@ -1019,7 +1115,7 @@
                 </div>
                 <p class="h-test-quote">Hywiz understands SaaS metrics like CAC, LTV, and payback period. They optimized for pipeline revenue instead of empty lead form submissions.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0e7ff; color: #4338ca;">SV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-7.jpg" alt="Sergei Volkov" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sergei Volkov</span>
                     <span class="h-test-role">Founder, CloudSaaS Suite</span>
@@ -1041,7 +1137,7 @@
                 </div>
                 <p class="h-test-quote">We mandate Hywiz for all of our portfolio companies running paid search. Transparent, data-driven, and relentlessly focused on ROAS.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fee2e2; color: #b91c1c;">ML</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Maya Lin" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Maya Lin</span>
                     <span class="h-test-role">Managing Partner, Elevate Capital</span>
@@ -1065,8 +1161,17 @@
           <h2>
             Google Ads Management <span class="accent-text">FAQs</span>
           </h2>
-          <p class="section-subtitle">
-            Everything you need to know about our account auditing, Smart Bidding management, attribution tracking, and ROAS guarantees
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Everything you need to know about our account auditing, Smart Bidding management,</span>
+              <span class="desc-row-2">attribution tracking, and ROAS guarantees.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Everything you need to know about auditing and bidding,</span>
+              <span class="desc-row-2">attribution, and ROAS guarantees.</span>
+            </span>
           </p>
         </div>
 
@@ -1216,68 +1321,40 @@
           </div>
           <!-- Right side: Contact Card Form -->
           <div class="contact-form-card reveal-right">
-            <form action="#" method="POST" class="wpcf7-form">
-              <div class="contact-inputs-grid">
-                <div class="contact-input-group">
-                  <label for="contact-name">What’s your name?</label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="text-264"
-                    placeholder="Your full name"
-                    required
-                  />
+            <form action="#" method="POST" class="wpcf7-form modern-msg-form">
+              <h3 class="msg-form-heading">Send a message</h3>
+              <p class="msg-form-sub">Fill out the quick brief below and our team will get back to you within 24 hours.</p>
+
+              <div class="msg-form-body">
+                <!-- Left Column: 3 Pill Inputs -->
+                <div class="msg-form-inputs">
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-name" name="text-264" class="msg-input-pill" placeholder="Your name" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="email" id="contact-email" name="email-439" class="msg-input-pill" placeholder="Your email" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-topic" name="subject-268" class="msg-input-pill" placeholder="Subject" required />
+                  </div>
                 </div>
-                <div class="contact-input-group">
-                  <label for="contact-email">Email address</label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email-439"
-                    placeholder="hello@company.com"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-topic">Discussion topic?</label>
-                  <input
-                    type="text"
-                    id="contact-topic"
-                    name="subject-268"
-                    placeholder="e.g. Web Design / SEO"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-budget">What’s your budget?</label>
-                  <input
-                    type="text"
-                    id="contact-budget"
-                    name="budget-270"
-                    placeholder="e.g. $5,000 - $10,000"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group full-width">
-                  <label for="contact-desc">Project Description</label>
-                  <textarea
-                    id="contact-desc"
-                    name="textarea-989"
-                    placeholder="A brief description about your project, request, or consultation details..."
-                    required
-                  ></textarea>
+
+                <!-- Right Column: Message Textarea -->
+                <div class="msg-form-textarea-wrap">
+                  <textarea id="contact-desc" name="textarea-989" class="msg-textarea" placeholder="Your message" required></textarea>
                 </div>
               </div>
-              <label class="contact-checkbox-row">
-                <input type="checkbox" name="acceptance-872" required />
-                <span
-                  >I am bound by the terms of the Service and I accept the
-                  Privacy Policy.</span
-                >
-              </label>
-              <div style="text-align: center; width: 100%">
-                <button type="submit" class="btn btn-solid">
-                  <span>— Send message</span>
+
+              <!-- Bottom Row: Checkbox & Disclaimer on left, Pill Submit Button on right -->
+              <div class="msg-form-footer">
+                <label class="msg-form-consent-label">
+                  <input type="checkbox" name="acceptance-872" class="msg-consent-checkbox" required />
+                  <span class="msg-form-disclaimer">
+                    By clicking Send a message button, you agree to use our &ldquo;Form&rdquo; terms And consent cookie usage in browser.
+                  </span>
+                </label>
+                <button type="submit" class="msg-form-submit-btn">
+                  <span>SEND A MESSAGE</span>
                 </button>
               </div>
             </form>
@@ -1508,10 +1585,7 @@
       </div>
       <!-- Footer Copyright bottom -->
       <div class="wrap footer-bottom-premium">
-        <span>© 2026 Web Agency. All rights reserved.<br>Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a>
-        </div>
+        <span>© 2026 Web Agency. All rights reserved. Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
       </div>
     </footer>
     <script src="js/main.js"></script>
@@ -1606,6 +1680,32 @@
         onScroll();
       })();
     </script>
+
+    <!-- FLOATING QUICK CONNECT WIDGETS (WHATSAPP & CALL) -->
+    <div class="floating-quick-actions" aria-label="Quick Contact Actions">
+      <!-- Left: WhatsApp Live Chat -->
+      <a href="https://wa.me/923143110259" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" aria-label="Chat with us on WhatsApp">
+        <span class="floating-btn-badge" aria-label="3 unread messages">3</span>
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 3C7.07 3 3.048 7.021 3.047 11.983c0 1.586.415 3.133 1.203 4.498L3 21l4.63-1.215a8.93 8.93 0 0 0 4.401 1.157h.004c4.961 0 8.983-4.022 8.984-8.984 0-2.4-.934-4.658-2.634-6.357A8.93 8.93 0 0 0 12.031 3zm0 1.957c3.873 0 7.027 3.153 7.028 7.026 0 1.876-.73 3.64-2.057 4.966a6.974 6.974 0 0 1-4.971 2.06h-.004a6.98 6.98 0 0 1-3.559-.971l-.255-.152-2.645.694.706-2.578-.166-.264a6.97 6.97 0 0 1-1.07-3.755c0-3.873 3.154-7.026 7.028-7.026zm3.844 9.385c-.211-.106-1.247-.616-1.44-.686-.194-.07-.335-.106-.476.106-.14.211-.546.686-.67.827-.123.14-.247.158-.458.053-.211-.106-.89-.328-1.696-1.047a6.29 6.29 0 0 1-1.173-1.458c-.123-.211-.013-.325.092-.43.095-.096.211-.247.317-.37.106-.124.141-.212.211-.353.07-.141.035-.265-.018-.37-.053-.106-.476-1.147-.652-1.57-.172-.413-.347-.357-.476-.364-.124-.006-.265-.007-.406-.007-.141 0-.37.053-.564.265-.194.211-.741.724-.741 1.766 0 1.041.758 2.048.864 2.189.106.141 1.492 2.278 3.614 3.195.505.218.899.348 1.206.446.507.161.968.138 1.333.084.407-.061 1.247-.51 1.423-1.004.176-.494.176-.917.123-1.006-.053-.088-.194-.141-.405-.247z" fill="#ffffff"/>
+          </svg>
+          <span class="floating-btn-tooltip">Chat on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Right: Direct Call -->
+      <a href="tel:+923143110259" class="floating-btn floating-btn-phone" aria-label="Call Us Directly">
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="floating-btn-tooltip">Call Us Directly</span>
+        </div>
+      </a>
+    </div>
   </body>
 </html>
 

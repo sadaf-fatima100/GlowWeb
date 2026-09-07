@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-default-theme="light">
+<html lang="en" data-default-theme="dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
     <style>
       /* ─── Universal Box Strategy Alignment (Navbar & Section Matching) ─── */
       .blog-page-universe .wrap,
@@ -201,7 +201,7 @@
         z-index: 3;
         font-size: 11px;
         font-weight: 600;
-        color: rgba(255,255,255,0.75);
+        color: rgba(255,255,255,0.9);
         font-family: var(--font-mono);
         display: flex;
         align-items: center;
@@ -452,42 +452,67 @@
       </nav>
     </header>
     <div class="mobile-drawer">
-      <button class="mobile-close btn btn-ghost">Close</button>
-      <a href="index.html">Home</a>
-      <div class="mobile-drawer-accordion">
-        <a
-          href="services.html"
-          class="accordion-toggle"
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-          "
-        >
-          Services
-          <svg
-            viewBox="0 0 24 24"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="accordion-icon"
-          >
-            <path d="M7 10l5 5 5-5z" />
-          </svg>
-        </a>
-        <div class="accordion-content">
-          <a href="web-development.html">Web Development</a>
-          <a href="google-ads.html">Google Ads</a>
-          <a href="search-engine-optimization.html"
-            >Search Engine Optimization</a
-          >
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand webagency-brand">Web Agency</a>
+        <div class="mobile-drawer-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54c-.44-.06-.9-.1-1.36-.1z" />
+              </svg></span>
+          </button>
+          <button class="mobile-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About Us</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="contact.html">Contact Us</a>
+
+      <div class="mobile-drawer-nav">
+        <a href="index.html"><span>Home</span></a>
+        <div class="mobile-drawer-accordion">
+          <a href="services.html" class="accordion-toggle">
+            <span>Services</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </a>
+          <div class="accordion-content">
+            <a href="web-development.html">Web Development</a>
+            <a href="google-ads.html">Google Ads</a>
+            <a href="search-engine-optimization.html">Search Engine Optimization</a>
+          </div>
+        </div>
+        <a href="portfolio.html"><span>Portfolio</span></a>
+        <a href="about.html"><span>About Us</span></a>
+        <a href="blog.html" class="active">
+          <span>Blog</span>
+          <span class="drawer-active-indicator"></span>
+        </a>
+        <a href="contact.html"><span>Contact Us</span></a>
+      </div>
+
+      <div class="mobile-drawer-cta-wrap">
+        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <div class="drawer-footer-contact">
+          <span class="drawer-footer-lbl">Email us directly</span>
+          <a href="mailto:hello@hywiz.com" class="drawer-footer-email">hello@hywiz.com</a>
+        </div>
+        <div class="drawer-footer-status">
+          <span class="drawer-status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+      </div>
     </div>
     <style>
       /* =========================================================
@@ -517,17 +542,24 @@
       .blog-hero-desc {
         font-family: 'Plus Jakarta Sans', sans-serif !important;
         font-size: clamp(1.02rem, 1.5vw, 1.15rem) !important;
-        color: var(--fg-soft) !important;
-        font-weight: 400 !important;
-        max-width: 680px !important;
+        color: rgba(255, 255, 255, 0.92) !important;
+        font-weight: 500 !important;
+        max-width: 980px !important;
         margin: 0 auto 32px auto !important;
-        line-height: 1.65 !important;
+        line-height: 1.68 !important;
         text-align: center !important;
         text-wrap: balance !important;
+        letter-spacing: -0.01em;
+      }
+      .blog-lede-row-1 {
+        display: block !important;
+      }
+      .blog-lede-row-2 {
+        display: block !important;
       }
       html:not([data-theme="dark"]) .blog-hero-desc,
       [data-theme='light'] .blog-hero-desc {
-        color: #2c4235 !important;
+        color: #1a2e22 !important;
         font-weight: 500 !important;
       }
 
@@ -838,6 +870,44 @@
           padding-top: 105px;
           padding-bottom: 28px;
         }
+        .blog-desk-title {
+          display: none !important;
+        }
+        .blog-mob-title {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          gap: 4px !important;
+          text-align: center !important;
+        }
+        .blog-mob-row-1,
+        .blog-mob-row-2 {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+          white-space: normal !important;
+        }
+        .blog-hero-title,
+        h1.blog-hero-title {
+          width: 100% !important;
+          max-width: 100% !important;
+          text-align: center !important;
+          margin-inline: auto !important;
+        }
+        .blog-lede-row-1,
+        .blog-lede-row-2 {
+          display: inline !important;
+        }
+        .blog-hero-desc {
+          font-size: clamp(14px, 2vw, 16px) !important;
+          line-height: 1.55 !important;
+          max-width: 580px !important;
+          margin-inline: auto !important;
+          margin-bottom: 24px !important;
+          text-align: center !important;
+        }
         .blog-hero-row {
           display: inline-flex;
           justify-content: center;
@@ -907,6 +977,9 @@
          MOBILE PHONES (<= 640px)
          ═══════════════════════════════════════════════════════════ */
       @media (max-width: 640px) {
+        .blog-hero-desc {
+          max-width: 480px !important;
+        }
         .blog-grid {
           grid-template-columns: 1fr !important;
           gap: 18px !important;
@@ -945,6 +1018,17 @@
       }
 
       /* ═══════════════════════════════════════════════════════════
+         PHONES & SMALL VIEWPORTS (<= 480px)
+         ═══════════════════════════════════════════════════════════ */
+      @media (max-width: 480px) {
+        .blog-hero-desc {
+          font-size: 13.5px !important;
+          line-height: 1.5 !important;
+          max-width: 360px !important;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════════════════
          SMALL PHONES (<= 400px)
          ═══════════════════════════════════════════════════════════ */
       @media (max-width: 400px) {
@@ -979,23 +1063,30 @@
           <span class="hero-live-dot"></span>
           <span class="hero-live-text">Insights &amp; Strategies</span>
         </div>
-        <!-- Main Hero Headline (Desktop: 2 rows, Mobile: 3 balanced rows — identical font size & weight) -->
+        <!-- Main Hero Headline (Wide Full-Width Layout Matching Cards) -->
         <h1 class="blog-hero-title reveal" style="animation-delay: 0.1s">
-          <!-- Desktop & Tablet (>600px): Clean 2-Row Layout -->
+          <!-- Desktop & Tablet (>768px): Clean 2-Row Layout -->
           <span class="blog-desk-title">
-            <span class="blog-title-row-1">Explore Ideas &amp; Strategies</span>
-            <span class="blog-title-row-2">That <span class="blog-hero-accent">Fuel Modern Growth</span></span>
+            <span class="blog-title-row-1">Explore Ideas &amp; Strategies That</span>
+            <span class="blog-title-row-2"><span class="blog-hero-accent">Fuel Modern Growth</span></span>
           </span>
-          <!-- Mobile (<=600px): Perfectly Balanced 3-Row Layout -->
+          <!-- Mobile & Tablet (<=768px): Perfectly Balanced Wide 2-Row Layout -->
           <span class="blog-mob-title">
-            <span class="blog-mob-row">Explore Ideas</span>
-            <span class="blog-mob-row">&amp; Strategies That</span>
-            <span class="blog-mob-row"><span class="blog-hero-accent">Fuel Modern Growth</span></span>
+            <span class="blog-mob-row-1">Explore Ideas &amp; Strategies</span>
+            <span class="blog-mob-row-2"><span class="blog-hero-accent">That Fuel Modern Growth</span></span>
           </span>
         </h1>
-        <p class="blog-hero-desc reveal">
-          Actionable frameworks, engineering deep-dives, and marketing playbooks<br />
-          curated by our web specialists to accelerate your business growth
+        <p class="blog-hero-desc hero-desc-inverted-pyramid reveal">
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+          <span class="hero-desc-desk">
+            <span class="hero-desc-row-1">Actionable engineering frameworks, design deep-dives, and marketing playbooks</span>
+            <span class="hero-desc-row-2">curated by our web specialists to accelerate compounding growth.</span>
+          </span>
+          <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+          <span class="hero-desc-mob">
+            <span class="hero-desc-row-1">Actionable frameworks, engineering deep-dives, and playbooks</span>
+            <span class="hero-desc-row-2">curated to accelerate your growth.</span>
+          </span>
         </p>
         <div class="blog-filter-bar reveal">
           <button type="button" class="blog-filter-tag active" data-filter="all">All Articles</button>
@@ -1200,68 +1291,40 @@
           </div>
           <!-- Right side: Contact Card Form -->
           <div class="contact-form-card reveal-right">
-            <form action="#" method="POST" class="wpcf7-form">
-              <div class="contact-inputs-grid">
-                <div class="contact-input-group">
-                  <label for="contact-name">What’s your name?</label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="text-264"
-                    placeholder="Your full name"
-                    required
-                  />
+            <form action="#" method="POST" class="wpcf7-form modern-msg-form">
+              <h3 class="msg-form-heading">Send a message</h3>
+              <p class="msg-form-sub">Fill out the quick brief below and our team will get back to you within 24 hours.</p>
+
+              <div class="msg-form-body">
+                <!-- Left Column: 3 Pill Inputs -->
+                <div class="msg-form-inputs">
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-name" name="text-264" class="msg-input-pill" placeholder="Your name" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="email" id="contact-email" name="email-439" class="msg-input-pill" placeholder="Your email" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-topic" name="subject-268" class="msg-input-pill" placeholder="Subject" required />
+                  </div>
                 </div>
-                <div class="contact-input-group">
-                  <label for="contact-email">Email address</label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email-439"
-                    placeholder="hello@company.com"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-topic">Discussion topic?</label>
-                  <input
-                    type="text"
-                    id="contact-topic"
-                    name="subject-268"
-                    placeholder="e.g. Web Design / SEO"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-budget">What’s your budget?</label>
-                  <input
-                    type="text"
-                    id="contact-budget"
-                    name="budget-270"
-                    placeholder="e.g. $5,000 - $10,000"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group full-width">
-                  <label for="contact-desc">Project Description</label>
-                  <textarea
-                    id="contact-desc"
-                    name="textarea-989"
-                    placeholder="A brief description about your project, request, or consultation details..."
-                    required
-                  ></textarea>
+
+                <!-- Right Column: Message Textarea -->
+                <div class="msg-form-textarea-wrap">
+                  <textarea id="contact-desc" name="textarea-989" class="msg-textarea" placeholder="Your message" required></textarea>
                 </div>
               </div>
-              <label class="contact-checkbox-row">
-                <input type="checkbox" name="acceptance-872" required />
-                <span
-                  >I am bound by the terms of the Service and I accept the
-                  Privacy Policy.</span
-                >
-              </label>
-              <div style="text-align: center; width: 100%">
-                <button type="submit" class="btn btn-solid">
-                  <span>— Send message</span>
+
+              <!-- Bottom Row: Checkbox & Disclaimer on left, Pill Submit Button on right -->
+              <div class="msg-form-footer">
+                <label class="msg-form-consent-label">
+                  <input type="checkbox" name="acceptance-872" class="msg-consent-checkbox" required />
+                  <span class="msg-form-disclaimer">
+                    By clicking Send a message button, you agree to use our &ldquo;Form&rdquo; terms And consent cookie usage in browser.
+                  </span>
+                </label>
+                <button type="submit" class="msg-form-submit-btn">
+                  <span>SEND A MESSAGE</span>
                 </button>
               </div>
             </form>
@@ -1491,10 +1554,7 @@
       </div>
       <!-- Footer Copyright bottom -->
       <div class="wrap footer-bottom-premium">
-        <span>© 2026 Web Agency. All rights reserved.<br>Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a>
-        </div>
+        <span>© 2026 Web Agency. All rights reserved. Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
       </div>
     </footer>
     <script src="js/main.js"></script>
@@ -1533,6 +1593,32 @@
         });
       });
     </script>
+
+    <!-- FLOATING QUICK CONNECT WIDGETS (WHATSAPP & CALL) -->
+    <div class="floating-quick-actions" aria-label="Quick Contact Actions">
+      <!-- Left: WhatsApp Live Chat -->
+      <a href="https://wa.me/923143110259" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" aria-label="Chat with us on WhatsApp">
+        <span class="floating-btn-badge" aria-label="3 unread messages">3</span>
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 3C7.07 3 3.048 7.021 3.047 11.983c0 1.586.415 3.133 1.203 4.498L3 21l4.63-1.215a8.93 8.93 0 0 0 4.401 1.157h.004c4.961 0 8.983-4.022 8.984-8.984 0-2.4-.934-4.658-2.634-6.357A8.93 8.93 0 0 0 12.031 3zm0 1.957c3.873 0 7.027 3.153 7.028 7.026 0 1.876-.73 3.64-2.057 4.966a6.974 6.974 0 0 1-4.971 2.06h-.004a6.98 6.98 0 0 1-3.559-.971l-.255-.152-2.645.694.706-2.578-.166-.264a6.97 6.97 0 0 1-1.07-3.755c0-3.873 3.154-7.026 7.028-7.026zm3.844 9.385c-.211-.106-1.247-.616-1.44-.686-.194-.07-.335-.106-.476.106-.14.211-.546.686-.67.827-.123.14-.247.158-.458.053-.211-.106-.89-.328-1.696-1.047a6.29 6.29 0 0 1-1.173-1.458c-.123-.211-.013-.325.092-.43.095-.096.211-.247.317-.37.106-.124.141-.212.211-.353.07-.141.035-.265-.018-.37-.053-.106-.476-1.147-.652-1.57-.172-.413-.347-.357-.476-.364-.124-.006-.265-.007-.406-.007-.141 0-.37.053-.564.265-.194.211-.741.724-.741 1.766 0 1.041.758 2.048.864 2.189.106.141 1.492 2.278 3.614 3.195.505.218.899.348 1.206.446.507.161.968.138 1.333.084.407-.061 1.247-.51 1.423-1.004.176-.494.176-.917.123-1.006-.053-.088-.194-.141-.405-.247z" fill="#ffffff"/>
+          </svg>
+          <span class="floating-btn-tooltip">Chat on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Right: Direct Call -->
+      <a href="tel:+923143110259" class="floating-btn floating-btn-phone" aria-label="Call Us Directly">
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="floating-btn-tooltip">Call Us Directly</span>
+        </div>
+      </a>
+    </div>
   </body>
 </html>
 

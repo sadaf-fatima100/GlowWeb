@@ -54,7 +54,1216 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
+    <style>
+      /* =========================================================
+         SERVICES PAGE UNIVERSE — COMPLETE DESIGN PARITY WITH HOME & BLOGS
+         ========================================================= */
+      .services-page-universe {
+        position: relative;
+        width: 100%;
+        overflow-x: clip;
+      }
+
+      /* Suppress legacy .nav-links a::after double underline on webagency nav items */
+      .webagency-nav-links .webagency-nav-item::after,
+      .webagency-nav-links a::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      /* --- 1. HERO SECTION & HEADINGS (100% HOME PAGE PARITY) --- */
+      .services-hero-creative,
+      .services-page-universe .services-hero-creative {
+        position: relative;
+        padding-top: clamp(108px, 9vw, 128px) !important;
+        padding-bottom: clamp(60px, 7vw, 90px) !important;
+        background: transparent !important;
+      }
+
+      /* Main H1 Parity with Home Page */
+      .services-page-universe .services-hero-h1,
+      .services-page-universe h1.services-hero-h1 {
+        font-family: var(--font-display) !important;
+        font-size: 68px !important;
+        font-weight: 800 !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.02em !important;
+        color: var(--fg) !important;
+        max-width: 1050px !important;
+        margin: 0 auto 20px !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .services-desk-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .services-mob-title {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .services-hero-gradient {
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block;
+      }
+
+      html:not([data-theme="dark"]) .services-hero-gradient,
+      [data-theme='light'] .services-hero-gradient {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      /* Lede Subtitle - Unified with Home Page Hero Subtitle */
+      .services-page-universe .services-hero-lede {
+        font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+        font-size: clamp(0.96rem, 1.4vw, 1.12rem) !important;
+        color: var(--fg-soft) !important;
+        line-height: 1.62 !important;
+        max-width: 860px !important;
+        margin: 0 auto 32px !important;
+        font-weight: 400 !important;
+        text-align: center !important;
+      }
+
+      .services-page-universe .services-lede-row-1 {
+        display: block !important;
+      }
+
+      .services-page-universe .services-lede-row-2 {
+        display: block !important;
+      }
+
+      html:not([data-theme="dark"]) .services-page-universe .services-hero-lede,
+      [data-theme='light'] .services-page-universe .services-hero-lede {
+        color: #2c4235 !important;
+        font-weight: 500 !important;
+      }
+
+      /* Hero Actions CTA Buttons */
+      .services-hero-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 56px;
+        flex-wrap: wrap;
+      }
+
+      .services-hero-actions .btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-family: var(--font-body) !important;
+        font-size: 15px !important;
+        min-width: 195px !important;
+        height: 48px !important;
+        padding: 0 24px !important;
+        border-radius: 999px !important;
+        box-sizing: border-box !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+      }
+
+      .services-hero-actions .btn-primary {
+        background: var(--accent-primary) !important;
+        color: #03140a !important;
+        font-weight: 700 !important;
+        border: 1.5px solid transparent !important;
+        box-shadow: 0 10px 25px rgba(0, 217, 143, 0.35) !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .services-hero-actions .btn-primary:hover {
+        background: #00ffaa !important;
+        transform: translateY(-2px) scale(1.02) !important;
+        box-shadow: 0 14px 30px rgba(0, 217, 143, 0.5) !important;
+      }
+
+      .services-hero-actions .btn-ghost {
+        font-weight: 600 !important;
+        color: var(--fg) !important;
+        border: 1.5px solid var(--border-strong) !important;
+        background: transparent !important;
+        transition: all 0.25s ease !important;
+      }
+
+      .services-hero-actions .btn-ghost:hover {
+        border-color: var(--accent-primary) !important;
+        color: var(--accent-primary) !important;
+        background: rgba(0, 217, 143, 0.08) !important;
+        transform: translateY(-2px) !important;
+      }
+
+      /* --- 2. MASTER H3 CARD TITLE STANDARD (EXACT BLOG SPEC) --- */
+      .services-page-universe .pillar-title,
+      .services-page-universe .services-circle h3,
+      .services-page-universe .services-circle h4,
+      .services-page-universe .service-pillar-card h3,
+      .services-page-universe .tech-card-name,
+      .services-page-universe .tech-clean-card h3,
+      .services-page-universe .proc-v2-title {
+        font-family: var(--font-display) !important;
+        font-size: 19.5px !important;
+        font-weight: 650 !important;
+        line-height: 1.35 !important;
+        letter-spacing: -0.015em !important;
+        color: var(--fg) !important;
+        margin: 0 0 8px 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+        transition: color 0.25s ease !important;
+      }
+
+      .services-page-universe .services-circle:hover .pillar-title,
+      .services-page-universe .service-pillar-card:hover .pillar-title,
+      .services-page-universe .tech-clean-card:hover .tech-card-name,
+      .services-page-universe .proc-v2-step:hover .proc-v2-title {
+        color: var(--accent-primary) !important;
+      }
+
+      /* =========================================================
+         2. PRECISION SERPENTINE LASER HERO CARDS (EXECUTIVE PARITY)
+         ========================================================= */
+      .services-page-universe .services-flow-wrap {
+        position: relative;
+        max-width: 1140px;
+        margin: 44px auto 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /* Ambient Center Glow */
+      .services-flow-ambient-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: clamp(380px, 70vw, 880px);
+        height: clamp(160px, 25vw, 280px);
+        background: radial-gradient(
+          ellipse 60% 60% at 50% 50%,
+          rgba(0, 255, 170, 0.14) 0%,
+          rgba(0, 217, 143, 0.07) 45%,
+          rgba(79, 235, 253, 0.03) 65%,
+          transparent 80%
+        );
+        filter: blur(40px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      html:not([data-theme="dark"]) .services-flow-ambient-glow,
+      [data-theme='light'] .services-flow-ambient-glow {
+        background: radial-gradient(
+          ellipse 60% 60% at 50% 50%,
+          rgba(0, 217, 143, 0.12) 0%,
+          rgba(0, 143, 88, 0.05) 45%,
+          rgba(79, 235, 253, 0.02) 65%,
+          transparent 80%
+        );
+        filter: blur(32px);
+      }
+
+      /* Desktop Continuous Precision SVG Circuit Serpentine Path */
+      .services-flow-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 3;
+        overflow: visible;
+      }
+
+      /* The 3 Connected Seamless Cards Grid (Contiguous Glass Cluster) */
+      .services-flow-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        align-items: stretch;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        background: rgba(10, 16, 13, 0.82);
+        border: 1px solid rgba(0, 217, 143, 0.12);
+        box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      html:not([data-theme="dark"]) .services-flow-grid,
+      [data-theme='light'] .services-flow-grid {
+        background: rgba(255, 255, 255, 0.92);
+        border-color: rgba(0, 168, 107, 0.14);
+        box-shadow: 0 16px 36px -8px rgba(0, 30, 15, 0.06), inset 0 1px 0 #ffffff;
+      }
+
+      /* Light Mode Only Circuit Border Line Adjustments (Dark mode remains 100% untouched) */
+      html:not([data-theme="dark"]) .services-flow-svg .flow-svg-track,
+      [data-theme='light'] .services-flow-svg .flow-svg-track {
+        stroke: url(#flowLineGradLight) !important;
+        stroke-width: 2.2px !important;
+        filter: drop-shadow(0 2px 8px rgba(0, 135, 90, 0.22)) !important;
+        opacity: 1 !important;
+      }
+
+      html:not([data-theme="dark"]) .services-flow-svg .flow-svg-core,
+      [data-theme='light'] .services-flow-svg .flow-svg-core {
+        opacity: 0 !important;
+        display: none !important;
+      }
+
+      html:not([data-theme="dark"]) .services-flow-svg .pin-outer,
+      [data-theme='light'] .services-flow-svg .pin-outer {
+        fill: #00875a !important;
+        filter: drop-shadow(0 1px 4px rgba(0, 135, 90, 0.35)) !important;
+      }
+
+      html:not([data-theme="dark"]) .services-flow-svg .pin-inner,
+      [data-theme='light'] .services-flow-svg .pin-inner {
+        fill: #ffffff !important;
+      }
+
+      /* Seamless Inner Service Card */
+      .service-flow-card {
+        width: 100%;
+        min-height: 330px;
+        border-radius: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: clamp(34px, 3.2vw, 44px) clamp(20px, 2vw, 30px) !important;
+        position: relative;
+        cursor: pointer;
+        box-sizing: border-box;
+        overflow: hidden !important;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.35s ease !important;
+      }
+
+      .service-flow-card:last-child {
+        border-right: none !important;
+      }
+
+      html:not([data-theme="dark"]) .service-flow-card,
+      [data-theme='light'] .service-flow-card {
+        border-right: 1px solid rgba(0, 30, 15, 0.07) !important;
+      }
+
+      html:not([data-theme="dark"]) .service-flow-card:last-child,
+      [data-theme='light'] .service-flow-card:last-child {
+        border-right: none !important;
+      }
+
+      /* Hover States */
+      .service-flow-card:hover {
+        background: radial-gradient(circle at 50% 35%, rgba(0, 217, 143, 0.09) 0%, transparent 75%) !important;
+      }
+
+      html:not([data-theme="dark"]) .service-flow-card:hover,
+      [data-theme='light'] .service-flow-card:hover {
+        background: radial-gradient(circle at 50% 35%, rgba(0, 143, 88, 0.06) 0%, transparent 75%) !important;
+      }
+
+      /* Shiny sweep reflection on hover */
+      .service-flow-card .shiny-sweep {
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+        transform: skewX(-25deg);
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .service-flow-card:hover .shiny-sweep {
+        opacity: 1;
+        animation: sweep 1.1s ease-out;
+      }
+
+      /* Flow Card Icon Container */
+      .flow-card-icon-wrap {
+        width: 48px;
+        height: 48px;
+        border-radius: 13px;
+        background: rgba(0, 217, 143, 0.08);
+        border: 1px solid rgba(0, 217, 143, 0.2);
+        box-shadow: inset 0 0 10px rgba(0, 217, 143, 0.06);
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.35s ease, background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      html:not([data-theme="dark"]) .flow-card-icon-wrap,
+      [data-theme='light'] .flow-card-icon-wrap {
+        background: rgba(0, 143, 88, 0.06);
+        border-color: rgba(0, 143, 88, 0.18);
+      }
+
+      .service-flow-card:hover .flow-card-icon-wrap {
+        transform: scale(1.08) translateY(-2px);
+        background: rgba(0, 217, 143, 0.14);
+        border-color: rgba(0, 217, 143, 0.4);
+        box-shadow: 0 0 16px rgba(0, 217, 143, 0.22);
+      }
+
+      .flow-card-icon-wrap svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .flow-card-title {
+        font-family: var(--font-display) !important;
+        font-size: clamp(18px, 1.4vw, 20px) !important;
+        font-weight: 750 !important;
+        color: var(--fg) !important;
+        margin: 0 0 10px 0 !important;
+        letter-spacing: -0.015em !important;
+        line-height: 1.25 !important;
+      }
+
+      .flow-card-desc {
+        font-family: var(--font-body) !important;
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        color: var(--fg-soft) !important;
+        max-width: 29ch !important;
+        margin: 0 auto 20px !important;
+        font-weight: 400 !important;
+      }
+
+      html:not([data-theme="dark"]) .flow-card-desc,
+      [data-theme='light'] .flow-card-desc {
+        color: #3b5044 !important;
+      }
+
+      .flow-card-action {
+        font-family: var(--font-display) !important;
+        font-size: 12.5px !important;
+        font-weight: 700 !important;
+        color: var(--accent-primary) !important;
+        letter-spacing: 0.02em !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 6px 14px !important;
+        border-radius: 9999px !important;
+        background: rgba(0, 217, 143, 0.07) !important;
+        border: 1px solid rgba(0, 217, 143, 0.18) !important;
+        transition: all 0.3s ease !important;
+        margin: 0 !important;
+      }
+
+      html:not([data-theme="dark"]) .flow-card-action,
+      [data-theme='light'] .flow-card-action {
+        color: #008f58 !important;
+        background: rgba(0, 143, 88, 0.06) !important;
+        border-color: rgba(0, 143, 88, 0.16) !important;
+      }
+
+      .service-flow-card:hover .flow-card-action {
+        color: #04140d !important;
+        background: var(--accent-primary) !important;
+        border-color: var(--accent-primary) !important;
+        box-shadow: 0 0 14px rgba(0, 217, 143, 0.35) !important;
+        gap: 9px !important;
+      }
+
+      html:not([data-theme="dark"]) .service-flow-card:hover .flow-card-action,
+      [data-theme='light'] .service-flow-card:hover .flow-card-action {
+        color: #ffffff !important;
+        background: #008f58 !important;
+        border-color: #008f58 !important;
+        box-shadow: 0 0 12px rgba(0, 143, 88, 0.25) !important;
+      }
+
+      .flow-card-action svg {
+        width: 12px !important;
+        height: 12px !important;
+        stroke: currentColor !important;
+        transition: transform 0.3s ease !important;
+      }
+
+      .service-flow-card:hover .flow-card-action svg {
+        transform: translateX(2px) !important;
+      }
+
+      /* --- 3. SECTION HEADINGS (H2) PARITY WITH HOME PAGE --- */
+      .services-page-universe .section-head h2,
+      .services-page-universe .tech-clean-title,
+      .services-page-universe .cta-split-heading {
+        font-family: var(--font-display) !important;
+        font-size: 44px !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.01em !important;
+        color: var(--fg) !important;
+        margin-bottom: 12px !important;
+      }
+
+      .services-page-universe .section-head h2 em,
+      .services-page-universe .cta-split-heading em {
+        font-style: normal !important;
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block !important;
+      }
+
+      html:not([data-theme="dark"]) .services-page-universe .section-head h2 em,
+      [data-theme='light'] .services-page-universe .section-head h2 em {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      .services-page-universe .section-head {
+        margin-bottom: 0px !important;
+      }
+
+      .services-page-universe .section-why-choose .section-head {
+        margin-bottom: clamp(48px, 5vw, 60px) !important;
+      }
+
+      .services-page-universe .section-subtitle,
+      .services-page-universe .tech-clean-subtitle {
+        font-family: var(--font-body) !important;
+        font-size: 16px !important;
+        color: var(--fg-soft) !important;
+        line-height: 1.65 !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        font-weight: 400 !important;
+      }
+
+      .services-page-universe .section-head p.section-subtitle {
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
+      }
+
+      html:not([data-theme="dark"]) .services-page-universe .section-subtitle,
+      [data-theme='light'] .services-page-universe .section-subtitle {
+        color: #2c4235 !important;
+        font-weight: 500 !important;
+      }
+
+      /* --- 4. IN-DEPTH CAPABILITIES ROWS & GAP SPACING --- */
+      .services-page-universe .expertise-row-creative {
+        gap: clamp(48px, 5.5vw, 84px) !important;
+        margin-top: clamp(44px, 4vw, 54px) !important;
+      }
+
+      .services-page-universe .section-head + .expertise-row-creative,
+      .services-page-universe .expertise-row-creative.expertise-row-first,
+      .services-page-universe .expertise-row-first,
+      .services-page-universe .expertise-row-creative:first-of-type {
+        margin-top: clamp(56px, 5vw, 68px) !important;
+      }
+
+      .services-page-universe .expertise-row-title {
+        font-family: var(--font-display) !important;
+        font-size: clamp(30px, 2.8vw, 38px) !important;
+        font-weight: 800 !important;
+        line-height: 1.18 !important;
+        letter-spacing: -0.025em !important;
+        color: var(--fg) !important;
+        margin-bottom: 18px !important;
+        width: 100% !important;
+        max-width: 580px !important;
+        text-wrap: unset !important;
+      }
+
+      .exp-desk-br {
+        display: block;
+      }
+
+      .services-page-universe .expertise-row-title em {
+        font-style: normal !important;
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block !important;
+      }
+
+      html:not([data-theme="dark"]) .services-page-universe .expertise-row-title em,
+      [data-theme='light'] .services-page-universe .expertise-row-title em {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      .services-page-universe .expertise-content-creative p {
+        font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 14px !important;
+        max-width: 580px !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+      }
+
+      .services-page-universe .expertise-lead-desc {
+        color: var(--fg-soft) !important;
+      }
+
+      html:not([data-theme="dark"]) .services-page-universe .expertise-lead-desc,
+      [data-theme='light'] .services-page-universe .expertise-lead-desc {
+        color: #2c4235 !important;
+      }
+
+      /* 2nd Paragraph: Button Green Color + Justified Text (Matching Home Page) */
+      .services-page-universe .expertise-highlight-desc {
+        color: #00d98f !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.01em !important;
+        margin-bottom: 24px !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+      }
+
+      html:not([data-theme="dark"]) .services-page-universe .expertise-highlight-desc,
+      [data-theme='light'] .services-page-universe .expertise-highlight-desc {
+        color: #008f58 !important; /* Button emerald green with high WCAG contrast in light theme */
+      }
+
+      /* =========================================================
+         CONTINUOUS PILLS MARQUEE SECTION (HERO FOLLOWER)
+         ========================================================= */
+      .services-pills-marquee-section {
+        position: relative;
+        overflow: hidden;
+        background: var(--bg);
+        padding: clamp(24px, 3.5vw, 42px) 0;
+        margin-top: -6px;
+        margin-bottom: clamp(10px, 2vw, 24px);
+      }
+
+      .pills-marquee-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: clamp(340px, 58vw, 760px);
+        height: clamp(120px, 20vw, 200px);
+        background: radial-gradient(
+          ellipse 60% 60% at 50% 50%,
+          rgba(0, 255, 170, 0.2) 0%,
+          rgba(0, 217, 143, 0.12) 40%,
+          rgba(79, 235, 253, 0.06) 65%,
+          transparent 80%
+        );
+        filter: blur(36px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      html:not([data-theme="dark"]) .pills-marquee-glow,
+      [data-theme='light'] .pills-marquee-glow {
+        background: radial-gradient(
+          ellipse 60% 60% at 50% 50%,
+          rgba(0, 217, 143, 0.16) 0%,
+          rgba(0, 143, 88, 0.08) 40%,
+          rgba(79, 235, 253, 0.05) 65%,
+          transparent 80%
+        );
+        filter: blur(28px);
+      }
+
+      .pills-marquee-container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2px, 0.4vw, 5px);
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(0, 0, 0, 1) 8%,
+          rgba(0, 0, 0, 1) 92%,
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(0, 0, 0, 1) 8%,
+          rgba(0, 0, 0, 1) 92%,
+          transparent 100%
+        );
+      }
+
+      @media (max-width: 640px) {
+        .pills-marquee-container {
+          mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0, 0, 0, 1) 5%,
+            rgba(0, 0, 0, 1) 95%,
+            transparent 100%
+          );
+          -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0, 0, 0, 1) 5%,
+            rgba(0, 0, 0, 1) 95%,
+            transparent 100%
+          );
+        }
+      }
+
+      .pills-marquee-row {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        user-select: none;
+        padding: 4px 0;
+        margin: 0;
+      }
+
+      .pills-track {
+        display: flex;
+        width: max-content;
+        gap: clamp(10px, 1.2vw, 14px);
+        align-items: center;
+        padding: 4px 0;
+        will-change: transform;
+      }
+
+      .row-left .pills-track {
+        animation: pillsScrollLeft var(--speed, 34s) linear infinite;
+      }
+
+      .row-right .pills-track {
+        animation: pillsScrollRight var(--speed, 36s) linear infinite;
+      }
+
+      .pills-marquee-row:hover .pills-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes pillsScrollLeft {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      @keyframes pillsScrollRight {
+        0% {
+          transform: translate3d(-50%, 0, 0);
+        }
+        100% {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      .pills-group {
+        display: flex;
+        gap: clamp(10px, 1.2vw, 14px);
+        align-items: center;
+        padding: 4px 0;
+        flex-shrink: 0;
+      }
+
+      .tech-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(9px, 0.9vw, 11px) clamp(28px, 2.5vw, 42px);
+        min-width: clamp(170px, 14vw, 220px);
+        border-radius: 9999px;
+        font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+        font-size: clamp(13px, 0.95vw, 14.5px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        white-space: nowrap;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.3s ease,
+                    border-color 0.3s ease,
+                    background 0.3s ease;
+      }
+
+      .tech-pill:hover {
+        z-index: 10;
+      }
+
+      /* Highlighted Gradient Pill (Exact Reference Parity) */
+      .tech-pill.pill-gradient {
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%);
+        color: #03140a;
+        font-weight: 750;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        box-shadow: 0 4px 20px rgba(0, 217, 143, 0.35), 0 0 10px rgba(79, 235, 253, 0.2);
+      }
+
+      html:not([data-theme="dark"]) .tech-pill.pill-gradient,
+      [data-theme='light'] .tech-pill.pill-gradient {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 45%, #0284c7 100%);
+        color: #ffffff;
+        font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 16px rgba(0, 143, 88, 0.25);
+      }
+
+      .tech-pill.pill-gradient:hover {
+        transform: translateY(-3px) scale(1.05);
+        z-index: 10;
+        box-shadow: 0 8px 28px rgba(0, 255, 170, 0.55), 0 0 18px rgba(79, 235, 253, 0.35);
+      }
+
+      /* Dark / Subtle Glass Outline Pill (Exact Reference Parity) */
+      .tech-pill.pill-outline {
+        background: rgba(255, 255, 255, 0.035);
+        border: 1.2px solid rgba(255, 255, 255, 0.16);
+        color: #e6f4ec;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      html:not([data-theme="dark"]) .tech-pill.pill-outline,
+      [data-theme='light'] .tech-pill.pill-outline {
+        background: #ffffff;
+        border: 1.4px solid rgba(10, 26, 16, 0.14);
+        color: #0a1a10;
+        box-shadow: 0 2px 8px rgba(10, 26, 16, 0.04);
+      }
+
+      .tech-pill.pill-outline:hover {
+        border-color: var(--accent-primary);
+        color: var(--accent-primary);
+        background: rgba(0, 217, 143, 0.09);
+        box-shadow: 0 0 18px rgba(0, 217, 143, 0.3);
+        transform: translateY(-3px) scale(1.05);
+        z-index: 10;
+      }
+
+      /* --- 5. WHY CHOOSE US SECTION --- */
+      .services-page-universe .section-why-choose {
+        position: relative;
+        background: var(--bg);
+      }
+
+      .services-page-universe .tech-card-info {
+        font-family: var(--font-body) !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: var(--fg-soft) !important;
+      }
+
+      /* --- 6. RESPONSIVE BREAKPOINTS (HOME & BLOG PARITY) --- */
+
+      /* Small Laptop & Tablet Landscape (<= 1024px) */
+      @media (max-width: 1024px) {
+        .services-hero-creative,
+        .services-page-universe .services-hero-creative {
+          padding-top: clamp(96px, 12vw, 118px) !important;
+        }
+        .services-page-universe .services-hero-h1,
+        .services-page-universe h1.services-hero-h1 {
+          font-size: 52px !important;
+          line-height: 1.1 !important;
+        }
+        .services-page-universe .section-head h2,
+        .services-page-universe .tech-clean-title,
+        .services-page-universe .cta-split-heading {
+          font-size: 36px !important;
+        }
+        .services-page-universe .pillar-title,
+        .services-page-universe .services-circle h3,
+        .services-page-universe .services-circle h4,
+        .services-page-universe .service-pillar-card h3,
+        .services-page-universe .tech-card-name,
+        .services-page-universe .tech-clean-card h3,
+        .services-page-universe .proc-v2-title {
+          font-size: 18px !important;
+        }
+        .services-page-universe .services-flow-wrap {
+          margin-top: 32px !important;
+        }
+        .services-page-universe .services-flow-grid {
+          gap: 0 !important;
+        }
+        .services-page-universe .service-flow-card {
+          padding: 24px 16px !important;
+          min-height: 290px !important;
+        }
+        .services-page-universe .flow-card-icon-wrap {
+          width: 42px !important;
+          height: 42px !important;
+          margin-bottom: 8px !important;
+        }
+        .services-page-universe .flow-card-title {
+          font-size: 17px !important;
+          margin-bottom: 6px !important;
+        }
+        .services-page-universe .flow-card-desc {
+          font-size: 12.5px !important;
+          line-height: 1.45 !important;
+          margin-bottom: 12px !important;
+        }
+        .services-page-universe .flow-card-action {
+          font-size: 11.5px !important;
+        }
+        .services-page-universe .expertise-content-creative p {
+          font-size: 14.5px !important;
+          line-height: 1.65 !important;
+        }
+        .services-page-universe .expertise-row-title {
+          font-size: 28px !important;
+        }
+      }
+
+      /* Tablet Portrait & Large Phones (<= 768px) */
+      @media (max-width: 768px) {
+        .services-hero-creative,
+        .services-page-universe .services-hero-creative {
+          padding-top: clamp(88px, 14vw, 108px) !important;
+          padding-bottom: 40px !important;
+        }
+        .services-page-universe .services-hero-h1,
+        .services-page-universe h1.services-hero-h1 {
+          font-size: 40px !important;
+          line-height: 1.15 !important;
+          gap: 6px !important;
+        }
+        .services-page-universe .section-head h2,
+        .services-page-universe .tech-clean-title,
+        .services-page-universe .cta-split-heading {
+          font-size: 30px !important;
+        }
+        .services-page-universe .pillar-title,
+        .services-page-universe .services-circle h3,
+        .services-page-universe .services-circle h4,
+        .services-page-universe .service-pillar-card h3,
+        .services-page-universe .tech-card-name,
+        .services-page-universe .tech-clean-card h3,
+        .services-page-universe .proc-v2-title {
+          font-size: 17.5px !important;
+        }
+        .services-page-universe .expertise-row-title {
+          font-size: 24px !important;
+        }
+        .exp-desk-br,
+        .exp-sub-br,
+        .tech-sub-br,
+        .hero-lede-br {
+          display: none !important;
+        }
+        .services-page-universe .services-lede-row-1,
+        .services-page-universe .services-lede-row-2 {
+          display: inline !important;
+        }
+        .services-desk-title {
+          display: none !important;
+        }
+        .services-mob-title {
+          display: flex !important;
+          white-space: nowrap !important;
+          flex-wrap: nowrap !important;
+        }
+        .services-mob-row {
+          display: inline-block;
+          white-space: nowrap !important;
+        }
+        .services-page-universe .services-hero-lede {
+          font-size: clamp(0.94rem, 1.4vw, 1.06rem) !important;
+          line-height: 1.6 !important;
+          max-width: 600px !important;
+        }
+        .services-page-universe .tech-clean-grid,
+        .services-page-universe .wcu-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 16px !important;
+        }
+        .services-flow-svg,
+        .services-page-universe .services-flow-svg {
+          display: none !important;
+        }
+        .services-page-universe .services-flow-grid {
+          grid-template-columns: 1fr !important;
+          max-width: 440px !important;
+          gap: 16px !important;
+          margin: 24px auto 0 !important;
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+        }
+        .services-page-universe .service-flow-card {
+          width: 100% !important;
+          min-height: auto !important;
+          height: auto !important;
+          border-radius: 20px !important;
+          border: 1px solid rgba(0, 217, 143, 0.14) !important;
+          border-right: 1px solid rgba(0, 217, 143, 0.14) !important;
+          background: radial-gradient(circle at 80% 20%, rgba(0, 217, 143, 0.06) 0%, rgba(10, 16, 13, 0.85) 60%) !important;
+          box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45) !important;
+          padding: 28px 22px !important;
+        }
+        html:not([data-theme="dark"]) .services-page-universe .service-flow-card,
+        [data-theme='light'] .services-page-universe .service-flow-card {
+          background: radial-gradient(circle at 80% 20%, rgba(0, 217, 143, 0.06) 0%, #ffffff 70%) !important;
+          border-color: rgba(0, 168, 107, 0.14) !important;
+          border-right: 1px solid rgba(0, 168, 107, 0.14) !important;
+          box-shadow: 0 14px 32px -8px rgba(0, 30, 15, 0.06) !important;
+        }
+        .services-page-universe .flow-card-desc {
+          max-width: 32ch !important;
+          font-size: 13.5px !important;
+        }
+        .expertise-row-creative,
+        .services-page-universe .expertise-row-creative {
+          flex-direction: column !important;
+          gap: 32px !important;
+          margin-top: 36px !important;
+          width: 100% !important;
+        }
+        .section-head + .expertise-row-creative,
+        .expertise-row-creative.expertise-row-first,
+        .expertise-row-first,
+        .expertise-row-creative:first-of-type {
+          margin-top: 46px !important;
+        }
+        .expertise-row-creative.reverse,
+        .services-page-universe .expertise-row-creative.reverse {
+          flex-direction: column !important;
+        }
+        .exp-desk-br,
+        .services-page-universe .exp-desk-br {
+          display: none !important;
+        }
+        .expertise-content-creative,
+        .services-page-universe .expertise-content-creative {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+          width: 100% !important;
+          padding: 0 !important;
+        }
+        .expertise-content-creative .section-num-label {
+          justify-content: flex-start !important;
+        }
+        .expertise-row-title,
+        .services-page-universe .expertise-row-title {
+          text-align: left !important;
+          margin-inline: 0 !important;
+          align-self: flex-start !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .expertise-content-creative p,
+        .services-page-universe .expertise-content-creative p,
+        .expertise-lead-desc,
+        .expertise-highlight-desc {
+          margin-inline: 0 !important;
+          text-align: left !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .expertise-content-creative .btn,
+        .services-page-universe .expertise-content-creative .btn {
+          align-self: flex-start !important;
+          margin: 16px 0 0 0 !important;
+          display: inline-flex !important;
+        }
+        .expertise-image-creative,
+        .services-page-universe .expertise-image-creative {
+          width: 100% !important;
+          max-width: 100% !important;
+          align-self: stretch !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .expertise-image-creative::before,
+        .services-page-universe .expertise-image-creative::before {
+          display: none !important;
+        }
+        .expertise-image-creative img,
+        .services-page-universe .expertise-image-creative img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          max-height: 400px !important;
+          aspect-ratio: 16 / 10 !important;
+          object-fit: cover !important;
+          border-radius: 20px !important;
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35) !important;
+          display: block !important;
+        }
+      }
+
+      /* Mobile Phones (<= 640px) — 100% Clean Parity */
+      @media (max-width: 640px) {
+        .services-page-universe .services-flow-grid {
+          max-width: 420px !important;
+          gap: 14px !important;
+          margin: 20px auto 0 !important;
+        }
+        .services-page-universe .service-flow-card {
+          padding: 24px 18px !important;
+          border-radius: 20px !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+        .services-page-universe .flow-card-title {
+          font-size: 18px !important;
+          margin-bottom: 6px !important;
+        }
+        .services-page-universe .flow-card-desc {
+          font-size: 13px !important;
+          max-width: 100% !important;
+          margin-bottom: 12px !important;
+        }
+        .services-page-universe .flow-card-icon-wrap {
+          width: 44px !important;
+          height: 44px !important;
+          margin-bottom: 6px !important;
+        }
+        .services-page-universe .services-hero-actions {
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: center !important;
+          width: 100% !important;
+          gap: 12px !important;
+          margin-bottom: 36px !important;
+        }
+        .services-page-universe .services-hero-actions .btn {
+          width: auto !important;
+          min-width: 210px !important;
+          max-width: 260px !important;
+          text-align: center !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 12px 28px !important;
+        }
+      }
+
+      /* Small Phones (<= 480px) */
+      @media (max-width: 480px) {
+        .services-hero-creative,
+        .services-page-universe .services-hero-creative {
+          padding-top: clamp(82px, 16vw, 98px) !important;
+          padding-bottom: 30px !important;
+        }
+        .services-page-universe .services-hero-h1,
+        .services-page-universe h1.services-hero-h1 {
+          font-size: 34px !important;
+          line-height: 1.15 !important;
+        }
+        .services-page-universe .section-head h2,
+        .services-page-universe .tech-clean-title,
+        .services-page-universe .cta-split-heading {
+          font-size: 26px !important;
+        }
+        .services-page-universe .pillar-title,
+        .services-page-universe .services-circle h3,
+        .services-page-universe .services-circle h4,
+        .services-page-universe .service-pillar-card h3,
+        .services-page-universe .tech-card-name,
+        .services-page-universe .tech-clean-card h3,
+        .services-page-universe .proc-v2-title {
+          font-size: 17px !important;
+        }
+        .services-page-universe .expertise-row-title {
+          font-size: 22px !important;
+        }
+        .services-page-universe .services-flow-grid {
+          gap: 12px !important;
+          margin-top: 18px !important;
+        }
+        .services-page-universe .service-flow-card {
+          padding: 22px 16px !important;
+        }
+        .services-page-universe .tech-clean-grid,
+        .services-page-universe .wcu-grid {
+          grid-template-columns: 1fr !important;
+          gap: 14px !important;
+        }
+        .services-page-universe .services-hero-actions {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          gap: 12px;
+          margin-bottom: 40px;
+        }
+        .services-page-universe .services-hero-actions .btn {
+          width: auto !important;
+          min-width: 210px;
+          max-width: 260px;
+          text-align: center;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 12px 28px !important;
+        }
+        .services-page-universe .services-hero-lede {
+          font-size: 0.92rem !important;
+          line-height: 1.55 !important;
+          max-width: 325px !important;
+        }
+        .services-page-universe .section-subtitle {
+          font-size: 0.92rem !important;
+          line-height: 1.6 !important;
+          max-width: 100% !important;
+        }
+      }
+
+      /* Very Narrow Devices (<= 360px) */
+      @media (max-width: 360px) {
+        .services-page-universe .services-hero-h1,
+        .services-page-universe h1.services-hero-h1 {
+          font-size: 28px !important;
+        }
+        .services-page-universe .services-hero-lede {
+          font-size: 0.86rem !important;
+        }
+        .services-page-universe .section-head h2,
+        .services-page-universe .tech-clean-title,
+        .services-page-universe .cta-split-heading {
+          font-size: 22px !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Custom reactive mouse pointer -->
@@ -202,41 +1411,65 @@
     </header>
     <!-- Mobile nav drawer -->
     <div class="mobile-drawer">
-      <button class="mobile-close btn btn-ghost">Close</button>
-      <a href="index.html">Home</a>
-      <div class="mobile-drawer-accordion">
-        <a
-          href="services.html"
-          class="accordion-toggle active"
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-          "
-        >
-          Services
-          <svg
-            viewBox="0 0 24 24"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="accordion-icon"
-          >
-            <path d="M7 10l5 5 5-5z" />
-          </svg>
-        </a>
-        <div class="accordion-content">
-          <a href="web-development.html">Web Development</a>
-          <a href="google-ads.html">Google Ads</a>
-          <a href="search-engine-optimization.html"
-            >Search Engine Optimization</a
-          >
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand webagency-brand">Web Agency</a>
+        <div class="mobile-drawer-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54c-.44-.06-.9-.1-1.36-.1z" />
+              </svg></span>
+          </button>
+          <button class="mobile-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
-      <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
-      <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
-      <a href="contact.html">Get Started</a>
+
+      <div class="mobile-drawer-nav">
+        <a href="index.html"><span>Home</span></a>
+        <div class="mobile-drawer-accordion open">
+          <a href="services.html" class="accordion-toggle active">
+            <span>Services</span>
+            <span class="drawer-active-indicator"></span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </a>
+          <div class="accordion-content">
+            <a href="web-development.html">Web Development</a>
+            <a href="google-ads.html">Google Ads</a>
+            <a href="search-engine-optimization.html">Search Engine Optimization</a>
+          </div>
+        </div>
+        <a href="portfolio.html"><span>Portfolio</span></a>
+        <a href="about.html"><span>About Us</span></a>
+        <a href="blog.html"><span>Blog</span></a>
+        <a href="contact.html"><span>Contact Us</span></a>
+      </div>
+
+      <div class="mobile-drawer-cta-wrap">
+        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <div class="drawer-footer-contact">
+          <span class="drawer-footer-lbl">Email us directly</span>
+          <a href="mailto:hello@hywiz.com" class="drawer-footer-email">hello@hywiz.com</a>
+        </div>
+        <div class="drawer-footer-status">
+          <span class="drawer-status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+      </div>
     </div>
     <!-- ============================ SERVICES HERO SECTION ============================ -->
     <main class="services-page-universe" id="main-content">
@@ -260,8 +1493,8 @@
         <h1 class="reveal services-hero-h1">
           <!-- Desktop & Tablet (>600px): Clean 2-Row Layout -->
           <span class="services-desk-title">
-            <span class="services-title-row-1">High-Impact Web Solutions</span>
-            <span class="services-title-row-2">That <span class="services-hero-gradient">Accelerate Your Growth</span></span>
+            <span class="services-title-row-1">High-Impact Web Solutions That</span>
+            <span class="services-title-row-2"><span class="services-hero-gradient">Accelerate Your Growth</span></span>
           </span>
           <!-- Mobile (<=600px): Perfectly Balanced 3-Row Layout -->
           <span class="services-mob-title">
@@ -271,9 +1504,18 @@
           </span>
         </h1>
 
-        <!-- Lede Subtitle Paragraph -->
-        <p class="reveal services-hero-lede">
-          We combine cutting-edge web development, algorithmic SEO, and high-conversion Google Ads to engineer scalable digital experiences that outperform the competition.
+        <!-- Lede Subtitle Paragraph (Desktop & Mobile: 2 balanced rows, Line 1 wider, Line 2 narrower) -->
+        <p class="reveal services-hero-lede hero-desc-inverted-pyramid">
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+          <span class="hero-desc-desk">
+            <span class="hero-desc-row-1">We combine cutting-edge web development, algorithmic SEO, and high-conversion Google Ads</span>
+            <span class="hero-desc-row-2">built to accelerate growth and outperform the competition.</span>
+          </span>
+          <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+          <span class="hero-desc-mob">
+            <span class="hero-desc-row-1">We combine web development, SEO & Google Ads</span>
+            <span class="hero-desc-row-2">built to accelerate your growth.</span>
+          </span>
         </p>
 
         <!-- CTA Buttons -->
@@ -284,58 +1526,242 @@
           <a href="#processSection" class="btn btn-ghost">Explore Our Process</a>
         </div>
 
-        <!-- 3-Pillar Interactive Capability Showcase Deck -->
-        <div class="services-pillars-deck reveal">
-          <!-- Pillar 1: Web Development -->
-          <a href="web-development.html" class="service-pillar-card">
-            <div class="pillar-top-row">
-              <div class="pillar-icon-box icon-web">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        <!-- Connected Precision Serpentine Service Cards (Contiguous Cluster with Static Glowing Contour) -->
+        <div class="services-flow-wrap reveal">
+          <!-- Ambient Background Glow Behind the Circuit -->
+          <div class="services-flow-ambient-glow" aria-hidden="true"></div>
+
+          <!-- Exact Static Serpentine Glowing Line Contour (Tracing Card 1 Bottom -> Divider 1 UP -> Card 2 Top -> Divider 2 DOWN -> Card 3 Bottom -> Right Edge UP) -->
+          <svg class="services-flow-svg" viewBox="0 0 1140 330" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <!-- Multi-stop Vibrant Gradient (HyWiz Green -> Cyan -> Neon Mint) [Dark Mode] -->
+              <linearGradient id="flowLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00d98f" />
+                <stop offset="25%" stop-color="#00ffaa" />
+                <stop offset="50%" stop-color="#4febfd" />
+                <stop offset="75%" stop-color="#00ffaa" />
+                <stop offset="100%" stop-color="#00d98f" />
+              </linearGradient>
+
+              <!-- Light Mode Specific Crisp Gradient (Deep Emerald -> Vibrant Emerald -> Modern Tech Blue-Cyan) -->
+              <linearGradient id="flowLineGradLight" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00875a" />
+                <stop offset="25%" stop-color="#00a86b" />
+                <stop offset="50%" stop-color="#0284c7" />
+                <stop offset="75%" stop-color="#00a86b" />
+                <stop offset="100%" stop-color="#00875a" />
+              </linearGradient>
+
+              <!-- Precision Multi-stage Glow Filter -->
+              <filter id="flowLaserGlow" x="-10%" y="-10%" width="120%" height="120%">
+                <feGaussianBlur stdDeviation="3.5" result="blur1" />
+                <feGaussianBlur stdDeviation="1.2" result="blur2" />
+                <feMerge>
+                  <feMergeNode in="blur1" />
+                  <feMergeNode in="blur2" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Base Radiant Glow Track (Static, No Animation) -->
+            <path class="flow-svg-track" d="M 2 100 L 2 304 A 24 24 0 0 0 26 328 L 356 328 A 24 24 0 0 0 380 304 L 380 26 A 24 24 0 0 1 404 2 L 736 2 A 24 24 0 0 1 760 26 L 760 304 A 24 24 0 0 0 784 328 L 1114 328 A 24 24 0 0 0 1138 304 L 1138 100" fill="none" stroke="url(#flowLineGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#flowLaserGlow)" opacity="0.95" />
+
+            <!-- Core Sharp Accent Overlay (Static, No Animation) -->
+            <path class="flow-svg-core" d="M 2 100 L 2 304 A 24 24 0 0 0 26 328 L 356 328 A 24 24 0 0 0 380 304 L 380 26 A 24 24 0 0 1 404 2 L 736 2 A 24 24 0 0 1 760 26 L 760 304 A 24 24 0 0 0 784 328 L 1114 328 A 24 24 0 0 0 1138 304 L 1138 100" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+
+            <!-- Clean Static Terminal Pins -->
+            <g class="flow-pin">
+              <circle class="pin-outer" cx="2" cy="100" r="4.5" fill="#00ffaa" filter="url(#flowLaserGlow)" />
+              <circle class="pin-inner" cx="2" cy="100" r="2" fill="#ffffff" />
+            </g>
+            <g class="flow-pin">
+              <circle class="pin-outer" cx="1138" cy="100" r="4.5" fill="#00ffaa" filter="url(#flowLaserGlow)" />
+              <circle class="pin-inner" cx="1138" cy="100" r="2" fill="#ffffff" />
+            </g>
+          </svg>
+
+          <!-- 3 Seamless Contiguous Cards Grid (Gap: 0) -->
+          <div class="services-flow-grid">
+            <!-- Card 1: Web Development -->
+            <a href="web-development.html" class="service-flow-card" tabindex="0" aria-label="Explore Web Development">
+              <div class="shiny-sweep"></div>
+              <div class="flow-card-icon-wrap">
+                <svg viewBox="0 0 64 64" fill="none" stroke="var(--accent-primary)" stroke-width="2.2">
+                  <rect x="8" y="16" width="48" height="32" rx="4" class="anim-window" />
+                  <circle cx="16" cy="22" r="1.5" fill="var(--accent-primary)" stroke="none" class="anim-window" />
+                  <circle cx="22" cy="22" r="1.5" fill="var(--accent-primary)" stroke="none" class="anim-window" />
+                  <circle cx="28" cy="22" r="1.5" fill="var(--accent-primary)" stroke="none" class="anim-window" />
+                  <path d="M22 36l-6-6 6-6" class="anim-code-1" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M42 36l6-6-6-6" class="anim-code-2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M36 22l-8 20" class="anim-code-3" stroke-linecap="round" />
+                </svg>
               </div>
-              <span class="pillar-badge badge-web">01 / Core Service</span>
-            </div>
-            <h3 class="pillar-title">Web Design &amp; Development</h3>
-            <p class="pillar-desc">Bespoke, blazing-fast websites with fluid interactions, modern architecture, and sub-second loading speeds</p>
-            <div class="pillar-footer">
-              <span class="pillar-metric"><b style="color: var(--accent-primary);">&lt; 1s</b> Load Time</span>
+              <h3 class="flow-card-title">Web Development</h3>
+              <p class="flow-card-desc">
+                High-performing, bespoke websites delivering seamless UX &amp; driving measurable growth.
+              </p>
+              <span class="flow-card-action">
+                Get Started
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
 
-            </div>
-          </a>
-
-          <!-- Pillar 2: Google Ads -->
-          <a href="google-ads.html" class="service-pillar-card">
-            <div class="pillar-top-row">
-              <div class="pillar-icon-box icon-ads">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+            <!-- Card 2: Google Ads -->
+            <a href="google-ads.html" class="service-flow-card" tabindex="0" aria-label="Explore Google Ads">
+              <div class="shiny-sweep"></div>
+              <div class="flow-card-icon-wrap">
+                <svg viewBox="0 0 64 64" fill="none" stroke="var(--accent-primary)" stroke-width="2.2">
+                  <circle cx="32" cy="32" r="24" class="anim-target-1" />
+                  <circle cx="32" cy="32" r="14" class="anim-target-2" />
+                  <circle cx="32" cy="32" r="4" fill="var(--accent-primary)" stroke="none" class="anim-target-3" />
+                  <path d="M56 8L36 28" class="anim-arrow" stroke-linecap="round" />
+                  <path d="M46 8h10v10" class="anim-arrow" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </div>
-              <span class="pillar-badge badge-ads">02 / Growth Marketing</span>
-            </div>
-            <h3 class="pillar-title">Google Ads &amp; Paid Media</h3>
-            <p class="pillar-desc">Data-driven PPC campaigns, precision keyword targeting, and conversion funnels engineered for maximum ROI</p>
-            <div class="pillar-footer">
-              <span class="pillar-metric"><b style="color: var(--accent-teal);">4.8x</b> Avg. ROAS</span>
+              <h3 class="flow-card-title">Google Ads</h3>
+              <p class="flow-card-desc">
+                High-ROI PPC campaigns crafted to target the right audience &amp; generate quality buyer leads.
+              </p>
+              <span class="flow-card-action">
+                Get Started
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
 
-            </div>
-          </a>
-
-          <!-- Pillar 3: SEO Optimization -->
-          <a href="search-engine-optimization.html" class="service-pillar-card">
-            <div class="pillar-top-row">
-              <div class="pillar-icon-box icon-seo">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <!-- Card 3: SEO Optimization -->
+            <a href="search-engine-optimization.html" class="service-flow-card" tabindex="0" aria-label="Explore SEO Optimization">
+              <div class="shiny-sweep"></div>
+              <div class="flow-card-icon-wrap">
+                <svg viewBox="0 0 64 64" fill="none" stroke="var(--accent-primary)" stroke-width="2.2">
+                  <rect x="12" y="36" width="8" height="20" rx="2" class="anim-bar-1" />
+                  <rect x="28" y="24" width="8" height="32" rx="2" class="anim-bar-2" />
+                  <rect x="44" y="12" width="8" height="44" rx="2" class="anim-bar-3" />
+                  <circle cx="32" cy="28" r="14" stroke-width="2" class="anim-mag" />
+                  <path d="M42 38l8 8" stroke-width="3" stroke-linecap="round" class="anim-mag" />
+                </svg>
               </div>
-              <span class="pillar-badge badge-seo">03 / Organic Visibility</span>
-            </div>
-            <h3 class="pillar-title">Search Engine Optimization</h3>
-            <p class="pillar-desc">Dominating search engine results with technical audits, semantic keyword strategies, and authoritative content</p>
-            <div class="pillar-footer">
-              <span class="pillar-metric"><b style="color: var(--accent-gold);">+240%</b> Organic Reach</span>
-
-            </div>
-          </a>
+              <h3 class="flow-card-title">SEO Optimization</h3>
+              <p class="flow-card-desc">
+                Algorithmic SEO strategies that ensure your business ranks higher and attracts organic traffic.
+              </p>
+              <span class="flow-card-action">
+                Get Started
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- =========================================================
+         CONTINUOUS PILLS MARQUEE (EXECUTIVE AGENCY CAPABILITIES)
+         Row 1 & 3: Leftward | Row 2: Rightward (Opposite Direction)
+         ========================================================= -->
+    <section class="services-pills-marquee-section reveal" aria-label="Our Core Agency Capabilities &amp; Technology Stack">
+      <!-- Ambient Center Glow radiating behind pills -->
+      <div class="pills-marquee-glow" aria-hidden="true"></div>
+
+      <div class="pills-marquee-container">
+        <!-- Row 1: Leftward (Top) -->
+        <div class="pills-marquee-row row-left" style="--speed: 34s;">
+          <div class="pills-track">
+            <div class="pills-group">
+              <div class="tech-pill pill-gradient"><span>Custom Web Development</span></div>
+              <div class="tech-pill pill-outline"><span>Full-Stack Web Applications</span></div>
+              <div class="tech-pill pill-gradient"><span>Next.js, React &amp; Modern Frameworks</span></div>
+              <div class="tech-pill pill-outline"><span>High-Yield E-Commerce Platforms</span></div>
+              <div class="tech-pill pill-outline"><span>Strategic UI/UX Product Design</span></div>
+              <div class="tech-pill pill-gradient"><span>High-Performance Architecture</span></div>
+              <div class="tech-pill pill-outline"><span>Full-Stack Microservices Systems</span></div>
+              <div class="tech-pill pill-outline"><span>REST &amp; GraphQL API Integrations</span></div>
+              <div class="tech-pill pill-gradient"><span>Sub-Second Speed Optimization</span></div>
+              <div class="tech-pill pill-outline"><span>Headless WordPress &amp; Custom CMS</span></div>
+            </div>
+            <div class="pills-group" aria-hidden="true">
+              <div class="tech-pill pill-gradient"><span>Custom Web Development</span></div>
+              <div class="tech-pill pill-outline"><span>Full-Stack Web Applications</span></div>
+              <div class="tech-pill pill-gradient"><span>Next.js, React &amp; Modern Frameworks</span></div>
+              <div class="tech-pill pill-outline"><span>High-Yield E-Commerce Platforms</span></div>
+              <div class="tech-pill pill-outline"><span>Strategic UI/UX Product Design</span></div>
+              <div class="tech-pill pill-gradient"><span>High-Performance Architecture</span></div>
+              <div class="tech-pill pill-outline"><span>Full-Stack Microservices Systems</span></div>
+              <div class="tech-pill pill-outline"><span>REST &amp; GraphQL API Integrations</span></div>
+              <div class="tech-pill pill-gradient"><span>Sub-Second Speed Optimization</span></div>
+              <div class="tech-pill pill-outline"><span>Headless WordPress &amp; Custom CMS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Rightward (Mid - Opposite Direction) -->
+        <div class="pills-marquee-row row-right" style="--speed: 37s;">
+          <div class="pills-track">
+            <div class="pills-group">
+              <div class="tech-pill pill-outline"><span>Conversion Rate Optimization (CRO)</span></div>
+              <div class="tech-pill pill-gradient"><span>Targeted Google Ads PPC Campaigns</span></div>
+              <div class="tech-pill pill-outline"><span>Algorithmic Organic SEO Dominance</span></div>
+              <div class="tech-pill pill-outline"><span>Multi-Channel Social Media Growth</span></div>
+              <div class="tech-pill pill-gradient"><span>Advanced Real-Time Data Analytics</span></div>
+              <div class="tech-pill pill-outline"><span>High-Intent B2B Lead Generation</span></div>
+              <div class="tech-pill pill-gradient"><span>Predictable ROI-Driven Paid Strategy</span></div>
+              <div class="tech-pill pill-outline"><span>Audience-Segmented Ad Campaigns</span></div>
+              <div class="tech-pill pill-outline"><span>Page #1 Organic Search Rankings</span></div>
+              <div class="tech-pill pill-gradient"><span>Sustainable Enterprise Brand Scaling</span></div>
+            </div>
+            <div class="pills-group" aria-hidden="true">
+              <div class="tech-pill pill-outline"><span>Conversion Rate Optimization (CRO)</span></div>
+              <div class="tech-pill pill-gradient"><span>Targeted Google Ads PPC Campaigns</span></div>
+              <div class="tech-pill pill-outline"><span>Algorithmic Organic SEO Dominance</span></div>
+              <div class="tech-pill pill-outline"><span>Multi-Channel Social Media Growth</span></div>
+              <div class="tech-pill pill-gradient"><span>Advanced Real-Time Data Analytics</span></div>
+              <div class="tech-pill pill-outline"><span>High-Intent B2B Lead Generation</span></div>
+              <div class="tech-pill pill-gradient"><span>Predictable ROI-Driven Paid Strategy</span></div>
+              <div class="tech-pill pill-outline"><span>Audience-Segmented Ad Campaigns</span></div>
+              <div class="tech-pill pill-outline"><span>Page #1 Organic Search Rankings</span></div>
+              <div class="tech-pill pill-gradient"><span>Sustainable Enterprise Brand Scaling</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Leftward (Bottom - Same Direction as Top) -->
+        <div class="pills-marquee-row row-left" style="--speed: 32s;">
+          <div class="pills-track">
+            <div class="pills-group">
+              <div class="tech-pill pill-gradient"><span>Full Brand Identity &amp; Design Systems</span></div>
+              <div class="tech-pill pill-outline"><span>Fluid Multi-Device Responsive Design</span></div>
+              <div class="tech-pill pill-outline"><span>High-Availability Cloud Infrastructure</span></div>
+              <div class="tech-pill pill-gradient"><span>Ultra-Scalable Cloud Architecture</span></div>
+              <div class="tech-pill pill-outline"><span>Enterprise Cybersecurity &amp; SSL Protection</span></div>
+              <div class="tech-pill pill-gradient"><span>End-to-End Growth Marketing Funnels</span></div>
+              <div class="tech-pill pill-outline"><span>24/7 Dedicated Technical Support</span></div>
+              <div class="tech-pill pill-outline"><span>Modern High-Converting Web Design</span></div>
+              <div class="tech-pill pill-gradient"><span>Deep Technical SEO Audits &amp; Tuning</span></div>
+              <div class="tech-pill pill-outline"><span>Custom Enterprise Software Solutions</span></div>
+            </div>
+            <div class="pills-group" aria-hidden="true">
+              <div class="tech-pill pill-gradient"><span>Full Brand Identity &amp; Design Systems</span></div>
+              <div class="tech-pill pill-outline"><span>Fluid Multi-Device Responsive Design</span></div>
+              <div class="tech-pill pill-outline"><span>High-Availability Cloud Infrastructure</span></div>
+              <div class="tech-pill pill-gradient"><span>Ultra-Scalable Cloud Architecture</span></div>
+              <div class="tech-pill pill-outline"><span>Enterprise Cybersecurity &amp; SSL Protection</span></div>
+              <div class="tech-pill pill-gradient"><span>End-to-End Growth Marketing Funnels</span></div>
+              <div class="tech-pill pill-outline"><span>24/7 Dedicated Technical Support</span></div>
+              <div class="tech-pill pill-outline"><span>Modern High-Converting Web Design</span></div>
+              <div class="tech-pill pill-gradient"><span>Deep Technical SEO Audits &amp; Tuning</span></div>
+              <div class="tech-pill pill-outline"><span>Custom Enterprise Software Solutions</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROCESS SECTION (HOME PAGE PARITY) -->
     <section class="proc-v2-section section" id="processSection">
       <div class="wrap">
@@ -349,7 +1775,7 @@
           <h2>
             Proven Process for <em>Success</em>
           </h2>
-          <p>We help you on every step of the journey</p>
+          <p class="section-subtitle">We help you on every step of the journey</p>
         </div>
         
         <div class="proc-v2-steps reveal">
@@ -382,34 +1808,44 @@
             <div class="proc-v2-number">04</div>
             <div class="proc-v2-dot"></div>
             <h3 class="proc-v2-title">Launch</h3>
-            <p class="proc-v2-desc">Rigorous testing followed by a smooth deployment, ensuring your project launches flawlessly</p>
+            <p class="proc-v2-desc">Rigorous testing and smooth deployment, ensuring your project launches flawlessly</p>
           </div>
         </div>
       </div>
     </section>
     <!-- EXPERTISE DETAILS CREATIVE -->
     <section class="wrap" style="padding-block: 80px">
-      <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 50px; display: flex; flex-direction: column; align-items: center;">
+      <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 0px; display: flex; flex-direction: column; align-items: center;">
         <div class="section-num-label">
           <span class="sec-num">02</span>
           <span class="sec-slash">/</span>
           <span class="sec-tag">In-Depth Capabilities</span>
         </div>
-        <h2>An Overview of Our <em>Expertise &amp; Solutions</em></h2>
+        <h2>An Overview of Our Specialized <br class="exp-head-br" /><em>Expertise &amp; Solutions</em></h2>
+        <p class="section-subtitle desc-inverted-pyramid">
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+          <span class="desc-desk">
+            <span class="desc-row-1">Comprehensive digital solutions engineered to scale your business and brand,</span>
+            <span class="desc-row-2">built to drive tangible commercial revenue.</span>
+          </span>
+          <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+          <span class="desc-mob">
+            <span class="desc-row-1">Comprehensive digital solutions engineered to scale,</span>
+            <span class="desc-row-2">built to drive tangible revenue.</span>
+          </span>
+        </p>
       </div>
-      <div class="expertise-row-creative" style="margin-top: 40px">
+      <div class="expertise-row-creative expertise-row-first">
         <div class="expertise-content-creative">
-          <div class="section-num-label" style="margin-bottom: 14px;">
-            <span class="sec-num">01</span>
-            <span class="sec-slash">/</span>
-            <span class="sec-tag">Web Development</span>
-          </div>
-          <h3 class="expertise-row-title">Bespoke Web Design &amp; <em>Next-Gen Engineering</em></h3>
-          <p>
+          <h3 class="expertise-row-title">Bespoke Web Development <br class="exp-desk-br" /><em>&amp; Next-Gen Engineering</em></h3>
+          <p class="expertise-lead-desc">
             We fuse strategic creativity with cutting-edge architecture to
             engineer high-converting, lightning-fast websites. Through precision
             development and scalable systems, we deliver digital platforms that
-            captivate audiences and maximize growth
+            captivate audiences and maximize growth.
+          </p>
+          <p class="expertise-highlight-desc">
+            Every interface is engineered with semantic clean code, sub-second load times, and fluid responsive interactions designed to convert everyday casual visitors into profitable, recurring clients effortlessly.
           </p>
           <a href="contact.html" class="btn btn-solid mt-4"
             >Order Your Website</a
@@ -425,17 +1861,15 @@
       </div>
       <div class="expertise-row-creative reverse">
         <div class="expertise-content-creative">
-          <div class="section-num-label" style="margin-bottom: 14px;">
-            <span class="sec-num">02</span>
-            <span class="sec-slash">/</span>
-            <span class="sec-tag">Search Engine Optimization</span>
-          </div>
-          <h3 class="expertise-row-title">Command Search Visibility with <em>Strategic SEO</em></h3>
-          <p>
+          <h3 class="expertise-row-title">Command Organic Visibility <br class="exp-desk-br" /><em>with Strategic SEO</em></h3>
+          <p class="expertise-lead-desc">
             Our strategic SEO solutions position your brand at the top of search
             rankings to capture high-intent organic traffic. Through in-depth
             technical audits, semantic content architecture, and authority
-            building, we drive compounding revenue growth
+            building, we drive compounding revenue growth.
+          </p>
+          <p class="expertise-highlight-desc">
+            We strengthen technical foundations, Core Web Vitals, and semantic keyword structures to secure authoritative top rankings that attract qualified leads and sustain permanent market dominance.
           </p>
           <a href="contact.html" class="btn btn-solid mt-4"
             >Launch Your SEO Strategy</a
@@ -451,17 +1885,15 @@
       </div>
       <div class="expertise-row-creative">
         <div class="expertise-content-creative">
-          <div class="section-num-label" style="margin-bottom: 14px;">
-            <span class="sec-num">03</span>
-            <span class="sec-slash">/</span>
-            <span class="sec-tag">Google Ads Services</span>
-          </div>
-          <h3 class="expertise-row-title">Scale Customer Acquisition with <em>High-Yield Ads</em></h3>
-          <p>
+          <h3 class="expertise-row-title">Scale Customer Acquisition <br class="exp-desk-br" /><em>with High-Yield Ads</em></h3>
+          <p class="expertise-lead-desc">
             Our data-driven paid media frameworks deploy high-intent search
             campaigns and conversion-focused landing funnels. From smart bid
             optimization to real-time analytics attribution, we maximize your
-            ad spend for exceptional ROAS
+            ad spend for exceptional ROAS.
+          </p>
+          <p class="expertise-highlight-desc">
+            Through precision audience segmentation, dynamic creative split-testing, and automated bid funnels, we turn marketing capital into measurable, profitable customer acquisition with industry-leading ROI.
           </p>
           <a href="contact.html" class="btn btn-solid mt-4"
             >Scale Your PPC Campaigns</a
@@ -477,97 +1909,118 @@
       </div>
     </section>
     <!-- =========================================================
-         CLEAN & MODERN TECH CAPABILITIES (LINEAR / VERCEL STYLE)
+         03: WHY CHOOSE US (EXECUTIVE AGENCY STANDARD)
          ========================================================= -->
-    <section class="section-tech-clean">
+    <section class="section-why-choose" id="whyChooseUs">
       <div class="wrap">
-        <!-- Section Head -->
-        <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 48px; max-width: 860px; display: flex; flex-direction: column; align-items: center;">
+        <!-- Section Head with Ideal Spacing Below -->
+        <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: clamp(48px, 5vw, 60px); max-width: 860px; display: flex; flex-direction: column; align-items: center;">
           <div class="section-num-label">
             <span class="sec-num">03</span>
             <span class="sec-slash">/</span>
-            <span class="sec-tag">Technology &amp; Frameworks</span>
+            <span class="sec-tag">Why Choose Us</span>
           </div>
-          <h2 class="tech-clean-title">
-            Built With Modern <span class="tech-gradient-text">Engineering Standards</span>
+          <h2>
+            Unmatched Expertise That <br class="wcu-title-br" />
+            <em>Sets Your Business Apart</em>
           </h2>
-          <p class="tech-clean-subtitle">
-            We engineer high-performance platforms using the modern web stack, optimized for sub-second speeds and maximum conversion
+          <p class="section-subtitle wcu-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Results-driven digital solutions crafted to scale your business and market authority,</span>
+              <span class="desc-row-2">backed by trusted specialists and 24/7 dedicated support.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Results-driven solutions crafted to scale your business,</span>
+              <span class="desc-row-2">backed by 24/7 dedicated support.</span>
+            </span>
           </p>
         </div>
 
-        <!-- 6 Clean Spacious Tech Cards -->
-        <div class="tech-clean-grid reveal">
-          <!-- 1. Next.js & React -->
-          <div class="tech-clean-card">
-            <div class="tech-card-top">
-              <div class="tech-icon-circle">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-              </div>
-              <span class="tech-status-dot" title="Production Ready"></span>
-            </div>
-            <h3 class="tech-card-name">Next.js &amp; React</h3>
-            <p class="tech-card-info">Server-side rendering, component-driven architecture, and zero-latency page transitions</p>
-          </div>
+        <!-- Section Cluster with Central Illuminating Web 3.0 Flare -->
+        <div class="wcu-cluster-wrap">
+          <!-- Central Illuminating Glow radiating between 4 card corners -->
+          <div class="wcu-center-flare" aria-hidden="true"></div>
 
-          <!-- 2. UI/UX & Figma -->
-          <div class="tech-clean-card">
-            <div class="tech-card-top">
-              <div class="tech-icon-circle">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+          <!-- 4 Distinctive Why Choose Us Cards (2x2 Clean Horizontal Design) -->
+          <div class="wcu-grid">
+            <!-- 1. Expert Team -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-expert">
+                <svg class="wcu-main-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span class="wcu-icon-sparkle">✦</span>
               </div>
-              <span class="tech-status-dot" title="Production Ready"></span>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">Expert Team</h3>
+                <p class="wcu-card-desc">
+                  Work with skilled professionals dedicated to delivering exceptional digital solutions.
+                </p>
+              </div>
             </div>
-            <h3 class="tech-card-name">Figma Design Systems</h3>
-            <p class="tech-card-info">Human-centered UI/UX wireframing, design tokens, and scalable interactive design systems</p>
-          </div>
 
-          <!-- 3. GSAP & Motion -->
-          <div class="tech-clean-card">
-            <div class="tech-card-top">
-              <div class="tech-icon-circle">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <!-- 2. Tailored Strategies -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-strategy">
+                <svg class="wcu-main-icon wcu-orbit-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="2.5" fill="currentColor"></circle>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(90 12 12)"></ellipse>
+                </svg>
               </div>
-              <span class="tech-status-dot" title="Production Ready"></span>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">Tailored Strategies</h3>
+                <p class="wcu-card-desc">
+                  We craft customized plans to meet your unique business goals and needs.
+                </p>
+              </div>
             </div>
-            <h3 class="tech-card-name">GSAP &amp; Creative Motion</h3>
-            <p class="tech-card-info">High-framerate scroll-triggered animations, interactive SVG graphics, and micro-interactions</p>
-          </div>
 
-          <!-- 4. Tailwind & Web Standards -->
-          <div class="tech-clean-card">
-            <div class="tech-card-top">
-              <div class="tech-icon-circle">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <!-- 3. Proven Results -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-results">
+                <svg class="wcu-main-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="bar-step bar-1" d="M3 18h4v-5H3v5z" fill="currentColor" fill-opacity="0.25"></path>
+                  <path class="bar-step bar-2" d="M10 18h4v-9h-4v9z" fill="currentColor" fill-opacity="0.45"></path>
+                  <path class="bar-step bar-3" d="M17 18h4V4h-4v14z" fill="currentColor" fill-opacity="0.75"></path>
+                  <polyline points="3 14 10 9 17 4 21 4 21 8"></polyline>
+                </svg>
               </div>
-              <span class="tech-status-dot" title="Production Ready"></span>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">Proven Results</h3>
+                <p class="wcu-card-desc">
+                  Our strategies drive measurable growth, increased traffic, and higher ROI.
+                </p>
+              </div>
             </div>
-            <h3 class="tech-card-name">Tailwind CSS &amp; Core Web</h3>
-            <p class="tech-card-info">Clean responsive layouts, strict 8pt grid spacing, and 100/100 Google Lighthouse scores</p>
-          </div>
 
-          <!-- 5. Node.js & APIs -->
-          <div class="tech-clean-card">
-            <div class="tech-card-top">
-              <div class="tech-icon-circle">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            <!-- 4. 24/7 Support -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-support">
+                <svg class="wcu-main-icon wcu-sync-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="arrow-top" d="M4 8h12l-3-3m3 3l-3 3"></path>
+                  <path class="arrow-bottom" d="M20 16H8l3 3m-3-3l3-3"></path>
+                  <circle class="live-dot" cx="20" cy="8" r="1.5" fill="currentColor"></circle>
+                  <circle class="live-dot-2" cx="4" cy="16" r="1.5" fill="currentColor"></circle>
+                </svg>
               </div>
-              <span class="tech-status-dot" title="Production Ready"></span>
-            </div>
-            <h3 class="tech-card-name">Node.js &amp; Headless CMS</h3>
-            <p class="tech-card-info">Serverless edge functions, custom REST APIs, and flexible content management architectures</p>
-          </div>
-
-          <!-- 6. Google Ads & SEO -->
-          <div class="tech-clean-card">
-            <div class="tech-card-top">
-              <div class="tech-icon-circle">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">24/7 Support</h3>
+                <p class="wcu-card-desc">
+                  Enjoy round-the-clock assistance to ensure seamless experiences and success.
+                </p>
               </div>
-              <span class="tech-status-dot" title="Production Ready"></span>
             </div>
-            <h3 class="tech-card-name">Google Ads &amp; SEO Engine</h3>
-            <p class="tech-card-info">High-intent search keyword rankings, PPC conversion funnels, and real-time ROAS tracking</p>
           </div>
         </div>
       </div>
@@ -584,8 +2037,17 @@
           <h2>
             What Our <em>Clients Say</em>
           </h2>
-          <p class="section-subtitle">
-            Hear directly from founders, product leaders, and CMOs who scaled their revenue and digital impact with us
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Hear directly from founders, product leaders, and forward-thinking CMOs</span>
+              <span class="desc-row-2">who scaled revenue and digital impact with us.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Hear from founders and CMOs who scaled revenue</span>
+              <span class="desc-row-2">and digital impact with us.</span>
+            </span>
           </p>
         </div>
       </div>
@@ -610,7 +2072,7 @@
                 </div>
                 <p class="h-test-quote">"Working with HyWiz was a collaborative and enjoyable journey. Their engineering depth and UI/UX craftsmanship delivered a 4.9x ROAS surge."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #123b2c; color: #00ffaa;">MV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Marcus Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Marcus Vance</span>
                     <span class="h-test-role">Founder, Vantage Media</span>
@@ -632,7 +2094,7 @@
                 </div>
                 <p class="h-test-quote">"The creativity and speed of this team are unmatched. They redesigned our SaaS web app in record time and boosted signups by +140%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #182a44; color: #60a5fa;">ST</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Sarah Thampaer" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sarah Thampaer</span>
                     <span class="h-test-role">Lead Product Designer, CloudScale</span>
@@ -654,7 +2116,7 @@
                 </div>
                 <p class="h-test-quote">"I have searched for years for an agency that understands both world-class aesthetics and extreme performance. HyWiz is the gold standard."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Alexander Wright" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
@@ -676,7 +2138,7 @@
                 </div>
                 <p class="h-test-quote">"Our SEO traffic tripled within 90 days. Their technical audits and data-backed content architecture completely dominated our niche."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #331a38; color: #e879f9;">DS</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-4.jpg" alt="David Sterling" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">David Sterling</span>
                     <span class="h-test-role">Growth Director, Apex Health</span>
@@ -698,7 +2160,7 @@
                 </div>
                 <p class="h-test-quote">"Working with HyWiz was a collaborative and enjoyable journey. Their engineering depth and UI/UX craftsmanship delivered a 4.9x ROAS surge."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #123b2c; color: #00ffaa;">MV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Marcus Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Marcus Vance</span>
                     <span class="h-test-role">Founder, Vantage Media</span>
@@ -720,7 +2182,7 @@
                 </div>
                 <p class="h-test-quote">"The creativity and speed of this team are unmatched. They redesigned our SaaS web app in record time and boosted signups by +140%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #182a44; color: #60a5fa;">ST</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Sarah Thampaer" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sarah Thampaer</span>
                     <span class="h-test-role">Lead Product Designer, CloudScale</span>
@@ -742,7 +2204,7 @@
                 </div>
                 <p class="h-test-quote">"I have searched for years for an agency that understands both world-class aesthetics and extreme performance. HyWiz is the gold standard."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Alexander Wright" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
@@ -764,7 +2226,7 @@
                 </div>
                 <p class="h-test-quote">"Our SEO traffic tripled within 90 days. Their technical audits and data-backed content architecture completely dominated our niche."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #331a38; color: #e879f9;">DS</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-4.jpg" alt="David Sterling" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">David Sterling</span>
                     <span class="h-test-role">Growth Director, Apex Health</span>
@@ -792,7 +2254,7 @@
                 </div>
                 <p class="h-test-quote">"Outstanding execution from start to finish. They built an ultra-fast, responsive web platform that consistently converts enterprise leads."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #1a3330; color: #34d399;">CD</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-5.jpg" alt="Clara DuPont" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Clara DuPont</span>
                     <span class="h-test-role">VP Marketing, ParisVibe Global</span>
@@ -814,7 +2276,7 @@
                 </div>
                 <p class="h-test-quote">"Their Google Ads management reduced our CAC by 42% while doubling our qualified demo bookings. Truly indispensable growth partners."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #18233c; color: #38bdf8;">ER</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Elena Rostova" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Elena Rostova</span>
                     <span class="h-test-role">Head of Acquisition, FinLeap</span>
@@ -836,7 +2298,7 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-7.jpg" alt="Nathaniel Thorne" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
@@ -858,7 +2320,7 @@
                 </div>
                 <p class="h-test-quote">"Pixel-perfect visual execution, flawless mobile responsiveness, and remarkable communication. We could not recommend them higher!"</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #222a18; color: #a3e635;">SM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Sophia Mitchell" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sophia Mitchell</span>
                     <span class="h-test-role">Operations Director, NexaFlow</span>
@@ -880,7 +2342,7 @@
                 </div>
                 <p class="h-test-quote">"Outstanding execution from start to finish. They built an ultra-fast, responsive web platform that consistently converts enterprise leads."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #1a3330; color: #34d399;">CD</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-5.jpg" alt="Clara DuPont" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Clara DuPont</span>
                     <span class="h-test-role">VP Marketing, ParisVibe Global</span>
@@ -902,7 +2364,7 @@
                 </div>
                 <p class="h-test-quote">"Their Google Ads management reduced our CAC by 42% while doubling our qualified demo bookings. Truly indispensable growth partners."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #18233c; color: #38bdf8;">ER</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Elena Rostova" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Elena Rostova</span>
                     <span class="h-test-role">Head of Acquisition, FinLeap</span>
@@ -924,7 +2386,7 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-7.jpg" alt="Nathaniel Thorne" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
@@ -946,7 +2408,7 @@
                 </div>
                 <p class="h-test-quote">"Pixel-perfect visual execution, flawless mobile responsiveness, and remarkable communication. We could not recommend them higher!"</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #222a18; color: #a3e635;">SM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Sophia Mitchell" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sophia Mitchell</span>
                     <span class="h-test-role">Operations Director, NexaFlow</span>
@@ -1082,68 +2544,40 @@
           </div>
           <!-- Right side: Contact Card Form -->
           <div class="contact-form-card reveal-right">
-            <form action="#" method="POST" class="wpcf7-form">
-              <div class="contact-inputs-grid">
-                <div class="contact-input-group">
-                  <label for="contact-name">What’s your name?</label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="text-264"
-                    placeholder="Your full name"
-                    required
-                  />
+            <form action="#" method="POST" class="wpcf7-form modern-msg-form">
+              <h3 class="msg-form-heading">Send a message</h3>
+              <p class="msg-form-sub">Fill out the quick brief below and our team will get back to you within 24 hours.</p>
+
+              <div class="msg-form-body">
+                <!-- Left Column: 3 Pill Inputs -->
+                <div class="msg-form-inputs">
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-name" name="text-264" class="msg-input-pill" placeholder="Your name" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="email" id="contact-email" name="email-439" class="msg-input-pill" placeholder="Your email" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-topic" name="subject-268" class="msg-input-pill" placeholder="Subject" required />
+                  </div>
                 </div>
-                <div class="contact-input-group">
-                  <label for="contact-email">Email address</label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email-439"
-                    placeholder="hello@company.com"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-topic">Discussion topic?</label>
-                  <input
-                    type="text"
-                    id="contact-topic"
-                    name="subject-268"
-                    placeholder="e.g. Web Design / SEO"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-budget">What’s your budget?</label>
-                  <input
-                    type="text"
-                    id="contact-budget"
-                    name="budget-270"
-                    placeholder="e.g. $5,000 - $10,000"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group full-width">
-                  <label for="contact-desc">Project Description</label>
-                  <textarea
-                    id="contact-desc"
-                    name="textarea-989"
-                    placeholder="A brief description about your project, request, or consultation details..."
-                    required
-                  ></textarea>
+
+                <!-- Right Column: Message Textarea -->
+                <div class="msg-form-textarea-wrap">
+                  <textarea id="contact-desc" name="textarea-989" class="msg-textarea" placeholder="Your message" required></textarea>
                 </div>
               </div>
-              <label class="contact-checkbox-row">
-                <input type="checkbox" name="acceptance-872" required />
-                <span
-                  >I am bound by the terms of the Service and I accept the
-                  Privacy Policy.</span
-                >
-              </label>
-              <div style="text-align: center; width: 100%">
-                <button type="submit" class="btn btn-solid">
-                  <span>— Send message</span>
+
+              <!-- Bottom Row: Checkbox & Disclaimer on left, Pill Submit Button on right -->
+              <div class="msg-form-footer">
+                <label class="msg-form-consent-label">
+                  <input type="checkbox" name="acceptance-872" class="msg-consent-checkbox" required />
+                  <span class="msg-form-disclaimer">
+                    By clicking Send a message button, you agree to use our &ldquo;Form&rdquo; terms And consent cookie usage in browser.
+                  </span>
+                </label>
+                <button type="submit" class="msg-form-submit-btn">
+                  <span>SEND A MESSAGE</span>
                 </button>
               </div>
             </form>
@@ -1190,7 +2624,11 @@
               <div class="cta-image-glow"></div>
               
               <div class="cta-float-badge badge-top-left float-anim-1">
-                <div class="badge-icon-star">★</div>
+                <div class="badge-icon-star">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                </div>
                 <div class="badge-text-group">
                   <span class="badge-val">4.9 / 5.0</span>
                   <span class="badge-lbl">Client Rating</span>
@@ -1371,10 +2809,7 @@
       </div>
       <!-- Footer Copyright bottom -->
       <div class="wrap footer-bottom-premium">
-        <span>© 2026 Web Agency. All rights reserved.<br>Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a>
-        </div>
+        <span>© 2026 Web Agency. All rights reserved. Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
       </div>
     </footer>
     <script src="js/main.js"></script>
@@ -1423,7 +2858,42 @@
           `;
         }
       });
+
+      // Why Choose Us cards interactive mouse spotlight
+      document.querySelectorAll('.wcu-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+      });
     </script>
+
+    <!-- FLOATING QUICK CONNECT WIDGETS (WHATSAPP & CALL) -->
+    <div class="floating-quick-actions" aria-label="Quick Contact Actions">
+      <!-- Left: WhatsApp Live Chat -->
+      <a href="https://wa.me/923143110259" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" aria-label="Chat with us on WhatsApp">
+        <span class="floating-btn-badge" aria-label="3 unread messages">3</span>
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 3C7.07 3 3.048 7.021 3.047 11.983c0 1.586.415 3.133 1.203 4.498L3 21l4.63-1.215a8.93 8.93 0 0 0 4.401 1.157h.004c4.961 0 8.983-4.022 8.984-8.984 0-2.4-.934-4.658-2.634-6.357A8.93 8.93 0 0 0 12.031 3zm0 1.957c3.873 0 7.027 3.153 7.028 7.026 0 1.876-.73 3.64-2.057 4.966a6.974 6.974 0 0 1-4.971 2.06h-.004a6.98 6.98 0 0 1-3.559-.971l-.255-.152-2.645.694.706-2.578-.166-.264a6.97 6.97 0 0 1-1.07-3.755c0-3.873 3.154-7.026 7.028-7.026zm3.844 9.385c-.211-.106-1.247-.616-1.44-.686-.194-.07-.335-.106-.476.106-.14.211-.546.686-.67.827-.123.14-.247.158-.458.053-.211-.106-.89-.328-1.696-1.047a6.29 6.29 0 0 1-1.173-1.458c-.123-.211-.013-.325.092-.43.095-.096.211-.247.317-.37.106-.124.141-.212.211-.353.07-.141.035-.265-.018-.37-.053-.106-.476-1.147-.652-1.57-.172-.413-.347-.357-.476-.364-.124-.006-.265-.007-.406-.007-.141 0-.37.053-.564.265-.194.211-.741.724-.741 1.766 0 1.041.758 2.048.864 2.189.106.141 1.492 2.278 3.614 3.195.505.218.899.348 1.206.446.507.161.968.138 1.333.084.407-.061 1.247-.51 1.423-1.004.176-.494.176-.917.123-1.006-.053-.088-.194-.141-.405-.247z" fill="#ffffff"/>
+          </svg>
+          <span class="floating-btn-tooltip">Chat on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Right: Direct Call -->
+      <a href="tel:+923143110259" class="floating-btn floating-btn-phone" aria-label="Call Us Directly">
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="floating-btn-tooltip">Call Us Directly</span>
+        </div>
+      </a>
+    </div>
   </body>
 </html>
 

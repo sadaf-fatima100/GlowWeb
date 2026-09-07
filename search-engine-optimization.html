@@ -48,7 +48,7 @@
       content="https://hywiz.com/webagency_hero_team.jpg"
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
   </head>
   <body>
     <!-- Custom reactive mouse pointer -->
@@ -196,81 +196,141 @@
     </header>
     <!-- Mobile nav drawer -->
     <div class="mobile-drawer">
-      <button class="mobile-close btn btn-ghost">Close</button>
-      <a href="index.html">Home</a>
-      <div class="mobile-drawer-accordion">
-        <a
-          href="services.html"
-          class="accordion-toggle active"
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-          "
-        >
-          Services
-          <svg
-            viewBox="0 0 24 24"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="accordion-icon"
-          >
-            <path d="M7 10l5 5 5-5z" />
-          </svg>
-        </a>
-        <div class="accordion-content">
-          <a href="web-development.html">Web Development</a>
-          <a href="google-ads.html">Google Ads</a>
-          <a href="search-engine-optimization.html"
-            >Search Engine Optimization</a
-          >
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand webagency-brand">Web Agency</a>
+        <div class="mobile-drawer-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54c-.44-.06-.9-.1-1.36-.1z" />
+              </svg></span>
+          </button>
+          <button class="mobile-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
-      <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
-      <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
-      <a href="contact.html">Get Started</a>
+
+      <div class="mobile-drawer-nav">
+        <a href="index.html"><span>Home</span></a>
+        <div class="mobile-drawer-accordion open">
+          <a href="services.html" class="accordion-toggle">
+            <span>Services</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </a>
+          <div class="accordion-content">
+            <a href="web-development.html">Web Development</a>
+            <a href="google-ads.html">Google Ads</a>
+            <a href="search-engine-optimization.html" class="active">
+              <span>Search Engine Optimization</span>
+              <span class="drawer-active-indicator"></span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html"><span>Portfolio</span></a>
+        <a href="about.html"><span>About Us</span></a>
+        <a href="blog.html"><span>Blog</span></a>
+        <a href="contact.html"><span>Contact Us</span></a>
+      </div>
+
+      <div class="mobile-drawer-cta-wrap">
+        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <div class="drawer-footer-contact">
+          <span class="drawer-footer-lbl">Email us directly</span>
+          <a href="mailto:hello@hywiz.com" class="drawer-footer-email">hello@hywiz.com</a>
+        </div>
+        <div class="drawer-footer-status">
+          <span class="drawer-status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+      </div>
     </div>
     <!-- MAIN CONTENT -->
-    <main id="main-content" class="service-single-universe" style="padding-top: 40px; overflow-x: clip">
+    <main id="main-content" class="service-single-universe" style="overflow-x: clip">
       <!-- HERO SECTION -->
       <section class="ads-hero-section reveal">
         <div class="glow-orb ads-hero-glow"></div>
         <div class="wrap ads-hero-container">
           <div class="ads-hero-content">
-            <div class="hero-live-eyebrow reveal" style="margin-bottom: 20px; justify-content: center;">
+            <div class="hero-live-eyebrow reveal" style="justify-content: center;">
               <span class="hero-live-dot"></span>
               <span class="hero-live-text">Organic Search Growth &amp; Technical SEO</span>
             </div>
             <!-- Main Hero Headline (2-Row Balanced Structure — Consistent with Home Page) -->
             <h1 class="hero-title reveal">
-              <span class="service-title-row-1">Dominate Search Rankings</span>
-              <span class="service-title-row-2">That <span class="accent-hero">Compound Your Growth</span></span>
+              <span class="service-title-row-1">Dominate Search Rankings That</span>
+              <span class="service-title-row-2"><span class="accent-hero">Compound Your Growth</span></span>
             </h1>
-            <p class="hero-desc">
-              We deploy white-hat, data-backed SEO strategies that build lasting authority, capture high-intent commercial traffic, and deliver measurable revenue growth — month after month
+            <p class="hero-desc hero-desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="hero-desc-desk">
+                <span class="hero-desc-row-1">We deploy data-backed SEO strategies that build topical authority and capture buyer traffic,</span>
+                <span class="hero-desc-row-2">engineered to maximize your organic rankings and scalable revenue.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="hero-desc-mob">
+                <span class="hero-desc-row-1">We deploy data-backed SEO strategies that build authority</span>
+                <span class="hero-desc-row-2">and compound your organic revenue.</span>
+              </span>
             </p>
             <div class="hero-ctas">
-              <a href="contact.html" class="btn btn-solid">Launch Your SEO Strategy</a>
-              <a href="#pricing" class="btn btn-ghost">View Pricing</a>
+              <a href="contact.html" class="hero-btn-primary">
+                <span>Start Your SEO Plan</span>
+              </a>
+              <a href="#pricing" class="hero-btn-secondary">
+                <span>View Pricing</span>
+              </a>
             </div>
-            <!-- Trust stat pills -->
-            <div class="hero-trust-row">
-              <div class="hero-trust-pill">
-                <span class="pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>+280% Organic Traffic Average</span>
-              </div>
-              <div class="pill-divider"></div>
-              <div class="hero-trust-pill">
-                <span class="pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>100% White-Hat Practices</span>
-              </div>
-              <div class="pill-divider"></div>
-              <div class="hero-trust-pill">
-                <span class="pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                <span>Page #1 Rankings Guaranteed</span>
-              </div>
+          </div>
+        </div>
+
+        <!-- Trendy Kinetic Scrolling Block (Squarespace-Inspired Typography Stream) -->
+        <div class="service-scrolling-block-wrap" aria-hidden="true">
+          <div class="service-scrolling-track">
+            <div class="service-scrolling-item">
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">Topical Authority Silos</span>
+              <span class="marquee-star">✦</span>
+              <span>Core Web Vitals (INP &lt; 200ms)</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Unified JSON-LD Graph Schema</span>
+              <span class="marquee-star">✦</span>
+              <span>High-Intent Commercial Rankings</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">Deep Technical SEO Audits</span>
+              <span class="marquee-star">✦</span>
+              <span>Digital PR Tier-1 Backlinks</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Semantic Entity Optimization</span>
+            </div>
+            <div class="service-scrolling-item">
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">Topical Authority Silos</span>
+              <span class="marquee-star">✦</span>
+              <span>Core Web Vitals (INP &lt; 200ms)</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Unified JSON-LD Graph Schema</span>
+              <span class="marquee-star">✦</span>
+              <span>High-Intent Commercial Rankings</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-highlight">Deep Technical SEO Audits</span>
+              <span class="marquee-star">✦</span>
+              <span>Digital PR Tier-1 Backlinks</span>
+              <span class="marquee-star">✦</span>
+              <span class="accent-cyan">Semantic Entity Optimization</span>
             </div>
           </div>
         </div>
@@ -296,7 +356,7 @@
                 <span class="sec-tag">Core Capabilities</span>
               </div>
               <h2>
-                Command Search Visibility with <br /><span class="accent-text">Strategic SEO Solutions</span>
+                Command Search Visibility With <span class="accent-text">Strategic SEO Architecture</span>
               </h2>
               <p class="desc-lead">
                 Our strategic SEO solutions position your brand at the top of search
@@ -304,10 +364,10 @@
                 technical audits, semantic content architecture, and authority
                 building, we drive compounding revenue growth.
               </p>
-              <p class="desc-body">
+              <p class="desc-highlight">
                 We bridge the gap between technical search algorithms and commercial intent.
                 Whether you need to resolve indexing debt, outrank entrenched enterprise competitors,
-                or establish topical authority in competitive search verticals, our data-backed methodology
+                or establish topical authority in competitive search verticals, our proven methodology
                 delivers sustained #1 rankings.
               </p>
               <p class="desc-body">
@@ -333,14 +393,14 @@
                 <span class="sec-tag">Why Partner With Us</span>
               </div>
               <h2>
-                Delivering Targeted Search Strategies <br /><span class="accent-text">for Organic Growth</span>
+                High-Intent Keyword Targeting Built For <span class="accent-text">Compounding Growth</span>
               </h2>
               <p class="desc-lead">
                 Our approach to Search Engine Optimization is driven by rigorous data,
                 white-hat practices, and measurable ROI. We don't just chase vanity traffic;
                 we target high-intent commercial keywords that convert visitors into paying clients.
               </p>
-              <p class="desc-body">
+              <p class="desc-highlight">
                 By aligning precision keyword intent, robust internal linking structures, and conversion-focused page UX, we ensure that every click yields tangible business value and continuous organic growth.
               </p>
               <p class="desc-body">
@@ -374,8 +434,17 @@
             <h2>
               Streamlined Steps for <span class="accent-text">Ranking Dominance</span>
             </h2>
-            <p class="section-subtitle">
-              From in-depth semantic gap analysis and Core Web Vitals fixes to high-authority backlink velocity and continuous ranking defense
+            <p class="section-subtitle desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="desc-desk">
+                <span class="desc-row-1">From in-depth semantic gap analysis to high-authority backlink velocity,</span>
+                <span class="desc-row-2">engineered for sustainable, compounding ranking defense.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="desc-mob">
+                <span class="desc-row-1">From semantic analysis to authoritative link velocity,</span>
+                <span class="desc-row-2">built for ranking defense.</span>
+              </span>
             </p>
           </div>
           <div class="ads-steps-grid">
@@ -450,8 +519,17 @@
             <h2>
               Flexible &amp; Transparent <span class="accent-text">SEO Pricing Packages</span>
             </h2>
-            <p class="section-subtitle">
-              Predictable monthly retainers tailored for technical auditing, high-velocity link acquisition, and ranking scale
+            <p class="section-subtitle desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="desc-desk">
+                <span class="desc-row-1">Predictable monthly retainers tailored for technical SEO and link acquisition,</span>
+                <span class="desc-row-2">engineered for sustainable, compounding ranking scale.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="desc-mob">
+                <span class="desc-row-1">Predictable monthly retainers for technical auditing</span>
+                <span class="desc-row-2">and sustainable ranking scale.</span>
+              </span>
             </p>
           </div>
           <div class="ads-pricing-grid">
@@ -545,8 +623,17 @@
             <h2>
               Numbers That Define Our <span class="accent-text">Excellence</span>
             </h2>
-            <p class="section-subtitle">
-              Showcasing key performance benchmarks, custom architectures, and measurable digital growth
+            <p class="section-subtitle desc-inverted-pyramid">
+              <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+              <span class="desc-desk">
+                <span class="desc-row-1">Showcasing key performance benchmarks and custom architectures,</span>
+                <span class="desc-row-2">built for measurable digital growth.</span>
+              </span>
+              <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+              <span class="desc-mob">
+                <span class="desc-row-1">Key performance benchmarks and architectures</span>
+                <span class="desc-row-2">for measurable digital growth.</span>
+              </span>
             </p>
           </div>
 
@@ -614,8 +701,17 @@
           <h2>
             Proven Search Results &amp; <span class="accent-text">Client Reviews</span>
           </h2>
-          <p class="section-subtitle">
-            Hear directly from tech founders, VP Marketers, and eCommerce operators who achieved search dominance with us
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Hear directly from tech founders, VP Marketers, and operators</span>
+              <span class="desc-row-2">who achieved search dominance with us.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Hear from founders and marketing leaders</span>
+              <span class="desc-row-2">who achieved search dominance.</span>
+            </span>
           </p>
         </div>
       </div>
@@ -638,7 +734,7 @@
                 </div>
                 <p class="h-test-quote">Hywiz took our SaaS platform from zero organic visibility to over 85,000 monthly qualified visitors in under six months. Extraordinary ROI.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0f2fe; color: #0369a1;">MV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Marcus Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Marcus Vance</span>
                     <span class="h-test-role">Head of Growth, FinScale</span>
@@ -660,7 +756,7 @@
                 </div>
                 <p class="h-test-quote">We outranked Amazon on four primary high-intent commercial keywords. Our inbound organic revenue increased by 310%.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ecfdf5; color: #047857;">JT</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Julian Thorne" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Julian Thorne</span>
                     <span class="h-test-role">Founder, EcoLuxe Store</span>
@@ -682,7 +778,7 @@
                 </div>
                 <p class="h-test-quote">Their medical schema markup and E-E-A-T optimization positioned our clinic at the top of competitive regional search categories.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fef3c7; color: #b45309;">RA</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Dr. Rebecca Alpert" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Dr. Rebecca Alpert</span>
                     <span class="h-test-role">Chief Medical Officer, TeleDoc</span>
@@ -704,7 +800,7 @@
                 </div>
                 <p class="h-test-quote">No vanity metrics, just pure bottom-line pipeline. The technical Core Web Vitals fixes alone boosted our search visibility across 40+ countries.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ffedd5; color: #c2410c;">LG</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Liam Gallagher" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Liam Gallagher</span>
                     <span class="h-test-role">CMO, Horizon Media</span>
@@ -726,7 +822,7 @@
                 </div>
                 <p class="h-test-quote">Hywiz took our SaaS platform from zero organic visibility to over 85,000 monthly qualified visitors in under six months. Extraordinary ROI.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0f2fe; color: #0369a1;">MV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Marcus Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Marcus Vance</span>
                     <span class="h-test-role">Head of Growth, FinScale</span>
@@ -748,7 +844,7 @@
                 </div>
                 <p class="h-test-quote">We outranked Amazon on four primary high-intent commercial keywords. Our inbound organic revenue increased by 310%.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ecfdf5; color: #047857;">JT</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Julian Thorne" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Julian Thorne</span>
                     <span class="h-test-role">Founder, EcoLuxe Store</span>
@@ -770,7 +866,7 @@
                 </div>
                 <p class="h-test-quote">Their medical schema markup and E-E-A-T optimization positioned our clinic at the top of competitive regional search categories.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fef3c7; color: #b45309;">RA</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Dr. Rebecca Alpert" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Dr. Rebecca Alpert</span>
                     <span class="h-test-role">Chief Medical Officer, TeleDoc</span>
@@ -792,7 +888,7 @@
                 </div>
                 <p class="h-test-quote">No vanity metrics, just pure bottom-line pipeline. The technical Core Web Vitals fixes alone boosted our search visibility across 40+ countries.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #ffedd5; color: #c2410c;">LG</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Liam Gallagher" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Liam Gallagher</span>
                     <span class="h-test-role">CMO, Horizon Media</span>
@@ -818,7 +914,7 @@
                 </div>
                 <p class="h-test-quote">Their digital PR team secured Tier-1 editorial mentions on Forbes, TechCrunch, and VentureBeat. Domain Authority climbed by 18 points.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fce7f3; color: #be185d;">SL</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Sophie Laurent" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sophie Laurent</span>
                     <span class="h-test-role">VP Marketing, CloudSphere</span>
@@ -840,7 +936,7 @@
                 </div>
                 <p class="h-test-quote">Transparent, weekly KPI reporting and flawless execution. Hywiz eliminated all toxic backlink penalties from our prior agency.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #f3e8ff; color: #7e22ce;">CM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Carlos Mendez" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Carlos Mendez</span>
                     <span class="h-test-role">Managing Director, LogistiQ</span>
@@ -862,7 +958,7 @@
                 </div>
                 <p class="h-test-quote">We went from page 4 to spot #1 for high-volume luxury home search queries. Traffic converts at an unprecedented 4.8%.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0e7ff; color: #4338ca;">DP</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Daria Petrova" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Daria Petrova</span>
                     <span class="h-test-role">Founder, Artizen Global</span>
@@ -884,7 +980,7 @@
                 </div>
                 <p class="h-test-quote">The most knowledgeable SEO engineers we have collaborated with. The semantic topic clustering roadmap was pure genius.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fee2e2; color: #b91c1c;">AB</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Anthony Brooks" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Anthony Brooks</span>
                     <span class="h-test-role">CEO, Nexus Analytics</span>
@@ -906,7 +1002,7 @@
                 </div>
                 <p class="h-test-quote">Their digital PR team secured Tier-1 editorial mentions on Forbes, TechCrunch, and VentureBeat. Domain Authority climbed by 18 points.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fce7f3; color: #be185d;">SL</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Sophie Laurent" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sophie Laurent</span>
                     <span class="h-test-role">VP Marketing, CloudSphere</span>
@@ -928,7 +1024,7 @@
                 </div>
                 <p class="h-test-quote">Transparent, weekly KPI reporting and flawless execution. Hywiz eliminated all toxic backlink penalties from our prior agency.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #f3e8ff; color: #7e22ce;">CM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Carlos Mendez" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Carlos Mendez</span>
                     <span class="h-test-role">Managing Director, LogistiQ</span>
@@ -950,7 +1046,7 @@
                 </div>
                 <p class="h-test-quote">We went from page 4 to spot #1 for high-volume luxury home search queries. Traffic converts at an unprecedented 4.8%.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #e0e7ff; color: #4338ca;">DP</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Daria Petrova" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Daria Petrova</span>
                     <span class="h-test-role">Founder, Artizen Global</span>
@@ -972,7 +1068,7 @@
                 </div>
                 <p class="h-test-quote">The most knowledgeable SEO engineers we have collaborated with. The semantic topic clustering roadmap was pure genius.</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #fee2e2; color: #b91c1c;">AB</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Anthony Brooks" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Anthony Brooks</span>
                     <span class="h-test-role">CEO, Nexus Analytics</span>
@@ -996,8 +1092,17 @@
           <h2>
             Search Engine Optimization <span class="accent-text">FAQs</span>
           </h2>
-          <p class="section-subtitle">
-            Clear answers on technical auditing, high-authority backlink velocity, ranking timelines, and measurable ROI
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Clear answers on technical auditing, link velocity, and ranking timelines,</span>
+              <span class="desc-row-2">grounded in predictable, measurable organic ROI.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Clear answers on auditing, link velocity, and timelines,</span>
+              <span class="desc-row-2">grounded in measurable ROI.</span>
+            </span>
           </p>
         </div>
 
@@ -1147,68 +1252,40 @@
           </div>
           <!-- Right side: Contact Card Form -->
           <div class="contact-form-card reveal-right">
-            <form action="#" method="POST" class="wpcf7-form">
-              <div class="contact-inputs-grid">
-                <div class="contact-input-group">
-                  <label for="contact-name">What’s your name?</label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="text-264"
-                    placeholder="Your full name"
-                    required
-                  />
+            <form action="#" method="POST" class="wpcf7-form modern-msg-form">
+              <h3 class="msg-form-heading">Send a message</h3>
+              <p class="msg-form-sub">Fill out the quick brief below and our team will get back to you within 24 hours.</p>
+
+              <div class="msg-form-body">
+                <!-- Left Column: 3 Pill Inputs -->
+                <div class="msg-form-inputs">
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-name" name="text-264" class="msg-input-pill" placeholder="Your name" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="email" id="contact-email" name="email-439" class="msg-input-pill" placeholder="Your email" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-topic" name="subject-268" class="msg-input-pill" placeholder="Subject" required />
+                  </div>
                 </div>
-                <div class="contact-input-group">
-                  <label for="contact-email">Email address</label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email-439"
-                    placeholder="hello@company.com"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-topic">Discussion topic?</label>
-                  <input
-                    type="text"
-                    id="contact-topic"
-                    name="subject-268"
-                    placeholder="e.g. Web Design / SEO"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-budget">What’s your budget?</label>
-                  <input
-                    type="text"
-                    id="contact-budget"
-                    name="budget-270"
-                    placeholder="e.g. $5,000 - $10,000"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group full-width">
-                  <label for="contact-desc">Project Description</label>
-                  <textarea
-                    id="contact-desc"
-                    name="textarea-989"
-                    placeholder="A brief description about your project, request, or consultation details..."
-                    required
-                  ></textarea>
+
+                <!-- Right Column: Message Textarea -->
+                <div class="msg-form-textarea-wrap">
+                  <textarea id="contact-desc" name="textarea-989" class="msg-textarea" placeholder="Your message" required></textarea>
                 </div>
               </div>
-              <label class="contact-checkbox-row">
-                <input type="checkbox" name="acceptance-872" required />
-                <span
-                  >I am bound by the terms of the Service and I accept the
-                  Privacy Policy.</span
-                >
-              </label>
-              <div style="text-align: center; width: 100%">
-                <button type="submit" class="btn btn-solid">
-                  <span>— Send message</span>
+
+              <!-- Bottom Row: Checkbox & Disclaimer on left, Pill Submit Button on right -->
+              <div class="msg-form-footer">
+                <label class="msg-form-consent-label">
+                  <input type="checkbox" name="acceptance-872" class="msg-consent-checkbox" required />
+                  <span class="msg-form-disclaimer">
+                    By clicking Send a message button, you agree to use our &ldquo;Form&rdquo; terms And consent cookie usage in browser.
+                  </span>
+                </label>
+                <button type="submit" class="msg-form-submit-btn">
+                  <span>SEND A MESSAGE</span>
                 </button>
               </div>
             </form>
@@ -1439,10 +1516,7 @@
       </div>
       <!-- Footer Copyright bottom -->
       <div class="wrap footer-bottom-premium">
-        <span>© 2026 Web Agency. All rights reserved.<br>Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a>
-        </div>
+        <span>© 2026 Web Agency. All rights reserved. Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
       </div>
     </footer>
     <script src="js/main.js"></script>
@@ -1537,6 +1611,32 @@
         onScroll();
       })();
     </script>
+
+    <!-- FLOATING QUICK CONNECT WIDGETS (WHATSAPP & CALL) -->
+    <div class="floating-quick-actions" aria-label="Quick Contact Actions">
+      <!-- Left: WhatsApp Live Chat -->
+      <a href="https://wa.me/923143110259" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" aria-label="Chat with us on WhatsApp">
+        <span class="floating-btn-badge" aria-label="3 unread messages">3</span>
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 3C7.07 3 3.048 7.021 3.047 11.983c0 1.586.415 3.133 1.203 4.498L3 21l4.63-1.215a8.93 8.93 0 0 0 4.401 1.157h.004c4.961 0 8.983-4.022 8.984-8.984 0-2.4-.934-4.658-2.634-6.357A8.93 8.93 0 0 0 12.031 3zm0 1.957c3.873 0 7.027 3.153 7.028 7.026 0 1.876-.73 3.64-2.057 4.966a6.974 6.974 0 0 1-4.971 2.06h-.004a6.98 6.98 0 0 1-3.559-.971l-.255-.152-2.645.694.706-2.578-.166-.264a6.97 6.97 0 0 1-1.07-3.755c0-3.873 3.154-7.026 7.028-7.026zm3.844 9.385c-.211-.106-1.247-.616-1.44-.686-.194-.07-.335-.106-.476.106-.14.211-.546.686-.67.827-.123.14-.247.158-.458.053-.211-.106-.89-.328-1.696-1.047a6.29 6.29 0 0 1-1.173-1.458c-.123-.211-.013-.325.092-.43.095-.096.211-.247.317-.37.106-.124.141-.212.211-.353.07-.141.035-.265-.018-.37-.053-.106-.476-1.147-.652-1.57-.172-.413-.347-.357-.476-.364-.124-.006-.265-.007-.406-.007-.141 0-.37.053-.564.265-.194.211-.741.724-.741 1.766 0 1.041.758 2.048.864 2.189.106.141 1.492 2.278 3.614 3.195.505.218.899.348 1.206.446.507.161.968.138 1.333.084.407-.061 1.247-.51 1.423-1.004.176-.494.176-.917.123-1.006-.053-.088-.194-.141-.405-.247z" fill="#ffffff"/>
+          </svg>
+          <span class="floating-btn-tooltip">Chat on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Right: Direct Call -->
+      <a href="tel:+923143110259" class="floating-btn floating-btn-phone" aria-label="Call Us Directly">
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="floating-btn-tooltip">Call Us Directly</span>
+        </div>
+      </a>
+    </div>
   </body>
 </html>
 

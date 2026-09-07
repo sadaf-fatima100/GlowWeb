@@ -15,25 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
     <style>
-      /* ======================================== ABOUT PAGE CUSTOM STYLES ======================================== */ /* --- Hero --- */
-      .about-why-card h3 {
-        font-family: var(--font-display) !important;
-        font-size: 20px !important;
-        font-weight: 700 !important;
-        margin-bottom: 12px;
-        letter-spacing: -0.02em;
-      }
-      .about-why-card p {
-        font-family: var(--font-body) !important;
-        font-size: 16px !important;
-        line-height: 1.65 !important;
-        color: var(--fg-soft);
-      }
+      /* ======================================== ABOUT PAGE CUSTOM STYLES ======================================== */ 
+      /* --- Hero --- */
       .about-hero {
         position: relative;
-        padding: 200px 0 100px;
+        padding: clamp(140px, 16vw, 190px) 0 clamp(24px, 3.5vw, 40px);
         overflow: visible;
         background: transparent !important;
         text-align: center;
@@ -47,7 +35,8 @@
         justify-content: center;
       }
       .about-hero h1 {
-        max-width: 20ch;
+        width: 100%;
+        max-width: 100%;
         margin-inline: auto;
         margin-bottom: 24px;
       }
@@ -279,75 +268,9 @@
         font-weight: 700;
         opacity: 0.85;
         white-space: nowrap;
-      } /* --- Why Choose Us --- */
-      .about-why-section {
-        padding: 100px 0;
-        background: var(--bg);
       }
-      .about-why-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-        margin-top: 56px;
-      }
-      .about-why-card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 40px 32px;
-        position: relative;
-        overflow: hidden;
-        transition:
-          border-color 0.3s,
-          transform 0.3s,
-          box-shadow 0.3s;
-      }
-      .about-why-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          135deg,
-          color-mix(in srgb, var(--accent-primary) 6%, transparent) 0%,
-          transparent 60%
-        );
-        transition: opacity 0.3s;
-      }
-      .about-why-card:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-6px);
-        box-shadow: 0 20px 60px
-          color-mix(in srgb, var(--accent-primary) 12%, transparent);
-      }
-      .about-why-card:hover::before {
-        opacity: 1;
-      }
-/* Cleaned legacy styles */
-      .about-why-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: 16px;
-        background: color-mix(in srgb, var(--accent-primary) 10%, transparent);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--accent-primary);
-        margin-bottom: 24px;
-        transition: transform 0.3s;
-      }
-      .about-why-card:hover .about-why-icon {
-        transform: scale(1.1);
-      }
-      .about-why-card h3 {
-        font-size: 20px !important;
-        font-weight: 700;
-        margin-bottom: 12px;
-      }
-      .about-why-card p {
-        font-size: 16px !important;
-        line-height: 1.7;
-        color: var(--fg-soft);
-      } /* --- Team Section --- */
+
+      /* --- Team Section --- */
       .about-team-section {
         padding: 100px 0;
         background: var(--surface);
@@ -548,7 +471,6 @@
           grid-template-columns: 1fr;
         }
         .about-pillars-grid,
-        .about-why-grid,
         .about-team-grid {
           grid-template-columns: 1fr 1fr;
         }
@@ -567,7 +489,6 @@
       }
       @media (max-width: 600px) {
         .about-pillars-grid,
-        .about-why-grid,
         .about-team-grid,
         .about-stats-grid {
           grid-template-columns: 1fr;
@@ -641,6 +562,1926 @@
         }
         .about-hero-gallery-right-img {
           height: 250px;
+        }
+      }
+
+      /* =========================================================
+         PURPOSE BEHIND EVERYTHING WE BUILD — TIMELINE ROADMAP
+         ========================================================= */
+      .about-philosophy-section {
+        position: relative;
+        width: 100%;
+        padding-block: clamp(70px, 8vw, 110px);
+        background: var(--bg);
+        overflow: hidden;
+      }
+
+      /* Section 02 Head: Full Width Banner */
+      .philosophy-section-head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: clamp(14px, 1.8vw, 20px) !important;
+      }
+
+      .philosophy-main-title {
+        color: var(--fg) !important;
+        margin-bottom: 0 !important;
+        font-size: clamp(30px, 3.4vw, 44px) !important;
+        line-height: 1.18 !important;
+        letter-spacing: -0.02em !important;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .philosophy-sub-lead {
+        font-family: var(--font-body) !important;
+        font-size: clamp(14.5px, 1.15vw, 16px) !important;
+        line-height: 1.62 !important;
+        color: var(--fg-soft) !important;
+        max-width: 720px;
+        margin-top: 8px !important;
+        margin-bottom: 0 !important;
+      }
+
+      .philosophy-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.28fr;
+        gap: clamp(24px, 3vw, 40px);
+        align-items: stretch;
+      }
+
+      /* Left Column: Creative Framed Image (Height matches Bento Grid 1:1) */
+      .philosophy-header-col {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .philosophy-image-container {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        display: flex;
+        flex: 1;
+        margin: 0 !important;
+      }
+
+      .philosophy-image-container .expertise-image-creative {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex: 1 !important;
+        position: relative;
+        border-radius: 26px !important;
+        overflow: hidden !important;
+        border: 1px solid rgba(0, 217, 143, 0.18) !important;
+        background: var(--surface) !important;
+        box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.35) !important;
+        transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease) !important;
+      }
+
+      .philosophy-image-container .expertise-image-creative::before {
+        display: none !important;
+      }
+
+      .philosophy-image-container .expertise-image-creative:hover {
+        transform: translateY(-6px) scale(1.01) !important;
+        border-color: rgba(0, 255, 170, 0.45) !important;
+        box-shadow: 0 24px 60px -12px rgba(0, 217, 143, 0.28), 0 0 25px rgba(0, 217, 143, 0.12) !important;
+      }
+
+      .philosophy-image-container .expertise-image-creative img {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        max-height: unset !important;
+        aspect-ratio: unset !important;
+        object-fit: cover !important;
+        border-radius: 26px !important;
+        display: block !important;
+      }
+
+      html[data-theme="light"] .philosophy-image-container .expertise-image-creative {
+        border-color: rgba(0, 143, 88, 0.18) !important;
+        box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.08) !important;
+      }
+
+      html[data-theme="light"] .philosophy-image-container .expertise-image-creative:hover {
+        border-color: rgba(0, 143, 88, 0.45) !important;
+        box-shadow: 0 20px 48px -10px rgba(0, 143, 88, 0.2) !important;
+      }
+
+      .philosophy-left-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .philosophy-stat-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 12.5px;
+        font-weight: 600;
+        background: var(--surface);
+        border: 1px solid var(--border-strong);
+        color: var(--fg);
+      }
+
+      .chip-glow-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent-primary);
+        box-shadow: 0 0 8px var(--accent-primary);
+      }
+
+      /* Right Column: 2x2 Bento Cards */
+      .philosophy-timeline-col {
+        position: relative;
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* =========================================================
+         ABOUT AGENCY STATEMENT — Big Editorial Manifesto Block
+         ========================================================= */
+      /* =========================================================
+         ABOUT AGENCY STATEMENT — Big Editorial Manifesto Block
+         ========================================================= */
+      .about-statement-section {
+        position: relative;
+        width: 100%;
+        padding: clamp(56px, 6vw, 88px) 0;
+        overflow: hidden;
+        /* Deep space dark bg with a faint emerald base tint */
+        background: radial-gradient(ellipse 120% 80% at 50% 100%,
+          rgba(0, 30, 18, 0.98) 0%,
+          rgba(6, 12, 10, 0.99) 60%,
+          var(--bg) 100%
+        );
+      }
+
+      .about-statement-section + .agency-metrics-section {
+        padding-top: clamp(28px, 4vw, 48px) !important;
+      }
+
+      /* =========================================================
+         WEB 3.0 ILLUMINATING GRADIENT LIGHTING SYSTEM
+         ========================================================= */
+      .stmt-ambient-aurora {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      /* ── LAYER 1: MEGA CENTRAL HALO — blindingly bright emerald core */
+      .aurora-core-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(1100px, 100vw);
+        height: 650px;
+        border-radius: 50%;
+        background:
+          radial-gradient(ellipse 55% 40% at 50% 50%,
+            rgba(0, 255, 170, 0.38) 0%,
+            rgba(0, 217, 143, 0.22) 30%,
+            rgba(0, 190, 120, 0.10) 55%,
+            transparent 75%
+          );
+        filter: blur(72px);
+        animation: auroraBreathe 8s ease-in-out infinite alternate;
+        mix-blend-mode: screen;
+      }
+
+      /* ── LAYER 2: LEFT ORB — deep teal-cyan plasma blob */
+      .aurora-blob.blob-left {
+        top: 5%;
+        left: -4%;
+        width: clamp(320px, 42vw, 560px);
+        height: clamp(280px, 36vw, 480px);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        background:
+          radial-gradient(ellipse at 40% 40%,
+            rgba(0, 217, 143, 0.45) 0%,
+            rgba(0, 255, 170, 0.22) 40%,
+            rgba(79, 235, 253, 0.10) 70%,
+            transparent 85%
+          );
+        filter: blur(72px);
+        opacity: 0.85;
+        mix-blend-mode: screen;
+        animation: blobMorph1 14s ease-in-out infinite alternate;
+      }
+
+      /* ── LAYER 3: RIGHT ORB — electric cyan violet plasma blob */
+      .aurora-blob.blob-right {
+        bottom: 0%;
+        right: -4%;
+        width: clamp(340px, 44vw, 580px);
+        height: clamp(300px, 38vw, 500px);
+        border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%;
+        background:
+          radial-gradient(ellipse at 60% 60%,
+            rgba(79, 235, 253, 0.40) 0%,
+            rgba(0, 217, 143, 0.22) 38%,
+            rgba(0, 120, 200, 0.12) 65%,
+            transparent 85%
+          );
+        filter: blur(82px);
+        opacity: 0.78;
+        mix-blend-mode: screen;
+        animation: blobMorph2 18s ease-in-out infinite alternate;
+      }
+
+      /* ── LAYER 4: TOP CONIC SPOT LIGHT — like a stage light from above */
+      .aurora-blob.blob-left::before,
+      .aurora-blob.blob-right::before {
+        display: none;
+      }
+      .stmt-ambient-aurora::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 0;
+        border-left: 220px solid transparent;
+        border-right: 220px solid transparent;
+        border-top: 520px solid rgba(0, 255, 170, 0.055);
+        filter: blur(18px);
+        pointer-events: none;
+        z-index: 1;
+        animation: spotPulse 6s ease-in-out infinite alternate;
+      }
+
+      /* ── LAYER 5: GRID SCANLINES — cyber / tech grid shimmer */
+      .stmt-ambient-aurora::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(0, 255, 170, 0.028) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 170, 0.022) 1px, transparent 1px);
+        background-size: 52px 52px;
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 75%);
+        pointer-events: none;
+        z-index: 1;
+        animation: gridShimmer 12s ease-in-out infinite alternate;
+        opacity: 0.7;
+      }
+
+      /* ── LAYER 6: HORIZONTAL LASER SCAN LINE */
+      .aurora-core-glow::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -10%;
+        width: 120%;
+        height: 1px;
+        background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0, 255, 170, 0.0) 15%,
+          rgba(0, 255, 170, 0.45) 40%,
+          rgba(79, 235, 253, 0.55) 50%,
+          rgba(0, 255, 170, 0.45) 60%,
+          rgba(0, 255, 170, 0.0) 85%,
+          transparent 100%
+        );
+        transform: translateY(-50%);
+        filter: blur(2px);
+        animation: laserScan 5s ease-in-out infinite alternate;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes auroraBreathe {
+        0%   { transform: translate(-50%, -50%) scale(0.78); opacity: 0.55; }
+        40%  { transform: translate(-50%, -52%) scale(1.08); opacity: 1.00; }
+        100% { transform: translate(-50%, -50%) scale(0.90); opacity: 0.75; }
+      }
+
+      @keyframes blobMorph1 {
+        0%   { transform: translate(0, 0) rotate(0deg) scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        50%  { transform: translate(50px, 25px) rotate(80deg) scale(1.18); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        100% { transform: translate(-25px, -18px) rotate(165deg) scale(0.92); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+      }
+
+      @keyframes blobMorph2 {
+        0%   { transform: translate(0, 0) rotate(0deg) scale(1.06); border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%; }
+        50%  { transform: translate(-60px, -35px) rotate(-95deg) scale(0.88); border-radius: 35% 65% 60% 40% / 45% 45% 55% 55%; }
+        100% { transform: translate(35px, 22px) rotate(-190deg) scale(1.12); border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%; }
+      }
+
+      @keyframes spotPulse {
+        0%   { opacity: 0.6; }
+        100% { opacity: 1.0; filter: blur(14px); }
+      }
+
+      @keyframes gridShimmer {
+        0%   { opacity: 0.45; background-position: 0 0; }
+        100% { opacity: 0.85; background-position: 4px 4px; }
+      }
+
+      @keyframes laserScan {
+        0%   { transform: translateY(-100%); opacity: 0.0; }
+        20%  { opacity: 1.0; }
+        80%  { opacity: 0.8; }
+        100% { transform: translateY(100%); opacity: 0.0; }
+      }
+
+      /* Light Theme Overrides — softer, desaturated */
+      html[data-theme="light"] .about-statement-section {
+        background: var(--bg);
+      }
+      html[data-theme="light"] .aurora-core-glow {
+        background: radial-gradient(ellipse 55% 40% at 50% 50%,
+          rgba(0, 143, 88, 0.14) 0%,
+          rgba(0, 217, 143, 0.06) 40%,
+          transparent 75%
+        );
+        filter: blur(80px);
+        mix-blend-mode: normal;
+      }
+      html[data-theme="light"] .aurora-blob {
+        mix-blend-mode: normal;
+        opacity: 0.35;
+      }
+      html[data-theme="light"] .aurora-blob.blob-left {
+        background: radial-gradient(ellipse at 40% 40%,
+          rgba(0, 143, 88, 0.20) 0%, transparent 70%);
+      }
+      html[data-theme="light"] .aurora-blob.blob-right {
+        background: radial-gradient(ellipse at 60% 60%,
+          rgba(2, 132, 199, 0.15) 0%, transparent 70%);
+      }
+      html[data-theme="light"] .stmt-ambient-aurora::before,
+      html[data-theme="light"] .stmt-ambient-aurora::after,
+      html[data-theme="light"] .aurora-core-glow::after {
+        opacity: 0;
+      }
+
+      /* =========================================================
+         EDITORIAL MANIFESTO WRAP — Exact Alignment with Floating Navbar
+         ========================================================= */
+      .about-statement-wrap {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: calc(100% - 64px);
+        max-width: 1216px;
+        padding-inline: 24px;
+        box-sizing: border-box;
+        margin-inline: auto;
+      }
+
+      .about-statement-body {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 3.3vw, 44px);
+        font-weight: 600;
+        line-height: 1.44;
+        color: var(--fg);
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+      }
+
+      .about-stmt-line {
+        color: var(--fg-soft);
+        transition: color 0.3s ease;
+      }
+
+      .about-stmt-highlight {
+        color: #ffffff;
+        font-weight: 800;
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 30%, #4febfd 65%, #00d98f 100%);
+        background-size: 250% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline;
+        filter: drop-shadow(0 0 25px rgba(0, 217, 143, 0.35));
+        animation: stmtTextShimmer 7s ease-in-out infinite alternate;
+      }
+
+      @keyframes stmtTextShimmer {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+
+      html[data-theme="light"] .about-stmt-highlight,
+      [data-theme="light"] .about-stmt-highlight {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 35%, #0284c7 70%, #008f58 100%);
+        background-size: 250% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: none;
+        animation: stmtTextShimmer 7s ease-in-out infinite alternate;
+      }
+
+      /* =========================================================
+         CORNER ACCENT BURST SHAPES (Tightly Anchored to Words)
+         ========================================================= */
+      .stmt-word-anchor {
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        vertical-align: baseline;
+      }
+
+      .stmt-corner-accent {
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        pointer-events: none;
+        z-index: 3;
+        transform-origin: center center;
+      }
+
+      .stmt-corner-tl {
+        top: -16px;
+        right: calc(100% + 4px);
+        animation: accentPulseTL 3.2s ease-in-out infinite alternate;
+      }
+
+      .stmt-corner-br {
+        bottom: -12px;
+        left: calc(100% + 4px);
+        transform: rotate(180deg);
+        animation: accentPulseBR 3.2s ease-in-out infinite alternate 1.6s;
+      }
+
+      .stmt-accent-svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        color: #00ffaa;
+      }
+
+      .stmt-accent-svg line {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .stmt-accent-svg .ray-main {
+        animation: rayMainGlow 2.4s ease-in-out infinite alternate;
+      }
+
+      .stmt-accent-svg .ray-side-1 {
+        animation: raySide1Drift 2.4s ease-in-out infinite alternate 0.3s;
+      }
+
+      .stmt-accent-svg .ray-side-2 {
+        animation: raySide2Drift 2.4s ease-in-out infinite alternate 0.6s;
+      }
+
+      @keyframes accentPulseTL {
+        0% {
+          transform: scale(0.92);
+          filter: drop-shadow(0 0 6px rgba(0, 255, 170, 0.45));
+          opacity: 0.85;
+        }
+        100% {
+          transform: scale(1.08);
+          filter: drop-shadow(0 0 14px rgba(0, 255, 170, 0.95)) drop-shadow(0 0 24px rgba(0, 217, 143, 0.5));
+          opacity: 1;
+        }
+      }
+
+      @keyframes accentPulseBR {
+        0% {
+          transform: rotate(180deg) scale(0.92);
+          filter: drop-shadow(0 0 6px rgba(0, 255, 170, 0.45));
+          opacity: 0.85;
+        }
+        100% {
+          transform: rotate(180deg) scale(1.08);
+          filter: drop-shadow(0 0 14px rgba(0, 255, 170, 0.95)) drop-shadow(0 0 24px rgba(0, 217, 143, 0.5));
+          opacity: 1;
+        }
+      }
+
+      @keyframes rayMainGlow {
+        0% { stroke-width: 3.8px; opacity: 0.85; }
+        100% { stroke-width: 4.6px; opacity: 1; }
+      }
+
+      @keyframes raySide1Drift {
+        0% { transform: translate(0, 0); opacity: 0.7; }
+        100% { transform: translate(2px, -2px); opacity: 1; }
+      }
+
+      @keyframes raySide2Drift {
+        0% { transform: translate(0, 0); opacity: 0.7; }
+        100% { transform: translate(-2px, 2px); opacity: 1; }
+      }
+
+      /* Light Mode Overrides */
+      html[data-theme="light"] .stmt-accent-svg {
+        color: #008f58;
+      }
+
+      html[data-theme="light"] .stmt-corner-tl {
+        animation: accentPulseLightTL 3.2s ease-in-out infinite alternate;
+      }
+
+      html[data-theme="light"] .stmt-corner-br {
+        animation: accentPulseLightBR 3.2s ease-in-out infinite alternate 1.6s;
+      }
+
+      @keyframes accentPulseLightTL {
+        0% {
+          transform: scale(0.92);
+          filter: drop-shadow(0 0 4px rgba(0, 143, 88, 0.35));
+          opacity: 0.85;
+        }
+        100% {
+          transform: scale(1.08);
+          filter: drop-shadow(0 0 10px rgba(0, 143, 88, 0.7));
+          opacity: 1;
+        }
+      }
+
+      @keyframes accentPulseLightBR {
+        0% {
+          transform: rotate(180deg) scale(0.92);
+          filter: drop-shadow(0 0 4px rgba(0, 143, 88, 0.35));
+          opacity: 0.85;
+        }
+        100% {
+          transform: rotate(180deg) scale(1.08);
+          filter: drop-shadow(0 0 10px rgba(0, 143, 88, 0.7));
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .stmt-corner-accent {
+          width: 32px;
+          height: 32px;
+        }
+        .stmt-corner-tl {
+          top: -12px;
+          right: calc(100% + 3px);
+        }
+        .stmt-corner-br {
+          bottom: -10px;
+          left: calc(100% + 3px);
+        }
+        .about-statement-wrap {
+          width: calc(100% - 32px);
+          max-width: calc(100% - 32px);
+          padding-inline: 16px;
+        }
+        .about-statement-body {
+          font-size: clamp(20px, 5.5vw, 28px);
+          line-height: 1.48;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .stmt-corner-accent {
+          width: 26px;
+          height: 26px;
+        }
+        .stmt-corner-tl {
+          top: -10px;
+          right: calc(100% + 2px);
+        }
+        .stmt-corner-br {
+          bottom: -8px;
+          left: calc(100% + 2px);
+        }
+        .about-statement-wrap {
+          width: calc(100% - 24px);
+          max-width: calc(100% - 24px);
+          padding-inline: 12px;
+        }
+        .about-statement-body {
+          font-size: clamp(18px, 5.2vw, 24px);
+          line-height: 1.46;
+        }
+      }
+
+      /* =========================================================
+         PHILO STACKED CARDS — Clean Right Column
+         ========================================================= */
+      .philo-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .philo-card {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+        animation-delay: var(--delay, 0s);
+      }
+
+      .philo-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 48px -8px rgba(0, 217, 143, 0.15);
+        border-color: rgba(0, 217, 143, 0.3);
+      }
+
+      html[data-theme="light"] .philo-card,
+      [data-theme="light"] .philo-card {
+        background: #fff;
+        border-color: rgba(0, 143, 88, 0.1);
+        box-shadow: 0 2px 16px -4px rgba(0, 143, 88, 0.06);
+      }
+
+      html[data-theme="light"] .philo-card:hover,
+      [data-theme="light"] .philo-card:hover {
+        border-color: rgba(0, 143, 88, 0.3);
+        box-shadow: 0 16px 40px -8px rgba(0, 143, 88, 0.14);
+      }
+
+      /* Left accent bar */
+      .philo-card-accent {
+        width: 4px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #00d98f 0%, #4febfd 100%);
+        border-radius: 0;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+
+      .philo-card:hover .philo-card-accent {
+        opacity: 1;
+      }
+
+      html[data-theme="light"] .philo-card-accent {
+        background: linear-gradient(180deg, #008f58 0%, #0284c7 100%);
+      }
+
+      .philo-card-body {
+        padding: 24px 28px;
+        flex: 1;
+      }
+
+      .philo-card-eyebrow {
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 10.5px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent-primary);
+        margin-bottom: 8px;
+      }
+
+      html[data-theme="light"] .philo-card-eyebrow {
+        color: #008f58;
+      }
+
+      .philo-card-title {
+        font-family: var(--font-display);
+        font-size: clamp(17px, 1.5vw, 21px);
+        font-weight: 700;
+        color: var(--fg);
+        margin: 0 0 10px;
+        transition: color 0.25s ease;
+      }
+
+      .philo-card:hover .philo-card-title {
+        color: var(--accent-primary);
+      }
+
+      html[data-theme="light"] .philo-card:hover .philo-card-title {
+        color: #008f58;
+      }
+
+      .philo-card-desc {
+        font-family: var(--font-body);
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: var(--fg-soft);
+        margin: 0 0 14px;
+      }
+
+      .philo-card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .philo-tag {
+        font-family: var(--font-body);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 11px;
+        border-radius: 6px;
+        background: var(--bg-2, rgba(0,217,143,0.05));
+        border: 1px solid var(--border);
+        color: var(--fg-soft);
+        transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      }
+
+      .philo-card:hover .philo-tag {
+        background: rgba(0, 217, 143, 0.08);
+        border-color: rgba(0, 217, 143, 0.25);
+        color: var(--fg);
+      }
+
+      html[data-theme="light"] .philo-tag {
+        background: rgba(0, 0, 0, 0.03);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      html[data-theme="light"] .philo-card:hover .philo-tag {
+        background: rgba(0, 143, 88, 0.07);
+        border-color: rgba(0, 143, 88, 0.25);
+        color: #03140a;
+      }
+
+      @media (max-width: 960px) {
+        .philo-stack {
+          gap: 12px;
+        }
+        .philo-card-body {
+          padding: 20px 22px;
+        }
+      }
+
+      /* =========================================================
+         PHILO BENTO GRID — 2×2 with Rich Ambient Corner Gradients
+         ========================================================= */
+      .philo-bento {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      /* Center intersection glow where cards meet */
+      .philo-bento-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 180px;
+        height: 180px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(0, 255, 170, 0.3) 0%, rgba(0, 217, 143, 0.1) 40%, transparent 70%);
+        pointer-events: none;
+        z-index: 3;
+        border-radius: 50%;
+        animation: bentoGlowPulse 3.5s ease-in-out infinite;
+      }
+
+      @keyframes bentoGlowPulse {
+        0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+        50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+      }
+
+      html[data-theme="light"] .philo-bento-glow {
+        background: radial-gradient(circle, rgba(0, 143, 88, 0.22) 0%, rgba(0, 143, 88, 0.06) 40%, transparent 70%);
+      }
+
+      /* Individual Bento Card */
+      .philo-bcard {
+        position: relative;
+        min-height: 270px;
+        border-radius: 26px;
+        padding: 26px 24px 18px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        border: 1px solid rgba(0, 217, 143, 0.14);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+        z-index: 1;
+      }
+
+      /* Dark theme per-card signature lighting (ambient gradients matching reference) */
+      .philo-bcard.card-history {
+        background: radial-gradient(circle at 50% 125%, rgba(0, 255, 170, 0.3) 0%, rgba(0, 217, 143, 0.08) 45%, rgba(6, 12, 9, 0.96) 75%), #060a08;
+      }
+      .philo-bcard.card-vision {
+        background: radial-gradient(circle at 92% 14%, rgba(0, 255, 170, 0.32) 0%, rgba(0, 217, 143, 0.07) 50%, rgba(6, 12, 9, 0.96) 75%), #060a08;
+      }
+      .philo-bcard.card-mission {
+        background: radial-gradient(circle at 10% 14%, rgba(0, 255, 170, 0.3) 0%, rgba(0, 217, 143, 0.07) 45%, rgba(6, 12, 9, 0.96) 75%), #060a08;
+      }
+      .philo-bcard.card-values {
+        background: radial-gradient(circle at 50% 125%, rgba(0, 255, 170, 0.35) 0%, rgba(0, 217, 143, 0.08) 50%, rgba(6, 12, 9, 0.96) 75%), #060a08;
+      }
+
+      .philo-bcard:hover {
+        transform: translateY(-6px) scale(1.015);
+        border-color: rgba(0, 255, 170, 0.45);
+        box-shadow: 0 24px 60px -12px rgba(0, 217, 143, 0.28), 0 0 25px rgba(0, 217, 143, 0.12);
+      }
+
+      /* Light Theme Adaptations */
+      html[data-theme="light"] .philo-bcard {
+        border-color: rgba(0, 143, 88, 0.16);
+        box-shadow: 0 4px 24px -4px rgba(0, 143, 88, 0.08);
+      }
+      html[data-theme="light"] .philo-bcard.card-history {
+        background: radial-gradient(circle at 50% 125%, rgba(0, 217, 143, 0.18) 0%, transparent 60%), #ffffff;
+      }
+      html[data-theme="light"] .philo-bcard.card-vision {
+        background: radial-gradient(circle at 92% 14%, rgba(0, 217, 143, 0.18) 0%, transparent 60%), #ffffff;
+      }
+      html[data-theme="light"] .philo-bcard.card-mission {
+        background: radial-gradient(circle at 10% 14%, rgba(0, 217, 143, 0.18) 0%, transparent 60%), #ffffff;
+      }
+      html[data-theme="light"] .philo-bcard.card-values {
+        background: radial-gradient(circle at 50% 125%, rgba(0, 217, 143, 0.2) 0%, transparent 60%), #ffffff;
+      }
+      html[data-theme="light"] .philo-bcard:hover {
+        border-color: rgba(0, 143, 88, 0.38);
+        box-shadow: 0 20px 50px -10px rgba(0, 143, 88, 0.18);
+      }
+
+      /* Card Top: Eyebrow, Title, Description */
+      .bcard-top {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 2;
+      }
+
+      .bcard-eyebrow {
+        font-family: var(--font-display);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent-primary);
+      }
+      html[data-theme="light"] .bcard-eyebrow {
+        color: #008f58;
+      }
+
+      .bcard-title {
+        font-family: var(--font-display);
+        font-size: clamp(17px, 1.4vw, 21px);
+        font-weight: 700;
+        color: var(--fg);
+        margin: 0;
+        line-height: 1.25;
+        transition: color 0.3s ease;
+      }
+      .philo-bcard:hover .bcard-title {
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 50%, #4febfd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      html[data-theme="light"] .philo-bcard:hover .bcard-title {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .bcard-desc {
+        font-family: var(--font-body);
+        font-size: 12.5px;
+        line-height: 1.55;
+        color: var(--fg-soft);
+        margin: 0;
+      }
+
+      /* Card Bottom: Visual Graphics Area */
+      .bcard-visual {
+        position: relative;
+        width: 100%;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        margin-top: 6px;
+      }
+
+      .visual-glow-flare {
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        width: 120px;
+        height: 50px;
+        transform: translateX(-50%);
+        background: radial-gradient(ellipse at center, rgba(0, 255, 170, 0.45) 0%, transparent 70%);
+        pointer-events: none;
+        filter: blur(12px);
+      }
+
+      /* Graphic 1: Concentric Rings Emblem */
+      .visual-emblem {
+        position: relative;
+      }
+      .emblem-halo {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .emblem-ring-outer {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1px dashed rgba(0, 217, 143, 0.35);
+        animation: emblemSpin 20s linear infinite;
+      }
+      .emblem-ring-mid {
+        position: absolute;
+        inset: 10px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 255, 170, 0.45);
+        box-shadow: 0 0 16px rgba(0, 217, 143, 0.25);
+      }
+      .emblem-core {
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #00ffaa 0%, #00a86b 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #060a08;
+        box-shadow: 0 0 20px rgba(0, 255, 170, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease;
+      }
+      .emblem-core svg {
+        width: 20px;
+        height: 20px;
+        stroke: #060a08;
+      }
+      .philo-bcard:hover .emblem-core {
+        transform: scale(1.12);
+        box-shadow: 0 0 28px rgba(0, 255, 170, 0.85);
+      }
+      @keyframes emblemSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* Graphic 2: Connected Energy Nodes */
+      .visual-nodes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+      }
+      .node-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, rgba(0, 255, 170, 0.3) 0%, rgba(0, 217, 143, 0.08) 80%);
+        border: 1.5px solid rgba(0, 255, 170, 0.6);
+        box-shadow: 0 0 18px rgba(0, 217, 143, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #00ffaa;
+        flex-shrink: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .node-badge svg {
+        width: 20px;
+        height: 20px;
+        stroke: #00ffaa;
+      }
+      html[data-theme="light"] .node-badge {
+        border-color: #008f58;
+        color: #008f58;
+      }
+      html[data-theme="light"] .node-badge svg {
+        stroke: #008f58;
+      }
+      .philo-bcard:hover .node-badge {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(0, 255, 170, 0.6);
+      }
+      .node-lightning-bridge {
+        position: relative;
+        flex: 1;
+        max-width: 90px;
+        height: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightning-line {
+        position: absolute;
+        inset: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #00ffaa, #4febfd, #00ffaa);
+        box-shadow: 0 0 8px #00ffaa;
+      }
+      .lightning-spark {
+        position: relative;
+        z-index: 2;
+        font-size: 13px;
+        color: #fff;
+        text-shadow: 0 0 10px #00ffaa, 0 0 20px #00d98f;
+        animation: sparkFlicker 1.8s ease-in-out infinite alternate;
+      }
+      @keyframes sparkFlicker {
+        0% { transform: scale(0.85); opacity: 0.7; }
+        100% { transform: scale(1.25); opacity: 1; }
+      }
+
+      /* Graphic 3: ROI Chart & Metric Pill */
+      .visual-chart {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-end;
+        gap: 6px;
+      }
+      .bcard-roi-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        align-self: flex-start;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: rgba(0, 217, 143, 0.12);
+        border: 1px solid rgba(0, 255, 170, 0.35);
+        font-size: 11px;
+        font-family: var(--font-display);
+        color: var(--fg);
+        box-shadow: 0 2px 10px rgba(0, 217, 143, 0.15);
+      }
+      .roi-pill-tag {
+        font-size: 9.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--fg-soft);
+        margin-right: 8px;
+      }
+      .roi-pill-num {
+        color: #00ffaa;
+        font-weight: 700;
+      }
+      html[data-theme="light"] .roi-pill-num {
+        color: #008f58;
+      }
+      .chart-mountain {
+        position: relative;
+        width: 100%;
+        height: 48px;
+      }
+      .chart-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .chart-beacon {
+        position: absolute;
+        top: 4px;
+        right: 22px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #00ffaa;
+        box-shadow: 0 0 14px #00ffaa, 0 0 24px #00d98f;
+        animation: beaconPulse 2s ease-in-out infinite;
+      }
+      @keyframes beaconPulse {
+        0%, 100% { transform: scale(1); opacity: 0.85; }
+        50% { transform: scale(1.4); opacity: 1; }
+      }
+
+      /* Graphic 4: Tiered Perspective Steppes */
+      .visual-steps {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        height: 85px;
+      }
+      .steps-beacon {
+        font-size: 14px;
+        color: #00ffaa;
+        text-shadow: 0 0 12px #00ffaa;
+        margin-bottom: 2px;
+        animation: sparkFlicker 2s infinite alternate;
+      }
+      html[data-theme="light"] .steps-beacon {
+        color: #008f58;
+        text-shadow: 0 0 8px rgba(0, 143, 88, 0.6);
+      }
+      .step-tier {
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 170, 0.45) 50%, transparent 100%);
+        border-top: 1.5px solid rgba(0, 255, 170, 0.85);
+        box-shadow: 0 -2px 10px rgba(0, 217, 143, 0.35);
+        transition: transform 0.3s ease;
+      }
+      .step-1 {
+        width: 55px;
+        height: 9px;
+        margin-bottom: 3px;
+      }
+      .step-2 {
+        width: 95px;
+        height: 11px;
+        margin-bottom: 3px;
+        background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 170, 0.35) 50%, transparent 100%);
+      }
+      .step-3 {
+        width: 140px;
+        height: 13px;
+        background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 170, 0.25) 50%, transparent 100%);
+      }
+      .philo-bcard:hover .step-tier {
+        transform: translateY(-2px);
+      }
+
+
+      /* Gallery Cards: 100% natural, crisp, vibrant meeting photos with zero grayscale */
+      .about-gallery-card img {
+        filter: none !important;
+      }
+      .about-gallery-card:hover img {
+        filter: none !important;
+      }
+      .about-gallery-card::before {
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.45) 0%,
+          rgba(0, 0, 0, 0.12) 25%,
+          transparent 45%
+        ) !important;
+      }
+      /* Hero Subtitle: Strictly 2 balanced rows on desktop/tablet */
+      .about-hero-desc {
+        font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+        font-size: clamp(0.96rem, 1.4vw, 1.12rem) !important;
+        color: rgba(255, 255, 255, 0.92) !important;
+        max-width: 860px !important;
+        margin: 0 auto 24px auto !important;
+        line-height: 1.68 !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+        letter-spacing: -0.01em;
+      }
+      .about-lede-row-1 {
+        display: block !important;
+      }
+      .about-lede-row-2 {
+        display: block !important;
+      }
+      html:not([data-theme="dark"]) .about-hero-desc,
+      [data-theme='light'] .about-hero-desc {
+        color: #1a2e22 !important;
+        font-weight: 500 !important;
+      }
+      @media (max-width: 768px) {
+        .about-desk-title {
+          display: none !important;
+        }
+        .about-mob-title {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          gap: 4px !important;
+          text-align: center !important;
+        }
+        .about-mob-row-1,
+        .about-mob-row-2 {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+        }
+        .about-lede-row-1,
+        .about-lede-row-2 {
+          display: inline !important;
+        }
+      }
+      /* Compact gap above gallery cards */
+      .about-value-chips {
+        margin: 0 auto 18px auto !important;
+      }
+      .about-hero-gallery-v2 {
+        margin-top: 8px !important;
+      }
+
+      /* =========================================================
+         CREATIVE SOLUTIONS & COMMITMENT (SECTION 03) — SERVICE PAGE PARITY
+         ========================================================= */
+      .about-page-universe .about-expertise-section {
+        padding-block: clamp(60px, 7vw, 90px) !important;
+      }
+
+      .about-page-universe .about-expertise-section .section-head {
+        margin-bottom: 0px !important;
+      }
+
+      .about-page-universe .about-expertise-section .section-head h2 em,
+      .about-page-universe .section-why-choose .section-head h2 em {
+        font-style: normal !important;
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block !important;
+      }
+
+      html:not([data-theme="dark"]) .about-page-universe .about-expertise-section .section-head h2 em,
+      html:not([data-theme="dark"]) .about-page-universe .section-why-choose .section-head h2 em,
+      [data-theme='light'] .about-page-universe .about-expertise-section .section-head h2 em,
+      [data-theme='light'] .about-page-universe .section-why-choose .section-head h2 em {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      /* Why Choose Us Section Parity with Services Page */
+      .about-page-universe .section-why-choose {
+        position: relative;
+        background: var(--bg);
+      }
+
+      .about-page-universe .section-why-choose .section-head {
+        margin-bottom: clamp(48px, 5vw, 60px) !important;
+      }
+
+      .wcu-title-br {
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .wcu-title-br {
+          display: none !important;
+        }
+      }
+
+      .about-page-universe .about-expertise-section .section-subtitle {
+        font-family: var(--font-body) !important;
+        font-size: 16px !important;
+        color: var(--fg-soft) !important;
+        line-height: 1.65 !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        font-weight: 400 !important;
+      }
+
+      html:not([data-theme="dark"]) .about-page-universe .about-expertise-section .section-subtitle,
+      [data-theme='light'] .about-page-universe .about-expertise-section .section-subtitle {
+        color: #2c4235 !important;
+        font-weight: 500 !important;
+      }
+
+      /* Row Spacing & Equal Width Columns */
+      .about-page-universe .expertise-row-creative {
+        display: flex;
+        align-items: center;
+        gap: clamp(48px, 5.5vw, 84px) !important;
+        margin-top: clamp(44px, 4vw, 54px) !important;
+      }
+
+      .about-page-universe .section-head + .expertise-row-creative,
+      .about-page-universe .expertise-row-creative.expertise-row-first,
+      .about-page-universe .expertise-row-first,
+      .about-page-universe .expertise-row-creative:first-of-type {
+        margin-top: clamp(56px, 5vw, 68px) !important;
+      }
+
+      .about-page-universe .expertise-row-creative.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .about-page-universe .expertise-row-creative .expertise-content-creative {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .about-page-universe .expertise-row-creative .expertise-image-creative {
+        flex: 1;
+        min-width: 0;
+        max-width: unset;
+        padding: 16px;
+        align-self: center;
+      }
+
+      /* Row Titles & Shimmer Em */
+      .about-page-universe .expertise-row-title {
+        font-family: var(--font-display) !important;
+        font-size: clamp(30px, 2.8vw, 38px) !important;
+        font-weight: 800 !important;
+        line-height: 1.18 !important;
+        letter-spacing: -0.025em !important;
+        color: var(--fg) !important;
+        margin-bottom: 18px !important;
+        width: 100% !important;
+        max-width: 580px !important;
+        text-wrap: unset !important;
+      }
+
+      .exp-desk-br {
+        display: block;
+      }
+
+      .exp-head-br,
+      .exp-sub-br {
+        display: block;
+      }
+
+      .about-page-universe .expertise-row-title em {
+        font-style: normal !important;
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block !important;
+      }
+
+      html:not([data-theme="dark"]) .about-page-universe .expertise-row-title em,
+      [data-theme='light'] .about-page-universe .expertise-row-title em {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      /* Paragraph Typography & Green Color Coding */
+      .about-page-universe .expertise-content-creative p {
+        font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 14px !important;
+        max-width: 580px !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+      }
+
+      .about-page-universe .expertise-lead-desc {
+        color: var(--fg-soft) !important;
+      }
+
+      html:not([data-theme="dark"]) .about-page-universe .expertise-lead-desc,
+      [data-theme='light'] .about-page-universe .expertise-lead-desc {
+        color: #2c4235 !important;
+      }
+
+      /* 2nd Paragraph: Button Emerald Green Color + Justified Text */
+      .about-page-universe .expertise-highlight-desc {
+        color: #00d98f !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.01em !important;
+        margin-bottom: 24px !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+      }
+
+      html:not([data-theme="dark"]) .about-page-universe .expertise-highlight-desc,
+      [data-theme='light'] .about-page-universe .expertise-highlight-desc {
+        color: #008f58 !important;
+      }
+
+      /* Inline Green Highlights */
+      .text-green-accent {
+        color: #00d98f !important;
+        font-weight: 700 !important;
+      }
+
+      html:not([data-theme="dark"]) .text-green-accent,
+      [data-theme='light'] .text-green-accent {
+        color: #008f58 !important;
+      }
+
+      .about-page-universe .expertise-content-creative .btn {
+        margin-top: 14px !important;
+      }
+
+      /* ==========================================================================
+         ABOUT PAGE COMPREHENSIVE RESPONSIVE SYSTEM
+         Matches Home Page standards across Desktop (>1024px), Tablet Landscape (769-1024px),
+         Tablet Portrait (641-768px), and Mobile (<=640px / <=480px).
+         Strict Rule: All Left/Right Image & Content Sections are 100% CENTER-ALIGNED when stacked.
+         ========================================================================== */
+
+      /* --- Tablet Landscape (<= 1024px) --- */
+      @media (max-width: 1024px) {
+        .exp-desk-br {
+          display: inline !important;
+        }
+        /* Hero 3-Card Gallery: 3 fluid columns on tablet */
+        .about-hero-gallery-v2 {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 12px !important;
+          margin-top: 24px !important;
+        }
+        .about-gallery-card:nth-child(1),
+        .about-gallery-card:nth-child(2),
+        .about-gallery-card:nth-child(3) {
+          height: 240px !important;
+        }
+      }
+
+      /* --- Tablet Standard & Medium Devices (<= 960px) --- */
+      @media (max-width: 960px) {
+        /* Section 01: Key Metrics Grid (2 Columns) */
+        .agency-metrics-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 16px !important;
+          max-width: 680px !important;
+          margin-inline: auto !important;
+        }
+
+        /* Section 02: Brand Philosophy (Left Image + Right Bento Grid) - CENTER ALIGNED */
+        .philosophy-section-head {
+          text-align: center !important;
+          align-items: center !important;
+          margin-inline: auto !important;
+          max-width: 720px !important;
+        }
+        .philosophy-section-head .section-num-label {
+          justify-content: center !important;
+          margin-inline: auto !important;
+        }
+        .philosophy-main-title {
+          text-align: center !important;
+          margin-inline: auto !important;
+          font-size: clamp(28px, 3.8vw, 38px) !important;
+        }
+        .philosophy-sub-lead {
+          text-align: center !important;
+          margin-inline: auto !important;
+        }
+        .philosophy-layout {
+          grid-template-columns: 1fr !important;
+          gap: 36px !important;
+          max-width: 680px !important;
+          margin-inline: auto !important;
+        }
+        .philosophy-header-col {
+          position: static !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          width: 100% !important;
+          margin-inline: auto !important;
+        }
+        .philosophy-image-container {
+          width: 100% !important;
+          max-width: 580px !important;
+          margin-inline: auto !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+        .philosophy-image-container .expertise-image-creative {
+          width: 100% !important;
+          max-width: 580px !important;
+          height: clamp(260px, 36vw, 360px) !important;
+          min-height: unset !important;
+          border-radius: 22px !important;
+          margin-inline: auto !important;
+        }
+        .philosophy-image-container .expertise-image-creative img {
+          width: 100% !important;
+          height: 100% !important;
+          min-height: unset !important;
+          max-height: unset !important;
+          object-fit: cover !important;
+          border-radius: 22px !important;
+          display: block !important;
+        }
+        .philosophy-left-badges {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          width: 100% !important;
+          margin-top: 14px !important;
+          gap: 10px !important;
+        }
+        .philosophy-timeline-col {
+          width: 100% !important;
+          max-width: 680px !important;
+          margin-inline: auto !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+        .philo-bento {
+          display: grid !important;
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 16px !important;
+          width: 100% !important;
+          max-width: 680px !important;
+          margin-inline: auto !important;
+        }
+        .philo-bento-glow {
+          display: none !important;
+        }
+        .philo-bcard {
+          min-height: 230px !important;
+          padding: 22px 20px 16px !important;
+        }
+
+        /* Section 03: Creative Solutions & Commitment (3 Alternating Rows) — Left Align Heading & Button, Justified Text */
+        .about-page-universe .about-expertise-section,
+        .about-expertise-section {
+          padding-block: clamp(50px, 7vw, 75px) !important;
+        }
+        .about-page-universe .about-expertise-section .section-head,
+        .about-expertise-section .section-head {
+          text-align: center !important;
+          align-items: center !important;
+          margin-inline: auto !important;
+        }
+        .about-page-universe .about-expertise-section .section-subtitle,
+        .about-expertise-section .section-subtitle {
+          text-align: center !important;
+          margin-inline: auto !important;
+        }
+        .about-page-universe .expertise-row-creative,
+        .about-expertise-section .expertise-row-creative {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          gap: 32px !important;
+          margin-top: 48px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-inline: 0 !important;
+        }
+        .about-page-universe .section-head + .expertise-row-creative,
+        .about-page-universe .expertise-row-creative.expertise-row-first,
+        .about-page-universe .expertise-row-first,
+        .about-page-universe .expertise-row-creative:first-of-type,
+        .about-expertise-section .section-head + .expertise-row-creative,
+        .about-expertise-section .expertise-row-creative.expertise-row-first,
+        .about-expertise-section .expertise-row-first,
+        .about-expertise-section .expertise-row-creative:first-of-type {
+          margin-top: 48px !important;
+        }
+        .about-page-universe .expertise-row-creative.reverse,
+        .about-expertise-section .expertise-row-creative.reverse {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+        }
+        .exp-desk-br,
+        .about-page-universe .exp-desk-br {
+          display: none !important;
+        }
+        .about-page-universe .expertise-content-creative,
+        .about-expertise-section .expertise-content-creative {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-inline: 0 !important;
+          padding: 0 !important;
+        }
+        .about-page-universe .expertise-row-title,
+        .about-expertise-section .expertise-row-title {
+          text-align: left !important;
+          margin-inline: 0 !important;
+          align-self: flex-start !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .about-page-universe .expertise-lead-desc,
+        .about-page-universe .expertise-highlight-desc,
+        .about-page-universe .expertise-content-creative p,
+        .about-expertise-section .expertise-lead-desc,
+        .about-expertise-section .expertise-highlight-desc,
+        .about-expertise-section .expertise-content-creative p {
+          text-align: left !important;
+          margin-inline: 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+        }
+        .about-page-universe .expertise-content-creative .btn,
+        .about-expertise-section .expertise-content-creative .btn {
+          display: inline-flex !important;
+          align-self: flex-start !important;
+          margin: 18px 0 0 0 !important;
+        }
+        .about-page-universe .expertise-image-creative,
+        .about-expertise-section .expertise-image-creative {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-inline: 0 !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          border-radius: 20px !important;
+          overflow: hidden !important;
+          padding: 0 !important;
+        }
+        .about-page-universe .expertise-image-creative img,
+        .about-expertise-section .expertise-image-creative img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          max-height: 400px !important;
+          aspect-ratio: 16 / 10 !important;
+          object-fit: cover !important;
+          border-radius: 20px !important;
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35) !important;
+          display: block !important;
+        }
+        .about-page-universe .expertise-image-creative img,
+        .about-expertise-section .expertise-image-creative img {
+          width: 100% !important;
+          max-height: 340px !important;
+          height: auto !important;
+          object-fit: cover !important;
+          border-radius: 20px !important;
+          display: block !important;
+          margin: 0 auto !important;
+        }
+
+        /* Section 04: Why Choose Us (WCU Grid 2 Columns) */
+        .about-page-universe .section-why-choose .section-head,
+        .section-why-choose .section-head {
+          text-align: center !important;
+          align-items: center !important;
+          margin-inline: auto !important;
+        }
+        .about-page-universe .wcu-grid,
+        .section-why-choose .wcu-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 16px !important;
+          max-width: 720px !important;
+          margin-inline: auto !important;
+        }
+      }
+
+      /* --- Tablet Portrait & Small Tablets (<= 768px) --- */
+      @media (max-width: 768px) {
+        /* Hero title parity & wide container coverage */
+        .about-desk-title {
+          display: none !important;
+        }
+        .about-mob-title {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          gap: 4px !important;
+          text-align: center !important;
+        }
+        .about-mob-row-1,
+        .about-mob-row-2 {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+        }
+        .about-hero h1,
+        .about-hero-title,
+        h1.about-hero-title {
+          width: 100% !important;
+          max-width: 100% !important;
+          text-align: center !important;
+        }
+        .about-lede-row-1,
+        .about-lede-row-2 {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+        }
+        .about-lede-2row {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          width: 100% !important;
+          text-align: center !important;
+        }
+        .about-hero .lede {
+          font-size: clamp(14.5px, 2vw, 16px) !important;
+          line-height: 1.55 !important;
+          max-width: 580px !important;
+          margin-inline: auto !important;
+          text-align: center !important;
+        }
+
+        /* Remove desktop linebreaks */
+        .exp-desk-br,
+        .exp-head-br,
+        .exp-sub-br,
+        .wcu-title-br {
+          display: none !important;
+        }
+
+        /* Editorial Statement Section */
+        .about-statement-section {
+          padding: clamp(48px, 6vw, 68px) 0 !important;
+        }
+        .about-statement-wrap {
+          width: calc(100% - 32px) !important;
+          max-width: calc(100% - 32px) !important;
+          padding: clamp(32px, 5vw, 48px) clamp(16px, 3.5vw, 28px) !important;
+        }
+        .statement-manifesto-text {
+          font-size: clamp(20px, 3.5vw, 26px) !important;
+          line-height: 1.38 !important;
+        }
+
+        /* Section 03 Creative Rows Gap Refinement */
+        .about-page-universe .expertise-row-creative,
+        .about-expertise-section .expertise-row-creative {
+          gap: 28px !important;
+          margin-top: 40px !important;
+        }
+      }
+
+      /* --- Mobile Handsets (<= 640px) --- */
+      @media (max-width: 640px) {
+        /* Hero Gallery: 1 centered column */
+        .about-hero-gallery-v2 {
+          grid-template-columns: 1fr !important;
+          max-width: 420px !important;
+          margin: 18px auto 0 !important;
+          gap: 14px !important;
+        }
+        .about-gallery-card:nth-child(1),
+        .about-gallery-card:nth-child(2),
+        .about-gallery-card:nth-child(3) {
+          height: 220px !important;
+        }
+
+        /* Metrics: 1 column */
+        .agency-metrics-grid {
+          grid-template-columns: 1fr !important;
+          max-width: 400px !important;
+          margin-inline: auto !important;
+          gap: 12px !important;
+        }
+
+        /* Section 02 Philosophy: 1 column Bento */
+        .philo-bento {
+          grid-template-columns: 1fr !important;
+          gap: 14px !important;
+          max-width: 440px !important;
+          margin-inline: auto !important;
+        }
+        .philo-bcard {
+          min-height: auto !important;
+          padding: 22px 20px 18px !important;
+        }
+        .philosophy-image-container .expertise-image-creative {
+          height: clamp(210px, 52vw, 280px) !important;
+          border-radius: 18px !important;
+        }
+        .philosophy-image-container .expertise-image-creative img {
+          border-radius: 18px !important;
+        }
+        .philosophy-left-badges {
+          flex-direction: column !important;
+          align-items: center !important;
+          gap: 8px !important;
+        }
+        .philosophy-stat-chip {
+          font-size: 11.5px !important;
+          padding: 5px 12px !important;
+        }
+
+        /* Section 03 Creative Rows: Mobile Sizing */
+        .about-page-universe .expertise-row-creative,
+        .about-expertise-section .expertise-row-creative {
+          gap: 22px !important;
+          margin-top: 34px !important;
+          max-width: 100% !important;
+        }
+        .about-page-universe .expertise-content-creative,
+        .about-expertise-section .expertise-content-creative {
+          align-items: flex-start !important;
+          text-align: left !important;
+        }
+        .about-page-universe .expertise-row-title,
+        .about-expertise-section .expertise-row-title {
+          font-size: clamp(20px, 5.2vw, 24px) !important;
+          text-align: left !important;
+          align-self: flex-start !important;
+        }
+        .about-page-universe .expertise-lead-desc,
+        .about-page-universe .expertise-highlight-desc,
+        .about-page-universe .expertise-content-creative p,
+        .about-expertise-section .expertise-lead-desc,
+        .about-expertise-section .expertise-highlight-desc,
+        .about-expertise-section .expertise-content-creative p {
+          font-size: 13.5px !important;
+          line-height: 1.6 !important;
+          text-align: justify !important;
+          text-justify: inter-word !important;
+          text-align-last: left !important;
+          margin-inline: 0 !important;
+        }
+        .about-page-universe .expertise-content-creative .btn,
+        .about-expertise-section .expertise-content-creative .btn {
+          align-self: flex-start !important;
+          margin: 16px 0 0 0 !important;
+        }
+        .about-page-universe .expertise-image-creative img,
+        .about-expertise-section .expertise-image-creative img {
+          max-height: 240px !important;
+          border-radius: 16px !important;
+        }
+
+        /* Section 04 WCU Grid: 1 column */
+        .about-page-universe .wcu-grid,
+        .section-why-choose .wcu-grid {
+          grid-template-columns: 1fr !important;
+          gap: 14px !important;
+          max-width: 420px !important;
+          margin-inline: auto !important;
+        }
+      }
+
+      /* --- Small Phones (<= 480px) --- */
+      @media (max-width: 480px) {
+        .about-hero {
+          padding-top: clamp(100px, 15vw, 120px) !important;
+          padding-bottom: 20px !important;
+        }
+        .about-hero h1 {
+          font-size: clamp(28px, 8vw, 36px) !important;
+        }
+        .about-statement-wrap {
+          width: calc(100% - 20px) !important;
+          max-width: calc(100% - 20px) !important;
+          padding: 28px 14px !important;
+        }
+        .statement-manifesto-text {
+          font-size: 19px !important;
+          line-height: 1.4 !important;
+        }
+        .statement-signature-wrap {
+          flex-direction: column !important;
+          gap: 8px !important;
+          align-items: center !important;
+          text-align: center !important;
+        }
+        .stmt-signer-avatar {
+          width: 44px !important;
+          height: 44px !important;
+        }
+        .philosophy-main-title {
+          font-size: clamp(24px, 7vw, 30px) !important;
+        }
+        .philo-bcard {
+          padding: 20px 16px 14px !important;
+        }
+        .bcard-title {
+          font-size: 18px !important;
+        }
+        .bcard-desc {
+          font-size: 12px !important;
+        }
+        .bcard-visual {
+          height: 75px !important;
+        }
+        .about-page-universe .expertise-row-title,
+        .about-expertise-section .expertise-row-title {
+          font-size: clamp(19px, 6vw, 22px) !important;
+        }
+        .about-page-universe .expertise-image-creative img,
+        .about-expertise-section .expertise-image-creative img {
+          max-height: 200px !important;
+          border-radius: 14px !important;
         }
       }
     </style>
@@ -790,15 +2631,67 @@
       </nav>
     </header>
     <div class="mobile-drawer">
-      <button
-        class="mobile-close btn btn-ghost"
-        style="position: absolute; top: 24px; right: 28px"
-      >
-        Close
-      </button>
-      <a href="index.html">Home</a> <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
-      <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand webagency-brand">Web Agency</a>
+        <div class="mobile-drawer-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54c-.44-.06-.9-.1-1.36-.1z" />
+              </svg></span>
+          </button>
+          <button class="mobile-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer-nav">
+        <a href="index.html"><span>Home</span></a>
+        <div class="mobile-drawer-accordion">
+          <a href="services.html" class="accordion-toggle">
+            <span>Services</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </a>
+          <div class="accordion-content">
+            <a href="web-development.html">Web Development</a>
+            <a href="google-ads.html">Google Ads</a>
+            <a href="search-engine-optimization.html">Search Engine Optimization</a>
+          </div>
+        </div>
+        <a href="portfolio.html"><span>Portfolio</span></a>
+        <a href="about.html" class="active">
+          <span>About Us</span>
+          <span class="drawer-active-indicator"></span>
+        </a>
+        <a href="blog.html"><span>Blog</span></a>
+        <a href="contact.html"><span>Contact Us</span></a>
+      </div>
+
+      <div class="mobile-drawer-cta-wrap">
+        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <div class="drawer-footer-contact">
+          <span class="drawer-footer-lbl">Email us directly</span>
+          <a href="mailto:hello@hywiz.com" class="drawer-footer-email">hello@hywiz.com</a>
+        </div>
+        <div class="drawer-footer-status">
+          <span class="drawer-status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+      </div>
     </div>
     <!-- ============================ HERO SECTION (NEW SIGNATURE STYLING) ============================ -->
     <main class="about-page-universe" id="main-content">
@@ -810,23 +2703,31 @@
           <span class="hero-live-text">Who We Are &amp; Our Mission</span>
         </div>
 
-        <!-- Main Hero Headline (Desktop: 2 rows, Mobile: 3 balanced rows — identical font size & weight) -->
+        <!-- Main Hero Headline (Wide Full-Width Layout Matching Image Width) -->
         <h1 class="about-hero-title reveal" style="animation-delay: 0.1s">
-          <!-- Desktop & Tablet (>600px): Clean 2-Row Layout -->
+          <!-- Desktop & Tablet (>768px): Clean 2-Row Layout -->
           <span class="about-desk-title">
-            <span class="about-title-row-1">We Craft Digital Platforms</span>
-            <span class="about-title-row-2">That <span class="about-hero-accent">Elevate Your Brand</span></span>
+            <span class="about-title-row-1">We Craft Digital Platforms That</span>
+            <span class="about-title-row-2"><span class="about-hero-accent">Elevate Your Brand</span></span>
           </span>
-          <!-- Mobile (<=600px): Perfectly Balanced 3-Row Layout -->
+          <!-- Mobile & Tablet (<=768px): Perfectly Balanced Wide 2-Row Layout -->
           <span class="about-mob-title">
-            <span class="about-mob-row">We Craft Digital</span>
-            <span class="about-mob-row">Platforms That</span>
-            <span class="about-mob-row"><span class="about-hero-accent">Elevate Your Brand</span></span>
+            <span class="about-mob-row-1">We Craft Digital Platforms</span>
+            <span class="about-mob-row-2"><span class="about-hero-accent">That Elevate Your Brand</span></span>
           </span>
         </h1>
-        <!-- Subtitle Lede -->
-        <p class="about-hero-desc reveal">
-          We are a dedicated team of web engineers, UI/UX designers, and growth marketers passionate about building high-converting digital platforms that turn ambitious brands into industry leaders
+        <!-- Subtitle Lede (Strictly 2 Balanced Rows — Row 1 Wider, Row 2 ~65%) -->
+        <p class="about-hero-desc hero-desc-inverted-pyramid reveal">
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+          <span class="hero-desc-desk">
+            <span class="hero-desc-row-1">A dedicated team of senior web engineers and designers building high-impact platforms</span>
+            <span class="hero-desc-row-2">that help ambitious companies scale authority and revenue.</span>
+          </span>
+          <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+          <span class="hero-desc-mob">
+            <span class="hero-desc-row-1">A senior team of web engineers and designers building platforms</span>
+            <span class="hero-desc-row-2">that help ambitious brands scale revenue.</span>
+          </span>
         </p>
         <!-- Value Chips -->
         <div class="about-value-chips reveal">
@@ -843,33 +2744,59 @@
             <span>Scalable Architecture</span>
           </div>
         </div>
-        <!-- Modern 3-Column Overlapping Photo Collage -->
+        <!-- Modern 3-Column Meeting Photos Gallery -->
         <div class="about-hero-gallery-v2 reveal">
           <div class="about-gallery-card">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=85" alt="Creative Collaboration" loading="lazy" />
+            <img src="images/about-meeting-1.jpg" alt="Creative Collaboration Meeting" loading="lazy" />
             <div class="about-gallery-card-badge">
               <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00d98f;"></span>
               <span>Creative Collaboration</span>
             </div>
           </div>
           <div class="about-gallery-card">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85" alt="Full-Stack Capabilities" loading="lazy" />
+            <img src="images/about-meeting-2.jpg" alt="High-Impact Strategy Session" loading="lazy" />
             <div class="about-gallery-card-badge">
               <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00d98f;"></span>
-              <span>Full-Stack Engineering</span>
+              <span>Strategy &amp; Architecture</span>
             </div>
           </div>
           <div class="about-gallery-card">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="Agile Execution" loading="lazy" />
+            <img src="images/about-meeting-3.jpg" alt="Client Brand Alignment Discussion" loading="lazy" />
             <div class="about-gallery-card-badge">
               <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00d98f;"></span>
-              <span>Agile Execution</span>
+              <span>Client Partnerships</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- =========================================================
+         ABOUT AGENCY STATEMENT — Big Editorial Manifesto Block
+         ========================================================= -->
+    <section class="about-statement-section reveal">
+      <!-- Ambient Cinematic Liquid Aurora Lighting (Clean, Silky Glow) -->
+      <div class="stmt-ambient-aurora">
+        <div class="aurora-core-glow"></div>
+        <div class="aurora-blob blob-left"></div>
+        <div class="aurora-blob blob-right"></div>
+      </div>
+
+      <div class="about-statement-wrap">
+        <!-- Big Editorial Manifesto Text (Tightly Framed with Corner Accent Bursts) -->
+        <p class="about-statement-body">
+          <span class="stmt-word-anchor"><span class="stmt-corner-accent stmt-corner-tl" aria-hidden="true"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="stmt-accent-svg"><line x1="22" y1="20" x2="44" y2="42" stroke="currentColor" stroke-width="4" stroke-linecap="round" class="ray-main" /><line x1="52" y1="14" x2="53" y2="28" stroke="currentColor" stroke-width="4" stroke-linecap="round" class="ray-side-1" /><line x1="18" y1="48" x2="32" y2="51" stroke="currentColor" stroke-width="4" stroke-linecap="round" class="ray-side-2" /></svg></span><span class="about-stmt-line">We</span></span><span class="about-stmt-line"> help ambitious businesses grow through </span><span class="about-stmt-highlight">bespoke web engineering</span><span class="about-stmt-line"> — crafting digital experiences that are </span><span class="about-stmt-highlight">visually stunning</span><span class="about-stmt-line"> and </span><span class="about-stmt-highlight">strategically aligned with the goals of our </span><span class="stmt-word-anchor"><span class="about-stmt-highlight">clients.</span><span class="stmt-corner-accent stmt-corner-br" aria-hidden="true"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="stmt-accent-svg"><line x1="22" y1="20" x2="44" y2="42" stroke="currentColor" stroke-width="4" stroke-linecap="round" class="ray-main" /><line x1="52" y1="14" x2="53" y2="28" stroke="currentColor" stroke-width="4" stroke-linecap="round" class="ray-side-1" /><line x1="18" y1="48" x2="32" y2="51" stroke="currentColor" stroke-width="4" stroke-linecap="round" class="ray-side-2" /></svg></span></span>
+        </p>
+      </div>
+    </section>
+
     <section class="agency-metrics-section section" id="metricsSection">
+      <!-- Web 3.0 Ambient Glow Layer -->
+      <div class="metrics-ambient-glow" aria-hidden="true">
+        <div class="metrics-orb metrics-orb-1"></div>
+        <div class="metrics-orb metrics-orb-2"></div>
+        <div class="metrics-orb metrics-orb-3"></div>
+      </div>
       <div class="wrap">
         <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 48px;">
           <!-- Section Numbered Eyebrow -->
@@ -881,8 +2808,17 @@
           <h2>
             Numbers That Define <em>Our Excellence</em>
           </h2>
-          <p class="section-subtitle">
-            Empowering brands worldwide with data-driven strategies and measurable digital growth
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Empowering brands worldwide with data-driven strategies</span>
+              <span class="desc-row-2">and measurable digital growth.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Empowering brands worldwide with data strategies</span>
+              <span class="desc-row-2">and measurable digital growth.</span>
+            </span>
           </p>
         </div>
 
@@ -947,114 +2883,171 @@
          ========================================================= -->
     <section class="about-philosophy-section section" id="philosophySection">
       <div class="wrap">
-        <div class="philosophy-layout">
-          <!-- Left Column: Sticky Editorial Header -->
-          <div class="philosophy-header-col reveal-left">
-            <div class="section-num-label">
-              <span class="sec-num">02</span>
-              <span class="sec-slash">/</span>
-              <span class="sec-tag">Brand Philosophy</span>
-            </div>
-            <h2 class="philosophy-main-title">
-              The Purpose Behind <br />
-              <span class="gradient-text">Everything We Build</span>
-            </h2>
-            <p class="philosophy-lead">
-              We don't just write code or design interfaces. We align our heritage, long-term vision, and daily execution to engineer transformative digital growth for our partners worldwide.
-            </p>
+        <!-- Section Head: Full Width Banner -->
+        <div class="philosophy-section-head reveal">
+          <div class="section-num-label" style="margin-bottom: 14px;">
+            <span class="sec-num">02</span>
+            <span class="sec-slash">/</span>
+            <span class="sec-tag">Brand Philosophy</span>
           </div>
-
-          <!-- Right Column: 3 Editorial Rows (NO CARDS) -->
-          <div class="philosophy-content-col reveal-right">
-            
-            <!-- Row 1: History -->
-            <div class="philosophy-row">
-              <div class="philosophy-row-num">01</div>
-              <div class="philosophy-row-body">
-                <span class="philosophy-row-eyebrow">The Beginning · Foundation</span>
-                <h3 class="philosophy-row-title">Our History</h3>
-                <p class="philosophy-row-desc">
-                  From humble beginnings to an elite web agency, we’ve consistently transformed ambitious ideas into impactful, high-converting digital results for businesses worldwide
-                </p>
-                <div class="philosophy-row-tags">
-                  <span class="philosophy-mini-tag">Rooted in Craft</span>
-                  <span class="philosophy-mini-tag">Independent &amp; Agile</span>
-                  <span class="philosophy-mini-tag">Proven Track Record</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 2: Vision -->
-            <div class="philosophy-row">
-              <div class="philosophy-row-num">02</div>
-              <div class="philosophy-row-body">
-                <span class="philosophy-row-eyebrow">The Future · Trajectory</span>
-                <h3 class="philosophy-row-title">Our Vision</h3>
-                <p class="philosophy-row-desc">
-                  To be a global leader in delivering cutting-edge web solutions that inspire technological innovation, redefining online success, &amp; serving the digital world globally
-                </p>
-                <div class="philosophy-row-tags">
-                  <span class="philosophy-mini-tag">Global Scalability</span>
-                  <span class="philosophy-mini-tag">Edge-First Architecture</span>
-                  <span class="philosophy-mini-tag">Next-Gen UX</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 3: Mission -->
-            <div class="philosophy-row">
-              <div class="philosophy-row-num">03</div>
-              <div class="philosophy-row-body">
-                <span class="philosophy-row-eyebrow">The Goal · Commitment</span>
-                <h3 class="philosophy-row-title">Our Mission</h3>
-                <p class="philosophy-row-desc">
-                  Our mission is to empower businesses with innovative web solutions that drive compounding growth, enhance online presence, and deliver exceptional, measurable ROI
-                </p>
-                <div class="philosophy-row-tags">
-                  <span class="philosophy-mini-tag">Revenue Focused</span>
-                  <span class="philosophy-mini-tag">Client-Obsessed</span>
-                  <span class="philosophy-mini-tag">Compounding ROI</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <h2 class="philosophy-main-title">
+            The Purpose Behind <span class="gradient-text">Everything We Build</span>
+          </h2>
+          <p class="philosophy-sub-lead">
+            We align architectural engineering with creative storytelling to build high-performance digital ecosystems that scale authority and revenue.
+          </p>
         </div>
-      </div>
+
+        <div class="philosophy-layout">
+          <!-- Left Column: Creative Image (Aligned with Bento Grid) -->
+          <div class="philosophy-header-col reveal-left">
+            <div class="philosophy-image-container">
+              <div class="expertise-image-creative">
+                <img
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80"
+                  alt="Team meeting - The Purpose Behind Everything We Build"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div><!-- /philosophy-header-col -->
+
+          <!-- Right Column: 2×2 Bento Grid -->
+          <div class="philosophy-timeline-col">
+
+            <!-- 2×2 Bento Grid -->
+            <div class="philo-bento">
+              <!-- Center Glow where cards meet -->
+              <div class="philo-bento-glow"></div>
+
+              <!-- Card 1: Our History -->
+              <div class="philo-bcard card-history reveal" style="--delay:0.05s">
+                <div class="bcard-top">
+                  <span class="bcard-eyebrow">01 · The Foundation</span>
+                  <h3 class="bcard-title">Our History</h3>
+                  <p class="bcard-desc">From humble roots to an elite agency — transforming ambitious ideas into compounding digital realities.</p>
+                </div>
+                <div class="bcard-visual visual-emblem">
+                  <div class="emblem-halo">
+                    <div class="emblem-ring-outer"></div>
+                    <div class="emblem-ring-mid"></div>
+                    <div class="emblem-core">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 22 20 2 20"/></svg>
+                    </div>
+                  </div>
+                  <div class="visual-glow-flare"></div>
+                </div>
+              </div>
+
+              <!-- Card 2: Our Vision -->
+              <div class="philo-bcard card-vision reveal" style="--delay:0.15s">
+                <div class="bcard-top">
+                  <span class="bcard-eyebrow">02 · The Trajectory</span>
+                  <h3 class="bcard-title">Our Vision</h3>
+                  <p class="bcard-desc">Redefining conversion velocity, edge infrastructure, and next-generation digital architectures.</p>
+                </div>
+                <div class="bcard-visual visual-nodes">
+                  <div class="node-badge badge-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                  </div>
+                  <div class="node-lightning-bridge">
+                    <span class="lightning-line"></span>
+                    <span class="lightning-spark">✦</span>
+                    <span class="lightning-line"></span>
+                  </div>
+                  <div class="node-badge badge-right">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </div>
+                  <div class="visual-glow-flare"></div>
+                </div>
+              </div>
+
+              <!-- Card 3: Our Mission -->
+              <div class="philo-bcard card-mission reveal" style="--delay:0.25s">
+                <div class="bcard-top">
+                  <span class="bcard-eyebrow">03 · The Commitment</span>
+                  <h3 class="bcard-title">Our Mission</h3>
+                  <p class="bcard-desc">Bespoke web platforms engineered with surgical clarity to maximize market authority and client ROI.</p>
+                </div>
+                <div class="bcard-visual visual-chart">
+                  <div class="bcard-roi-pill">
+                    <span class="roi-pill-tag">Client ROI</span>
+                    <span class="roi-pill-num"><strong>+300%</strong> Avg Growth ↗</span>
+                  </div>
+                  <div class="chart-mountain">
+                    <svg class="chart-svg" viewBox="0 0 220 54" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#00d98f" stop-opacity="0.5"/>
+                          <stop offset="100%" stop-color="#00d98f" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,52 Q40,50 75,42 T140,28 T195,8 L195,54 L0,54 Z" fill="url(#chartGrad)"/>
+                      <path d="M0,52 Q40,50 75,42 T140,28 T195,8" fill="none" stroke="#00d98f" stroke-width="2.5"/>
+                    </svg>
+                    <div class="chart-beacon"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Core Values -->
+              <div class="philo-bcard card-values reveal" style="--delay:0.35s">
+                <div class="bcard-top">
+                  <span class="bcard-eyebrow">04 · The Culture</span>
+                  <h3 class="bcard-title">Core Values</h3>
+                  <p class="bcard-desc">Radical transparency, sub-second speed, and relentless ownership — treating every client like a co-founder.</p>
+                </div>
+                <div class="bcard-visual visual-steps">
+                  <div class="steps-beacon">✦</div>
+                  <div class="step-tier step-1"></div>
+                  <div class="step-tier step-2"></div>
+                  <div class="step-tier step-3"></div>
+                  <div class="visual-glow-flare"></div>
+                </div>
+              </div>
+
+            </div><!-- /philo-bento -->
+          </div><!-- /philosophy-timeline-col -->
+        </div><!-- /philosophy-layout -->
+      </div><!-- /wrap -->
     </section>
 
     <!-- =========================================================
          CREATIVE SOLUTIONS & CLIENT COMMITMENT (SECTION 03)
          ========================================================= -->
-    <section class="wrap" style="padding-block: 80px">
-      <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 50px; display: flex; flex-direction: column; align-items: center;">
+    <section class="wrap about-expertise-section" id="aboutSolutions">
+      <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 0px; display: flex; flex-direction: column; align-items: center;">
         <div class="section-num-label">
           <span class="sec-num">03</span>
           <span class="sec-slash">/</span>
           <span class="sec-tag">Creative Solutions &amp; Commitment</span>
         </div>
-        <h2>
-          Driving Measurable Success <span class="tech-gradient-text">&amp; Lasting Growth</span>
-        </h2>
-        <p class="section-subtitle reveal" style="margin-inline: auto; margin-top: 14px; max-width: 680px;">From high-yield marketing architectures to relentless client dedication, we empower ambitious brands to dominate their markets</p>
+        <h2>Driving Measurable Success <br class="exp-head-br" /><em>&amp; Lasting Growth</em></h2>
+        <p class="section-subtitle desc-inverted-pyramid">
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+          <span class="desc-desk">
+            <span class="desc-row-1">From high-yield marketing architectures to relentless client dedication,</span>
+            <span class="desc-row-2">we empower ambitious brands to dominate their markets.</span>
+          </span>
+          <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+          <span class="desc-mob">
+            <span class="desc-row-1">From high-yield architectures to relentless dedication,</span>
+            <span class="desc-row-2">we empower brands to dominate.</span>
+          </span>
+        </p>
       </div>
 
       <!-- Row 1: Creative Solutions (Left content, Right image) -->
-      <div class="expertise-row-creative" style="margin-top: 40px">
+      <div class="expertise-row-creative expertise-row-first">
         <div class="expertise-content-creative reveal-left">
-          <div class="section-num-label" style="margin-bottom: 14px;">
-            <span class="sec-num">01</span>
-            <span class="sec-slash">/</span>
-            <span class="sec-tag">Creative Solutions</span>
-          </div>
-          <h3 class="expertise-row-title">Explode Your Sales with <em>Ready-to-Buy Customers</em></h3>
-          <p>
+          <h3 class="expertise-row-title">Explode Your Sales with <br class="exp-desk-br" /><em>Ready-to-Buy Customers</em></h3>
+          <p class="expertise-lead-desc">
             Our integrated web and marketing solutions drive high-intent traffic to your site and secure dominant first-page rankings across search engines and paid channels. We bridge the gap between creative brand storytelling and data-backed conversion engineering, ensuring your business captures its full market share.
           </p>
-          <p style="margin-bottom: 24px;">
+          <p class="expertise-highlight-desc">
             Backed by over 500+ successful client deployments across 10+ competitive sectors, we develop in-depth marketing blueprints that solidify your brand identity and scale revenue sustainably.
           </p>
-          <a href="services.html" class="btn btn-solid">Get Started Now</a>
+          <a href="services.html" class="btn btn-solid mt-4">Get Started Now</a>
         </div>
         <div class="expertise-image-creative reveal-right">
           <img
@@ -1068,19 +3061,14 @@
       <!-- Row 2: Experience & Dedication (Reverse: Right content, Left image) -->
       <div class="expertise-row-creative reverse">
         <div class="expertise-content-creative reveal-right">
-          <div class="section-num-label" style="margin-bottom: 14px;">
-            <span class="sec-num">02</span>
-            <span class="sec-slash">/</span>
-            <span class="sec-tag">Proven Reliability</span>
-          </div>
-          <h3 class="expertise-row-title">Experience Tells Its Story — <em>We Never Let You Down</em></h3>
-          <p>
+          <h3 class="expertise-row-title">Experience Tells Its Story — <br class="exp-desk-br" /><em>We Never Let You Down</em></h3>
+          <p class="expertise-lead-desc">
             With over 7+ years of digital marketing and web engineering experience, our multidisciplinary team of strategists, designers, writers, and technical experts is equipped to handle multifaceted projects with speed and precision.
           </p>
-          <p style="margin-bottom: 24px;">
+          <p class="expertise-highlight-desc">
             As your business scales, our capabilities grow alongside you. Our team continually undertakes advanced industry certifications and masters emerging technologies to ensure your digital services stay sharp, modern, and high-performing.
           </p>
-          <a href="contact.html" class="btn btn-solid">Grow With Us</a>
+          <a href="contact.html" class="btn btn-solid mt-4">Grow With Us</a>
         </div>
         <div class="expertise-image-creative reveal-left">
           <img
@@ -1094,19 +3082,14 @@
       <!-- Row 3: Client Focus & Partnership (Left content, Right image) -->
       <div class="expertise-row-creative">
         <div class="expertise-content-creative reveal-left">
-          <div class="section-num-label" style="margin-bottom: 14px;">
-            <span class="sec-num">03</span>
-            <span class="sec-slash">/</span>
-            <span class="sec-tag">Client Commitment</span>
-          </div>
-          <h3 class="expertise-row-title">Our Clients Always Matter — <em>Marketed to Perfection</em></h3>
-          <p>
+          <h3 class="expertise-row-title">Our Clients Always Matter — <br class="exp-desk-br" /><em>Marketed to Perfection</em></h3>
+          <p class="expertise-lead-desc">
             At the foundation of our agency is a single unwavering principle: keeping our clients delighted by exceeding expectations on every milestone. We treat your brand as our own, ensuring every digital touchpoint communicates quality, credibility, and authority.
           </p>
-          <p style="margin-bottom: 24px;">
+          <p class="expertise-highlight-desc">
             We build long-term, transparent partnerships that put your business needs first. By aligning closely with your vision, we become an indispensable strategic partner championing your ongoing success.
           </p>
-          <a href="contact.html" class="btn btn-solid">Partner With Us</a>
+          <a href="contact.html" class="btn btn-solid mt-4">Partner With Us</a>
         </div>
         <div class="expertise-image-creative reveal-right">
           <img
@@ -1118,165 +3101,119 @@
       </div>
     </section>
 
-    <!-- ============================ WHY CHOOSE US (SECTION 04) ============================ -->
-    <style>
-      /* --- Why Choose Us Section with Illuminating Shining Glow Cards --- */
-      .about-why-section {
-        position: relative;
-        overflow: hidden;
-        background: var(--bg);
-        padding: clamp(60px, 7vw, 100px) 0;
-      }
-      .about-why-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-      }
-      .about-why-card {
-        position: relative;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 32px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                    border-color 0.4s ease,
-                    box-shadow 0.4s ease;
-        cursor: pointer;
-      }
-      /* Illuminating Shining Sheen on Hover */
-      .about-why-card::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -120%;
-        width: 80%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.08),
-          rgba(0, 217, 143, 0.28),
-          transparent
-        );
-        transform: skewX(-20deg);
-        pointer-events: none;
-        z-index: 3;
-      }
-      .about-why-card:hover::after {
-        left: 160%;
-        transition: left 0.75s ease-in-out;
-      }
-      /* Illuminating Glowing Border on Hover */
-      .about-why-card:hover {
-        transform: translateY(-8px);
-        border-color: var(--accent-primary) !important;
-        box-shadow: 
-          0 16px 40px -10px rgba(0, 217, 143, 0.35),
-          0 0 25px rgba(0, 217, 143, 0.25),
-          inset 0 0 15px rgba(0, 217, 143, 0.08);
-      }
-      .about-why-icon-wrap {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
-        background: rgba(0, 217, 143, 0.08);
-        border: 1px solid rgba(0, 217, 143, 0.25);
-        color: var(--accent-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px auto;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-      }
-      .about-why-card:hover .about-why-icon-wrap {
-        transform: scale(1.1) rotate(4deg);
-        box-shadow: 0 0 20px rgba(0, 217, 143, 0.4);
-      }
-      .about-why-card h3 {
-        font-family: var(--font-display) !important;
-        font-size: 20px !important;
-        font-weight: 800;
-        line-height: 1.3;
-        color: var(--fg);
-        margin-bottom: 10px;
-        letter-spacing: -0.025em;
-        text-align: center;
-      }
-      .about-why-card p {
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
-        font-size: 14.5px !important;
-        line-height: 1.55;
-        color: var(--fg-soft);
-        margin: 0 auto;
-        text-align: center;
-        max-width: 265px;
-        text-wrap: balance;
-      }
-      @media (max-width: 1024px) {
-        .about-why-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 640px) {
-        .about-why-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-    <section class="about-why-section section reveal">
+    <!-- =========================================================
+         04: WHY CHOOSE US (EXECUTIVE AGENCY STANDARD)
+         ========================================================= -->
+    <section class="section-why-choose" id="whyChooseUs">
       <div class="wrap">
-        <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 48px;">
-          <!-- Section Numbered Eyebrow -->
+        <!-- Section Head with Ideal Spacing Below -->
+        <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: clamp(48px, 5vw, 60px); max-width: 860px; display: flex; flex-direction: column; align-items: center;">
           <div class="section-num-label">
             <span class="sec-num">04</span>
             <span class="sec-slash">/</span>
             <span class="sec-tag">Why Choose Us</span>
           </div>
-          <h2 class="reveal">Why Choose Us for Your <em>Web Journey?</em></h2>
-          <p class="section-subtitle reveal" style="margin-inline: auto;">Experience unmatched expertise, tailored strategies, and a proven track record of delivering measurable results</p>
+          <h2>
+            Unmatched Expertise That <br class="wcu-title-br" />
+            <em>Sets Your Business Apart</em>
+          </h2>
+          <p class="section-subtitle wcu-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Results-driven digital solutions crafted to scale your business and market authority,</span>
+              <span class="desc-row-2">backed by trusted specialists and 24/7 dedicated support.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Results-driven solutions crafted to scale your business,</span>
+              <span class="desc-row-2">backed by 24/7 dedicated support.</span>
+            </span>
+          </p>
         </div>
 
-        <div class="about-why-grid">
-          <!-- Card 1: Expert Team -->
-          <div class="about-why-card spotlight-card reveal-up">
-            <div class="about-why-icon-wrap">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            </div>
-            <h3>Expert Team</h3>
-            <p>Elite engineers delivering high-impact, custom web solutions</p>
-          </div>
+        <!-- Section Cluster with Central Illuminating Web 3.0 Flare -->
+        <div class="wcu-cluster-wrap">
+          <!-- Central Illuminating Glow radiating between 4 card corners -->
+          <div class="wcu-center-flare" aria-hidden="true"></div>
 
-          <!-- Card 2: Tailored Strategies -->
-          <div class="about-why-card spotlight-card reveal-up" style="--i: 1">
-            <div class="about-why-icon-wrap">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <!-- 4 Distinctive Why Choose Us Cards (2x2 Clean Horizontal Design) -->
+          <div class="wcu-grid">
+            <!-- 1. Expert Team -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-expert">
+                <svg class="wcu-main-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span class="wcu-icon-sparkle">✦</span>
+              </div>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">Expert Team</h3>
+                <p class="wcu-card-desc">
+                  Work with skilled professionals dedicated to delivering exceptional digital solutions.
+                </p>
+              </div>
             </div>
-            <h3>Tailored Strategies</h3>
-            <p>Bespoke roadmaps aligned with your growth and revenue targets</p>
-          </div>
 
-          <!-- Card 3: Proven Results -->
-          <div class="about-why-card spotlight-card reveal-up" style="--i: 2">
-            <div class="about-why-icon-wrap">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            <!-- 2. Tailored Strategies -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-strategy">
+                <svg class="wcu-main-icon wcu-orbit-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="2.5" fill="currentColor"></circle>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(90 12 12)"></ellipse>
+                </svg>
+              </div>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">Tailored Strategies</h3>
+                <p class="wcu-card-desc">
+                  We craft customized plans to meet your unique business goals and needs.
+                </p>
+              </div>
             </div>
-            <h3>Proven Results</h3>
-            <p>Proven track record of scaling organic reach and client ROI</p>
-          </div>
 
-          <!-- Card 4: 24/7 Dedicated Support -->
-          <div class="about-why-card spotlight-card reveal-up" style="--i: 3">
-            <div class="about-why-icon-wrap" style="color: var(--accent-teal); border-color: rgba(79, 235, 253, 0.3); background: rgba(79, 235, 253, 0.08);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            <!-- 3. Proven Results -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-results">
+                <svg class="wcu-main-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="bar-step bar-1" d="M3 18h4v-5H3v5z" fill="currentColor" fill-opacity="0.25"></path>
+                  <path class="bar-step bar-2" d="M10 18h4v-9h-4v9z" fill="currentColor" fill-opacity="0.45"></path>
+                  <path class="bar-step bar-3" d="M17 18h4V4h-4v14z" fill="currentColor" fill-opacity="0.75"></path>
+                  <polyline points="3 14 10 9 17 4 21 4 21 8"></polyline>
+                </svg>
+              </div>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">Proven Results</h3>
+                <p class="wcu-card-desc">
+                  Our strategies drive measurable growth, increased traffic, and higher ROI.
+                </p>
+              </div>
             </div>
-            <h3>24/7 Support</h3>
-            <p>Round-the-clock monitoring to keep your platform secure</p>
+
+            <!-- 4. 24/7 Support -->
+            <div class="wcu-card reveal">
+              <div class="shiny-sweep"></div>
+              <div class="wcu-icon-box icon-support">
+                <svg class="wcu-main-icon wcu-sync-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="arrow-top" d="M4 8h12l-3-3m3 3l-3 3"></path>
+                  <path class="arrow-bottom" d="M20 16H8l3 3m-3-3l3-3"></path>
+                  <circle class="live-dot" cx="20" cy="8" r="1.5" fill="currentColor"></circle>
+                  <circle class="live-dot-2" cx="4" cy="16" r="1.5" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <div class="wcu-content">
+                <h3 class="wcu-card-title">24/7 Support</h3>
+                <p class="wcu-card-desc">
+                  Enjoy round-the-clock assistance to ensure seamless experiences and success.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1296,8 +3233,17 @@
           <h2>
             What Our <em>Clients Say</em>
           </h2>
-          <p class="section-subtitle">
-            Hear directly from founders, product leaders, and CMOs who scaled their revenue and digital impact with us
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Hear directly from founders, product leaders, and forward-thinking CMOs</span>
+              <span class="desc-row-2">who scaled revenue and digital impact with us.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Hear from founders and CMOs who scaled revenue</span>
+              <span class="desc-row-2">and digital impact with us.</span>
+            </span>
           </p>
         </div>
       </div>
@@ -1322,7 +3268,7 @@
                 </div>
                 <p class="h-test-quote">"Working with HyWiz was a collaborative and enjoyable journey. Their engineering depth and UI/UX craftsmanship delivered a 4.9x ROAS surge."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #123b2c; color: #00ffaa;">MV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Marcus Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Marcus Vance</span>
                     <span class="h-test-role">Founder, Vantage Media</span>
@@ -1344,7 +3290,7 @@
                 </div>
                 <p class="h-test-quote">"The creativity and speed of this team are unmatched. They redesigned our SaaS web app in record time and boosted signups by +140%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #182a44; color: #60a5fa;">ST</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Sarah Thampaer" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sarah Thampaer</span>
                     <span class="h-test-role">Lead Product Designer, CloudScale</span>
@@ -1366,7 +3312,7 @@
                 </div>
                 <p class="h-test-quote">"I have searched for years for an agency that understands both world-class aesthetics and extreme performance. HyWiz is the gold standard."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Alexander Wright" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
@@ -1388,7 +3334,7 @@
                 </div>
                 <p class="h-test-quote">"Our SEO traffic tripled within 90 days. Their technical audits and data-backed content architecture completely dominated our niche."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #331a38; color: #e879f9;">DS</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-4.jpg" alt="David Sterling" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">David Sterling</span>
                     <span class="h-test-role">Growth Director, Apex Health</span>
@@ -1410,7 +3356,7 @@
                 </div>
                 <p class="h-test-quote">"Working with HyWiz was a collaborative and enjoyable journey. Their engineering depth and UI/UX craftsmanship delivered a 4.9x ROAS surge."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #123b2c; color: #00ffaa;">MV</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-1.jpg" alt="Marcus Vance" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Marcus Vance</span>
                     <span class="h-test-role">Founder, Vantage Media</span>
@@ -1432,7 +3378,7 @@
                 </div>
                 <p class="h-test-quote">"The creativity and speed of this team are unmatched. They redesigned our SaaS web app in record time and boosted signups by +140%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #182a44; color: #60a5fa;">ST</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-2.jpg" alt="Sarah Thampaer" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sarah Thampaer</span>
                     <span class="h-test-role">Lead Product Designer, CloudScale</span>
@@ -1454,7 +3400,7 @@
                 </div>
                 <p class="h-test-quote">"I have searched for years for an agency that understands both world-class aesthetics and extreme performance. HyWiz is the gold standard."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #3b2a1a; color: #fbbf24;">AW</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-3.jpg" alt="Alexander Wright" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Alexander Wright</span>
                     <span class="h-test-role">CEO, PlanetX.ai</span>
@@ -1476,7 +3422,7 @@
                 </div>
                 <p class="h-test-quote">"Our SEO traffic tripled within 90 days. Their technical audits and data-backed content architecture completely dominated our niche."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #331a38; color: #e879f9;">DS</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-4.jpg" alt="David Sterling" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">David Sterling</span>
                     <span class="h-test-role">Growth Director, Apex Health</span>
@@ -1504,7 +3450,7 @@
                 </div>
                 <p class="h-test-quote">"Outstanding execution from start to finish. They built an ultra-fast, responsive web platform that consistently converts enterprise leads."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #1a3330; color: #34d399;">CD</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-5.jpg" alt="Clara DuPont" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Clara DuPont</span>
                     <span class="h-test-role">VP Marketing, ParisVibe Global</span>
@@ -1526,7 +3472,7 @@
                 </div>
                 <p class="h-test-quote">"Their Google Ads management reduced our CAC by 42% while doubling our qualified demo bookings. Truly indispensable growth partners."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #18233c; color: #38bdf8;">ER</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Elena Rostova" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Elena Rostova</span>
                     <span class="h-test-role">Head of Acquisition, FinLeap</span>
@@ -1548,7 +3494,7 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-7.jpg" alt="Nathaniel Thorne" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
@@ -1570,7 +3516,7 @@
                 </div>
                 <p class="h-test-quote">"Pixel-perfect visual execution, flawless mobile responsiveness, and remarkable communication. We could not recommend them higher!"</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #222a18; color: #a3e635;">SM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Sophia Mitchell" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sophia Mitchell</span>
                     <span class="h-test-role">Operations Director, NexaFlow</span>
@@ -1592,7 +3538,7 @@
                 </div>
                 <p class="h-test-quote">"Outstanding execution from start to finish. They built an ultra-fast, responsive web platform that consistently converts enterprise leads."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #1a3330; color: #34d399;">CD</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-5.jpg" alt="Clara DuPont" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Clara DuPont</span>
                     <span class="h-test-role">VP Marketing, ParisVibe Global</span>
@@ -1614,7 +3560,7 @@
                 </div>
                 <p class="h-test-quote">"Their Google Ads management reduced our CAC by 42% while doubling our qualified demo bookings. Truly indispensable growth partners."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #18233c; color: #38bdf8;">ER</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-6.jpg" alt="Elena Rostova" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Elena Rostova</span>
                     <span class="h-test-role">Head of Acquisition, FinLeap</span>
@@ -1636,7 +3582,7 @@
                 </div>
                 <p class="h-test-quote">"Turned our complex technical architecture into an intuitive, crystal-clear user journey. Our conversion rate increased by +340%."</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #381822; color: #fb7185;">NT</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-7.jpg" alt="Nathaniel Thorne" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Nathaniel Thorne</span>
                     <span class="h-test-role">CTO, HelixCorp Security</span>
@@ -1658,7 +3604,7 @@
                 </div>
                 <p class="h-test-quote">"Pixel-perfect visual execution, flawless mobile responsiveness, and remarkable communication. We could not recommend them higher!"</p>
                 <div class="h-test-author">
-                  <div class="h-test-avatar" style="background: #222a18; color: #a3e635;">SM</div>
+                  <div class="h-test-avatar"><img src="images/avatars/avatar-8.jpg" alt="Sophia Mitchell" width="44" height="44" loading="lazy" /></div>
                   <div class="h-test-info">
                     <span class="h-test-name">Sophia Mitchell</span>
                     <span class="h-test-role">Operations Director, NexaFlow</span>
@@ -1796,68 +3742,40 @@
           </div>
           <!-- Right side: Contact Card Form -->
           <div class="contact-form-card reveal-right">
-            <form action="#" method="POST" class="wpcf7-form">
-              <div class="contact-inputs-grid">
-                <div class="contact-input-group">
-                  <label for="contact-name">What’s your name?</label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="text-264"
-                    placeholder="Your full name"
-                    required
-                  />
+            <form action="#" method="POST" class="wpcf7-form modern-msg-form">
+              <h3 class="msg-form-heading">Send a message</h3>
+              <p class="msg-form-sub">Fill out the quick brief below and our team will get back to you within 24 hours.</p>
+
+              <div class="msg-form-body">
+                <!-- Left Column: 3 Pill Inputs -->
+                <div class="msg-form-inputs">
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-name" name="text-264" class="msg-input-pill" placeholder="Your name" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="email" id="contact-email" name="email-439" class="msg-input-pill" placeholder="Your email" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-topic" name="subject-268" class="msg-input-pill" placeholder="Subject" required />
+                  </div>
                 </div>
-                <div class="contact-input-group">
-                  <label for="contact-email">Email address</label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email-439"
-                    placeholder="hello@company.com"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-topic">Discussion topic?</label>
-                  <input
-                    type="text"
-                    id="contact-topic"
-                    name="subject-268"
-                    placeholder="e.g. Web Design / SEO"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-budget">What’s your budget?</label>
-                  <input
-                    type="text"
-                    id="contact-budget"
-                    name="budget-270"
-                    placeholder="e.g. $5,000 - $10,000"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group full-width">
-                  <label for="contact-desc">Project Description</label>
-                  <textarea
-                    id="contact-desc"
-                    name="textarea-989"
-                    placeholder="A brief description about your project, request, or consultation details..."
-                    required
-                  ></textarea>
+
+                <!-- Right Column: Message Textarea -->
+                <div class="msg-form-textarea-wrap">
+                  <textarea id="contact-desc" name="textarea-989" class="msg-textarea" placeholder="Your message" required></textarea>
                 </div>
               </div>
-              <label class="contact-checkbox-row">
-                <input type="checkbox" name="acceptance-872" required />
-                <span
-                  >I am bound by the terms of the Service and I accept the
-                  Privacy Policy.</span
-                >
-              </label>
-              <div style="text-align: center; width: 100%">
-                <button type="submit" class="btn btn-solid">
-                  <span>— Send message</span>
+
+              <!-- Bottom Row: Checkbox & Disclaimer on left, Pill Submit Button on right -->
+              <div class="msg-form-footer">
+                <label class="msg-form-consent-label">
+                  <input type="checkbox" name="acceptance-872" class="msg-consent-checkbox" required />
+                  <span class="msg-form-disclaimer">
+                    By clicking Send a message button, you agree to use our &ldquo;Form&rdquo; terms And consent cookie usage in browser.
+                  </span>
+                </label>
+                <button type="submit" class="msg-form-submit-btn">
+                  <span>SEND A MESSAGE</span>
                 </button>
               </div>
             </form>
@@ -2089,10 +4007,7 @@
       </div>
       <!-- Footer Copyright bottom -->
       <div class="wrap footer-bottom-premium">
-        <span>© 2026 Web Agency. All rights reserved.<br>Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a>
-        </div>
+        <span>© 2026 Web Agency. All rights reserved. Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
       </div>
     </footer>
     <script>
@@ -2127,8 +4042,43 @@
         );
         stats.forEach((stat) => observer.observe(stat));
       });
+
+      // Why Choose Us cards interactive mouse spotlight
+      document.querySelectorAll('.wcu-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+      });
     </script>
     <script src="js/main.js"></script>
+
+    <!-- FLOATING QUICK CONNECT WIDGETS (WHATSAPP & CALL) -->
+    <div class="floating-quick-actions" aria-label="Quick Contact Actions">
+      <!-- Left: WhatsApp Live Chat -->
+      <a href="https://wa.me/923143110259" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" aria-label="Chat with us on WhatsApp">
+        <span class="floating-btn-badge" aria-label="3 unread messages">3</span>
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 3C7.07 3 3.048 7.021 3.047 11.983c0 1.586.415 3.133 1.203 4.498L3 21l4.63-1.215a8.93 8.93 0 0 0 4.401 1.157h.004c4.961 0 8.983-4.022 8.984-8.984 0-2.4-.934-4.658-2.634-6.357A8.93 8.93 0 0 0 12.031 3zm0 1.957c3.873 0 7.027 3.153 7.028 7.026 0 1.876-.73 3.64-2.057 4.966a6.974 6.974 0 0 1-4.971 2.06h-.004a6.98 6.98 0 0 1-3.559-.971l-.255-.152-2.645.694.706-2.578-.166-.264a6.97 6.97 0 0 1-1.07-3.755c0-3.873 3.154-7.026 7.028-7.026zm3.844 9.385c-.211-.106-1.247-.616-1.44-.686-.194-.07-.335-.106-.476.106-.14.211-.546.686-.67.827-.123.14-.247.158-.458.053-.211-.106-.89-.328-1.696-1.047a6.29 6.29 0 0 1-1.173-1.458c-.123-.211-.013-.325.092-.43.095-.096.211-.247.317-.37.106-.124.141-.212.211-.353.07-.141.035-.265-.018-.37-.053-.106-.476-1.147-.652-1.57-.172-.413-.347-.357-.476-.364-.124-.006-.265-.007-.406-.007-.141 0-.37.053-.564.265-.194.211-.741.724-.741 1.766 0 1.041.758 2.048.864 2.189.106.141 1.492 2.278 3.614 3.195.505.218.899.348 1.206.446.507.161.968.138 1.333.084.407-.061 1.247-.51 1.423-1.004.176-.494.176-.917.123-1.006-.053-.088-.194-.141-.405-.247z" fill="#ffffff"/>
+          </svg>
+          <span class="floating-btn-tooltip">Chat on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Right: Direct Call -->
+      <a href="tel:+923143110259" class="floating-btn floating-btn-phone" aria-label="Call Us Directly">
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="floating-btn-tooltip">Call Us Directly</span>
+        </div>
+      </a>
+    </div>
   </body>
 </html>
 

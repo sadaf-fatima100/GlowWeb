@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
     <style>
       .portfolio-page-universe {
         position: relative;
@@ -45,14 +45,25 @@
         -webkit-text-fill-color: transparent !important;
       }
       .portfolio-hero-desc {
-        font-family: var(--font-body) !important;
-        font-size: clamp(15px, 1.3vw, 16.5px) !important;
+        font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+        font-size: clamp(0.96rem, 1.4vw, 1.12rem) !important;
         color: var(--fg-soft) !important;
-        max-width: 680px !important;
-        margin: 0 auto !important;
-        line-height: 1.65 !important;
+        max-width: 860px !important;
+        margin: 0 auto 24px !important;
+        line-height: 1.62 !important;
+        font-weight: 400 !important;
         text-align: center !important;
-        text-wrap: balance !important;
+      }
+      .portfolio-lede-row-1 {
+        display: block !important;
+      }
+      .portfolio-lede-row-2 {
+        display: block !important;
+      }
+      html:not([data-theme="dark"]) .portfolio-hero-desc,
+      [data-theme='light'] .portfolio-hero-desc {
+        color: #2c4235 !important;
+        font-weight: 500 !important;
       }
       .portfolio-stat-pill {
         display: inline-flex;
@@ -86,42 +97,150 @@
       .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        gap: 12px;
       }
+      /* =========================================================
+         PORTFOLIO CARDS — THICK BORDER & TRENDY POP-UP ANIMATIONS
+         ========================================================= */
       .port-card {
-        border-radius: 20px;
-        overflow: hidden;
-        border: 2px solid rgba(0, 217, 143, 0.85) !important;
-        background: var(--surface);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(0, 217, 143, 0.22);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+        border-radius: 22px !important;
+        overflow: hidden !important;
+        border: 4px solid #00d98f !important;
+        background: #060d09 !important;
+        box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 217, 143, 0.28), inset 0 0 0 1px rgba(0, 217, 143, 0.2) !important;
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+        position: relative;
+        will-change: transform, box-shadow;
       }
       html[data-theme="dark"] .port-card,
       html:not([data-theme="light"]) .port-card {
-        border: 2px solid rgba(0, 217, 143, 0.85) !important;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(0, 217, 143, 0.22) !important;
+        border: 4px solid #00d98f !important;
+        box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 217, 143, 0.28), inset 0 0 0 1px rgba(0, 217, 143, 0.2) !important;
       }
       html[data-theme="light"] .port-card,
       [data-theme="light"] .port-card {
-        border: 2px solid #00a86b !important;
-        box-shadow: 0 8px 24px rgba(0, 30, 15, 0.12), 0 0 0 1px rgba(0, 168, 107, 0.25) !important;
+        border: 4px solid #008f58 !important;
+        background: #f0f7f3 !important;
+        box-shadow: 0 14px 36px -8px rgba(0, 30, 15, 0.16), 0 0 0 1px rgba(0, 143, 88, 0.25) !important;
       }
       .port-card:hover {
-        transform: translateY(-6px);
+        transform: translateY(-10px) scale(1.02) !important;
         border-color: #00ffaa !important;
-        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 30px rgba(0, 217, 143, 0.35) !important;
+        box-shadow: 0 28px 65px -12px rgba(0, 0, 0, 0.75), 0 0 38px rgba(0, 217, 143, 0.48), inset 0 0 0 1px rgba(0, 255, 170, 0.4) !important;
+        z-index: 3;
       }
       html[data-theme="light"] .port-card:hover,
       [data-theme="light"] .port-card:hover {
-        border-color: #008f58 !important;
-        box-shadow: 0 20px 48px rgba(0, 30, 15, 0.2), 0 0 20px rgba(0, 168, 107, 0.3) !important;
+        border-color: #00b374 !important;
+        box-shadow: 0 26px 54px -10px rgba(0, 30, 15, 0.22), 0 0 26px rgba(0, 179, 116, 0.38) !important;
       }
-      .port-frame img {
+
+      /* Frame Container with 3D Depth Clipping */
+      .port-frame {
+        position: relative;
+        overflow: hidden;
+        border-radius: 17px;
+        background: #08120c;
+        transform: translateZ(0);
+        -webkit-mask-image: -webkit-radial-gradient(white, black); /* Crisp corner clipping */
+      }
+      html[data-theme="light"] .port-frame,
+      [data-theme="light"] .port-frame {
+        background: #eef5f0;
+      }
+
+      /* Image Entrance & Pop-In Animation into Box */
+      .port-card .port-frame img {
         width: 100%;
         height: auto !important;
         aspect-ratio: auto !important;
         object-fit: contain !important;
-        display: block;
+        display: block !important;
+        transform: scale(0.92) translateY(28px) !important;
+        opacity: 0.85;
+        filter: blur(1.5px);
+        transition: transform 0.85s cubic-bezier(0.34, 1.35, 0.64, 1), opacity 0.7s ease, filter 0.7s ease !important;
+        will-change: transform, opacity, filter;
+      }
+
+      /* When scrolled into view (.is-in) — pops up inside box with spring */
+      .port-card.is-in .port-frame img {
+        transform: scale(1) translateY(0) !important;
+        opacity: 1 !important;
+        filter: blur(0) !important;
+        transition-delay: calc(var(--i, 0) * 0.09s);
+      }
+
+      /* Filter hide reset */
+      .port-card.mix-hide .port-frame img {
+        transform: scale(0.92) translateY(24px) !important;
+        opacity: 0 !important;
+      }
+
+      /* Interactive Hover Pop-Up Animation */
+      .port-card:hover .port-frame img {
+        transform: scale(1.06) translateY(-10px) !important;
+        filter: contrast(1.03) brightness(1.02) !important;
+        transition: transform 0.5s cubic-bezier(0.34, 1.45, 0.64, 1), filter 0.35s ease !important;
+        transition-delay: 0s !important;
+      }
+
+      /* Subtle Ambient Glass Tint Overlay on Hover */
+      .port-frame::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.2) 0%,
+          transparent 35%,
+          transparent 65%,
+          rgba(0, 0, 0, 0.38) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .port-card:hover .port-frame::before {
+        opacity: 1;
+      }
+
+      /* Trendy Floating "✦ View Project ↗" Pop-Up Badge */
+      .port-frame::after {
+        content: '✦ View Project ↗';
+        position: absolute;
+        top: clamp(140px, 20vw, 240px);
+        left: 50%;
+        transform: translate(-50%, -25%) scale(0.7);
+        opacity: 0;
+        pointer-events: none;
+        background: rgba(6, 16, 11, 0.92);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1.5px solid #00d98f;
+        color: #ffffff;
+        font-family: var(--font-display);
+        font-size: 13.5px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        padding: 10px 22px;
+        border-radius: 999px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 22px rgba(0, 217, 143, 0.4);
+        transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+        z-index: 4;
+        white-space: nowrap;
+      }
+      .port-card:hover .port-frame::after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      html[data-theme="light"] .port-frame::after,
+      [data-theme="light"] .port-frame::after {
+        background: rgba(255, 255, 255, 0.96);
+        color: #042414;
+        border-color: #008f58;
+        box-shadow: 0 14px 32px rgba(0, 30, 15, 0.2), 0 0 0 1px rgba(0, 143, 88, 0.25);
       }
       /* Stacked Hero Gallery Borders */
       .stacked-card {
@@ -136,7 +255,7 @@
       @media (max-width: 1024px) {
         .portfolio-grid {
           grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
+          gap: 12px;
         }
         .stacked-card {
           width: 155px;
@@ -148,9 +267,27 @@
           padding-top: 110px;
           padding-bottom: 35px;
         }
+        .portfolio-desk-title {
+          display: none !important;
+        }
+        .portfolio-mob-title {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          width: 100% !important;
+          gap: 4px !important;
+          text-align: center !important;
+        }
+        .portfolio-lede-row-1,
+        .portfolio-lede-row-2 {
+          display: inline !important;
+        }
+        .portfolio-lede-br {
+          display: none !important;
+        }
         .portfolio-grid {
-          grid-template-columns: 1fr;
-          gap: 18px;
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 12px !important;
         }
         .stacked-gallery-container {
           padding: 16px 0;
@@ -184,6 +321,12 @@
           text-align: center;
         }
       }
+      @media (max-width: 640px) {
+        .portfolio-grid {
+          grid-template-columns: 1fr !important;
+          gap: 12px !important;
+        }
+      }
       @media (max-width: 480px) {
         .portfolio-hero {
           padding-top: 100px;
@@ -204,6 +347,128 @@
         .contact-form-card {
           padding: 24px 16px !important;
           border-radius: 18px !important;
+        }
+      }
+
+      /* Capability Moving Ticker Ribbon */
+      .portfolio-ticker-ribbon {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: clamp(14px, 1.4vw, 18px) 0;
+        background: rgba(10, 18, 14, 0.72);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-top: 1px solid rgba(0, 217, 143, 0.18);
+        border-bottom: 1px solid rgba(0, 217, 143, 0.18);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(0, 217, 143, 0.15), inset 0 -1px 0 rgba(79, 235, 253, 0.08);
+        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        margin: 0 0 clamp(24px, 3vw, 40px);
+        z-index: 5;
+      }
+      .portfolio-ticker-ribbon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(0, 217, 143, 0.5) 50%, transparent 100%);
+        pointer-events: none;
+      }
+      .portfolio-ticker-ribbon::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(79, 235, 253, 0.4) 50%, transparent 100%);
+        pointer-events: none;
+      }
+      html:not([data-theme="dark"]) .portfolio-ticker-ribbon,
+      [data-theme='light'] .portfolio-ticker-ribbon {
+        background: rgba(240, 247, 243, 0.88);
+        border-top: 1px solid rgba(0, 168, 107, 0.18);
+        border-bottom: 1px solid rgba(0, 168, 107, 0.18);
+        box-shadow: 0 6px 24px rgba(0, 30, 15, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(0, 168, 107, 0.1);
+      }
+      .portfolio-ticker-track {
+        display: flex;
+        width: max-content;
+        will-change: transform;
+        animation: portfolioTickerMove 32s linear infinite;
+      }
+      .portfolio-ticker-ribbon:hover .portfolio-ticker-track {
+        animation-play-state: paused;
+      }
+      .portfolio-ticker-group {
+        display: flex;
+        align-items: center;
+        gap: clamp(32px, 3.5vw, 52px);
+        padding-right: clamp(32px, 3.5vw, 52px);
+        flex-shrink: 0;
+      }
+      .portfolio-ticker-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+        font-family: var(--font-display);
+        font-size: clamp(14px, 1.1vw, 16px);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--fg);
+        cursor: default;
+        transition: transform 0.25s ease, color 0.25s ease;
+      }
+      .portfolio-ticker-item:hover {
+        transform: translateY(-1px);
+        color: var(--accent-primary);
+      }
+      html:not([data-theme="dark"]) .portfolio-ticker-item:hover {
+        color: #008f58;
+      }
+      .ticker-sparkle {
+        color: var(--accent-primary);
+        font-size: 15px;
+        line-height: 1;
+        filter: drop-shadow(0 0 8px rgba(0, 217, 143, 0.65));
+        transition: transform 0.35s ease;
+        display: inline-block;
+      }
+      .portfolio-ticker-item:hover .ticker-sparkle {
+        transform: rotate(90deg) scale(1.3);
+      }
+      html:not([data-theme="dark"]) .ticker-sparkle {
+        color: #00a86b;
+        filter: drop-shadow(0 0 6px rgba(0, 168, 107, 0.4));
+      }
+      .ticker-accent {
+        background: linear-gradient(135deg, #00d98f 0%, #00ffaa 45%, #4febfd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        font-weight: 800;
+      }
+      html:not([data-theme="dark"]) .ticker-accent,
+      [data-theme='light'] .ticker-accent {
+        background: linear-gradient(135deg, #008f58 0%, #00b374 50%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+      @keyframes portfolioTickerMove {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .portfolio-ticker-track {
+          animation-duration: 90s;
         }
       }
     </style>
@@ -353,15 +618,67 @@
       </nav>
     </header>
     <div class="mobile-drawer">
-      <button
-        class="mobile-close btn btn-ghost"
-        style="position: absolute; top: 24px; right: 28px"
-      >
-        Close
-      </button>
-      <a href="index.html">Home</a> <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a> <a href="about.html">About Us</a>
-      <a href="blog.html">Blog</a> <a href="contact.html">Contact Us</a>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand webagency-brand">Web Agency</a>
+        <div class="mobile-drawer-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54c-.44-.06-.9-.1-1.36-.1z" />
+              </svg></span>
+          </button>
+          <button class="mobile-close" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer-nav">
+        <a href="index.html"><span>Home</span></a>
+        <div class="mobile-drawer-accordion">
+          <a href="services.html" class="accordion-toggle">
+            <span>Services</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </a>
+          <div class="accordion-content">
+            <a href="web-development.html">Web Development</a>
+            <a href="google-ads.html">Google Ads</a>
+            <a href="search-engine-optimization.html">Search Engine Optimization</a>
+          </div>
+        </div>
+        <a href="portfolio.html" class="active">
+          <span>Portfolio</span>
+          <span class="drawer-active-indicator"></span>
+        </a>
+        <a href="about.html"><span>About Us</span></a>
+        <a href="blog.html"><span>Blog</span></a>
+        <a href="contact.html"><span>Contact Us</span></a>
+      </div>
+
+      <div class="mobile-drawer-cta-wrap">
+        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+          <span>Get Started</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <div class="drawer-footer-contact">
+          <span class="drawer-footer-lbl">Email us directly</span>
+          <a href="mailto:hello@hywiz.com" class="drawer-footer-email">hello@hywiz.com</a>
+        </div>
+        <div class="drawer-footer-status">
+          <span class="drawer-status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+      </div>
     </div>
     <main class="portfolio-page-universe" id="main-content">
       <section class="portfolio-hero">
@@ -378,8 +695,8 @@
         <h1 class="reveal portfolio-hero-title">
           <!-- Desktop & Tablet (>600px): Clean 2-Row Layout -->
           <span class="portfolio-desk-title">
-            <span class="portfolio-title-row-1">Exceptional Digital Projects</span>
-            <span class="portfolio-title-row-2">That <span class="portfolio-hero-accent">Deliver Real Results</span></span>
+            <span class="portfolio-title-row-1">Exceptional Digital Projects That</span>
+            <span class="portfolio-title-row-2"><span class="portfolio-hero-accent">Deliver Real Results</span></span>
           </span>
           <!-- Mobile (<=600px): Perfectly Balanced 3-Row Layout -->
           <span class="portfolio-mob-title">
@@ -428,10 +745,17 @@
           </div>
         </div>
         <!-- Brand Statement Paragraph -->
-        <p class="portfolio-hero-desc reveal">
-          <strong>Web Agency</strong> is a dedicated web engineering agency that
-          propels ambitious companies to discover greatness. We build high-converting
-          websites, scalable web platforms, and impactful digital experiences that drive measurable growth
+        <p class="portfolio-hero-desc hero-desc-inverted-pyramid reveal">
+          <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+          <span class="hero-desc-desk">
+            <span class="hero-desc-row-1"><strong>Web Agency</strong> builds high-converting websites, scalable platforms, and digital products</span>
+            <span class="hero-desc-row-2">that propel ambitious companies to achieve measurable growth.</span>
+          </span>
+          <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+          <span class="hero-desc-mob">
+            <span class="hero-desc-row-1"><strong>Web Agency</strong> builds high-converting websites and platforms</span>
+            <span class="hero-desc-row-2">that propel ambitious companies to grow.</span>
+          </span>
         </p>
         <div class="reveal" style="margin-top: 24px; display: flex; justify-content: center; gap: 16px; align-items: center; flex-wrap: wrap;">
           <div class="portfolio-stat-pill success">
@@ -443,6 +767,35 @@
         </div>
       </div>
     </section>
+
+    <!-- HORIZONTAL MOVING CAPABILITY TICKER RIBBON -->
+    <div class="portfolio-ticker-ribbon" aria-label="Core Agency Capabilities">
+      <div class="portfolio-ticker-track">
+        <!-- Group 1 -->
+        <div class="portfolio-ticker-group">
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Bespoke <span class="ticker-accent">Web Engineering</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Algorithmic <span class="ticker-accent">SEO Dominance</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">High-ROI <span class="ticker-accent">Google Ads</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Sub-Second <span class="ticker-accent">Speed Performance</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Interactive <span class="ticker-accent">Motion UI</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Scalable <span class="ticker-accent">Cloud Architecture</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Conversion Rate <span class="ticker-accent">Optimization</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Measurable <span class="ticker-accent">Client Growth</span></span></div>
+        </div>
+        <!-- Group 2 (Duplicate for Seamless Infinite Loop) -->
+        <div class="portfolio-ticker-group" aria-hidden="true">
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Bespoke <span class="ticker-accent">Web Engineering</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Algorithmic <span class="ticker-accent">SEO Dominance</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">High-ROI <span class="ticker-accent">Google Ads</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Sub-Second <span class="ticker-accent">Speed Performance</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Interactive <span class="ticker-accent">Motion UI</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Scalable <span class="ticker-accent">Cloud Architecture</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Conversion Rate <span class="ticker-accent">Optimization</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Measurable <span class="ticker-accent">Client Growth</span></span></div>
+        </div>
+      </div>
+    </div>
+
     <section class="section" id="portfolioGridSection" style="padding-top: clamp(24px, 3vw, 44px); padding-bottom: clamp(64px, 7vw, 104px);">
       <div class="wrap">
         <!-- Section Head -->
@@ -455,8 +808,17 @@
           <h2>
             Proven Case Studies &amp; <span class="gradient-text">Recent Projects</span>
           </h2>
-          <p class="section-subtitle" style="max-width: 62ch; margin-inline: auto;">
-            Explore our curated showcase of high-performance web platforms, custom digital products, and strategic campaigns engineered for measurable compounding growth
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Explore our curated showcase of high-performance web platforms and digital products,</span>
+              <span class="desc-row-2">engineered for measurable compounding growth.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Explore our showcase of web platforms and campaigns,</span>
+              <span class="desc-row-2">engineered for measurable growth.</span>
+            </span>
           </p>
         </div>
 
@@ -1080,8 +1442,17 @@
           <h2>
             What Our <em>Clients Say</em>
           </h2>
-          <p class="section-subtitle">
-            Hear directly from founders, product leaders, and CMOs who scaled their revenue and digital impact with us
+          <p class="section-subtitle desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Hear directly from founders, product leaders, and forward-thinking CMOs</span>
+              <span class="desc-row-2">who scaled revenue and digital impact with us.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Hear from founders and CMOs who scaled revenue</span>
+              <span class="desc-row-2">and digital impact with us.</span>
+            </span>
           </p>
         </div>
       </div>
@@ -1579,68 +1950,40 @@
           </div>
           <!-- Right side: Contact Card Form -->
           <div class="contact-form-card reveal-right">
-            <form action="#" method="POST" class="wpcf7-form">
-              <div class="contact-inputs-grid">
-                <div class="contact-input-group">
-                  <label for="contact-name">What’s your name?</label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="text-264"
-                    placeholder="Your full name"
-                    required
-                  />
+            <form action="#" method="POST" class="wpcf7-form modern-msg-form">
+              <h3 class="msg-form-heading">Send a message</h3>
+              <p class="msg-form-sub">Fill out the quick brief below and our team will get back to you within 24 hours.</p>
+
+              <div class="msg-form-body">
+                <!-- Left Column: 3 Pill Inputs -->
+                <div class="msg-form-inputs">
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-name" name="text-264" class="msg-input-pill" placeholder="Your name" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="email" id="contact-email" name="email-439" class="msg-input-pill" placeholder="Your email" required />
+                  </div>
+                  <div class="msg-input-pill-wrap">
+                    <input type="text" id="contact-topic" name="subject-268" class="msg-input-pill" placeholder="Subject" required />
+                  </div>
                 </div>
-                <div class="contact-input-group">
-                  <label for="contact-email">Email address</label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email-439"
-                    placeholder="hello@company.com"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-topic">Discussion topic?</label>
-                  <input
-                    type="text"
-                    id="contact-topic"
-                    name="subject-268"
-                    placeholder="e.g. Web Design / SEO"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group">
-                  <label for="contact-budget">What’s your budget?</label>
-                  <input
-                    type="text"
-                    id="contact-budget"
-                    name="budget-270"
-                    placeholder="e.g. $5,000 - $10,000"
-                    required
-                  />
-                </div>
-                <div class="contact-input-group full-width">
-                  <label for="contact-desc">Project Description</label>
-                  <textarea
-                    id="contact-desc"
-                    name="textarea-989"
-                    placeholder="A brief description about your project, request, or consultation details..."
-                    required
-                  ></textarea>
+
+                <!-- Right Column: Message Textarea -->
+                <div class="msg-form-textarea-wrap">
+                  <textarea id="contact-desc" name="textarea-989" class="msg-textarea" placeholder="Your message" required></textarea>
                 </div>
               </div>
-              <label class="contact-checkbox-row">
-                <input type="checkbox" name="acceptance-872" required />
-                <span
-                  >I am bound by the terms of the Service and I accept the
-                  Privacy Policy.</span
-                >
-              </label>
-              <div style="text-align: center; width: 100%">
-                <button type="submit" class="btn btn-solid">
-                  <span>— Send message</span>
+
+              <!-- Bottom Row: Checkbox & Disclaimer on left, Pill Submit Button on right -->
+              <div class="msg-form-footer">
+                <label class="msg-form-consent-label">
+                  <input type="checkbox" name="acceptance-872" class="msg-consent-checkbox" required />
+                  <span class="msg-form-disclaimer">
+                    By clicking Send a message button, you agree to use our &ldquo;Form&rdquo; terms And consent cookie usage in browser.
+                  </span>
+                </label>
+                <button type="submit" class="msg-form-submit-btn">
+                  <span>SEND A MESSAGE</span>
                 </button>
               </div>
             </form>
@@ -1872,10 +2215,7 @@
       </div>
       <!-- Footer Copyright bottom -->
       <div class="wrap footer-bottom-premium">
-        <span>© 2026 Web Agency. All rights reserved.<br>Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a>
-        </div>
+        <span>© 2026 Web Agency. All rights reserved. Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
       </div>
     </footer>
     <script src="js/main.js"></script>
@@ -1906,18 +2246,39 @@
       if (track) {
         const html = testimonials
           .map(
-            ([name, role, text]) =>
-              ` <div class="test-card"> <div class="stars">★★★★★</div> <p>"${text}"</p> <div class="test-who"> <div class="test-avatar">${name
-                .split(" ")
-                .map((n) => n[0])
-                .join(
-                  "",
-                )}</div> <div> <b>${name}</b> <span>${role}</span> </div> </div> </div> `,
+            ([name, role, text], idx) =>
+              ` <div class="test-card"> <div class="stars">★★★★★</div> <p>"${text}"</p> <div class="test-who"> <div class="test-avatar"><img src="images/avatars/avatar-${(idx % 8) + 1}.jpg" alt="${name}" width="44" height="44" loading="lazy" /></div> <div> <b>${name}</b> <span>${role}</span> </div> </div> </div> `,
           )
           .join("");
         track.innerHTML = html + html + html;
       }
     </script>
+
+    <!-- FLOATING QUICK CONNECT WIDGETS (WHATSAPP & CALL) -->
+    <div class="floating-quick-actions" aria-label="Quick Contact Actions">
+      <!-- Left: WhatsApp Live Chat -->
+      <a href="https://wa.me/923143110259" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" aria-label="Chat with us on WhatsApp">
+        <span class="floating-btn-badge" aria-label="3 unread messages">3</span>
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 3C7.07 3 3.048 7.021 3.047 11.983c0 1.586.415 3.133 1.203 4.498L3 21l4.63-1.215a8.93 8.93 0 0 0 4.401 1.157h.004c4.961 0 8.983-4.022 8.984-8.984 0-2.4-.934-4.658-2.634-6.357A8.93 8.93 0 0 0 12.031 3zm0 1.957c3.873 0 7.027 3.153 7.028 7.026 0 1.876-.73 3.64-2.057 4.966a6.974 6.974 0 0 1-4.971 2.06h-.004a6.98 6.98 0 0 1-3.559-.971l-.255-.152-2.645.694.706-2.578-.166-.264a6.97 6.97 0 0 1-1.07-3.755c0-3.873 3.154-7.026 7.028-7.026zm3.844 9.385c-.211-.106-1.247-.616-1.44-.686-.194-.07-.335-.106-.476.106-.14.211-.546.686-.67.827-.123.14-.247.158-.458.053-.211-.106-.89-.328-1.696-1.047a6.29 6.29 0 0 1-1.173-1.458c-.123-.211-.013-.325.092-.43.095-.096.211-.247.317-.37.106-.124.141-.212.211-.353.07-.141.035-.265-.018-.37-.053-.106-.476-1.147-.652-1.57-.172-.413-.347-.357-.476-.364-.124-.006-.265-.007-.406-.007-.141 0-.37.053-.564.265-.194.211-.741.724-.741 1.766 0 1.041.758 2.048.864 2.189.106.141 1.492 2.278 3.614 3.195.505.218.899.348 1.206.446.507.161.968.138 1.333.084.407-.061 1.247-.51 1.423-1.004.176-.494.176-.917.123-1.006-.053-.088-.194-.141-.405-.247z" fill="#ffffff"/>
+          </svg>
+          <span class="floating-btn-tooltip">Chat on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Right: Direct Call -->
+      <a href="tel:+923143110259" class="floating-btn floating-btn-phone" aria-label="Call Us Directly">
+        <div class="floating-btn-pulse"></div>
+        <div class="floating-btn-inner">
+          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="floating-btn-tooltip">Call Us Directly</span>
+        </div>
+      </a>
+    </div>
   </body>
 </html>
 

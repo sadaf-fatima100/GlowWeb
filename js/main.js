@@ -46,9 +46,26 @@
   });
 
   /* ---------- Mobile Drawer ---------- */
+  function closeMobileDrawer() {
+    const drawer = document.querySelector('.mobile-drawer');
+    if (drawer && drawer.classList.contains('open')) {
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function openMobileDrawer() {
+    const drawer = document.querySelector('.mobile-drawer');
+    if (drawer) {
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
   document.addEventListener('click', (e) => {
     if (e.target.closest('.burger')) {
-      document.querySelector('.mobile-drawer')?.classList.add('open');
+      openMobileDrawer();
+      return;
     }
     
     // Accordion Toggle Logic
@@ -62,9 +79,23 @@
       return; // Stop here so it doesn't close the drawer
     }
 
-    // Close drawer on overlay click or when a standard link is clicked
+    // Close drawer on overlay click, close button, or when a standard link is clicked
     if (e.target.closest('.mobile-close') || (e.target.closest('.mobile-drawer') && e.target.tagName === 'A' && !e.target.closest('.accordion-toggle'))) {
-      document.querySelector('.mobile-drawer')?.classList.remove('open');
+      closeMobileDrawer();
+    }
+  });
+
+  // Close drawer on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileDrawer();
+    }
+  });
+
+  // Auto-close mobile drawer when window expands to desktop (> 1024px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+      closeMobileDrawer();
     }
   });
 
@@ -316,153 +347,92 @@
     }
   }
 
-  /* ---------- Interactive Custom Particle Swarm Cursor ---------- */
-  const oldCc = document.getElementById('customCursor');
-  const oldCcf = document.getElementById('customCursorFollower');
-  if (oldCc) oldCc.style.display = 'none';
-  if (oldCcf) oldCcf.style.display = 'none';
+  /* ---------- Precision Orbital Crosshair Cursor (Reference Matched) ---------- */
+  const cursor = document.getElementById('customCursor');
+  const follower = document.getElementById('customCursorFollower');
+  const oldCanvas = document.getElementById('cursorParticleCanvas');
+  if (oldCanvas) oldCanvas.remove();
 
-  if (window.matchMedia('(min-width: 960px)').matches) {
-    const canvas = document.createElement('canvas');
-    canvas.id = 'cursorParticleCanvas';
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100vw';
-    canvas.style.height = '100vh';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '999999';
-    document.body.appendChild(canvas);
+  if (cursor && follower && window.matchMedia('(min-width: 961px) and (pointer: fine)').matches) {
+    follower.innerHTML = '';
 
-    const ctx = canvas.getContext('2d');
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+    cursor.style.display = 'block';
+    follower.style.display = 'block';
 
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    }, { passive: true });
+    let mouseX = -100;
+    let mouseY = -100;
+    let followerX = -100;
+    let followerY = -100;
+    let isVisible = false;
 
-    let mx = width / 2;
-    let my = height / 2;
-    let lastMx = mx;
-    let lastMy = my;
-    let smoothSpeed = 0;
-    let isHovered = false;
-
-    const particles = [];
-    const particleCount = 45;
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: mx,
-        y: my,
-        vx: 0,
-        vy: 0,
-        angle: (i / particleCount) * Math.PI * 2,
-        angularSpeed: 0.02 + Math.random() * 0.03,
-        baseRadius: Math.random() * 6,
-        scatterMultiplier: 1.2 + Math.random() * 2.8,
-        ease: 0.05 + Math.random() * 0.05,
-        friction: 0.82 + Math.random() * 0.06,
-        size: 1.2 + Math.random() * 2.2,
-        opacity: 0.35 + Math.random() * 0.5
-      });
-    }
-
+    // Track mouse position directly with zero lag
     document.addEventListener('mousemove', (e) => {
-      mx = e.clientX;
-      my = e.clientY;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!isVisible) {
+        isVisible = true;
+        cursor.classList.add('visible');
+        follower.classList.add('visible');
+        followerX = mouseX;
+        followerY = mouseY;
+      }
     }, { passive: true });
 
-    function tick() {
-      ctx.clearRect(0, 0, width, height);
+    document.addEventListener('mouseleave', () => {
+      isVisible = false;
+      cursor.classList.remove('visible');
+      follower.classList.remove('visible');
+    });
 
-      // Calculate instant velocity
-      const dMx = mx - lastMx;
-      const dMy = my - lastMy;
-      const speed = Math.sqrt(dMx * dMx + dMy * dMy);
-      smoothSpeed += (speed - smoothSpeed) * 0.12;
+    document.addEventListener('mousedown', () => {
+      follower.classList.add('active');
+    });
 
-      lastMx = mx;
-      lastMy = my;
+    document.addEventListener('mouseup', () => {
+      follower.classList.remove('active');
+    });
 
-      // Extract colors from CSS variables dynamically
-      const docStyle = getComputedStyle(document.documentElement);
-      const accent = docStyle.getPropertyValue('--accent-primary').trim() || '#2563EB';
+    // Silky smooth 60fps/120fps hardware-accelerated GPU render loop
+    const render = () => {
+      if (isVisible) {
+        // Center dot follows mouse instantly with GPU translate3d
+        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
-      particles.forEach((p) => {
-        // Dynamic target radius based on speed and hover state
-        let targetRadius = p.baseRadius;
-        let speedScatter = smoothSpeed * p.scatterMultiplier;
+        // Follower ring smoothly eases behind with physics lerp
+        followerX += (mouseX - followerX) * 0.16;
+        followerY += (mouseY - followerY) * 0.16;
+        follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+      }
+      requestAnimationFrame(render);
+    };
+    requestAnimationFrame(render);
 
-        if (isHovered) {
-          // Hover state: assemble into a gorgeous expanding circular orbital halo
-          targetRadius = 24 + Math.sin(p.angle * 2) * 4;
-          speedScatter *= 0.3; // dampen scatter during hover snaps
-        }
-
-        const targetX = mx + Math.cos(p.angle) * (targetRadius + speedScatter);
-        const targetY = my + Math.sin(p.angle) * (targetRadius + speedScatter);
-
-        // Physics LERP
-        p.vx += (targetX - p.x) * p.ease;
-        p.vy += (targetY - p.y) * p.ease;
-
-        p.vx *= p.friction;
-        p.vy *= p.friction;
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Orbit rotation speed increases slightly when hovered for high-end look
-        p.angle += isHovered ? p.angularSpeed * 1.6 : p.angularSpeed;
-
-        // Draw particle
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = accent;
-        ctx.globalAlpha = p.opacity;
-        ctx.shadowBlur = isHovered ? 8 : 4;
-        ctx.shadowColor = accent;
-        ctx.fill();
-      });
-
-      // Draw active center dot
-      ctx.beginPath();
-      ctx.arc(mx, my, isHovered ? 2 : 3, 0, Math.PI * 2);
-      ctx.fillStyle = accent;
-      ctx.globalAlpha = 0.9;
-      ctx.shadowBlur = 4;
-      ctx.shadowColor = accent;
-      ctx.fill();
-
-      ctx.globalAlpha = 1.0;
-      ctx.shadowBlur = 0;
-
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-
-    // Interactive hover triggers
+    // Interactive Hover States for links, buttons, inputs, interactive cards
     const updateHoverables = () => {
-      const hoverables = document.querySelectorAll('a, button, .draggable-tag, .port-card, .price-card, .webagency-accordion');
-      hoverables.forEach(item => {
-        // Prevent duplicate binds
-        if (item.dataset.cursorBound) return;
-        item.dataset.cursorBound = 'true';
-        
-        item.addEventListener('mouseenter', () => {
-          isHovered = true;
+      const hoverables = document.querySelectorAll(
+        'a, button, input, textarea, select, .btn, .hero-btn-primary, .hero-btn-secondary, ' +
+        '.contact-quote-btn, .expertise-nav-btn, .price-card, .h-testimonial-card, ' +
+        '.service-flow-card, .stacked-card, .bento-card, .service-pillar-card, ' +
+        '.faq-question, .ticker-item, .map-badge-btn, .contact-meta-item, [role="button"]'
+      );
+      hoverables.forEach((el) => {
+        if (el.dataset.cursorBound) return;
+        el.dataset.cursorBound = 'true';
+
+        el.addEventListener('mouseenter', () => {
+          cursor.classList.add('hovered');
+          follower.classList.add('hovered');
         });
-        item.addEventListener('mouseleave', () => {
-          isHovered = false;
+
+        el.addEventListener('mouseleave', () => {
+          cursor.classList.remove('hovered');
+          follower.classList.remove('hovered');
         });
       });
     };
+
     updateHoverables();
-    
-    // Periodically re-bind dynamic elements
     setInterval(updateHoverables, 2000);
   }
 
