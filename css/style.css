@@ -6353,8 +6353,9 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
     padding: 110px 0 115px;
   }
   .diag-content-title {
-    font-size: 24px !important;
-    line-height: 1.24 !important;
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
   }
   .diag-content-desc {
     font-size: 14px !important;
@@ -7290,27 +7291,32 @@ html:not([data-theme="dark"]) .cap-desc-body,
 @media (max-width: 991px) {
   .trusted-partner-grid,
   .trusted-partner-grid.trusted-partner-grid-rev {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 36px !important;
     text-align: left;
   }
+  .trusted-partner-grid .trusted-partner-content,
+  .trusted-partner-grid.trusted-partner-grid-rev .trusted-partner-content,
   .trusted-partner-content {
+    order: 1 !important;
     width: 100% !important;
     max-width: 100% !important;
   }
+  .trusted-partner-grid .expertise-image-creative,
+  .trusted-partner-grid.trusted-partner-grid-rev .expertise-image-creative,
+  .trusted-partner-grid .trusted-image-container,
+  .trusted-partner-grid.trusted-partner-grid-rev .trusted-image-container,
+  .expertise-image-creative,
   .trusted-image-container {
-    order: -1;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .trusted-rating-badge {
-    left: 20px;
-  }
-  .expertise-image-creative {
+    order: 2 !important;
     width: 100% !important;
     max-width: 540px !important;
     padding: 12px !important;
     margin: 0 auto !important;
+  }
+  .trusted-rating-badge {
+    left: 20px;
   }
   .expertise-image-creative img {
     min-height: auto !important;
@@ -19359,7 +19365,8 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
   .section-head h2,
   .about-expertise-section h2,
   .section-why-choose h2,
-  .philosophy-main-title {
+  .philosophy-main-title,
+  .diag-content-title {
     font-size: 26px !important;
     line-height: 1.2 !important;
     letter-spacing: -0.02em !important;
@@ -21291,7 +21298,7 @@ html:not([data-theme="dark"]) .floating-btn-phone,
   box-shadow: 0 12px 32px rgba(0, 40, 20, 0.2), 0 0 20px rgba(37, 211, 102, 0.35);
 }
 
-/* Notification Message Badge (3 Unread) - Professional Red Alert */
+/* Notification Message Badge (3 Unread) - Pure Borderless Red Pill */
 .floating-btn-badge {
   position: absolute;
   top: -3px;
@@ -21311,17 +21318,19 @@ html:not([data-theme="dark"]) .floating-btn-phone,
   pointer-events: none;
   background: #FF3B30 !important;
   color: #ffffff !important;
-  border: 2px solid #060a08;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 59, 48, 0.7);
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 59, 48, 0.5);
   animation: floatingBadgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s both;
 }
 
-/* Light Theme Badge Border & Glow */
+/* Light Theme Badge - Pure Borderless Red */
 html:not([data-theme="dark"]) .floating-btn-badge,
 [data-theme='light'] .floating-btn-badge {
   background: #FF3B30 !important;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 10px rgba(255, 59, 48, 0.45);
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.35);
 }
 
 /* --- TOOLTIP STYLING --- */
