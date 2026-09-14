@@ -1,16 +1,63 @@
-# Dependencies
+# ==========================================
+# Security, Environment & Secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+credentials.json
+secrets.json
+
+# ==========================================
+# Dependencies & Package Managers
+# ==========================================
 node_modules/
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-# Build & Temporary Files
+# ==========================================
+# Python & Automation / Testing Scripts
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.py
+.pytest_cache/
+.coverage
+htmlcov/
+test_*.html
+test_*.js
+*.log
+
+# ==========================================
+# Temporary, Build & Scratch Files
+# ==========================================
 scratch/
+tmp/
+temp/
 *.tmp
 *.temp
 *.bak
 *.swp
 *.zip
+*-original.*
+chrome-profile/
+.tempmediaStorage/
 
-# Operating System Files
+# ==========================================
+# Root Test Snapshots & Temp Dumps
+# (Preserves images/ folder)
+# ==========================================
+/*.png
+/*.jpg.tmp
+
+# ==========================================
+# OS & File System Artifacts
+# ==========================================
 .DS_Store
 .DS_Store?
 ._*
@@ -20,12 +67,17 @@ ehthumbs.db
 Thumbs.db
 [Dd]esktop.ini
 
+# ==========================================
 # IDE & Editor Configurations
+# ==========================================
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# Agent & Local AI Configurations
+# ==========================================
+# Agent & Internal Prompt Artifacts
+# ==========================================
 .agents/
 .gemini/
+skills/

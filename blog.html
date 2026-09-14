@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog — Agency</title>
+    <title>Blog | HyWiz Digital Agency: Growth Playbooks &amp; Insights</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,11 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=4.0" />
+    <link rel="stylesheet" href="css/style.css?v=4.3" />
     <style>
       /* ─── Universal Box Strategy Alignment (Navbar & Section Matching) ─── */
-      .blog-page-universe .wrap,
-      .blog-page-universe .blog-grid {
+      .blog-page-universe .wrap {
         width: calc(100% - 64px) !important;
         max-width: 1216px !important;
         margin-inline: auto !important;
@@ -23,14 +22,58 @@
         box-sizing: border-box !important;
       }
 
+      /* ─── Section Header Above Blog Cards ─── */
+      .blog-section-header {
+        text-align: center;
+        margin-bottom: clamp(36px, 4.5vw, 52px);
+        max-width: 820px;
+        margin-inline: auto;
+      }
+
+      .blog-section-title {
+        font-family: var(--font-display, 'Outfit', sans-serif) !important;
+        font-size: clamp(28px, 3.4vw, 42px) !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.028em !important;
+        color: var(--fg) !important;
+        margin: 0 0 16px 0 !important;
+        text-wrap: balance !important;
+      }
+
+      .blog-section-title .accent-text {
+        color: var(--accent-primary, #00d98f) !important;
+      }
+
+      html:not([data-theme="dark"]) .blog-section-title .accent-text,
+      [data-theme='light'] .blog-section-title .accent-text {
+        color: #008f58 !important;
+      }
+
+      .blog-section-desc {
+        font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif) !important;
+        font-size: clamp(15px, 1.1vw, 17px) !important;
+        line-height: 1.65 !important;
+        color: var(--fg-soft) !important;
+        max-width: 980px !important;
+        margin: 0 auto !important;
+      }
+
+      html:not([data-theme="dark"]) .blog-section-desc,
+      [data-theme='light'] .blog-section-desc {
+        color: #2c4235 !important;
+      }
+
       .blog-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
+        width: 100% !important;
+        max-width: 100% !important;
         margin: 0 auto;
       }
 
-      /* Blog grid responsive — overrides must be scoped to .blog-page-universe to beat global styles */
+      /* Blog grid responsive: overrides must be scoped to .blog-page-universe to beat global styles */
       @media (max-width: 1024px) {
         .blog-page-universe .blog-grid {
           grid-template-columns: repeat(2, 1fr) !important;
@@ -38,6 +81,20 @@
         }
       }
       @media (max-width: 768px) {
+        .blog-page-universe .wrap {
+          width: calc(100% - 32px) !important;
+        }
+        .blog-section-header {
+          margin-bottom: 28px !important;
+        }
+        .blog-section-title {
+          font-size: clamp(24px, 6vw, 30px) !important;
+          margin-bottom: 12px !important;
+        }
+        .blog-section-desc {
+          font-size: 14.5px !important;
+          line-height: 1.6 !important;
+        }
         .blog-page-universe .blog-grid {
           grid-template-columns: 1fr !important;
           gap: 16px !important;
@@ -262,6 +319,7 @@
         font-family: var(--font-body) !important;
         font-size: 14.5px !important;
         color: var(--fg-soft) !important;
+        font-weight: 450 !important;
         line-height: 1.65 !important;
         margin: 0 0 14px;
         flex: 1;
@@ -339,7 +397,7 @@
     <div class="topbar">
       <div class="wrap">
         <div class="promo">
-          <span class="dot"></span> Leading Digital Agency — Web Design,
+          <span class="dot"></span> Leading Digital Agency: Web Design,
           Development, SEO &amp; Google Ads
         </div>
         <div>hello@hywiz.com</div>
@@ -516,7 +574,7 @@
     </div>
     <style>
       /* =========================================================
-         UNIFIED SEAMLESS BLOG PAGE CANVAS (DARK & LIGHT AURORA)
+         UNIFIED CONTINUOUS BLOG PAGE CANVAS (DARK & LIGHT AURORA)
          ========================================================= */
       .blog-page-universe {
         position: relative;
@@ -542,7 +600,7 @@
       .blog-hero-desc {
         font-family: 'Plus Jakarta Sans', sans-serif !important;
         font-size: clamp(1.02rem, 1.5vw, 1.15rem) !important;
-        color: rgba(255, 255, 255, 0.92) !important;
+        color: var(--fg-soft) !important;
         font-weight: 500 !important;
         max-width: 980px !important;
         margin: 0 auto 32px auto !important;
@@ -792,7 +850,7 @@
         border-radius: 50%;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 -2px 4px rgba(0, 0, 0, 0.05);
       }
-      /* Cursor icon wrapper — hidden on mobile, shown on desktop */
+      /* Cursor icon wrapper: hidden on mobile, shown on desktop */
       .hero-cursor-wrap {
         display: inline-flex;
         align-items: center;
@@ -882,12 +940,13 @@
           gap: 4px !important;
           text-align: center !important;
         }
+        .blog-mob-row,
         .blog-mob-row-1,
         .blog-mob-row-2 {
           display: block !important;
           width: 100% !important;
           text-align: center !important;
-          white-space: normal !important;
+          white-space: nowrap !important;
         }
         .blog-hero-title,
         h1.blog-hero-title {
@@ -901,9 +960,7 @@
           display: inline !important;
         }
         .blog-hero-desc {
-          font-size: clamp(14px, 2vw, 16px) !important;
           line-height: 1.55 !important;
-          max-width: 580px !important;
           margin-inline: auto !important;
           margin-bottom: 24px !important;
           text-align: center !important;
@@ -1017,16 +1074,7 @@
         }
       }
 
-      /* ═══════════════════════════════════════════════════════════
-         PHONES & SMALL VIEWPORTS (<= 480px)
-         ═══════════════════════════════════════════════════════════ */
-      @media (max-width: 480px) {
-        .blog-hero-desc {
-          font-size: 13.5px !important;
-          line-height: 1.5 !important;
-          max-width: 360px !important;
-        }
-      }
+
 
       /* ═══════════════════════════════════════════════════════════
          SMALL PHONES (<= 400px)
@@ -1046,11 +1094,22 @@
           height: 26px;
           font-size: 13px;
         }
-        .title-cursor-icon {
-          width: 20px;
+        .blog-filter-bar {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+          gap: 8px 10px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-bottom: 28px !important;
         }
         .blog-filter-tag {
-          flex: 1 1 100%;
+          flex: 0 0 auto !important;
+          width: auto !important;
+          padding: 8px 18px !important;
+          font-size: 13px !important;
+          border-radius: 999px !important;
+          white-space: nowrap !important;
         }
       }
     </style>
@@ -1058,22 +1117,23 @@
       <!-- Centered Blog Hero Section (Contact Page Parity) -->
       <div class="blog-hero-centered-wrapper">
         <div class="wrap" style="position: relative; z-index: 2">
-        <!-- Eyebrow — Live dot, no pill -->
+        <!-- Eyebrow: Live dot, no pill -->
         <div class="hero-live-eyebrow reveal" style="justify-content: center;">
           <span class="hero-live-dot"></span>
           <span class="hero-live-text">Insights &amp; Strategies</span>
         </div>
-        <!-- Main Hero Headline (Wide Full-Width Layout Matching Cards) -->
+        <!-- Main Hero Headline (Desktop: 2 rows, Mobile: 3 balanced rows: identical font size & weight) -->
         <h1 class="blog-hero-title reveal" style="animation-delay: 0.1s">
-          <!-- Desktop & Tablet (>768px): Clean 2-Row Layout -->
+          <!-- Desktop & Tablet (>768px): Clean 2-Row Full Editorial Layout -->
           <span class="blog-desk-title">
             <span class="blog-title-row-1">Explore Ideas &amp; Strategies That</span>
             <span class="blog-title-row-2"><span class="blog-hero-accent">Fuel Modern Growth</span></span>
           </span>
-          <!-- Mobile & Tablet (<=768px): Perfectly Balanced Wide 2-Row Layout -->
+          <!-- Mobile (<=768px): Perfectly Balanced 3-Row Layout -->
           <span class="blog-mob-title">
-            <span class="blog-mob-row-1">Explore Ideas &amp; Strategies</span>
-            <span class="blog-mob-row-2"><span class="blog-hero-accent">That Fuel Modern Growth</span></span>
+            <span class="blog-mob-row">Explore Ideas</span>
+            <span class="blog-mob-row">&amp; Strategies That</span>
+            <span class="blog-mob-row"><span class="blog-hero-accent">Fuel Modern Growth</span></span>
           </span>
         </h1>
         <p class="blog-hero-desc hero-desc-inverted-pyramid reveal">
@@ -1084,8 +1144,8 @@
           </span>
           <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
           <span class="hero-desc-mob">
-            <span class="hero-desc-row-1">Actionable frameworks, engineering deep-dives, and playbooks</span>
-            <span class="hero-desc-row-2">curated to accelerate your growth.</span>
+            <span class="hero-desc-row-1">Actionable frameworks and playbooks</span>
+            <span class="hero-desc-row-2">to scale growth.</span>
           </span>
         </p>
         <div class="blog-filter-bar reveal">
@@ -1096,8 +1156,57 @@
         </div>
       </div>
     </div>
-    <section class="section" style="padding-top: 0">
-      <div class="wrap blog-grid">
+
+    <!-- HORIZONTAL MOVING CAPABILITY TICKER RIBBON -->
+    <div class="portfolio-ticker-ribbon" aria-label="Core Agency Capabilities and Topics" style="margin-top: clamp(18px, 2.5vw, 32px); margin-bottom: clamp(32px, 4.5vw, 60px);">
+      <div class="portfolio-ticker-track">
+        <!-- Group 1 -->
+        <div class="portfolio-ticker-group">
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Bespoke <span class="ticker-accent">Web Engineering</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Algorithmic <span class="ticker-accent">SEO Dominance</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">High-ROI <span class="ticker-accent">Google Ads</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Actionable <span class="ticker-accent">Growth Playbooks</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Sub-Second <span class="ticker-accent">Speed &amp; INP</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Conversion Rate <span class="ticker-accent">Optimization</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Semantic <span class="ticker-accent">Topic Clusters</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Smart Bidding <span class="ticker-accent">&amp; ROAS Scale</span></span></div>
+        </div>
+        <!-- Group 2 (Duplicate for Continuous Infinite Loop) -->
+        <div class="portfolio-ticker-group" aria-hidden="true">
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Bespoke <span class="ticker-accent">Web Engineering</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Algorithmic <span class="ticker-accent">SEO Dominance</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">High-ROI <span class="ticker-accent">Google Ads</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Actionable <span class="ticker-accent">Growth Playbooks</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Sub-Second <span class="ticker-accent">Speed &amp; INP</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Conversion Rate <span class="ticker-accent">Optimization</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Semantic <span class="ticker-accent">Topic Clusters</span></span></div>
+          <div class="portfolio-ticker-item"><span class="ticker-sparkle">✦</span><span class="ticker-text">Smart Bidding <span class="ticker-accent">&amp; ROAS Scale</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section blog-cards-section" style="padding-top: 0">
+      <div class="wrap">
+        <!-- Section Header above Blog Cards -->
+        <div class="blog-section-header reveal">
+          <h2 class="blog-section-title">
+            Latest Articles &amp; <span class="accent-text">Growth Playbooks</span>
+          </h2>
+          <p class="blog-section-desc desc-inverted-pyramid">
+            <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
+            <span class="desc-desk">
+              <span class="desc-row-1">Explore our authoritative blueprints covering high-performance web engineering,</span>
+              <span class="desc-row-2">algorithmic search dominance, and scalable Google Ads acquisition.</span>
+            </span>
+            <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
+            <span class="desc-mob">
+              <span class="desc-row-1">Authoritative blueprints on web engineering,</span>
+              <span class="desc-row-2">SEO search dominance, and Google Ads.</span>
+            </span>
+          </p>
+        </div>
+
+        <div class="blog-grid">
         <!-- POST 1: Google Ads (ROAS & Smart Bidding) -->
         <a href="blog-post.html?id=googleads" target="_blank" class="blog-card reveal-scale spotlight-card" data-category="googleads">
           <div class="blog-cover media-frame">
@@ -1170,7 +1279,7 @@
             </div>
             <h3>Beyond Keywords: Mastering Semantic Search and Topical Authority</h3>
             <p>
-              How to engineer comprehensive topic clusters, satisfy modern search algorithms, and build digital authority that survives core updates
+              How to engineer multi-layered topic clusters, satisfy modern search algorithms, and build digital authority that survives core updates
             </p>
             <span class="blog-read-more">Read Article</span>
           </div>
@@ -1196,7 +1305,7 @@
             </div>
             <h3>Technical SEO in 2026: INP Optimization, Schema Graphs & Crawl Budgets</h3>
             <p>
-              A deep dive into sub-second Interaction to Next Paint, JSON-LD linked data entities, and headless site architecture for enterprise ranking
+              Strategic breakdown of sub-second Interaction to Next Paint, JSON-LD entity structures, and headless site architecture for enterprise ranking
             </p>
             <span class="blog-read-more">Read Article</span>
           </div>
@@ -1246,13 +1355,14 @@
             <div class="blog-meta-row">
               <span class="blog-date">Jan 29, 2026</span>
             </div>
-            <h3>Design Systems & Micro-Interactions: Elevating Brand Perception</h3>
+            <h3>Design Systems & Micro-Interactions: Refining Brand Perception</h3>
             <p>
               How tokenized design systems, mathematical fluid typography, and micro-motion turn standard websites into bespoke brand worlds
             </p>
             <span class="blog-read-more">Read Article</span>
           </div>
         </a>
+      </div>
       </div>
     </section>
 
@@ -1342,7 +1452,7 @@
 
           <!-- Left Column: Content -->
           <div class="cta-content-col reveal">
-            <!-- CTA Eyebrow — live dot, no number -->
+            <!-- CTA Eyebrow: live dot, no number -->
             <div class="hero-live-eyebrow">
               <span class="hero-live-dot"></span>
               <span class="hero-live-text">Let's Build Something Exceptional</span>
@@ -1350,11 +1460,11 @@
 
             <h2 class="cta-split-heading">
               Ready to Scale Your <br/>
-              <span class="cta-gradient-accent">Digital Presence?</span>
+              <span class="cta-gradient-accent">Digital Pipeline?</span>
             </h2>
 
             <p class="cta-split-subtitle">
-              Partner with our elite web agency to engineer high-converting platforms, dominate search rankings, and accelerate compounding business growth
+              Partner with our senior engineering team to build high-converting platforms, dominate search rankings, and accelerate compounding buyer revenue
             </p>
 
             <div class="cta-split-actions">
@@ -1492,7 +1602,7 @@
         </div>
         <!-- Column 2: Quick Links -->
         <div class="footer-links-col">
-          <h4>Quick Links</h4>
+        <h3>Quick Links</h3>
           <div class="footer-links-list">
             <a href="index.html">Home</a> <a href="services.html">Services</a>
             <a href="about.html">About Us</a>
@@ -1502,7 +1612,7 @@
         </div>
         <!-- Column 3: Services -->
         <div class="footer-links-col">
-          <h4>Services</h4>
+        <h3>Services</h3>
           <div class="footer-links-list">
             <a href="web-development.html">Web Development</a>
             <a href="google-ads.html">Google Ads</a>
@@ -1513,7 +1623,7 @@
         </div>
         <!-- Column 4: Company Details -->
         <div class="footer-links-col">
-          <h4>Company</h4>
+        <h3>Company</h3>
           <div class="footer-links-list">
             <div class="footer-contact-item no-hover">
               <span class="footer-icon-btn" aria-hidden="true">

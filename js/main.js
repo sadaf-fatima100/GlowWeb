@@ -99,14 +99,24 @@
     }
   });
 
-  /* ---------- Magnetic Hover & LERP Damping ---------- */
+  /* ---------- Magnetic Hover & LERP Damping (Optimized) ---------- */
   const magneticEls = document.querySelectorAll('.magnetic');
   magneticEls.forEach(el => {
     let targetX = 0, targetY = 0;
     let currentX = 0, currentY = 0;
+    let isRunning = false;
+    let r = null;
     
+    el.addEventListener('mouseenter', () => {
+      r = el.getBoundingClientRect();
+      if (!isRunning) {
+        isRunning = true;
+        requestAnimationFrame(update);
+      }
+    });
+
     el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
+      if (!r) r = el.getBoundingClientRect();
       // Calculate delta from center
       const mx = e.clientX - (r.left + r.width / 2);
       const my = e.clientY - (r.top + r.height / 2);
@@ -118,16 +128,24 @@
     el.addEventListener('mouseleave', () => {
       targetX = 0;
       targetY = 0;
+      r = null;
     });
 
     function update() {
+      if (!isRunning) return;
       // Linear interpolation (LERP) for smooth ease-back
       currentX += (targetX - currentX) * 0.12;
       currentY += (targetY - currentY) * 0.12;
       el.style.transform = `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0)`;
+      
+      // Stop loop once element has returned to rest
+      if (Math.abs(targetX - currentX) < 0.05 && Math.abs(targetY - currentY) < 0.05 && targetX === 0) {
+        el.style.transform = 'translate3d(0, 0, 0)';
+        isRunning = false;
+        return;
+      }
       requestAnimationFrame(update);
     }
-    update();
   });
 
   /* ---------- Scroll-Triggered Reveal & Split-Text Line Wrappers ---------- */
@@ -208,14 +226,21 @@
     const reading = scrollLine.querySelector('.reading');
     const maxScroll = 100;
 
+    let scrollTicking = false;
     const onScroll = () => {
-      const doc = document.documentElement;
-      const scrolled = doc.scrollTop || document.body.scrollTop;
-      const total = doc.scrollHeight - doc.clientHeight || 1;
-      const pct = Math.min(1, Math.max(0, scrolled / total));
-      fill.style.height = (pct * 100) + '%';
-      if (reading) {
-        reading.textContent = Math.round(pct * maxScroll) + '% SCROLLED';
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          const doc = document.documentElement;
+          const scrolled = window.pageYOffset || doc.scrollTop || document.body.scrollTop || 0;
+          const total = (doc.scrollHeight - doc.clientHeight) || 1;
+          const pct = Math.min(1, Math.max(0, scrolled / total));
+          fill.style.height = (pct * 100) + '%';
+          if (reading) {
+            reading.textContent = Math.round(pct * maxScroll) + '% SCROLLED';
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
       }
     };
     document.addEventListener('scroll', onScroll, { passive: true });
@@ -412,9 +437,9 @@
     const updateHoverables = () => {
       const hoverables = document.querySelectorAll(
         'a, button, input, textarea, select, .btn, .hero-btn-primary, .hero-btn-secondary, ' +
-        '.contact-quote-btn, .expertise-nav-btn, .price-card, .h-testimonial-card, ' +
-        '.service-flow-card, .stacked-card, .bento-card, .service-pillar-card, ' +
-        '.faq-question, .ticker-item, .map-badge-btn, .contact-meta-item, [role="button"]'
+        '.contact-quote-btn, .expertise-nav-btn, .service-flow-card, .stacked-card, ' +
+        '.port-card, .portfolio-item, .project-carousel-frame, .port-frame, ' +
+        '.map-badge-btn, .webagency-accordion-header, [role="button"]'
       );
       hoverables.forEach((el) => {
         if (el.dataset.cursorBound) return;
@@ -613,12 +638,18 @@
       io.observe(this.viewport);
     }
 
-    /* --- Get viewport dimensions safely --- */
+    /* --- Get viewport dimensions safely (Cached to prevent forced reflow) --- */
     _dims() {
+      if (this._cachedW && this._cachedH && (Date.now() - (this._cachedTime || 0) < 2000)) {
+        return { w: this._cachedW, h: this._cachedH };
+      }
       const r = this.viewport.getBoundingClientRect();
+      this._cachedW = r.width > 100 ? r.width : (this.viewport.clientWidth || window.innerWidth);
+      this._cachedH = r.height > 100 ? r.height : 440;
+      this._cachedTime = Date.now();
       return {
-        w: r.width > 100 ? r.width : (this.viewport.clientWidth || window.innerWidth),
-        h: r.height > 100 ? r.height : 440
+        w: this._cachedW,
+        h: this._cachedH
       };
     }
 
