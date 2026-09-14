@@ -320,7 +320,7 @@
               <a href="services.html" class="btn btn-solid">Continue shopping</a>
             </div>
 
-            <!-- Cart Table Box -->
+                        <!-- Cart Table Box -->
             <div class="cart-table-box">
               <table class="cart-table">
                 <thead>
@@ -387,17 +387,17 @@
 
       <script>
         const products = {
-          "web-basic": { title: "Basic - Web Development", price: 997, image: "web-dev-hero.png" },
-          "web-premium": { title: "Premium - Web Development", price: 1497, image: "web-dev-hero.png" },
-          "web-elite": { title: "Elite - Web Development", price: 1997, image: "web-dev-hero.png" },
+          "web-basic": { title: "Starter Plan — Web Development", price: 997, image: "images/web-dev-hero.png" },
+          "web-premium": { title: "Premium Plan — Web Development", price: 1497, image: "images/web-dev-hero.png" },
+          "web-elite": { title: "Diamond Plan — Web Development", price: 1997, image: "images/web-dev-hero.png" },
           
-          "seo-basic": { title: "Basic - SEO Optimization", price: 797, image: "seo-hero.png" },
-          "seo-premium": { title: "Premium - SEO Optimization", price: 1297, image: "seo-hero.png" },
-          "seo-elite": { title: "Elite - SEO Optimization", price: 1897, image: "seo-hero.png" },
+          "seo-basic": { title: "Starter Plan — SEO Services", price: 697, image: "images/seo-hero.png" },
+          "seo-premium": { title: "Premium Plan — SEO Services", price: 997, image: "images/seo-hero.png" },
+          "seo-elite": { title: "Diamond Plan — SEO Services", price: 1497, image: "images/seo-hero.png" },
           
-          "ads-basic": { title: "Basic - Google Ads", price: 697, image: "google-ads-hero.png" },
-          "ads-premium": { title: "Premium - Google Ads", price: 1197, image: "google-ads-hero.png" },
-          "ads-elite": { title: "Elite - Google Ads", price: 1697, image: "google-ads-hero.png" }
+          "ads-basic": { title: "Starter Plan — Google Ads", price: 697, image: "images/google-ads-hero.png" },
+          "ads-premium": { title: "Premium Plan — Google Ads", price: 997, image: "images/google-ads-hero.png" },
+          "ads-elite": { title: "Diamond Plan — Google Ads", price: 1497, image: "images/google-ads-hero.png" }
         };
 
         let currentProduct = null;
@@ -413,7 +413,7 @@
           currentProduct = products[productId];
           cartContent.style.display = 'block';
           
-          document.getElementById('banner-product-name').innerText = `"${currentProduct.title}"`;
+          document.getElementById('banner-product-name').innerText = '"' + currentProduct.title + '"';
           document.getElementById('cart-item-title').innerText = currentProduct.title;
           document.getElementById('cart-item-price').innerText = '$' + currentProduct.price.toLocaleString() + '.00';
           document.getElementById('cart-item-img').src = currentProduct.image;
@@ -450,6 +450,7 @@
           alert('Redirecting to secure checkout for ' + currentProduct.title + ' (Total: $' + (currentProduct.price * qty).toLocaleString() + ')');
         }
       </script>
+
     </main>
 
     <!-- FOOTER -->
@@ -641,6 +642,3 @@
     </div>
   </body>
 </html>
-
-
-

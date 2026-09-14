@@ -5860,10 +5860,10 @@ html:not([data-theme="dark"]) .diag-btn-secondary:hover,
 
 html:not([data-theme="dark"]) .diag-ribbon-bg,
 [data-theme='light'] .diag-ribbon-bg {
-  background: rgba(0, 217, 143, 0.16) !important;
-  border-top: 1px solid rgba(0, 180, 115, 0.35) !important;
-  border-bottom: 1px solid rgba(0, 180, 115, 0.35) !important;
-  box-shadow: 0 4px 16px rgba(10, 26, 16, 0.06) !important;
+  background: rgba(0, 217, 143, 0.22) !important;
+  border-top: 1.5px solid rgba(0, 180, 115, 0.45) !important;
+  border-bottom: 1.5px solid rgba(0, 180, 115, 0.45) !important;
+  box-shadow: 0 4px 16px rgba(10, 26, 16, 0.08) !important;
 }
 
 html:not([data-theme="dark"]) .diag-ribbon-bg .diag-item,
@@ -6397,7 +6397,7 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
 .diag-crossover-banner {
   position: relative;
   width: 100%;
-  height: clamp(80px, 7.5vw, 110px);
+  height: clamp(95px, 9vw, 120px);
   overflow: hidden;
   background: var(--bg);
   display: flex;
@@ -6405,7 +6405,7 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
   justify-content: center;
   user-select: none;
   pointer-events: none;
-  margin: 0;
+  margin: clamp(24px, 3.5vw, 40px) 0;
   padding: 0;
   border: none !important;
   box-shadow: none !important;
@@ -6415,7 +6415,7 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
 .diag-crossover-banner .diag-ribbon {
   position: absolute;
   left: 50%;
-  width: 115vw;
+  width: 120vw;
   min-width: 100%;
   pointer-events: auto;
 }
@@ -6423,14 +6423,14 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
 .diag-crossover-banner .diag-ribbon-bg {
   top: 50%;
   height: clamp(34px, 3.2vw, 42px);
-  transform: translate(-50%, -50%) rotate(2.8deg);
+  transform: translate(-50%, -50%) rotate(3.2deg);
   z-index: 1;
 }
 
 .diag-crossover-banner .diag-ribbon-fg {
   top: 50%;
-  height: clamp(44px, 4vw, 54px);
-  transform: translate(-50%, -50%) rotate(-2.4deg);
+  height: clamp(42px, 3.8vw, 50px);
+  transform: translate(-50%, -50%) rotate(-2.8deg);
   z-index: 2;
 }
 
@@ -6442,50 +6442,53 @@ html:not([data-theme="dark"]) .diag-crossover-banner,
 
 @media (max-width: 991px) {
   .diag-crossover-banner {
-    height: clamp(74px, 8.5vw, 95px);
+    height: clamp(88px, 10vw, 110px);
+    margin: 24px 0;
   }
   .diag-crossover-banner .diag-ribbon {
-    width: 125vw;
+    width: 130vw;
   }
   .diag-crossover-banner .diag-ribbon-bg {
-    transform: translate(-50%, -50%) rotate(2.4deg);
+    transform: translate(-50%, -50%) rotate(3.4deg);
   }
   .diag-crossover-banner .diag-ribbon-fg {
-    transform: translate(-50%, -50%) rotate(-2.2deg);
+    transform: translate(-50%, -50%) rotate(-3.0deg);
   }
 }
 
 @media (max-width: 767px) {
   .diag-crossover-banner {
-    height: 72px;
+    height: 92px;
+    margin: 24px 0 16px;
   }
   .diag-crossover-banner .diag-ribbon {
-    width: 135vw;
+    width: 145vw;
   }
   .diag-crossover-banner .diag-ribbon-bg {
-    height: 32px;
-    transform: translate(-50%, -50%) rotate(2.0deg);
+    height: 34px;
+    transform: translate(-50%, -50%) rotate(3.8deg);
   }
   .diag-crossover-banner .diag-ribbon-fg {
-    height: 40px;
-    transform: translate(-50%, -50%) rotate(-1.8deg);
+    height: 38px;
+    transform: translate(-50%, -50%) rotate(-3.4deg);
   }
 }
 
 @media (max-width: 480px) {
   .diag-crossover-banner {
-    height: 64px;
+    height: 90px;
+    margin: 20px 0 14px;
   }
   .diag-crossover-banner .diag-ribbon {
-    width: 140vw;
+    width: 155vw;
   }
   .diag-crossover-banner .diag-ribbon-bg {
-    height: 28px;
-    transform: translate(-50%, -50%) rotate(1.6deg);
+    height: 32px;
+    transform: translate(-50%, -50%) rotate(4.2deg);
   }
   .diag-crossover-banner .diag-ribbon-fg {
     height: 36px;
-    transform: translate(-50%, -50%) rotate(-1.5deg);
+    transform: translate(-50%, -50%) rotate(-3.8deg);
   }
 }
 
@@ -16969,9 +16972,58 @@ html:not([data-theme="dark"]) .about-hero-desc,
 .about-philosophy-section {
   position: relative;
   width: 100%;
-  padding-block: clamp(70px, 8vw, 110px);
+  padding-top: clamp(48px, 5.5vw, 76px);
+  padding-bottom: clamp(32px, 3.5vw, 48px);
   background: var(--bg);
   overflow: hidden;
+}
+
+/* About & Services Expertise Sections - Disciplined Left Alignment & Calibrated Rhythm */
+.about-expertise-section,
+.services-expertise-section {
+  padding-top: clamp(20px, 2.5vw, 36px) !important;
+  padding-bottom: clamp(48px, 5vw, 68px) !important;
+}
+
+.about-expertise-section .section-head,
+.services-expertise-section .section-head {
+  text-align: left !important;
+  margin-inline: 0 !important;
+  align-items: flex-start !important;
+  max-width: 720px !important;
+  margin-bottom: 0 !important;
+}
+
+.about-expertise-section .section-num-label,
+.services-expertise-section .section-num-label {
+  margin-inline: 0 !important;
+  justify-content: flex-start !important;
+}
+
+.about-expertise-section .section-head h2,
+.services-expertise-section .section-head h2 {
+  text-align: left !important;
+}
+
+.about-expertise-section .section-subtitle,
+.about-expertise-section .desc-mob,
+.about-expertise-section .desc-desk,
+.services-expertise-section .section-subtitle,
+.services-expertise-section .desc-mob,
+.services-expertise-section .desc-desk {
+  text-align: left !important;
+  margin-inline: 0 !important;
+  align-items: flex-start !important;
+}
+
+.about-expertise-section .expertise-row-first,
+.services-expertise-section .expertise-row-first {
+  margin-top: clamp(24px, 3vw, 40px) !important;
+}
+
+.about-expertise-section .expertise-row-title,
+.services-expertise-section .expertise-row-title {
+  margin-bottom: clamp(10px, 1.4vw, 16px) !important;
 }
 
 .philosophy-section-head {
