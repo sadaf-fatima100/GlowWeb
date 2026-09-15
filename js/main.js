@@ -68,19 +68,22 @@
       return;
     }
     
-    // Accordion Toggle Logic
+    // Accordion Toggle Logic (chevron button triggers expansion without navigating)
     const accordionToggle = e.target.closest('.accordion-toggle');
     if (accordionToggle) {
       e.preventDefault();
+      e.stopPropagation();
       const accordion = accordionToggle.closest('.mobile-drawer-accordion');
       if (accordion) {
-        accordion.classList.toggle('open');
+        const isOpen = accordion.classList.toggle('open');
+        accordionToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       }
-      return; // Stop here so it doesn't close the drawer
+      return; // Stop here so it doesn't close the drawer or trigger link navigation
     }
 
-    // Close drawer on overlay click, close button, or when a standard link is clicked
-    if (e.target.closest('.mobile-close') || (e.target.closest('.mobile-drawer') && e.target.tagName === 'A' && !e.target.closest('.accordion-toggle'))) {
+    // Close drawer on overlay click, close button, or when a standard nav link is clicked
+    const clickedNavLink = e.target.closest('.mobile-drawer a');
+    if (e.target.closest('.mobile-close') || clickedNavLink) {
       closeMobileDrawer();
     }
   });
@@ -98,6 +101,25 @@
       closeMobileDrawer();
     }
   });
+
+  // URL query support for testing mobile drawer state (e.g. ?drawer=open&accordion=open&theme=light)
+  try {
+    const navParams = new URLSearchParams(window.location.search);
+    if (navParams.get('theme')) {
+      applyTheme(navParams.get('theme'));
+    }
+    if (navParams.get('drawer') === 'open') {
+      openMobileDrawer();
+      if (navParams.get('accordion') === 'open') {
+        const acc = document.querySelector('.mobile-drawer-accordion');
+        if (acc) {
+          acc.classList.add('open');
+          const toggle = acc.querySelector('.accordion-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'true');
+        }
+      }
+    }
+  } catch(e) {}
 
   /* ---------- Magnetic Hover & LERP Damping (Optimized) ---------- */
   const magneticEls = document.querySelectorAll('.magnetic');

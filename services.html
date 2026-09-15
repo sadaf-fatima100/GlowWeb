@@ -53,7 +53,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=4.0" />
+    <link rel="stylesheet" href="css/style.css?v=5.1" />
     <style>
       /* =========================================================
          SERVICES PAGE UNIVERSE - COMPLETE DESIGN PARITY WITH HOME & BLOGS
@@ -1439,13 +1439,17 @@
       <div class="mobile-drawer-nav">
         <a href="index.html"><span>Home</span></a>
         <div class="mobile-drawer-accordion open">
-          <a href="services.html" class="accordion-toggle active">
-            <span>Services</span>
-            <span class="drawer-active-indicator"></span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
-              <path d="M7 10l5 5 5-5z" />
-            </svg>
-          </a>
+          <div class="mobile-drawer-accordion-header">
+            <a href="services.html" class="drawer-nav-link active">
+              <span>Services</span>
+              <span class="drawer-active-indicator"></span>
+            </a>
+            <button type="button" class="accordion-toggle" aria-label="Toggle Services submenu" aria-expanded="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+          </div>
           <div class="accordion-content">
             <a href="web-development.html">Web Development</a>
             <a href="google-ads.html">Google Ads</a>

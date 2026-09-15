@@ -47,7 +47,7 @@
       content="https://hywiz.com/webagency_hero_team.jpg"
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="css/style.css?v=4.0" />
+    <link rel="stylesheet" href="css/style.css?v=5.1" />
   </head>
   <body>
     <!-- Custom reactive mouse pointer -->
@@ -215,12 +215,16 @@
       <div class="mobile-drawer-nav">
         <a href="index.html"><span>Home</span></a>
         <div class="mobile-drawer-accordion open">
-          <a href="services.html" class="accordion-toggle">
-            <span>Services</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
-              <path d="M7 10l5 5 5-5z" />
-            </svg>
-          </a>
+          <div class="mobile-drawer-accordion-header">
+            <a href="services.html" class="drawer-nav-link">
+              <span>Services</span>
+            </a>
+            <button type="button" class="accordion-toggle" aria-label="Toggle Services submenu" aria-expanded="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="accordion-icon">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+          </div>
           <div class="accordion-content">
             <a href="web-development.html">Web Development</a>
             <a href="google-ads.html" class="active">
@@ -354,8 +358,8 @@
                 <span class="sec-slash">/</span>
                 <span class="sec-tag">Split Testing &amp; Iteration</span>
               </div>
-              <h2>
-                Continuous Ad Split Testing That <span class="accent-text">Unlocks Maximum Conversions</span>
+              <h2 class="cap-title">
+                Continuous Ad Testing <br class="cap-title-br" /><span class="accent-text">Built To Maximize ROI</span>
               </h2>
               <p class="desc-lead">
                 From custom landing pages and compelling ad copy to smart bid structures, we rigorously test every angle to identify what drives real revenue for your business.
@@ -385,8 +389,8 @@
                 <span class="sec-slash">/</span>
                 <span class="sec-tag">Conversion Intelligence</span>
               </div>
-              <h2>
-                Full-Funnel Conversion Tracking &amp; <span class="accent-text">Search Query Intelligence</span>
+              <h2 class="cap-title">
+                Conversion Tracking &amp; <br class="cap-title-br" /><span class="accent-text">Search Intelligence</span>
               </h2>
               <p class="desc-lead">
                 Before spending a dollar, we implement server-side tracking and verified conversion actions so every lead, call, and sale is accurately attributed.
@@ -432,8 +436,8 @@
                 <span class="sec-slash">/</span>
                 <span class="sec-tag">Bid &amp; Quality Optimization</span>
               </div>
-              <h2>
-                Continuous Campaign Refinement That <span class="accent-text">Maximizes Target ROAS</span>
+              <h2 class="cap-title">
+                Smart Bid Refinement <br class="cap-title-br" /><span class="accent-text">Built For Peak ROAS</span>
               </h2>
               <p class="desc-lead">
                 We continuously fine-tune your campaigns to ensure your budget captures the highest-quality buyer traffic rather than empty clicks.
@@ -463,8 +467,8 @@
                 <span class="sec-slash">/</span>
                 <span class="sec-tag">Profitable Account Scaling</span>
               </div>
-              <h2>
-                Aggressive Campaign Scaling Built On <span class="accent-text">Predictable Profit Margins</span>
+              <h2 class="cap-title">
+                Profitable Ad Scaling <br class="cap-title-br" /><span class="accent-text">Built On High Margins</span>
               </h2>
               <p class="desc-lead">
                 Once your cost per acquisition is dialed in and profitable, we strategically scale your budget to capture dominant market share.
