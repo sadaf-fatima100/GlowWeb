@@ -5352,6 +5352,7 @@ html:not([data-theme="dark"]) .expertise-right {
     justify-content: center !important;
     transform: scale(0.9) !important;
     transform-origin: center center !important;
+    overflow: visible !important;
   }
   .floating-webdev-badge {
     display: none !important;
@@ -5360,6 +5361,10 @@ html:not([data-theme="dark"]) .expertise-right {
     width: 92% !important;
     max-width: 390px !important;
     animation: floatWindowMobile 5s ease-in-out infinite !important;
+    box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08), 0 0 18px rgba(0, 217, 143, 0.1) !important;
+  }
+  html[data-theme="dark"] .anim-design-window {
+    box-shadow: 0 14px 32px -4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 217, 143, 0.08) !important;
   }
 }
 
@@ -5429,6 +5434,7 @@ html:not([data-theme="dark"]) .expertise-right {
   .expertise-anim-wrap {
     transform: scale(0.86) !important;
     transform-origin: center center !important;
+    overflow: visible !important;
   }
   .floating-webdev-badge {
     display: none !important;
@@ -5437,6 +5443,7 @@ html:not([data-theme="dark"]) .expertise-right {
     width: 95% !important;
     max-width: 380px !important;
     animation: floatWindowMobile 5s ease-in-out infinite !important;
+    box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.08), 0 0 16px rgba(0, 217, 143, 0.08) !important;
   }
   .anim-code-window {
     width: 82% !important;
@@ -6606,22 +6613,22 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
     width: 125vw;
   }
   .diag-edge-top .diag-ribbon-bg-top {
-    top: 20px;
+    top: 38px;
     height: 36px;
     transform: translate(-50%, 0) rotate(2.8deg);
   }
   .diag-edge-top .diag-ribbon-fg-top {
-    top: 56px;
+    top: 40px;
     height: 42px;
     transform: translate(-50%, 0) rotate(-2.4deg);
   }
   .diag-edge-bottom .diag-ribbon-fg-bottom {
-    bottom: 56px;
+    bottom: 40px;
     height: 42px;
     transform: translate(-50%, 0) rotate(2.4deg);
   }
   .diag-edge-bottom .diag-ribbon-bg-bottom {
-    bottom: 20px;
+    bottom: 38px;
     height: 36px;
     transform: translate(-50%, 0) rotate(-2.8deg);
   }
@@ -6674,22 +6681,22 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
     width: 135vw;
   }
   .diag-edge-top .diag-ribbon-bg-top {
-    top: 16px;
+    top: 30px;
     height: 34px;
     transform: translate(-50%, 0) rotate(2.6deg);
   }
   .diag-edge-top .diag-ribbon-fg-top {
-    top: 50px;
+    top: 32px;
     height: 38px;
     transform: translate(-50%, 0) rotate(-2.2deg);
   }
   .diag-edge-bottom .diag-ribbon-fg-bottom {
-    bottom: 50px;
+    bottom: 32px;
     height: 38px;
     transform: translate(-50%, 0) rotate(2.2deg);
   }
   .diag-edge-bottom .diag-ribbon-bg-bottom {
-    bottom: 16px;
+    bottom: 30px;
     height: 34px;
     transform: translate(-50%, 0) rotate(-2.6deg);
   }
@@ -6736,22 +6743,22 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
     width: 140vw;
   }
   .diag-edge-top .diag-ribbon-bg-top {
-    top: 12px;
+    top: 24px;
     height: 32px;
     transform: translate(-50%, 0) rotate(2.5deg);
   }
   .diag-edge-top .diag-ribbon-fg-top {
-    top: 48px;
+    top: 26px;
     height: 36px;
     transform: translate(-50%, 0) rotate(-2.1deg);
   }
   .diag-edge-bottom .diag-ribbon-fg-bottom {
-    bottom: 48px;
+    bottom: 26px;
     height: 36px;
     transform: translate(-50%, 0) rotate(2.1deg);
   }
   .diag-edge-bottom .diag-ribbon-bg-bottom {
-    bottom: 12px;
+    bottom: 24px;
     height: 32px;
     transform: translate(-50%, 0) rotate(-2.5deg);
   }
@@ -6794,20 +6801,20 @@ html:not([data-theme="dark"]) .diag-ribbon-fg .diag-crest,
 .diag-crossover-banner .diag-ribbon {
   position: absolute;
   left: 50%;
+  top: 50%;
   width: 120vw;
   min-width: 100%;
   pointer-events: auto;
+  transform-origin: center center;
 }
 
 .diag-crossover-banner .diag-ribbon-bg {
-  top: 50%;
   height: clamp(34px, 3.2vw, 42px);
   transform: translate(-50%, -50%) rotate(3.2deg);
   z-index: 1;
 }
 
 .diag-crossover-banner .diag-ribbon-fg {
-  top: 50%;
   height: clamp(42px, 3.8vw, 50px);
   transform: translate(-50%, -50%) rotate(-2.8deg);
   z-index: 2;
@@ -6821,61 +6828,55 @@ html:not([data-theme="dark"]) .diag-crossover-banner,
 
 @media (max-width: 991px) {
   .diag-crossover-banner {
-    height: 108px;
-    margin: 28px 0 22px;
+    height: 104px;
+    margin: 26px 0 20px;
   }
   .diag-crossover-banner .diag-ribbon {
     width: 135vw;
   }
   .diag-crossover-banner .diag-ribbon-bg {
-    top: 20px;
     height: 36px;
-    transform: translate(-50%, 0) rotate(2.8deg);
+    transform: translate(-50%, -50%) rotate(2.8deg);
   }
   .diag-crossover-banner .diag-ribbon-fg {
-    top: 54px;
-    height: 40px;
-    transform: translate(-50%, 0) rotate(-2.4deg);
+    height: 42px;
+    transform: translate(-50%, -50%) rotate(-2.4deg);
   }
 }
 
 @media (max-width: 767px) {
   .diag-crossover-banner {
-    height: 104px;
-    margin: 28px 0 20px;
+    height: 96px;
+    margin: 22px 0 18px;
   }
   .diag-crossover-banner .diag-ribbon {
     width: 145vw;
   }
   .diag-crossover-banner .diag-ribbon-bg {
-    top: 16px;
     height: 34px;
-    transform: translate(-50%, 0) rotate(2.6deg);
+    transform: translate(-50%, -50%) rotate(2.6deg);
   }
   .diag-crossover-banner .diag-ribbon-fg {
-    top: 52px;
-    height: 38px;
-    transform: translate(-50%, 0) rotate(-2.2deg);
+    height: 40px;
+    transform: translate(-50%, -50%) rotate(-2.2deg);
   }
 }
 
 @media (max-width: 480px) {
   .diag-crossover-banner {
-    height: 100px;
-    margin: 24px 0 18px;
+    height: 92px;
+    margin: 18px 0 16px;
   }
   .diag-crossover-banner .diag-ribbon {
     width: 155vw;
   }
   .diag-crossover-banner .diag-ribbon-bg {
-    top: 15px;
     height: 32px;
-    transform: translate(-50%, 0) rotate(2.4deg);
+    transform: translate(-50%, -50%) rotate(2.4deg);
   }
   .diag-crossover-banner .diag-ribbon-fg {
-    top: 48px;
-    height: 36px;
-    transform: translate(-50%, 0) rotate(-2.0deg);
+    height: 38px;
+    transform: translate(-50%, -50%) rotate(-2.0deg);
   }
 }
 
@@ -13568,7 +13569,7 @@ html:not([data-theme="dark"]) .tp-img-box img {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14490,6 +14491,152 @@ html[data-theme="dark"] .seo-target-circle::after {
 }
 
 
+/* =========================================================
+   EXPERTISE ANIMATION — LIGHT THEME CONTRAST FIXES
+   #00d98f on light-green/white bg = 1.85:1 (Fail)
+   Fix: use #006e3c (dark emerald) for all accent-colored
+   text in animation panels so contrast is 6.37:1 on white (WCAG AAA)
+   ========================================================= */
+
+/* --- Graphic 1: Figma Design Canvas --- */
+html:not([data-theme="dark"]) .artboard-name,
+[data-theme="light"] .artboard-name {
+  color: #006e3c !important;
+}
+
+html:not([data-theme="dark"]) .mini-hero-badge,
+[data-theme="light"] .mini-hero-badge {
+  color: #006e3c !important;
+  background: rgba(0, 110, 60, 0.08) !important;
+}
+
+html:not([data-theme="dark"]) .mini-card-metric,
+[data-theme="light"] .mini-card-metric {
+  color: #006e3c !important;
+}
+
+html:not([data-theme="dark"]) .mini-card-lbl,
+[data-theme="light"] .mini-card-lbl {
+  color: #44594c !important;
+}
+
+html:not([data-theme="dark"]) .window-tab-pill,
+[data-theme="light"] .window-tab-pill {
+  color: #006e3c !important;
+  background: rgba(0, 110, 60, 0.07) !important;
+  border-color: rgba(0, 110, 60, 0.25) !important;
+}
+
+html:not([data-theme="dark"]) .mini-nav-btn,
+[data-theme="light"] .mini-nav-btn {
+  color: #006e3c !important;
+  background: rgba(0, 110, 60, 0.07) !important;
+  border-color: rgba(0, 110, 60, 0.22) !important;
+}
+
+html:not([data-theme="dark"]) .status-live-dot,
+[data-theme="light"] .status-live-dot {
+  background: #006e3c !important;
+  box-shadow: 0 0 6px rgba(0, 110, 60, 0.4) !important;
+}
+
+html:not([data-theme="dark"]) .figma-select-outline,
+[data-theme="light"] .figma-select-outline {
+  border-color: rgba(0, 110, 60, 0.4) !important;
+}
+
+html:not([data-theme="dark"]) .figma-node,
+[data-theme="light"] .figma-node {
+  border-color: #006e3c !important;
+}
+
+/* --- Graphic 2: SEO Board --- */
+html:not([data-theme="dark"]) .seo-search-pill,
+[data-theme="light"] .seo-search-pill {
+  background: #ffffff !important;
+  border-color: rgba(0, 110, 60, 0.25) !important;
+}
+
+html:not([data-theme="dark"]) .seo-search-pill svg,
+[data-theme="light"] .seo-search-pill svg {
+  color: #006e3c !important;
+}
+
+html:not([data-theme="dark"]) .seo-stat-pill,
+[data-theme="light"] .seo-stat-pill {
+  background: #ffffff !important;
+  border-color: rgba(0, 110, 60, 0.35) !important;
+}
+
+html:not([data-theme="dark"]) .seo-stat-val,
+[data-theme="light"] .seo-stat-val {
+  color: #006e3c !important;
+}
+
+html:not([data-theme="dark"]) .seo-stat-lbl,
+[data-theme="light"] .seo-stat-lbl {
+  color: #44594c !important;
+}
+
+html:not([data-theme="dark"]) .seo-search-pos,
+[data-theme="light"] .seo-search-pos {
+  color: #006e3c !important;
+  background: rgba(0, 110, 60, 0.09) !important;
+  border-color: rgba(0, 110, 60, 0.28) !important;
+}
+
+html:not([data-theme="dark"]) .chart-lbl,
+[data-theme="light"] .chart-lbl {
+  color: #4a5e52 !important;
+}
+
+html:not([data-theme="dark"]) .chart-lbl.highlight-lbl,
+[data-theme="light"] .chart-lbl.highlight-lbl {
+  color: #006e3c !important;
+}
+
+html:not([data-theme="dark"]) .seo-stat-icon,
+[data-theme="light"] .seo-stat-icon {
+  color: #006e3c !important;
+  background: rgba(0, 110, 60, 0.08) !important;
+}
+
+/* --- Graphic 3: Google Ads / Dashboard --- */
+html:not([data-theme="dark"]) .dash-card,
+[data-theme="light"] .dash-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 110, 60, 0.35) !important;
+  box-shadow: 0 12px 36px rgba(0, 110, 60, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not([data-theme="dark"]) .dash-value,
+[data-theme="light"] .dash-value {
+  color: #006e3c !important;
+}
+
+html:not([data-theme="dark"]) .dash-label,
+[data-theme="light"] .dash-label {
+  color: #3b5043 !important;
+}
+
+html:not([data-theme="dark"]) .cursor-anim svg,
+[data-theme="light"] .cursor-anim svg {
+  stroke: #006e3c !important;
+}
+
+html:not([data-theme="dark"]) .dash-pulse-ring,
+[data-theme="light"] .dash-pulse-ring {
+  border-color: rgba(0, 110, 60, 0.35) !important;
+}
+
+/* --- Floating Badges (all graphics) --- */
+html:not([data-theme="dark"]) .speed-icon,
+[data-theme="light"] .speed-icon,
+html:not([data-theme="dark"]) .load-icon,
+[data-theme="light"] .load-icon {
+  color: #006e3c !important;
+  background: rgba(0, 110, 60, 0.08) !important;
+}
 
 
 
@@ -19613,25 +19760,45 @@ html[data-theme="light"] .philo-bcard:hover .bcard-title {
 }
 .emblem-core {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #00ffaa 0%, #00a86b 100%);
+  background: radial-gradient(circle at 35% 35%, rgba(0, 255, 170, 0.3) 0%, rgba(0, 217, 143, 0.08) 80%);
+  border: 1.5px solid rgba(0, 255, 170, 0.6);
+  box-shadow: 0 0 18px rgba(0, 217, 143, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #060a08;
-  box-shadow: 0 0 20px rgba(0, 255, 170, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.5);
-  transition: transform 0.3s ease;
+  color: #00ffaa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .emblem-core svg {
   width: 20px;
   height: 20px;
-  stroke: #060a08;
+  stroke: #00ffaa;
+}
+html[data-theme="light"] .emblem-core {
+  border-color: #008f58;
+  color: #008f58;
+  background: radial-gradient(circle at 35% 35%, rgba(0, 217, 143, 0.2) 0%, rgba(0, 143, 88, 0.06) 80%);
+  box-shadow: 0 0 16px rgba(0, 143, 88, 0.2);
+}
+html[data-theme="light"] .emblem-core svg {
+  stroke: #008f58;
+}
+html[data-theme="light"] .emblem-ring-outer {
+  border-color: rgba(0, 143, 88, 0.35);
+}
+html[data-theme="light"] .emblem-ring-mid {
+  border-color: rgba(0, 143, 88, 0.5);
+  box-shadow: 0 0 14px rgba(0, 143, 88, 0.15);
 }
 .philo-bcard:hover .emblem-core {
-  transform: scale(1.12);
-  box-shadow: 0 0 28px rgba(0, 255, 170, 0.85);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.6);
+}
+html[data-theme="light"] .philo-bcard:hover .emblem-core {
+  box-shadow: 0 0 25px rgba(0, 143, 88, 0.45);
 }
 @keyframes emblemSpin {
   0% { transform: rotate(0deg); }

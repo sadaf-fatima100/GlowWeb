@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=8.5" />
+    <link rel="stylesheet" href="css/style.css?v=8.6" />
     <style>
       /* ======================================== ABOUT PAGE CUSTOM STYLES ======================================== */ 
       /* --- Hero --- */
@@ -1542,25 +1542,45 @@
       }
       .emblem-core {
         position: relative;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
-        background: radial-gradient(circle at 35% 35%, #00ffaa 0%, #00a86b 100%);
+        background: radial-gradient(circle at 35% 35%, rgba(0, 255, 170, 0.3) 0%, rgba(0, 217, 143, 0.08) 80%);
+        border: 1.5px solid rgba(0, 255, 170, 0.6);
+        box-shadow: 0 0 18px rgba(0, 217, 143, 0.35);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #060a08;
-        box-shadow: 0 0 20px rgba(0, 255, 170, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.5);
-        transition: transform 0.3s ease;
+        color: #00ffaa;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .emblem-core svg {
         width: 20px;
         height: 20px;
-        stroke: #060a08;
+        stroke: #00ffaa;
+      }
+      html[data-theme="light"] .emblem-core {
+        border-color: #008f58;
+        color: #008f58;
+        background: radial-gradient(circle at 35% 35%, rgba(0, 217, 143, 0.2) 0%, rgba(0, 143, 88, 0.06) 80%);
+        box-shadow: 0 0 16px rgba(0, 143, 88, 0.2);
+      }
+      html[data-theme="light"] .emblem-core svg {
+        stroke: #008f58;
+      }
+      html[data-theme="light"] .emblem-ring-outer {
+        border-color: rgba(0, 143, 88, 0.35);
+      }
+      html[data-theme="light"] .emblem-ring-mid {
+        border-color: rgba(0, 143, 88, 0.5);
+        box-shadow: 0 0 14px rgba(0, 143, 88, 0.15);
       }
       .philo-bcard:hover .emblem-core {
-        transform: scale(1.12);
-        box-shadow: 0 0 28px rgba(0, 255, 170, 0.85);
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(0, 255, 170, 0.6);
+      }
+      html[data-theme="light"] .philo-bcard:hover .emblem-core {
+        box-shadow: 0 0 25px rgba(0, 143, 88, 0.45);
       }
       @keyframes emblemSpin {
         0% { transform: rotate(0deg); }
