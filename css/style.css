@@ -6163,9 +6163,11 @@ html:not([data-theme="dark"]) .diag-content-title,
 
 html:not([data-theme="dark"]) .diag-title-accent,
 [data-theme='light'] .diag-title-accent {
-  background: linear-gradient(135deg, #008753 0%, #00b374 50%, #00774a 100%) !important;
+  background: linear-gradient(135deg, #008f58 0%, #00b374 45%, #0284c7 100%) !important;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+  display: inline-block;
 }
 
 html:not([data-theme="dark"]) .diag-content-desc,
@@ -13111,9 +13113,9 @@ html:not([data-theme="dark"]) .ads-step-card,
 
 .trusted-partner-grid-v2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 2.8vw, 38px);
-  align-items: center;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(28px, 3.5vw, 44px);
+  align-items: stretch;
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 auto;
@@ -13124,17 +13126,18 @@ html:not([data-theme="dark"]) .ads-step-card,
   display: flex;
   gap: 16px;
   height: 100%;
-  min-height: 480px;
+  min-height: 0;
+  max-height: 440px;
 }
 .tp-img-col-left {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 46%;
+  width: calc(46% - 8px);
   height: 100%;
 }
 .tp-img-col-right {
-  width: 54%;
+  width: calc(54% - 8px);
   height: 100%;
 }
 .tp-img-box {
@@ -13153,16 +13156,18 @@ html:not([data-theme="dark"]) .ads-step-card,
   transform: scale(1.05);
 }
 .tp-img-box.tp-img-small {
-  flex: 1 1 56%;
-  height: 56%;
+  flex: 1.25 1 0;
+  height: auto;
+  min-height: 0;
 }
 .tp-img-box.tp-img-large {
   height: 100%;
   width: 100%;
 }
 .tp-stat-box {
-  flex: 1 1 44%;
-  height: 44%;
+  flex: 0.95 1 0;
+  height: auto;
+  min-height: 0;
   background: linear-gradient(135deg, var(--bg-2) 0%, rgba(0, 217, 143, 0.12) 100%) !important;
   border: 1.5px solid rgba(0, 217, 143, 0.35) !important;
   border-radius: 18px !important;
@@ -13171,7 +13176,7 @@ html:not([data-theme="dark"]) .ads-step-card,
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  padding: 16px !important;
+  padding: 14px !important;
   position: relative !important;
   overflow: hidden !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
@@ -13204,21 +13209,23 @@ html:not([data-theme="dark"]) .ads-step-card,
 /* Floating Review */
 .tp-floating-review {
   position: absolute;
-  bottom: 16px;
-  left: -16px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-light);
-  padding: 12px 20px;
+  top: 52%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  padding: 8px 14px;
   border-radius: 14px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   z-index: 5;
+  white-space: nowrap;
 }
 .tp-avatar {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -13232,7 +13239,7 @@ html:not([data-theme="dark"]) .ads-step-card,
   flex-direction: column;
 }
 .tp-rating {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
   display: flex;
@@ -13244,16 +13251,18 @@ html:not([data-theme="dark"]) .ads-step-card,
   font-size: 0.95rem;
 }
 .tp-reviews-count {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 /* Right Content */
 .tp-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 440px;
   align-items: flex-start;
 }
 .tp-eyebrow {
@@ -19210,7 +19219,7 @@ html:not([data-theme="dark"]) .about-value-chip,
   position: relative;
   width: 100%;
   padding-top: clamp(48px, 5.5vw, 76px);
-  padding-bottom: clamp(32px, 3.5vw, 48px);
+  padding-bottom: clamp(20px, 2.5vw, 36px);
   background: var(--bg);
   overflow: hidden;
 }
@@ -21192,6 +21201,56 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
 
 /* ─── Section Head (heading + subtitle) ─── */
 @media (max-width: 768px) {
+  h2,
+  .section-title,
+  .section-head h2,
+  .services-header h2,
+  .tp-heading,
+  .bento-title,
+  .cta-heading,
+  .cta-split-heading,
+  .metrics-main-head h2,
+  .expertise-header h2,
+  .expertise-slide-title,
+  .expertise-slide-text-item h2,
+  .expertise-slides-text h2,
+  .process-header h2,
+  .portfolio-header h2,
+  .testimonials-header h2,
+  .contact-info h2,
+  .contact-info-col h2,
+  .contact-header h2,
+  .philosophy-main-title,
+  .tech-clean-title,
+  .about-story-content h2,
+  .about-values-left h2,
+  .about-cta-text h2,
+  .cap-title,
+  .trusted-partner-content h2,
+  .blog-post-content h2,
+  .about-expertise-section h2,
+  .section-why-choose h2,
+  .diag-content-title,
+  .expertise-content-creative h2,
+  .flow-card-title,
+  .blog-section-title,
+  .related-section-title,
+  .comments-title,
+  .cart-totals-title {
+    margin-bottom: 7px !important;
+  }
+
+  .section-head h2 + p,
+  .section-head h2 + .section-subtitle,
+  .section-head p,
+  .section-subtitle,
+  .services-header h2 + p,
+  .tp-heading + p,
+  .contact-info-col h2 + p,
+  .philosophy-main-title + p {
+    margin-top: 0 !important;
+  }
+
   .exp-head-br,
   .wcu-title-br {
     display: none !important;
@@ -21199,17 +21258,41 @@ html:not([data-theme="dark"]) .blog-single-universe::after,
 }
 
 @media (max-width: 480px) {
+  h2,
   .section-head h2,
   .about-expertise-section h2,
   .section-why-choose h2,
   .philosophy-main-title,
   .trusted-partner-content h2,
-  .diag-content-title {
+  .diag-content-title,
+  .cta-split-heading,
+  .cap-title,
+  .services-header h2,
+  .tp-heading,
+  .bento-title,
+  .expertise-slide-title,
+  .expertise-content-creative h2,
+  .contact-info-col h2,
+  .blog-section-title,
+  .related-section-title,
+  .comments-title,
+  .cart-totals-title {
     font-size: 26px !important;
     line-height: 1.2 !important;
     letter-spacing: -0.02em !important;
     text-wrap: wrap !important;
     width: 100% !important;
+    margin-bottom: 7px !important;
+  }
+  .section-head h2 + p,
+  .section-head h2 + .section-subtitle,
+  .section-head p,
+  .section-subtitle,
+  .services-header h2 + p,
+  .tp-heading + p,
+  .contact-info-col h2 + p,
+  .philosophy-main-title + p {
+    margin-top: 0 !important;
   }
   .exp-head-br,
   .wcu-title-br {
@@ -21296,9 +21379,9 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   }
   .trusted-partner-grid-v2 {
     display: grid !important;
-    grid-template-columns: 1fr 1.12fr !important;
+    grid-template-columns: 1fr 1.08fr !important;
     gap: clamp(24px, 3.2vw, 42px) !important;
-    align-items: center !important;
+    align-items: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -21309,8 +21392,8 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     width: 100% !important;
     max-width: 100% !important;
     height: 100% !important;
-    min-height: 460px !important;
-    max-height: 520px !important;
+    min-height: 0 !important;
+    max-height: 440px !important;
     display: flex !important;
     gap: 16px !important;
     position: relative !important;
@@ -21334,15 +21417,20 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12) !important;
   }
   .tp-img-box.tp-img-small {
-    height: 56% !important;
+    flex: 1.25 1 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
   }
   .tp-img-box.tp-img-large {
     height: 100% !important;
+    width: 100% !important;
   }
 
   /* 85+ Stat Box */
   .tp-stat-box {
-    height: 44% !important;
+    flex: 0.95 1 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
     border-radius: 18px !important;
     border: 1.5px solid rgba(0, 217, 143, 0.35) !important;
     background: linear-gradient(135deg, var(--surface, #ffffff) 0%, rgba(0, 217, 143, 0.12) 100%) !important;
@@ -21381,19 +21469,19 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   /* Floating Review Pill */
   .tp-floating-review {
     position: absolute !important;
-    top: 55% !important;
+    top: 52% !important;
     left: 46% !important;
     bottom: auto !important;
     right: auto !important;
     transform: translate(-50%, -50%) !important;
-    padding: 10px 16px !important;
+    padding: 8px 14px !important;
     border-radius: 14px !important;
     background: var(--surface) !important;
     border: 1.5px solid var(--border-strong) !important;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22) !important;
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     z-index: 5 !important;
     white-space: nowrap !important;
   }
@@ -21405,7 +21493,9 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    max-height: 440px !important;
     align-items: flex-start !important;
   }
   .tp-heading {
@@ -21660,31 +21750,33 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     color: var(--fg-soft) !important;
   }
 
-  /* Side-by-Side Features Layout (15+ on Left, Checklist on Right — ZERO Full-Width Stretched Box!) */
+  /* Side-by-Side Features Layout: Checklist on Left, Experience Box on Right */
   .tp-features-container {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: row-reverse !important;
     align-items: stretch !important;
-    gap: 14px !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
     width: 100% !important;
-    margin-bottom: 22px !important;
+    margin-bottom: 20px !important;
   }
 
-  /* Compact 15+ Years Experience Badge on Mobile (Width limited to ~125px) */
+  /* Compact Experience Badge on Mobile (on the Right side) */
   .tp-experience-box {
-    flex: 0 0 125px !important;
-    width: 125px !important;
-    min-width: 115px !important;
+    flex: 0 0 115px !important;
+    width: 115px !important;
+    max-width: 115px !important;
+    min-width: 105px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 16px 10px !important;
+    padding: 12px 8px !important;
     border-radius: 16px !important;
     background: var(--surface) !important;
     border: 1.5px solid rgba(0, 217, 143, 0.28) !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
     text-align: center !important;
   }
   .tp-exp-content {
@@ -21692,11 +21784,11 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 4px !important;
+    gap: 2px !important;
     width: 100% !important;
   }
   .tp-exp-num {
-    font-size: 2.1rem !important;
+    font-size: 1.9rem !important;
     font-weight: 800 !important;
     color: var(--accent-primary) !important;
     line-height: 1 !important;
@@ -21704,16 +21796,16 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     font-family: var(--font-display) !important;
   }
   .tp-exp-text {
-    font-size: 11.5px !important;
+    font-size: 11px !important;
     font-weight: 700 !important;
     color: var(--fg-soft) !important;
-    line-height: 1.25 !important;
+    line-height: 1.2 !important;
     text-align: center !important;
   }
 
-  /* Checklist fills the right side next to 15+ badge */
+  /* Checklist fills the left side */
   .tp-checklist {
-    flex: 1 !important;
+    flex: 1 1 auto !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
@@ -21726,16 +21818,16 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
-    font-size: 12.5px !important;
+    font-size: 12px !important;
     font-weight: 600 !important;
     color: var(--fg) !important;
-    line-height: 1.3 !important;
+    line-height: 1.25 !important;
   }
   .tp-checklist li svg {
-    width: 18px !important;
-    height: 18px !important;
-    min-width: 18px !important;
-    padding: 3px !important;
+    width: 17px !important;
+    height: 17px !important;
+    min-width: 17px !important;
+    padding: 2.5px !important;
     border-radius: 50% !important;
     background: var(--accent-primary) !important;
     color: #03140a !important;
@@ -21766,37 +21858,6 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
   }
   .tp-stat-text {
     font-size: 11px !important;
-  }
-  .tp-features-container {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 14px !important;
-  }
-  .tp-experience-box {
-    flex: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 12px 16px !important;
-  }
-  .tp-exp-content {
-    flex-direction: row !important;
-    justify-content: center !important;
-    gap: 12px !important;
-  }
-  .tp-exp-num {
-    font-size: 1.85rem !important;
-    margin-bottom: 0 !important;
-  }
-  .tp-exp-text {
-    font-size: 12px !important;
-    text-align: left !important;
-  }
-  .tp-checklist {
-    width: 100% !important;
-    gap: 10px !important;
-  }
-  .tp-checklist li {
-    font-size: 13px !important;
   }
 }
 
@@ -22047,7 +22108,8 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     padding-bottom: 12px !important;
   }
   .trusted-brands-head h3 {
-    font-size: 18px !important;
+    font-size: clamp(20px, 3.2vw, 22px) !important;
+    line-height: 1.3 !important;
     margin-bottom: 14px !important;
     padding-inline: 16px;
   }
@@ -22076,7 +22138,10 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     height: 15px !important;
   }
   .brands-track { gap: 16px !important; }
-  .trusted-brands-head h3 { font-size: 15px !important; }
+  .trusted-brands-head h3 {
+    font-size: clamp(17px, 4.8vw, 20.5px) !important;
+    line-height: 1.34 !important;
+  }
 }
 
 /* ─── 10 Contact Form Section (on home page) ─── */
@@ -23553,3 +23618,110 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
   margin-bottom: 18px !important;
 }
 
+/* ==========================================================================
+   UNIVERSAL MOBILE H2 BOTTOM MARGIN TIGHTENING (~7PX)
+   Across entire website, sets tight & elegant spacing below all h2 headings on mobile
+   ========================================================================== */
+@media (max-width: 768px) {
+  h2,
+  .section-head h2,
+  .section-title,
+  .services-header h2,
+  .tp-heading,
+  .bento-title,
+  .cta-heading,
+  .cta-split-heading,
+  .metrics-main-head h2,
+  .expertise-header h2,
+  .expertise-slide-title,
+  .expertise-slide-text-item h2,
+  .expertise-slides-text h2,
+  .process-header h2,
+  .portfolio-header h2,
+  .testimonials-header h2,
+  .contact-info h2,
+  .contact-info-col h2,
+  .contact-header h2,
+  .philosophy-main-title,
+  .tech-clean-title,
+  .about-story-content h2,
+  .about-values-left h2,
+  .about-cta-text h2,
+  .cap-title,
+  .trusted-partner-content h2,
+  .blog-post-content h2,
+  .about-expertise-section h2,
+  .section-why-choose h2,
+  .diag-content-title,
+  .expertise-content-creative h2,
+  .flow-card-title,
+  .blog-section-title,
+  .related-section-title,
+  .comments-title,
+  .cart-totals-title {
+    margin-bottom: 7px !important;
+  }
+
+  .section-head h2 + p,
+  .section-head h2 + .section-subtitle,
+  .section-head p,
+  .section-subtitle,
+  .services-header h2 + p,
+  .tp-heading + p,
+  .contact-info-col h2 + p,
+  .philosophy-main-title + p {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h2,
+  .section-head h2,
+  .section-title,
+  .services-header h2,
+  .tp-heading,
+  .bento-title,
+  .cta-heading,
+  .cta-split-heading,
+  .metrics-main-head h2,
+  .expertise-header h2,
+  .expertise-slide-title,
+  .expertise-slide-text-item h2,
+  .expertise-slides-text h2,
+  .process-header h2,
+  .portfolio-header h2,
+  .testimonials-header h2,
+  .contact-info h2,
+  .contact-info-col h2,
+  .contact-header h2,
+  .philosophy-main-title,
+  .tech-clean-title,
+  .about-story-content h2,
+  .about-values-left h2,
+  .about-cta-text h2,
+  .cap-title,
+  .trusted-partner-content h2,
+  .blog-post-content h2,
+  .about-expertise-section h2,
+  .section-why-choose h2,
+  .diag-content-title,
+  .expertise-content-creative h2,
+  .flow-card-title,
+  .blog-section-title,
+  .related-section-title,
+  .comments-title,
+  .cart-totals-title {
+    margin-bottom: 7px !important;
+  }
+
+  .section-head h2 + p,
+  .section-head h2 + .section-subtitle,
+  .section-head p,
+  .section-subtitle,
+  .services-header h2 + p,
+  .tp-heading + p,
+  .contact-info-col h2 + p,
+  .philosophy-main-title + p {
+    margin-top: 0 !important;
+  }
+}

@@ -1,0 +1,19 @@
+/*
+ ==============================================================================
+ WebForge - Modular CSS Architecture Source
+ ==============================================================================
+ This directory contains the decomposed modular source files of the WebForge
+ design system. In production, these modules are compiled into css/style.css
+ (canonical build) and css/style.min.css (high-performance distribution).
+
+ MODULE STRUCTURE:
+ ├── 01-tokens-theme.css    -> Design tokens, dark/light themes, color scales
+ ├── 02-reset-base.css       -> CSS reset, typography scale, global utilities
+ ├── 03-layout.css           -> Transparent/glass header, drawer, footer
+ ├── 04-components.css       -> Master pill buttons, modal, floating widgets
+ ├── 05-animations.css       -> Kinetic engine, marquee tickers, aurora mesh
+ ├── 06-pages-home.css       -> Graphizo hero v2, network hub, bento, split CTA
+ ├── 06-pages-subpages.css   -> About, services, portfolio, blog, cart, contact
+ └── 07-responsive.css       -> Unified device breakpoint matrix (1280 to 360px)
+ ==============================================================================
+*/

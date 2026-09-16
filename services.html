@@ -53,7 +53,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=8.1" />
+    <link rel="stylesheet" href="css/style.css?v=8.5" />
     <style>
       /* =========================================================
          SERVICES PAGE UNIVERSE - COMPLETE DESIGN PARITY WITH HOME & BLOGS
@@ -529,7 +529,7 @@
         line-height: 1.15 !important;
         letter-spacing: -0.01em !important;
         color: var(--fg) !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 12px;
       }
 
       .services-page-universe .section-head h2 em,
@@ -709,7 +709,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: clamp(2px, 0.4vw, 5px);
+        gap: clamp(4px, 0.5vw, 6px);
         mask-image: linear-gradient(
           to right,
           transparent 0%,
@@ -750,7 +750,7 @@
         width: 100%;
         display: flex;
         user-select: none;
-        padding: 4px 0;
+        padding: 2px 0;
         margin: 0;
       }
 
@@ -759,7 +759,7 @@
         width: max-content;
         gap: clamp(10px, 1.2vw, 14px);
         align-items: center;
-        padding: 4px 0;
+        padding: 0;
         will-change: transform;
       }
 
@@ -797,7 +797,7 @@
         display: flex;
         gap: clamp(10px, 1.2vw, 14px);
         align-items: center;
-        padding: 4px 0;
+        padding: 0;
         flex-shrink: 0;
       }
 
@@ -805,11 +805,12 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: clamp(9px, 0.9vw, 11px) clamp(28px, 2.5vw, 42px);
-        min-width: clamp(170px, 14vw, 220px);
+        padding: clamp(7.5px, 0.75vw, 9.5px) clamp(24px, 2.2vw, 36px);
+        min-width: clamp(160px, 13vw, 210px);
         border-radius: 9999px;
         font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
-        font-size: clamp(13px, 0.95vw, 14.5px);
+        font-size: clamp(12.5px, 0.9vw, 14px);
+        line-height: 1.25;
         font-weight: 600;
         letter-spacing: -0.015em;
         white-space: nowrap;
@@ -984,8 +985,16 @@
         }
         .services-page-universe .section-head h2,
         .services-page-universe .tech-clean-title,
-        .services-page-universe .cta-split-heading {
+        .services-page-universe .cta-split-heading,
+        .services-page-universe h2 {
           font-size: 30px !important;
+          margin-bottom: 7px !important;
+        }
+        .services-page-universe .section-head p,
+        .services-page-universe .section-head p.section-subtitle,
+        .services-page-universe .section-subtitle,
+        .services-page-universe .tech-clean-subtitle {
+          margin-top: 0 !important;
         }
         .services-page-universe .pillar-title,
         .services-page-universe .services-circle h3,
@@ -1148,8 +1157,16 @@
         }
         .services-page-universe .section-head h2,
         .services-page-universe .tech-clean-title,
-        .services-page-universe .cta-split-heading {
+        .services-page-universe .cta-split-heading,
+        .services-page-universe h2 {
           font-size: clamp(23px, 6.5vw, 26px) !important;
+          margin-bottom: 7px !important;
+        }
+        .services-page-universe .section-head p,
+        .services-page-universe .section-head p.section-subtitle,
+        .services-page-universe .section-subtitle,
+        .services-page-universe .tech-clean-subtitle {
+          margin-top: 0 !important;
         }
         .services-page-universe .pillar-title,
         .services-page-universe .services-circle h3,
@@ -1187,6 +1204,12 @@
         }
         .services-page-universe .services-pills-marquee-section {
           padding: clamp(22px, 3.5vw, 32px) 0 !important;
+        }
+        .services-page-universe .pills-marquee-container {
+          gap: 6px !important;
+        }
+        .services-page-universe .pills-marquee-row {
+          padding: 1.5px 0 !important;
         }
         .services-page-universe .pills-marquee-row:nth-child(3) {
           display: none !important; /* Reduces GPU composite load by 33% on mobile */
@@ -1267,8 +1290,10 @@
         }
         .services-page-universe .section-head h2,
         .services-page-universe .tech-clean-title,
-        .services-page-universe .cta-split-heading {
+        .services-page-universe .cta-split-heading,
+        .services-page-universe h2 {
           font-size: 21px !important;
+          margin-bottom: 7px !important;
         }
         .services-page-universe .service-flow-card {
           padding: 16px 12px !important;
