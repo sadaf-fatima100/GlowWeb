@@ -9,12 +9,24 @@
   const root = document.documentElement;
   const THEME_KEY = 'webagency-theme';
   const DEFAULT_THEME = root.getAttribute('data-default-theme') || 'dark';
+  let themeTransitionTimer = null;
 
-  function applyTheme(theme) {
+  function applyTheme(theme, isUserAction = false) {
+    if (isUserAction) {
+      root.classList.add('theme-transitioning');
+      if (document.body) document.body.classList.add('theme-transitioning');
+    }
     root.setAttribute('data-theme', theme);
     document.querySelectorAll('.theme-toggle').forEach(btn => {
       btn.setAttribute('aria-pressed', theme === 'dark');
     });
+    if (isUserAction) {
+      clearTimeout(themeTransitionTimer);
+      themeTransitionTimer = setTimeout(() => {
+        root.classList.remove('theme-transitioning');
+        if (document.body) document.body.classList.remove('theme-transitioning');
+      }, 420);
+    }
   }
   
   function getStoredTheme() {
@@ -26,14 +38,14 @@
   }
 
   const initialTheme = getStoredTheme() || DEFAULT_THEME;
-  applyTheme(initialTheme);
+  applyTheme(initialTheme, false);
 
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.theme-toggle');
     if (!btn) return;
     const current = root.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
+    applyTheme(next, true);
     storeTheme(next);
   });
 
@@ -272,16 +284,23 @@
   /* ---------- Dynamic Header Scroll Animation ---------- */
   const header = document.querySelector('.site-header');
   if (header) {
-    const handleHeaderScroll = () => {
-      const isMobile = window.innerWidth <= 960;
-      if (isMobile) {
-        header.style.top = ''; // Clean CSS control on mobile
-        return;
+    let navTicking = false;
+    const onNavScroll = () => {
+      if (!navTicking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (scrollY > 60) {
+            header.classList.add('nav-scrolled');
+          } else {
+            header.classList.remove('nav-scrolled');
+          }
+          navTicking = false;
+        });
+        navTicking = true;
       }
-      header.style.top = '10px';
     };
-    window.addEventListener('resize', handleHeaderScroll, { passive: true });
-    handleHeaderScroll();
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    onNavScroll();
   }
 
   /* ---------- Animated Statistics Counters ---------- */

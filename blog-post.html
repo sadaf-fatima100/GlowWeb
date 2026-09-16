@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog — Agency</title>
+    <title>Blog | WebForge</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=5.1" />
+    <link rel="stylesheet" href="css/style.css?v=7.9" />
     <style>
       .blog-single-universe {
         position: relative;
@@ -795,16 +795,16 @@
     <div class="topbar">
       <div class="wrap">
         <div class="promo">
-          <span class="dot"></span> Leading Web Agency — Web Design,
+          <span class="dot"></span> WebForge : Web Design,
           Development, SEO &amp; Google Ads
         </div>
-        <div>hello@hywiz.com</div>
+        <div>hello@webforge.com</div>
       </div>
     </div>
     <!-- Header Navigation -->
     <header class="site-header webagency-header">
       <nav class="nav wrap webagency-nav">
-        <a href="index.html" class="brand webagency-brand"> Web Agency </a>
+        <a href="index.html" class="brand webagency-brand">WebForge</a>
         <div class="nav-links webagency-nav-links">
           <a href="index.html" class="webagency-nav-item">
             <div class="webagency-nav-item-inner">
@@ -827,7 +827,7 @@
                     width="12"
                     height="12"
                     fill="currentColor"
-                    style="margin-left: 4px"
+                    class="u-ml-4"
                   >
                     <path d="M7 10l5 5 5-5z" /></svg
                 ></span>
@@ -909,7 +909,7 @@
     </header>
     <div class="mobile-drawer">
       <div class="mobile-drawer-header">
-        <a href="index.html" class="brand webagency-brand">Web Agency</a>
+        <a href="index.html" class="brand webagency-brand">WebForge</a>
         <div class="mobile-drawer-actions">
           <button class="theme-toggle" aria-label="Toggle theme">
             <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor">
@@ -966,7 +966,7 @@
       <div class="mobile-drawer-footer">
         <div class="drawer-footer-contact">
           <span class="drawer-footer-lbl">Email us directly</span>
-          <a href="mailto:hello@hywiz.com" class="drawer-footer-email">hello@hywiz.com</a>
+          <a href="mailto:hello@webforge.com" class="drawer-footer-email">hello@webforge.com</a>
         </div>
         <div class="drawer-footer-status">
           <span class="drawer-status-dot"></span>
@@ -1096,89 +1096,76 @@
         </section>
       </div>
     </div>
-    <!-- CONTACT FORM SECTION -->
-    <section class="section-contact-form" id="contactSection">
+<!-- CALL TO ACTION (CTA) SECTION - 2-COLUMN WITH RIGHT VISUAL -->
+    <section class="cta-premium-section" id="ctaSection">
       <div class="wrap">
-        <div class="contact-form-grid">
-          <!-- Left side: Contact header & details -->
-          <div class="contact-info-col reveal">
-            <!-- Floating graphic decoration -->
-            <div class="contact-graphic-decoration">
-              <svg
-                width="40"
-                height="80"
-                viewBox="0 0 21 68"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M10.5 0 L10.5 68 M0 34 L21 34"
-                  stroke-linecap="round"
-                />
-                <circle cx="10.5" cy="34" r="6" fill="currentColor" />
-              </svg>
+        <div class="cta-box-container cta-split-layout">
+          <!-- Background Glow Halo -->
+          <div class="cta-aurora-bg"><div class="cta-aurora-glow"></div></div>
+
+          <!-- Left Column: Content -->
+          <div class="cta-content-col reveal">
+            <!-- CTA Eyebrow: live dot, no number -->
+            <div class="hero-live-eyebrow">
+              <span class="hero-live-dot"></span>
+              <span class="hero-live-text">Let's Build Something Exceptional</span>
             </div>
-            <h2>Have a Project <em>in Mind?</em> <span class="wave-hand">👋</span></h2>
-            <p>
-              Send us a message at
-              <strong style="color: var(--accent-primary)"
-                >hello@hywiz.com</strong
-              >
-              or fill out the form given here to start your journey toward
-              exceptional web solutions
+
+            <h2 class="cta-split-heading">
+              Ready to Scale Your <br/>
+              <span class="cta-gradient-accent">Digital Pipeline?</span>
+            </h2>
+
+            <p class="cta-split-subtitle">
+              Partner with our senior engineering team to build high-converting platforms, dominate search rankings, and accelerate compounding buyer revenue
             </p>
+
+            <div class="cta-split-actions">
+              <a href="contact.html" class="btn btn-solid cta-main-action">
+                <span>Get Started Now</span>
+              </a>
+              <a href="services.html" class="btn btn-ghost cta-secondary-action">Explore Services</a>
+            </div>
           </div>
-          <!-- Right side: Contact Card Form -->
-          <div class="contact-form-card reveal-right">
-            <form action="#" method="POST" class="wpcf7-form modern-msg-form">
-              <h3 class="msg-form-heading">Send a message</h3>
-              <p class="msg-form-sub">Fill out the quick brief below and our team will get back to you within 24 hours.</p>
 
-              <div class="msg-form-body">
-                <!-- Left Column: 3 Pill Inputs -->
-                <div class="msg-form-inputs">
-                  <div class="msg-input-pill-wrap">
-                    <input type="text" id="contact-name" name="text-264" class="msg-input-pill" placeholder="Your name" required />
-                  </div>
-                  <div class="msg-input-pill-wrap">
-                    <input type="email" id="contact-email" name="email-439" class="msg-input-pill" placeholder="Your email" required />
-                  </div>
-                  <div class="msg-input-pill-wrap">
-                    <input type="text" id="contact-topic" name="subject-268" class="msg-input-pill" placeholder="Subject" required />
-                  </div>
+          <!-- Right Column: Visual with Badges -->
+          <div class="cta-visual-col reveal-right">
+            <div class="cta-image-wrapper">
+              <div class="cta-image-glow"></div>
+              
+              <div class="cta-float-badge badge-top-left float-anim-1">
+                <div class="badge-icon-star">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 </div>
-
-                <!-- Right Column: Message Textarea -->
-                <div class="msg-form-textarea-wrap">
-                  <textarea id="contact-desc" name="textarea-989" class="msg-textarea" placeholder="Your message" required></textarea>
+                <div class="badge-text-group">
+                  <span class="badge-val">4.9 / 5.0</span>
+                  <span class="badge-lbl">Client Rating</span>
                 </div>
               </div>
 
-              <!-- Bottom Row: Checkbox & Disclaimer on left, Pill Submit Button on right -->
-              <div class="msg-form-footer">
-                <label class="msg-form-consent-label">
-                  <input type="checkbox" name="acceptance-872" class="msg-consent-checkbox" required />
-                  <span class="msg-form-disclaimer">
-                    By clicking Send a message button, you agree to use our &ldquo;Form&rdquo; terms And consent cookie usage in browser.
-                  </span>
-                </label>
-                <button type="submit" class="msg-form-submit-btn">
-                  <span>SEND A MESSAGE</span>
-                </button>
+              <div class="cta-float-badge badge-bottom-right float-anim-3">
+                <div class="badge-icon-growth">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                </div>
+                <div class="badge-text-group">
+                  <span class="badge-val">+250% Growth</span>
+                  <span class="badge-lbl">Proven Results</span>
+                </div>
               </div>
-            </form>
+
+              <img src="images/cta-person-illustration.webp" alt="WebForge Specialist" class="cta-person-img" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
     </section>
-    </main>
+</main>
     <!-- FOOTER -->
     <footer class="site-footer-premium" id="footer">
       <div class="wrap footer-grid-premium">
         <!-- Column 1: Info & Socials -->
         <div class="footer-info-col">
-          <a href="index.html" class="brand-logo-white">Web Agency</a>
+          <a href="index.html" class="brand-logo-white">WebForge</a>
           <p>
               Partner with the No.1 Web Design Agency. We deliver stunning websites and powerful digital strategies to help you outshine the competition globally.
             </p>
@@ -1281,6 +1268,7 @@
           <h4>Services</h4>
           <div class="footer-links-list">
             <a href="web-development.html">Web Development</a>
+          <a href="web-development.html">Web Design &amp; UI/UX</a>
             <a href="google-ads.html">Google Ads</a>
             <a href="search-engine-optimization.html"
               >Search Engine Optimization</a
@@ -1301,13 +1289,13 @@
               <span class="footer-contact-text">California, USA</span>
             </div>
             <div class="footer-contact-item hoverable">
-              <a href="mailto:hello@hywiz.com" class="footer-icon-btn" aria-label="Email us">
+              <a href="mailto:hello@webforge.com" class="footer-icon-btn" aria-label="Email us">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
               </a>
-              <a href="mailto:hello@hywiz.com" class="footer-contact-text">hello@hywiz.com</a>
+              <a href="mailto:hello@webforge.com" class="footer-contact-text">hello@webforge.com</a>
             </div>
             <div class="footer-contact-item hoverable">
               <a href="tel:923143110259" class="footer-icon-btn" aria-label="Call us">
@@ -1330,10 +1318,10 @@
       </div>
       <!-- Footer Copyright bottom -->
       <div class="wrap footer-bottom-premium">
-        <span>© 2026 Web Agency. All rights reserved. Designed & Developed with ❤️ by <a href="#" style="color:var(--accent-primary); font-weight: 600; text-decoration: none;">Hywiz Technologies</a></span>
+        <span>© 2026 WebForge. All rights reserved. Designed & Developed with ❤️ by <a href="https://hywiz.com/" target="_blank" rel="noopener noreferrer" class="footer-credit-link">Hywiz Technologies</a>.</span>
       </div>
     </footer>
-      <script src="js/main.js"></script>
+      <script src="js/main.js?v=5.3"></script>
       <script src="js/blog-data.js"></script>
       <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -1343,7 +1331,7 @@
           const post = typeof blogPosts !== 'undefined' ? blogPosts[postId] : null;
 
           if (post) {
-            document.title = post.title + " — Web Agency Insights";
+            document.title = post.title + " | WebForge Insights";
             const tagEl = document.getElementById('postTag');
             const dateEl = document.getElementById('postDate');
             const titleEl = document.getElementById('postTitle');
