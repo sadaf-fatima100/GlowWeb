@@ -13230,16 +13230,36 @@ html:not([data-theme="dark"]) .ads-step-card,
   width: fit-content;
 }
 
-/* Update 2: Fixes based on feedback */
+/* Section 02 Image Overlay & Filters (Dark & Light Theme Calibrated) */
 .tp-img-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(180deg, transparent, rgba(0, 217, 143, 0.25));
+  background: linear-gradient(180deg, rgba(0, 217, 143, 0.04) 0%, rgba(4, 8, 6, 0.15) 50%, rgba(0, 217, 143, 0.25) 100%);
   mix-blend-mode: overlay;
   pointer-events: none;
+  transition: background 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 .tp-img-box img {
-  filter: brightness(0.85) contrast(1.1) grayscale(0.1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: brightness(0.88) contrast(1.08);
+  transition: transform 0.5s ease, filter 0.3s var(--ease);
+}
+
+html[data-theme="light"] .tp-img-overlay,
+[data-theme='light'] .tp-img-overlay,
+html:not([data-theme="dark"]) .tp-img-overlay {
+  background: linear-gradient(180deg, rgba(0, 217, 143, 0.05) 0%, rgba(0, 143, 88, 0.18) 100%);
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+
+html[data-theme="light"] .tp-img-box img,
+[data-theme='light'] .tp-img-box img,
+html:not([data-theme="dark"]) .tp-img-box img {
+  filter: brightness(0.98) contrast(1.04);
 }
 
 /* Merged Stat & Review Card */
