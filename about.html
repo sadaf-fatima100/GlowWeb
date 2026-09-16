@@ -1798,7 +1798,9 @@
           display: block !important;
           width: 100% !important;
           text-align: center !important;
-          white-space: nowrap !important;
+          white-space: normal !important;
+          text-wrap: balance !important;
+          overflow-wrap: break-word !important;
         }
         .about-lede-row-1,
         .about-lede-row-2 {
@@ -2282,7 +2284,9 @@
           display: block !important;
           width: 100% !important;
           text-align: center !important;
-          white-space: nowrap !important;
+          white-space: normal !important;
+          text-wrap: balance !important;
+          overflow-wrap: break-word !important;
         }
         .about-hero h1,
         .about-hero-title,
@@ -2433,11 +2437,9 @@
         .about-expertise-section .expertise-lead-desc,
         .about-expertise-section .expertise-highlight-desc,
         .about-expertise-section .expertise-content-creative p {
-          font-size: 13.5px !important;
-          line-height: 1.6 !important;
-          text-align: justify !important;
-          text-justify: inter-word !important;
-          text-align-last: left !important;
+          font-size: 14px !important;
+          line-height: 1.62 !important;
+          text-align: left !important;
           margin-inline: 0 !important;
         }
         .about-page-universe .expertise-content-creative .btn,
@@ -2464,11 +2466,14 @@
       /* --- Small Phones (<= 480px) --- */
       @media (max-width: 480px) {
         .about-hero {
-          padding-top: clamp(100px, 15vw, 120px) !important;
-          padding-bottom: 20px !important;
+          padding-top: clamp(88px, 15vw, 110px) !important;
+          padding-bottom: clamp(40px, 6vw, 56px) !important;
         }
-        .about-hero h1 {
-          font-size: clamp(28px, 8vw, 36px) !important;
+        .about-hero h1,
+        .about-hero-title,
+        h1.about-hero-title {
+          font-size: clamp(25px, 7.2vw, 32px) !important;
+          line-height: 1.15 !important;
         }
         .about-statement-wrap {
           width: calc(100% - 20px) !important;
@@ -2508,10 +2513,56 @@
         .about-expertise-section .expertise-row-title {
           font-size: clamp(19px, 6vw, 22px) !important;
         }
+        .about-page-universe .expertise-image-creative,
+        .about-expertise-section .expertise-image-creative {
+          width: 100% !important;
+          max-width: 520px !important;
+          margin: 0 auto !important;
+          height: auto !important;
+          aspect-ratio: 16 / 10 !important;
+          border-radius: 16px !important;
+        }
         .about-page-universe .expertise-image-creative img,
         .about-expertise-section .expertise-image-creative img {
-          max-height: 200px !important;
-          border-radius: 14px !important;
+          width: 100% !important;
+          height: 100% !important;
+          max-height: none !important;
+          object-fit: cover !important;
+          border-radius: 16px !important;
+        }
+        .about-page-universe .about-expertise-section,
+        .about-expertise-section {
+          padding-block: clamp(40px, 6vw, 56px) !important;
+        }
+        .about-page-universe .section-why-choose,
+        .section-why-choose {
+          padding: clamp(40px, 6vw, 56px) 0 !important;
+        }
+        .about-value-chips {
+          flex-wrap: wrap !important;
+          gap: 6px !important;
+        }
+      }
+
+      /* Very Narrow Devices (<= 360px): iPhone SE, Galaxy Fold cover */
+      @media (max-width: 360px) {
+        .about-hero h1,
+        .about-hero-title,
+        h1.about-hero-title {
+          font-size: clamp(22px, 7vw, 25px) !important;
+        }
+        .about-hero .lede {
+          font-size: 0.86rem !important;
+        }
+        .philosophy-main-title {
+          font-size: 22px !important;
+        }
+        .philo-bcard {
+          padding: 16px 12px 12px !important;
+        }
+        .about-value-chip {
+          padding: 5px 10px !important;
+          font-size: 10px !important;
         }
       }
     </style>

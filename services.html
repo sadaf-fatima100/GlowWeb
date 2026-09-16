@@ -1014,12 +1014,20 @@
         }
         .services-mob-title {
           display: flex !important;
-          white-space: nowrap !important;
-          flex-wrap: nowrap !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          gap: 2px !important;
+          width: 100% !important;
+          white-space: normal !important;
+          flex-wrap: wrap !important;
         }
         .services-mob-row {
-          display: inline-block;
-          white-space: nowrap !important;
+          display: block !important;
+          white-space: normal !important;
+          text-wrap: balance !important;
+          overflow-wrap: break-word !important;
+          width: 100% !important;
+          text-align: center !important;
         }
         .services-page-universe .services-hero-lede {
           font-size: clamp(0.94rem, 1.4vw, 1.06rem) !important;
@@ -1130,17 +1138,18 @@
         .services-hero-creative,
         .services-page-universe .services-hero-creative {
           padding-top: clamp(82px, 16vw, 98px) !important;
-          padding-bottom: 30px !important;
+          padding-bottom: clamp(40px, 6vw, 56px) !important;
         }
         .services-page-universe .services-hero-h1,
         .services-page-universe h1.services-hero-h1 {
-          font-size: 34px !important;
+          font-size: clamp(25px, 7.2vw, 32px) !important;
           line-height: 1.15 !important;
+          max-width: 100% !important;
         }
         .services-page-universe .section-head h2,
         .services-page-universe .tech-clean-title,
         .services-page-universe .cta-split-heading {
-          font-size: 26px !important;
+          font-size: clamp(23px, 6.5vw, 26px) !important;
         }
         .services-page-universe .pillar-title,
         .services-page-universe .services-circle h3,
@@ -1152,14 +1161,42 @@
           font-size: 17px !important;
         }
         .services-page-universe .expertise-row-title {
-          font-size: 22px !important;
+          font-size: clamp(20px, 5.8vw, 23px) !important;
+        }
+        .services-page-universe .expertise-image-creative {
+          width: 100% !important;
+          max-width: 520px !important;
+          margin: 0 auto !important;
+          height: auto !important;
+          aspect-ratio: 16 / 10 !important;
+          border-radius: 16px !important;
+        }
+        .services-page-universe .expertise-image-creative img {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+        }
+        .services-page-universe .services-expertise-section {
+          padding-block: clamp(40px, 6vw, 56px) !important;
+        }
+        .services-page-universe .section-why-choose {
+          padding: clamp(40px, 6vw, 56px) 0 !important;
+        }
+        .services-page-universe .section-why-choose .section-head {
+          margin-bottom: 28px !important;
+        }
+        .services-page-universe .services-pills-marquee-section {
+          padding: clamp(22px, 3.5vw, 32px) 0 !important;
+        }
+        .services-page-universe .pills-marquee-row:nth-child(3) {
+          display: none !important; /* Reduces GPU composite load by 33% on mobile */
         }
         .services-page-universe .services-flow-grid {
           gap: 12px !important;
-          margin-top: 18px !important;
+          margin-top: 20px !important;
         }
         .services-page-universe .service-flow-card {
-          padding: 22px 16px !important;
+          padding: clamp(18px, 4.8vw, 22px) 16px !important;
         }
         .services-page-universe .tech-clean-grid,
         .services-page-universe .wcu-grid {
@@ -1172,7 +1209,7 @@
           justify-content: center;
           width: 100%;
           gap: 12px;
-          margin-bottom: 40px;
+          margin-bottom: 36px;
         }
         .services-page-universe .services-hero-actions .btn {
           width: auto !important;
@@ -1187,7 +1224,7 @@
         .services-page-universe .services-hero-lede {
           font-size: 0.92rem !important;
           line-height: 1.55 !important;
-          max-width: 325px !important;
+          max-width: 340px !important;
         }
         .services-page-universe .section-subtitle {
           font-size: 0.92rem !important;
@@ -1196,11 +1233,34 @@
         }
       }
 
-      /* Very Narrow Devices (<= 360px) */
+      /* Compact Phones (<= 420px): CTA Float Badges Collision Protection */
+      @media (max-width: 420px) {
+        .cta-float-badge {
+          padding: 5px 10px !important;
+          gap: 6px !important;
+          border-radius: 10px !important;
+        }
+        .cta-float-badge .badge-val {
+          font-size: 10.5px !important;
+        }
+        .cta-float-badge .badge-lbl {
+          font-size: 8.5px !important;
+        }
+        .badge-top-left {
+          top: 4% !important;
+          left: 4px !important;
+        }
+        .badge-bottom-right {
+          bottom: 4% !important;
+          right: 4px !important;
+        }
+      }
+
+      /* Very Narrow Devices (<= 360px): iPhone SE, Galaxy Fold cover */
       @media (max-width: 360px) {
         .services-page-universe .services-hero-h1,
         .services-page-universe h1.services-hero-h1 {
-          font-size: 28px !important;
+          font-size: clamp(22px, 7vw, 25px) !important;
         }
         .services-page-universe .services-hero-lede {
           font-size: 0.86rem !important;
@@ -1208,7 +1268,13 @@
         .services-page-universe .section-head h2,
         .services-page-universe .tech-clean-title,
         .services-page-universe .cta-split-heading {
-          font-size: 22px !important;
+          font-size: 21px !important;
+        }
+        .services-page-universe .service-flow-card {
+          padding: 16px 12px !important;
+        }
+        .services-page-universe .flow-card-title {
+          font-size: 17px !important;
         }
       }
     </style>
