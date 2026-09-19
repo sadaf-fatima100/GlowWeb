@@ -25708,12 +25708,13 @@ h2.expertise-row-title,
   .services-expertise-section h2.expertise-row-title,
   .about-page-universe h2.expertise-row-title,
   .services-page-universe h2.expertise-row-title {
-    font-size: 48px !important;
+    font-size: 46px !important;
     font-weight: 700 !important;
     line-height: 1.15 !important;
     letter-spacing: -0.01em !important;
   }
 }
+
 
 
 
