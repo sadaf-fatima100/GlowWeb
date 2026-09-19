@@ -17940,6 +17940,14 @@ h3,
   .trusted-partner-content h2,
   .blog-post-content h2,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 32px !important;
     font-weight: 700 !important;
@@ -18024,6 +18032,14 @@ h3,
   .trusted-partner-content h2,
   .blog-post-content h2,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 38px !important;
     font-weight: 700 !important;
@@ -18108,6 +18124,14 @@ h3,
   .trusted-partner-content h2,
   .blog-post-content h2,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 44px !important;
     font-weight: 700 !important;
@@ -18189,6 +18213,14 @@ h3,
   .trusted-partner-content h2,
   .blog-post-content h2,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 48px !important;
     font-weight: 700 !important;
@@ -18269,6 +18301,14 @@ h3,
   .trusted-partner-content h2,
   .blog-post-content h2,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 18px !important;
     line-height: 1.2 !important;
@@ -19812,7 +19852,6 @@ html:not([data-theme="dark"]) .about-value-chip,
 .services-expertise-section h2.expertise-row-title,
 .services-expertise-section .expertise-row-title {
   font-family: var(--font-display) !important;
-  font-size: 44px !important;
   font-weight: 700 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.01em !important;
@@ -19820,15 +19859,6 @@ html:not([data-theme="dark"]) .about-value-chip,
   margin-top: 0 !important;
   margin-bottom: clamp(14px, 1.6vw, 20px) !important;
   text-wrap: balance !important;
-}
-
-@media (min-width: 1441px) {
-  .about-expertise-section h2.expertise-row-title,
-  .about-expertise-section .expertise-row-title,
-  .services-expertise-section h2.expertise-row-title,
-  .services-expertise-section .expertise-row-title {
-    font-size: 48px !important;
-  }
 }
 
 .expertise-seo-heading .seo-title-line {
@@ -19869,7 +19899,6 @@ html:not([data-theme="dark"]) .about-value-chip,
 .philosophy-main-title {
   color: var(--fg) !important;
   margin-bottom: 0 !important;
-  font-size: clamp(30px, 3.4vw, 44px) !important;
   line-height: 1.18 !important;
   letter-spacing: -0.02em !important;
   width: 100%;
@@ -25359,6 +25388,14 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
   .cart-totals-title,
   .contact-details-heading,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 28px !important;
     font-weight: 700 !important;
@@ -25415,6 +25452,14 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
   .cart-totals-title,
   .contact-details-heading,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 26px !important;
     font-weight: 700 !important;
@@ -25496,6 +25541,14 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
   .cart-totals-title,
   .contact-details-heading,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 24px !important;
     font-weight: 700 !important;
@@ -25579,6 +25632,14 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
   .cart-totals-title,
   .contact-details-heading,
   .expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe .expertise-row-title,
+  .about-page-universe .expertise-row-title,
   h2.expertise-row-title {
     font-size: 18px !important;
     font-weight: 700 !important;
@@ -25692,30 +25753,35 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
 
 
 /* Standardize expertise row titles to match Home Page H2s */
-h2.expertise-row-title,
-.about-expertise-section h2.expertise-row-title,
-.services-expertise-section h2.expertise-row-title,
-.about-page-universe h2.expertise-row-title,
-.services-page-universe h2.expertise-row-title {
-  font-size: clamp(32px, 3.8vw, 46px) !important;
-  font-weight: 700 !important;
-  line-height: 1.16 !important;
-  letter-spacing: -0.03em !important;
+@media (min-width: 481px) {
+  h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe h2.expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-page-universe .expertise-row-title,
+  .services-page-universe .expertise-row-title {
+    font-size: clamp(32px, 3.8vw, 46px) !important;
+    font-weight: 700 !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.03em !important;
+  }
 }
 @media (min-width: 1441px) {
   h2.expertise-row-title,
   .about-expertise-section h2.expertise-row-title,
   .services-expertise-section h2.expertise-row-title,
   .about-page-universe h2.expertise-row-title,
-  .services-page-universe h2.expertise-row-title {
+  .services-page-universe h2.expertise-row-title,
+  .about-expertise-section .expertise-row-title,
+  .services-expertise-section .expertise-row-title,
+  .about-page-universe .expertise-row-title,
+  .services-page-universe .expertise-row-title {
     font-size: 46px !important;
     font-weight: 700 !important;
     line-height: 1.15 !important;
     letter-spacing: -0.01em !important;
   }
 }
-
-
-
-
-
