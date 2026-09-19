@@ -6414,10 +6414,7 @@ html[data-theme="dark"] .project-carousel-frame::after {
 .diag-ticker-section {
   position: relative;
   width: 100%;
-  background: #030d07;
-  background-image: 
-    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0, 217, 143, 0.10) 0%, transparent 75%),
-    linear-gradient(180deg, #060a08 0%, #030d07 35%, #030d07 65%, #0d1410 100%);
+  background: transparent;
   border: none !important;
   border-top: none !important;
   border-bottom: none !important;
@@ -6435,10 +6432,7 @@ html[data-theme="dark"] .project-carousel-frame::after {
    ========================================================= */
 html:not([data-theme="dark"]) .diag-ticker-section,
 [data-theme='light'] .diag-ticker-section {
-  background: #f4f7f5;
-  background-image: 
-    radial-gradient(ellipse 75% 65% at 50% 50%, rgba(0, 217, 143, 0.12) 0%, transparent 75%),
-    linear-gradient(180deg, #f4f7f5 0%, #edf4ef 35%, #edf4ef 65%, #eaf5ee 100%);
+  background: transparent;
   border: none !important;
   border-top: none !important;
   border-bottom: none !important;
@@ -8098,6 +8092,26 @@ html:not([data-theme="dark"]) .cap-desc-body,
     max-width: 100% !important;
     padding: 8px !important;
     margin: 0 !important;
+  }
+   .expertise-row-creative .expertise-image-creative {
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+    margin: 0 !important;
+    padding: 14px !important;
+  }
+  .expertise-row-creative .expertise-image-creative::before {
+    display: block !important;
+    border-radius: 26px !important;
+  }
+  .expertise-row-creative .expertise-image-creative img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 380px !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
   }
   .expertise-image-creative img {
     min-height: auto !important;
@@ -10678,10 +10692,11 @@ html:not([data-theme="dark"]) .expertise-image-creative.reveal-right:hover::befo
     max-width: 100% !important;
     align-self: stretch !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 14px !important;
   }
   .expertise-row-creative .expertise-image-creative::before {
-    display: none !important;
+    display: block !important;
+    border-radius: 26px !important;
   }
   .expertise-row-creative .expertise-image-creative img {
     width: 100% !important;
