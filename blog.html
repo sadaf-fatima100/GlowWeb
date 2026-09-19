@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=11.8" />
+    <link rel="stylesheet" href="css/style.css?v=11.9" />
     <style>
       /* ─── Universal Box Strategy Alignment (Navbar & Section Matching) ─── */
       .blog-page-universe .wrap {
@@ -924,13 +924,16 @@
          ═══════════════════════════════════════════════════════════ */
       @media (max-width: 768px) {
         .blog-page-universe .wrap,
-        .blog-page-universe .blog-grid,
-        .blog-page-universe .cta-box-container,
         .blog-page-universe .section-contact-form .wrap,
         .blog-page-universe footer.site-footer-premium .wrap {
           width: 100% !important;
           padding-inline: 16px !important;
           box-sizing: border-box !important;
+        }
+        .blog-page-universe .blog-grid,
+        .blog-page-universe .cta-box-container {
+          width: 100% !important;
+          padding-inline: 0 !important;
         }
         .blog-hero-centered-wrapper {
           padding-top: 105px;
@@ -1481,7 +1484,7 @@
         <span>© 2026 WebForge. All rights reserved. Designed & Developed with ❤️ by <a href="https://hywiz.com/" target="_blank" rel="noopener noreferrer" class="footer-credit-link">Hywiz Technologies</a>.</span>
       </div>
     </footer>
-    <script src="js/main.js?v=11.8"></script>
+    <script src="js/main.js?v=11.9"></script>
       <!-- Interactive Category Filter Script -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
