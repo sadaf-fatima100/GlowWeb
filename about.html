@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=8.6" />
+    <link rel="stylesheet" href="css/style.css?v=11.6" />
     <style>
       /* ======================================== ABOUT PAGE CUSTOM STYLES ======================================== */ 
       /* --- Hero --- */
@@ -2589,6 +2589,67 @@
           font-size: 10px !important;
         }
       }
+
+      /* ======================================== 
+         NEW RELATABLE BENTO CARD VISUALS 
+         ======================================== */
+      /* History Hourglass */
+      .visual-history { position: relative; display: flex; align-items: center; justify-content: center; height: 85px; }
+      .history-hourglass { position: relative; z-index: 2; width: 44px; height: 44px; color: #00ffaa; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 12px #00ffaa); animation: flipHourglass 5s ease-in-out infinite; }
+      .history-hourglass svg { width: 32px; height: 32px; fill: rgba(0, 255, 170, 0.15); }
+      .sand-drop { position: absolute; width: 4px; height: 4px; background: #00ffaa; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: sandFall 1.5s linear infinite; box-shadow: 0 0 8px #00ffaa; }
+      .history-ring-outer { position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px dashed rgba(0, 217, 143, 0.35); animation: emblemSpin 20s linear infinite; }
+      .history-ring-inner { position: absolute; width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(0, 255, 170, 0.25); animation: emblemSpin 10s linear infinite reverse; }
+      @keyframes flipHourglass { 0%, 40% { transform: rotate(0deg); } 50%, 90% { transform: rotate(180deg); } 100% { transform: rotate(360deg); } }
+      @keyframes sandFall { 0% { transform: translate(-50%, -10px); opacity: 0; } 20% { opacity: 1; } 80% { transform: translate(-50%, 10px); opacity: 1; } 100% { transform: translate(-50%, 10px); opacity: 0; } }
+      @keyframes emblemSpin { 100% { transform: rotate(360deg); } }
+      html[data-theme="light"] .history-hourglass { color: #008f58; filter: drop-shadow(0 0 12px rgba(0,143,88,0.5)); }
+      html[data-theme="light"] .sand-drop { background: #008f58; box-shadow: 0 0 8px #008f58; }
+
+      /* Vision Eye */
+      .visual-vision { position: relative; display: flex; align-items: center; justify-content: center; height: 85px; }
+      .vision-eye { position: relative; z-index: 2; width: 44px; height: 44px; color: #00ffaa; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 12px #00ffaa); }
+      .vision-eye svg { width: 34px; height: 34px; }
+      .vision-eye .pupil { fill: rgba(0, 255, 170, 0.6); animation: pupilScan 4s ease-in-out infinite; transform-origin: center; }
+      .vision-scan-ring { position: absolute; width: 70px; height: 70px; border-radius: 50%; border: 2px solid transparent; border-top-color: rgba(0, 255, 170, 0.6); border-bottom-color: rgba(0, 217, 143, 0.2); animation: scanSpin 3s linear infinite; }
+      .vision-pulse { position: absolute; width: 44px; height: 44px; border-radius: 50%; background: rgba(0, 255, 170, 0.15); animation: pulseVision 2s infinite; }
+      @keyframes pupilScan { 0%, 100% { transform: scale(1) translateX(0); } 25% { transform: scale(1.2) translateX(-2px); } 75% { transform: scale(1.2) translateX(2px); } }
+      @keyframes scanSpin { 100% { transform: rotate(360deg); } }
+      @keyframes pulseVision { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
+      html[data-theme="light"] .vision-eye { color: #008f58; filter: drop-shadow(0 0 12px rgba(0,143,88,0.5)); }
+      html[data-theme="light"] .vision-eye .pupil { fill: rgba(0, 143, 88, 0.6); }
+
+      /* Mission Target */
+      .visual-mission { position: relative; display: flex; align-items: center; justify-content: center; height: 85px; }
+      .mission-target { position: relative; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; transform: rotateX(55deg) rotateZ(45deg); transform-style: preserve-3d; }
+      .target-ring { position: absolute; border-radius: 50%; border: 2px solid rgba(0, 255, 170, 0.4); box-shadow: 0 0 10px rgba(0, 217, 143, 0.2); }
+      .target-ring.r1 { width: 100%; height: 100%; border-color: rgba(0, 217, 143, 0.2); }
+      .target-ring.r2 { width: 60%; height: 60%; border-color: rgba(0, 255, 170, 0.5); }
+      .target-ring.r3 { width: 20%; height: 20%; background: #00ffaa; box-shadow: 0 0 15px #00ffaa, 0 0 30px #00d98f; animation: bullseyePulse 2s infinite alternate; }
+      .mission-arrow { position: absolute; width: 32px; height: 32px; color: #fff; filter: drop-shadow(0 0 8px #00ffaa); transform: translateZ(40px) rotateZ(-45deg) rotateX(-55deg); animation: arrowStrike 3s infinite; }
+      .mission-arrow svg { width: 100%; height: 100%; fill: #00ffaa; stroke: none; }
+      @keyframes bullseyePulse { 0% { transform: scale(0.8); } 100% { transform: scale(1.2); } }
+      @keyframes arrowStrike { 
+        0%, 15% { transform: translateZ(80px) translateX(-40px) translateY(-40px) rotateZ(-45deg) rotateX(-55deg); opacity: 0; }
+        35% { transform: translateZ(0) translateX(0) translateY(0) rotateZ(-45deg) rotateX(-55deg); opacity: 1; }
+        85% { transform: translateZ(0) translateX(0) translateY(0) rotateZ(-45deg) rotateX(-55deg); opacity: 1; }
+        100% { transform: translateZ(0) translateX(0) translateY(0) rotateZ(-45deg) rotateX(-55deg); opacity: 0; }
+      }
+      html[data-theme="light"] .target-ring { border-color: rgba(0, 143, 88, 0.4); }
+      html[data-theme="light"] .target-ring.r3 { background: #008f58; box-shadow: 0 0 15px rgba(0,143,88,0.5); }
+      html[data-theme="light"] .mission-arrow { filter: drop-shadow(0 0 8px rgba(0,143,88,0.5)); }
+      html[data-theme="light"] .mission-arrow svg { fill: #008f58; }
+
+      /* Core Values Diamond */
+      .visual-values { position: relative; display: flex; align-items: center; justify-content: center; height: 85px; }
+      .diamond-core { position: relative; z-index: 2; width: 44px; height: 44px; color: #00ffaa; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 15px #00ffaa); animation: floatDiamond 3s ease-in-out infinite; }
+      .diamond-core svg { width: 36px; height: 36px; fill: rgba(0, 255, 170, 0.15); }
+      .diamond-pulse-ring { position: absolute; width: 44px; height: 44px; border-radius: 12%; border: 1px solid rgba(0, 255, 170, 0.5); transform: rotate(45deg); animation: diamondPulse 3s infinite; }
+      .diamond-pulse-ring.p2 { animation-delay: 1.5s; }
+      @keyframes floatDiamond { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes diamondPulse { 0% { transform: rotate(45deg) scale(0.8); opacity: 1; } 100% { transform: rotate(45deg) scale(2); opacity: 0; } }
+      html[data-theme="light"] .diamond-core { color: #008f58; filter: drop-shadow(0 0 15px rgba(0,143,88,0.5)); }
+      html[data-theme="light"] .diamond-core svg { fill: rgba(0, 143, 88, 0.15); }
     </style>
   </head>
   <body>
@@ -2727,7 +2788,7 @@
             ></span>
           </button>
           <a
-            href="contact.html"
+            href="contact.html#contactSection"
             class="btn btn-primary webagency-get-started-btn"
             >Get Started</a
           >
@@ -2782,7 +2843,7 @@
       </div>
 
       <div class="mobile-drawer-cta-wrap">
-        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+        <a href="contact.html#contactSection" class="btn btn-solid mobile-drawer-cta-btn">
           <span>Get Started</span>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -3037,14 +3098,15 @@
                   <h3 class="bcard-title">Our History</h3>
                   <p class="bcard-desc">From humble roots to an elite agency - transforming ambitious ideas into compounding digital realities.</p>
                 </div>
-                <div class="bcard-visual visual-emblem">
-                  <div class="emblem-halo">
-                    <div class="emblem-ring-outer"></div>
-                    <div class="emblem-ring-mid"></div>
-                    <div class="emblem-core">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 22 20 2 20"/></svg>
-                    </div>
+                <div class="bcard-visual visual-history">
+                  <div class="history-hourglass">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 2v2l6 7-6 7v2h16v-2l-6-7 6-7V2H4z"/>
+                    </svg>
+                    <div class="sand-drop"></div>
                   </div>
+                  <div class="history-ring-outer"></div>
+                  <div class="history-ring-inner"></div>
                   <div class="visual-glow-flare"></div>
                 </div>
               </div>
@@ -3056,18 +3118,15 @@
                   <h3 class="bcard-title">Our Vision</h3>
                   <p class="bcard-desc">Redefining conversion velocity, edge cloud infrastructure, and custom high-yield web architectures.</p>
                 </div>
-                <div class="bcard-visual visual-nodes">
-                  <div class="node-badge badge-left">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                <div class="bcard-visual visual-vision">
+                  <div class="vision-eye">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3" class="pupil"></circle>
+                    </svg>
                   </div>
-                  <div class="node-lightning-bridge">
-                    <span class="lightning-line"></span>
-                    <span class="lightning-spark">✦</span>
-                    <span class="lightning-line"></span>
-                  </div>
-                  <div class="node-badge badge-right">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                  </div>
+                  <div class="vision-scan-ring"></div>
+                  <div class="vision-pulse"></div>
                   <div class="visual-glow-flare"></div>
                 </div>
               </div>
@@ -3079,24 +3138,19 @@
                   <h3 class="bcard-title">Our Mission</h3>
                   <p class="bcard-desc">Bespoke web platforms engineered with surgical clarity to maximize market authority and client ROI.</p>
                 </div>
-                <div class="bcard-visual visual-chart">
-                  <div class="bcard-roi-pill">
-                    <span class="roi-pill-tag">Client ROI</span>
-                    <span class="roi-pill-num"><strong>+300%</strong> Avg Growth ↗</span>
+                <div class="bcard-visual visual-mission">
+                  <div class="mission-target">
+                    <div class="target-ring r1"></div>
+                    <div class="target-ring r2"></div>
+                    <div class="target-ring r3"></div>
+                    <div class="mission-arrow">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                      </svg>
+                    </div>
                   </div>
-                  <div class="chart-mountain">
-                    <svg class="chart-svg" viewBox="0 0 220 54" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stop-color="#00d98f" stop-opacity="0.5"/>
-                          <stop offset="100%" stop-color="#00d98f" stop-opacity="0"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M0,52 Q40,50 75,42 T140,28 T195,8 L195,54 L0,54 Z" fill="url(#chartGrad)"/>
-                      <path d="M0,52 Q40,50 75,42 T140,28 T195,8" fill="none" stroke="#00d98f" stroke-width="2.5"/>
-                    </svg>
-                    <div class="chart-beacon"></div>
-                  </div>
+                  <div class="visual-glow-flare"></div>
                 </div>
               </div>
 
@@ -3107,11 +3161,16 @@
                   <h3 class="bcard-title">Core Values</h3>
                   <p class="bcard-desc">Radical transparency, sub-second speed, and relentless ownership - treating every client like a co-founder.</p>
                 </div>
-                <div class="bcard-visual visual-steps">
-                  <div class="steps-beacon">✦</div>
-                  <div class="step-tier step-1"></div>
-                  <div class="step-tier step-2"></div>
-                  <div class="step-tier step-3"></div>
+                <div class="bcard-visual visual-values">
+                  <div class="diamond-core">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 3h12l4 6-10 13L2 9Z"></path>
+                      <path d="M11 3 8 9l4 13"></path>
+                      <path d="M13 3l3 6-4 13"></path>
+                    </svg>
+                  </div>
+                  <div class="diamond-pulse-ring p1"></div>
+                  <div class="diamond-pulse-ring p2"></div>
                   <div class="visual-glow-flare"></div>
                 </div>
               </div>
@@ -3926,14 +3985,7 @@
               </a>
               <a href="tel:923143110259" class="footer-contact-text">+92 314 3110259</a>
             </div>
-                        <div class="footer-contact-item hoverable">
-              <a href="https://wa.me/923143110259" target="_blank" rel="nofollow" class="footer-icon-btn" aria-label="WhatsApp">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                </svg>
-              </a>
-              <a href="https://wa.me/923143110259" target="_blank" rel="nofollow" class="footer-contact-text">Live WhatsApp Chat</a>
-            </div>
+                        
           </div>
         </div>
       </div>
@@ -3984,7 +4036,7 @@
         });
       });
     </script>
-    <script src="js/main.js?v=5.3"></script>
+    <script src="js/main.js?v=11.6"></script>
 
     <!-- FLOATING QUICK CONNECT WIDGETS (WHATSAPP & CALL) -->
     <div class="floating-quick-actions" aria-label="Quick Contact Actions">

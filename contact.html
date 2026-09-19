@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en" data-default-theme="dark" data-theme="dark">
   <head>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('webagency-theme');
+          if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | WebForge</title>
@@ -11,7 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=8.6" />
+    <link rel="stylesheet" href="css/style.css?v=11.6" />
   </head>
   <body>
     <!-- Custom reactive mouse pointer -->
@@ -149,7 +157,7 @@
             ></span>
           </button>
           <a
-            href="contact.html"
+            href="#contactSection"
             class="btn btn-primary webagency-get-started-btn"
             >Get Started</a
           >
@@ -204,7 +212,7 @@
       </div>
 
       <div class="mobile-drawer-cta-wrap">
-        <a href="contact.html" class="btn btn-solid mobile-drawer-cta-btn">
+        <a href="#contactSection" class="btn btn-solid mobile-drawer-cta-btn">
           <span>Get Started</span>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -641,16 +649,7 @@
           <div class="contact-info-ticker-wrap reveal" style="animation-delay: 0.35s">
             <div class="contact-info-ticker-track">
               <!-- Set 1 -->
-              <a href="tel:+13143110259" class="ticker-item">
-                <span class="ticker-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </span>
-                <span class="ticker-label">Direct Phone:</span>
-                <span class="ticker-val">+1 314 311 0259</span>
-              </a>
-              <span class="ticker-dot">✦</span>
+
 
               <a href="mailto:hello@webforge.com" class="ticker-item">
                 <span class="ticker-icon">
@@ -700,16 +699,7 @@
               <span class="ticker-dot">✦</span>
 
               <!-- Set 2 (Identical Duplicate for Seamless Infinite Loop) -->
-              <a href="tel:+13143110259" class="ticker-item">
-                <span class="ticker-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </span>
-                <span class="ticker-label">Direct Phone:</span>
-                <span class="ticker-val">+1 314 311 0259</span>
-              </a>
-              <span class="ticker-dot">✦</span>
+
 
               <a href="mailto:hello@webforge.com" class="ticker-item">
                 <span class="ticker-icon">
@@ -813,14 +803,14 @@
                   <span class="meta-text">Email: hello@webforge.com</span>
                 </a>
 
-                <!-- Phone Item -->
-                <a href="tel:+923143110259" class="contact-meta-item contact-meta-link">
+                <!-- WhatsApp Item -->
+                <a href="https://wa.me/923143110259" class="contact-meta-item contact-meta-link" target="_blank" rel="noopener noreferrer">
                   <span class="meta-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.36 11.36 0 0 1 8.5 3.92c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.54c0-.55-.45-1-.99-1z"/>
+                    <svg viewBox="0 0 448 512" width="22" height="22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
                     </svg>
                   </span>
-                  <span class="meta-text">Phone: +92 314 3110259</span>
+                  <span class="meta-text">WhatsApp: Chat with us</span>
                 </a>
               </div>
 
@@ -1051,22 +1041,7 @@
               </a>
               <a href="mailto:hello@webforge.com" class="footer-contact-text">hello@webforge.com</a>
             </div>
-            <div class="footer-contact-item hoverable">
-              <a href="tel:923143110259" class="footer-icon-btn" aria-label="Call us">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </a>
-              <a href="tel:923143110259" class="footer-contact-text">+92 314 3110259</a>
-            </div>
-                        <div class="footer-contact-item hoverable">
-              <a href="https://wa.me/923143110259" target="_blank" rel="nofollow" class="footer-icon-btn" aria-label="WhatsApp">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                </svg>
-              </a>
-              <a href="https://wa.me/923143110259" target="_blank" rel="nofollow" class="footer-contact-text">Live WhatsApp Chat</a>
-            </div>
+                        
           </div>
         </div>
       </div>
@@ -1075,7 +1050,7 @@
         <span>© 2026 WebForge. All rights reserved. Designed & Developed with ❤️ by <a href="https://hywiz.com/" target="_blank" rel="noopener noreferrer" class="footer-credit-link">Hywiz Technologies</a>.</span>
       </div>
     </footer>
-    <script src="js/main.js?v=5.3"></script>
+    <script src="js/main.js?v=11.6"></script>
     <script>
       // Auto-fill email from URL if present
       document.addEventListener('DOMContentLoaded', () => {
@@ -1104,17 +1079,6 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12.031 3C7.07 3 3.048 7.021 3.047 11.983c0 1.586.415 3.133 1.203 4.498L3 21l4.63-1.215a8.93 8.93 0 0 0 4.401 1.157h.004c4.961 0 8.983-4.022 8.984-8.984 0-2.4-.934-4.658-2.634-6.357A8.93 8.93 0 0 0 12.031 3zm0 1.957c3.873 0 7.027 3.153 7.028 7.026 0 1.876-.73 3.64-2.057 4.966a6.974 6.974 0 0 1-4.971 2.06h-.004a6.98 6.98 0 0 1-3.559-.971l-.255-.152-2.645.694.706-2.578-.166-.264a6.97 6.97 0 0 1-1.07-3.755c0-3.873 3.154-7.026 7.028-7.026zm3.844 9.385c-.211-.106-1.247-.616-1.44-.686-.194-.07-.335-.106-.476.106-.14.211-.546.686-.67.827-.123.14-.247.158-.458.053-.211-.106-.89-.328-1.696-1.047a6.29 6.29 0 0 1-1.173-1.458c-.123-.211-.013-.325.092-.43.095-.096.211-.247.317-.37.106-.124.141-.212.211-.353.07-.141.035-.265-.018-.37-.053-.106-.476-1.147-.652-1.57-.172-.413-.347-.357-.476-.364-.124-.006-.265-.007-.406-.007-.141 0-.37.053-.564.265-.194.211-.741.724-.741 1.766 0 1.041.758 2.048.864 2.189.106.141 1.492 2.278 3.614 3.195.505.218.899.348 1.206.446.507.161.968.138 1.333.084.407-.061 1.247-.51 1.423-1.004.176-.494.176-.917.123-1.006-.053-.088-.194-.141-.405-.247z" fill="#ffffff"/>
           </svg>
           <span class="floating-btn-tooltip">Chat on WhatsApp</span>
-        </div>
-      </a>
-
-      <!-- Right: Direct Call -->
-      <a href="tel:+923143110259" class="floating-btn floating-btn-phone" aria-label="Call Us Directly">
-        <div class="floating-btn-pulse"></div>
-        <div class="floating-btn-inner">
-          <svg class="floating-btn-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          <span class="floating-btn-tooltip">Call Us Directly</span>
         </div>
       </a>
     </div>

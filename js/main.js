@@ -952,24 +952,19 @@
     });
   }
 
-  /* ---------- Interactive Expertise Slider ---------- */
-  const textSlides = document.querySelectorAll('.expertise-slide-text-item');
-  const graphics = document.querySelectorAll('.expertise-graphic-item');
+  /* ---------- Interactive Expertise Slider & Pinned Scroll System ---------- */
+  const textSlides = document.querySelectorAll('.expertise-desktop-showcase .expertise-slide-text-item');
+  const graphics = document.querySelectorAll('.expertise-desktop-showcase .expertise-graphic-item');
   const navBtns = document.querySelectorAll('.expertise-nav-btn');
-  
-  if (textSlides.length && graphics.length && navBtns.length) {
+  const expertiseSection = document.getElementById('expertiseSection');
+
+  if (textSlides.length && graphics.length && expertiseSection) {
     let activeIndex = 0;
-    let progressInterval = null;
-    let elapsed = 0;
-    const duration = 3500; // 3.5s per slide on desktop
-    const intervalTick = 50; // check progress every 50ms
-    
-    const isMobileView = () => window.innerWidth <= 991;
 
     const showSlide = (index) => {
+      if (index < 0 || index >= textSlides.length) return;
       activeIndex = index;
-      elapsed = 0;
-      
+
       // Update Active Classes
       textSlides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
@@ -982,64 +977,42 @@
         const fill = btn.querySelector('.expertise-nav-progress-fill');
         if (fill) fill.style.width = '0%';
       });
-    };
-    
-    const startProgress = () => {
-      if (progressInterval) {
-        clearInterval(progressInterval);
-        progressInterval = null;
+      if (navBtns[index] && window.innerWidth <= 768) {
+        try {
+          navBtns[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } catch (err) {}
       }
-      
-      // Never auto-advance on mobile — mobile users read at their own pace via manual tap tabs
-      if (isMobileView()) {
-        return;
-      }
-      
-      progressInterval = setInterval(() => {
-        if (isMobileView()) {
-          clearInterval(progressInterval);
-          progressInterval = null;
-          return;
-        }
-
-        elapsed += intervalTick;
-        const percentage = Math.min(100, (elapsed / duration) * 100);
-        
-        const activeBtn = navBtns[activeIndex];
-        if (activeBtn) {
-          const fill = activeBtn.querySelector('.expertise-nav-progress-fill');
-          if (fill) fill.style.width = percentage + '%';
-        }
-        
-        if (elapsed >= duration) {
-          const nextIndex = (activeIndex + 1) % textSlides.length;
-          showSlide(nextIndex);
-        }
-      }, intervalTick);
     };
-    
-    // Bind click events to nav buttons
-    navBtns.forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        showSlide(index);
-        startProgress();
-      });
-    });
 
-    // Window resize handler
-    window.addEventListener('resize', () => {
-      if (isMobileView()) {
-        if (progressInterval) {
-          clearInterval(progressInterval);
-          progressInterval = null;
-        }
-        navBtns.forEach(btn => {
-          const fill = btn.querySelector('.expertise-nav-progress-fill');
-          if (fill) fill.style.width = '0%';
+    // Mobile / Tablet Tab Click Handling (tabs visible on <= 991px)
+    if (navBtns.length) {
+      navBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          showSlide(index);
         });
-      } else {
-        if (!progressInterval) {
-          startProgress();
+      });
+    }
+
+    // Touch swipe gesture support on mobile/tablet
+    let touchStartX = 0;
+    let touchStartY = 0;
+    expertiseSection.addEventListener('touchstart', (e) => {
+      if (window.innerWidth > 991 || !e.changedTouches.length) return;
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    expertiseSection.addEventListener('touchend', (e) => {
+      if (window.innerWidth > 991 || !e.changedTouches.length) return;
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+      if (Math.abs(diffX) > 48 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+        if (diffX < 0) {
+          showSlide((activeIndex + 1) % textSlides.length);
+        } else {
+          showSlide((activeIndex - 1 + textSlides.length) % textSlides.length);
         }
       }
     }, { passive: true });
@@ -1047,16 +1020,65 @@
     // Global method to switch slides from external cards/buttons
     window.goToExpertiseSlide = (index) => {
       showSlide(index);
-      startProgress();
-      const el = document.getElementById('expertiseSection');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (expertiseSection) {
+        expertiseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     };
 
-    // Initialize
+    // Initialize first slide as active
     showSlide(0);
-    startProgress();
+
+    // Desktop Pinned ScrollTrigger System (>= 992px)
+    const initPinnedScroll = () => {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        setTimeout(initPinnedScroll, 100);
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 992px)", () => {
+        showSlide(0);
+
+        const st = ScrollTrigger.create({
+          trigger: expertiseSection,
+          start: "top top",
+          end: "+=1800",
+          pin: true,
+          pinSpacing: true,
+          scrub: 0.6,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            const p = self.progress;
+            let target = 0;
+            if (p >= 0.67) {
+              target = 2;
+            } else if (p >= 0.33) {
+              target = 1;
+            } else {
+              target = 0;
+            }
+
+            if (target !== activeIndex) {
+              showSlide(target);
+            }
+          }
+        });
+
+        // Ensure refresh on window load
+        window.addEventListener('load', () => {
+          ScrollTrigger.refresh();
+        }, { once: true });
+
+        return () => {
+          if (st) st.kill();
+        };
+      });
+    };
+
+    initPinnedScroll();
   }
 
   /* ---------- Automatic Horizontal Scroll Carousel with Hover Pause ---------- */
