@@ -750,7 +750,7 @@
         width: 100%;
         display: flex;
         user-select: none;
-        padding: 2px 0;
+        padding: 12px 0;
         margin: 0;
       }
 
@@ -805,23 +805,24 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: clamp(7.5px, 0.75vw, 9.5px) clamp(24px, 2.2vw, 36px);
+        padding: clamp(14px, 1.2vw, 18px) clamp(24px, 2.2vw, 36px);
         min-width: clamp(160px, 13vw, 210px);
         border-radius: 9999px;
         font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
         font-size: clamp(12.5px, 0.9vw, 14px);
         line-height: 1.25;
         font-weight: 600;
-        letter-spacing: -0.015em;
+        letter-spacing: 0.015em;
         white-space: nowrap;
-        text-align: center;
         cursor: default;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.4s ease,
+                    color 0.4s ease,
+                    background 0.4s ease,
+                    box-shadow 0.4s ease;
         position: relative;
         z-index: 1;
-        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                    box-shadow 0.3s ease,
-                    border-color 0.3s ease,
-                    background 0.3s ease;
+        will-change: transform;
       }
 
       .tech-pill:hover {
@@ -849,7 +850,6 @@
       .tech-pill.pill-gradient:hover {
         transform: translateY(-3px) scale(1.05);
         z-index: 10;
-        box-shadow: 0 8px 28px rgba(0, 255, 170, 0.55), 0 0 18px rgba(79, 235, 253, 0.35);
       }
 
       /* Dark / Subtle Glass Outline Pill (Exact Reference Parity) */
@@ -872,8 +872,6 @@
       .tech-pill.pill-outline:hover {
         border-color: var(--accent-primary);
         color: var(--accent-primary);
-        background: rgba(0, 217, 143, 0.09);
-        box-shadow: 0 0 18px rgba(0, 217, 143, 0.3);
         transform: translateY(-3px) scale(1.05);
         z-index: 10;
       }
@@ -1203,7 +1201,7 @@
           gap: 6px !important;
         }
         .services-page-universe .pills-marquee-row {
-          padding: 1.5px 0 !important;
+          padding: 10px 0 !important;
         }
         .services-page-universe .pills-marquee-row:nth-child(3) {
           display: none !important; /* Reduces GPU composite load by 33% on mobile */
@@ -1849,29 +1847,14 @@
     </section>
     <!-- EXPERTISE DETAILS CREATIVE -->
     <section class="wrap services-expertise-section" style="padding-block: clamp(44px, 4.5vw, 60px)">
-      <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: 0px; display: flex; flex-direction: column; align-items: center;">
-        <div class="section-num-label">
-          <span class="sec-num">02</span>
-          <span class="sec-slash">/</span>
-          <span class="sec-tag">In-Depth Capabilities</span>
-        </div>
-        <h2>Specialized Growth Systems Across <br class="exp-head-br" /><em>Web, SEO &amp; Paid Ads</em></h2>
-        <p class="section-subtitle desc-inverted-pyramid">
-          <!-- Desktop & Tablet (>600px): Clean 2-Row Inverted Pyramid -->
-          <span class="desc-desk">
-            <span class="desc-row-1">Dedicated service systems engineered to scale your commercial market share,</span>
-            <span class="desc-row-2">built to drive predictable pipeline growth.</span>
-          </span>
-          <!-- Mobile (<=600px): Balanced Inverted Pyramid -->
-          <span class="desc-mob">
-            <span class="desc-row-1">Proven digital systems for scale,</span>
-            <span class="desc-row-2">built to scale revenue.</span>
-          </span>
-        </p>
-      </div>
       <div class="expertise-row-creative expertise-row-first">
         <div class="expertise-content-creative">
-          <h3 class="expertise-row-title">Bespoke Web Development <br class="exp-desk-br" /><em>&amp; Custom Engineering</em></h3>
+          <div class="section-num-label" style="margin-bottom: 24px;">
+              <span class="sec-num">02</span>
+              <span class="sec-slash">/</span>
+              <span class="sec-tag">Web Development</span>
+            </div>
+            <h2 class="expertise-row-title" >Custom Web Platforms <br class="exp-desk-br" /><em>&amp; Digital Engineering</em></h2>
           <p class="expertise-lead-desc">
             We engineer fast, high-converting digital platforms built around clean code, buyer psychology, and friction-free user journeys. Through rigorous front-end engineering, we eliminate technical debt and ensure your website turns visitors into revenue.
           </p>
@@ -1892,7 +1875,12 @@
       </div>
       <div class="expertise-row-creative reverse">
         <div class="expertise-content-creative">
-          <h3 class="expertise-row-title">Command Organic Visibility <br class="exp-desk-br" /><em>with Strategic SEO</em></h3>
+          <div class="section-num-label" style="margin-bottom: 24px;">
+              <span class="sec-num">03</span>
+              <span class="sec-slash">/</span>
+              <span class="sec-tag">Strategic SEO</span>
+            </div>
+            <h2 class="expertise-row-title" >Dominate Organic Search <br class="exp-desk-br" /><em>with Technical SEO</em></h2>
           <p class="expertise-lead-desc">
             Our search engineering positions your brand at the top of commercial rankings to capture high-intent buyers. Through exhaustive technical indexing audits, semantic topic silos, and authority PR, we secure compounding organic pipeline growth.
           </p>
@@ -1913,7 +1901,12 @@
       </div>
       <div class="expertise-row-creative">
         <div class="expertise-content-creative">
-          <h3 class="expertise-row-title">Scale Customer Acquisition <br class="exp-desk-br" /><em>with High-Yield Ads</em></h3>
+          <div class="section-num-label" style="margin-bottom: 24px;">
+              <span class="sec-num">04</span>
+              <span class="sec-slash">/</span>
+              <span class="sec-tag">Paid Ads</span>
+            </div>
+            <h2 class="expertise-row-title" >Scale Paid Acquisition <br class="exp-desk-br" /><em>with High-Yield Ads</em></h2>
           <p class="expertise-lead-desc">
             Our paid media frameworks deploy high-intent search campaigns, surgical negative keyword filters, and conversion-tested landing pages. Through server-side telemetry and smart bid sculpting, we maximize your ROAS at scale and volume.
           </p>
@@ -1941,7 +1934,7 @@
         <!-- Section Head with Ideal Spacing Below -->
         <div class="section-head center reveal" style="margin-inline: auto; text-align: center; margin-bottom: clamp(48px, 5vw, 60px); max-width: 860px; display: flex; flex-direction: column; align-items: center;">
           <div class="section-num-label">
-            <span class="sec-num">03</span>
+            <span class="sec-num">05</span>
             <span class="sec-slash">/</span>
             <span class="sec-tag">Why Choose Us</span>
           </div>
@@ -2111,7 +2104,7 @@
         <!-- Section Head -->
         <div class="section-head center reveal u-head-center-40">
           <div class="section-num-label">
-            <span class="sec-num">04</span>
+            <span class="sec-num">06</span>
             <span class="sec-slash">/</span>
             <span class="sec-tag">Client Reviews</span>
           </div>
@@ -2777,5 +2770,7 @@
     </div>
   </body>
 </html>
+
+
 
 

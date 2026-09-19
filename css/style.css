@@ -25599,16 +25599,119 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
 
 
 
-/* Increase footer info font sizes on desktop to reduce bottom gap */
-@media (min-width: 992px) {
+/* ═══════════════════════════════════════════════════════════
+   UNIVERSAL FOOTER PRECISION ALIGNMENT (ALL PAGES)
+   ═══════════════════════════════════════════════════════════ */
+.footer-info-col .brand-logo-white {
+  font-family: var(--font-display) !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+  padding: 0 !important;
+  margin: 0 0 18px 0 !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.site-footer-premium .footer-links-col h3,
+.site-footer-premium .footer-links-col h4,
+.footer-links-col h3,
+.footer-links-col h4 {
+  font-family: var(--font-display) !important;
+  font-size: 21.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  padding: 0 !important;
+  margin: 0 0 18px 0 !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Agency paragraph: perfectly aligns with "Home" on the same horizontal row */
+.footer-info-col p {
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  color: var(--fg-soft);
+  margin-top: 0 !important;
+  margin-bottom: 45px !important;
+  max-width: 36ch !important;
+}
+
+/* Links & Contact lists: uniform line-height & bottom alignment with social icons */
+.footer-links-list {
+  margin-top: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.footer-links-list a {
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.footer-contact-item {
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+}
+
+/* Mobile & Tablet view adjustments */
+@media (max-width: 768px) {
   .footer-info-col .brand-logo-white {
-    font-size: 28px !important;
-    margin-bottom: 18px;
+    font-size: 20px !important;
+    height: auto !important;
+    margin-bottom: 12px !important;
+  }
+  .site-footer-premium .footer-links-col h3,
+  .footer-links-col h3 {
+    height: auto !important;
+    margin-bottom: 14px !important;
   }
   .footer-info-col p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 24px;
+    margin-bottom: 22px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-info-col .brand-logo-white {
+    font-size: 19px !important;
+  }
+}
+
+
+
+
+
+/* Standardize expertise row titles to match Home Page H2s */
+h2.expertise-row-title,
+.about-expertise-section h2.expertise-row-title,
+.services-expertise-section h2.expertise-row-title,
+.about-page-universe h2.expertise-row-title,
+.services-page-universe h2.expertise-row-title {
+  font-size: clamp(32px, 3.8vw, 46px) !important;
+  font-weight: 700 !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.03em !important;
+}
+@media (min-width: 1441px) {
+  h2.expertise-row-title,
+  .about-expertise-section h2.expertise-row-title,
+  .services-expertise-section h2.expertise-row-title,
+  .about-page-universe h2.expertise-row-title,
+  .services-page-universe h2.expertise-row-title {
+    font-size: 48px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em !important;
   }
 }
 
