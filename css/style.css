@@ -6045,7 +6045,7 @@ html:not([data-theme="dark"]) .portfolio-hero-accent,
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 24px auto 32px;
+  margin: clamp(32px, 4vw, 48px) auto clamp(24px, 3vw, 36px);
   position: relative;
   z-index: 5;
   padding: 20px 10px;
@@ -6064,9 +6064,7 @@ html:not([data-theme="dark"]) .portfolio-hero-accent,
   overflow: hidden;
   position: relative;
   margin-inline: -20px;
-  transition: transform 0.4s var(--ease), z-index 0.3s, box-shadow 0.4s, border-color 0.4s;
-  cursor: zoom-in;
-  will-change: transform;
+  cursor: pointer;
   z-index: 2;
 }
 
@@ -6085,12 +6083,9 @@ html:not([data-theme="dark"]) .portfolio-hero-accent,
 .stacked-card.card-5 { transform: rotate(3deg) translateY(8px); z-index: 3; }
 .stacked-card.card-6 { transform: rotate(5deg) translateY(-4px); z-index: 2; }
 
-/* Interactive Hover States (Outward translation & Zoom in) */
+/* Hover transformation removed to prevent overlapping or obscuring the hero heading */
 .stacked-card:hover {
-  transform: scale(1.22) rotate(0deg) translateY(-26px) !important;
-  z-index: 30 !important;
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-primary);
+  /* Retain static position, no upward transform or scaling */
 }
 
 /* Responsive Overrides */
@@ -13227,6 +13222,9 @@ html:not([data-theme="dark"]) .ads-step-card,
     width: 100% !important;
     max-width: 100% !important;
   }
+  .bento-card::before {
+    display: none !important;
+  }
   .bento-card,
   .bento-card.card-large,
   .bento-card.card-small {
@@ -13257,6 +13255,9 @@ html:not([data-theme="dark"]) .ads-step-card,
     overflow: hidden !important;
     border-radius: 12px !important;
     background: none !important;
+  }
+  .visual-globe::before {
+    display: none !important;
   }
   .bento-card.card-large .bento-content,
   .bento-card.card-small .bento-content {
