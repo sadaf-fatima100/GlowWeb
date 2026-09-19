@@ -4505,14 +4505,14 @@ html:not([data-theme="dark"]) .services-header p,
 }
 
 .services-circle .get-started-btn {
-  font-size: 13px;
+  font-size: 15.5px;
   font-weight: 700;
   color: var(--accent-primary);
   letter-spacing: 0.02em;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   transition: color 0.3s, gap 0.3s;
   margin: 0;
   position: relative;
@@ -4524,8 +4524,8 @@ html:not([data-theme="dark"]) .services-header p,
 }
 
 .services-circle .get-started-btn svg {
-  width: 12px;
-  height: 12px;
+  width: 14.5px;
+  height: 14.5px;
   stroke: currentColor;
   transition: transform 0.3s;
 }
@@ -10305,9 +10305,7 @@ html:not([data-theme="dark"]) .services-hero-gradient,
 /* Expertise Creative */
 .expertise-row-creative {
   display: flex;
-  align-items: center;
-  gap: 80px;
-  margin-top: 96px;
+  align-items: flex-start; gap: 80px; margin-top: 96px;
 }
 
 .expertise-row-creative.reverse {
@@ -10433,9 +10431,7 @@ html:not([data-theme="dark"]) .expertise-image-creative.reveal-right:hover::befo
 /* Parent Service Page (.expertise-row-creative) Equal Width Columns */
 .expertise-row-creative {
   display: flex;
-  align-items: center;
-  gap: 90px;
-  margin-top: 80px;
+  align-items: flex-start; gap: 90px; margin-top: 80px;
 }
 
 .expertise-row-creative .expertise-content-creative {
@@ -10453,8 +10449,7 @@ html:not([data-theme="dark"]) .expertise-image-creative.reveal-right:hover::befo
 
 .expertise-row-creative .expertise-image-creative img {
   min-height: unset !important;
-  max-height: 340px !important;
-  height: 340px !important;
+  max-height: 400px !important; height: 400px !important;
   aspect-ratio: unset !important;
   object-fit: cover !important;
   width: 100% !important;
@@ -22838,7 +22833,7 @@ html:not([data-theme="dark"]) .tp-heading .accent-text,
     margin-bottom: 16px !important;
   }
   .services-circle .get-started-btn {
-    font-size: clamp(11.5px, 1.2vw, 13px) !important;
+    font-size: clamp(14px, 1.5vw, 15.5px) !important;
   }
 }
 
@@ -25601,5 +25596,22 @@ html:not([data-theme="dark"]) .floating-btn-tooltip,
     padding-bottom: 0 !important;
   }
 }
+
+
+
+/* Increase footer info font sizes on desktop to reduce bottom gap */
+@media (min-width: 992px) {
+  .footer-info-col .brand-logo-white {
+    font-size: 28px !important;
+    margin-bottom: 18px;
+  }
+  .footer-info-col p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+}
+
+
 
 
